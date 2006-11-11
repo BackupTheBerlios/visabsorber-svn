@@ -1,0 +1,17 @@
+\begin{thebibliography}{KK02}
+
+\bibitem[Bri95]{brig96}
+\textsc{Brigham}, Elbert~O.:
+\newblock \emph{Schnelle Fourier Transformation}.
+\newblock 6., korr. Auflage.
+\newblock Oldenbourg, 1995. --
+\newblock ISBN 3--486--23177--4
+
+\bibitem[KK02]{Kamm02}
+\textsc{Kammeyer}, Karl~D. ; \textsc{Kroschel}, Kristian:
+\newblock \emph{Digitale Signalverarbeitung: Filterung und Spektralanalyse}.
+\newblock 5., durchges. u. erg. Auflage.
+\newblock Stuttgart, D : B. G. Teubner Verlag, 2002. --
+\newblock ISBN 3--519--46122--6
+
+\end{thebibliography}

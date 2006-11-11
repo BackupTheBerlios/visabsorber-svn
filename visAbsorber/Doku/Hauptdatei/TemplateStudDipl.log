@@ -1,0 +1,1031 @@
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2006.11.2)  8 NOV 2006 16:56
+entering extended mode
+**D:/Programmierung/PPM/Doku/Hauptdatei/TemplateStudDipl.tex
+(D:\Programmierung\PPM\Doku\Hauptdatei\TemplateStudDipl.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, german, ngerman, french, loaded.
+("d:\Programme\MiKTeX 2.5\tex\latex\base\fix-cm.sty"
+Package: fix-cm 2006/03/24 v1.1n fixes to LaTeX
+ ("d:\Programme\MiKTeX 2.5\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+("d:\Programme\MiKTeX 2.5\tex\latex\koma-script\scrbook.cls"
+Document Class: scrbook 2006/07/30 v2.95b KOMA-Script document class (book)
+("d:\Programme\MiKTeX 2.5\tex\latex\koma-script\scrkbase.sty"
+Package: scrkbase 2006/07/30 v2.95b KOMA-Script package (basics and keyval use)
+
+("d:\Programme\MiKTeX 2.5\tex\latex\koma-script\scrlfile.sty"
+Package: scrlfile 2006/03/28 v2.95 KOMA-Script package (loading files)
+
+Package scrlfile, 2006/03/28 v2.95 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+) ("d:\Programme\MiKTeX 2.5\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+Package scrkbase Info: You've used the obsolete option `final'.
+(scrkbase)             \KOMAoptions{draft=false} will be used instead.
+(scrkbase)             You should do this change too on input line 628.
+Package scrkbase Info: You've used the obsolete option `halfparskip*'.
+(scrkbase)             \KOMAoptions{parskip=half*} will be used instead.
+(scrkbase)             You should do this change too on input line 628.
+Package scrkbase Info: You've used the obsolete option `cleardoubleempty'.
+(scrkbase)             \KOMAoptions{cleardoublepage=empty} will be used instead.
+(scrkbase)             You should do this change too on input line 628.
+Package scrkbase Info: You've used the obsolete option `11pt'.
+(scrkbase)             \KOMAoptions{fontsize=11pt} will be used instead.
+(scrkbase)             You should do this change too on input line 628.
+ ("d:\Programme\MiKTeX 2.5\tex\latex\base\bk11.clo"
+File: bk11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+("d:\Programme\MiKTeX 2.5\tex\latex\koma-script\typearea.sty"
+Package: typearea 2006/07/30 v2.95b KOMA-Script package (type area)
+
+Package typearea, 2006/07/30 v2.95b KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-2002
+
+\ta@bcor=\skip41
+\ta@div=\count79
+Package scrkbase Info: You've used the obsolete option `a4paper'.
+(scrkbase)             \KOMAoptions{paper=a4} will be used instead.
+(scrkbase)             You should do this change too on input line 419.
+\ta@hblk=\skip42
+\ta@vblk=\skip43
+\ta@temp=\skip44
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV-departure   = -6/100
+(typearea)              \evensidemargin = 47.2316pt
+(typearea)              \oddsidemargin  = -12.5192pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.60002pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 832.
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@pti@nb@sid@b@x=\box26
+\c@figure=\count87
+\c@table=\count88
+\bibindent=\dimen102
+) ("d:\Programme\MiKTeX 2.5\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+ ("d:\Programme\MiKTeX 2.5\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+("d:\Programme\MiKTeX 2.5\tex\latex\base\inputenc.sty"
+Package: inputenc 2006/05/05 v1.1b Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+ ("d:\Programme\MiKTeX 2.5\tex\latex\base\ansinew.def"
+File: ansinew.def 2006/05/05 v1.1b Input encoding file
+))
+("d:\Programme\MiKTeX 2.5\tex\latex\koma-script\scrpage2.sty"
+Package: scrpage2 2006/03/29 v2.2c LaTeX2e KOMA-Script package
+LaTeX Info: Redefining \pagemark on input line 134.
+) ("d:\Programme\MiKTeX 2.5\tex\latex\german\ngerman.sty"
+v2.5e 1998-07-08
+Package: ngerman 1998/07/08 v2.5e Support for writing german texts (br)
+\grmnU@D=\dimen103
+ngerman -- \language number for naustrian undefined, default 4 used.
+) ("d:\Programme\MiKTeX 2.5\tex\latex\ltxmisc\boxit.sty") ("d:\Programme\MiKTeX 2.5\tex\latex\nag\nag.sty"
+Package: nag 2006/07/08 0.5 warning about old commands (ulmi)
+\c@nag@c=\count89
+\c@nag@sins=\count90
+) ("d:\Programme\MiKTeX 2.5\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2006/09/06 v6.75e Hypertext links for LaTeX
+\@linkdim=\dimen104
+\Hy@linkcounter=\count91
+\Hy@pagecounter=\count92
+ ("d:\Programme\MiKTeX 2.5\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2006/09/06 v6.75e Hyperref: PDFDocEncoding definition (HO)
+) ("d:\Programme\MiKTeX 2.5\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2006/02/14 v1.1 MiKTeX 'hyperref' configuration
+) ("d:\Programme\MiKTeX 2.5\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2006/08/22 v2.4 Connects package keyval with LaTeX options (HO)
+)
+Package hyperref Info: Option `final' set `true' on input line 2073.
+Package hyperref Info: Option `linktocpage' set `true' on input line 2073.
+Package hyperref Info: Hyper figures OFF on input line 2123.
+Package hyperref Info: Link nesting OFF on input line 2128.
+Package hyperref Info: Hyper index ON on input line 2131.
+Package hyperref Info: Plain pages OFF on input line 2138.
+Package hyperref Info: Backreferencing OFF on input line 2143.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2273.
+("d:\Programme\MiKTeX 2.5\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 2428.
+\Fld@menulength=\count93
+\Field@Width=\dimen105
+\Fld@charsize=\dimen106
+\Choice@toks=\toks17
+\Field@toks=\toks18
+Package hyperref Info: Hyper figures OFF on input line 2906.
+Package hyperref Info: Link nesting OFF on input line 2911.
+Package hyperref Info: Hyper index ON on input line 2914.
+Package hyperref Info: backreferencing OFF on input line 2921.
+Package hyperref Info: Link coloring OFF on input line 2926.
+\Hy@abspage=\count94
+\c@Item=\count95
+\c@Hfootnote=\count96
+)
+*hyperref using default driver hdvips*
+("d:\Programme\MiKTeX 2.5\tex\latex\hyperref\hdvips.def"
+File: hdvips.def 2006/09/06 v6.75e Hyperref driver for dvips
+ ("d:\Programme\MiKTeX 2.5\tex\latex\hyperref\pdfmark.def"
+File: pdfmark.def 2006/09/06 v6.75e Hyperref definitions for pdfmark specials
+\pdf@docset=\toks19
+\pdf@box=\box27
+\pdf@toks=\toks20
+\pdf@defaulttoks=\toks21
+\Fld@listcount=\count97
+))
+("d:\Programme\MiKTeX 2.5\tex\latex\soul\soul.sty"
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks22
+\SOUL@lasttoken=\toks23
+\SOUL@cmds=\toks24
+\SOUL@buffer=\toks25
+\SOUL@token=\toks26
+\SOUL@spaceskip=\skip47
+\SOUL@ttwidth=\dimen107
+\SOUL@uldp=\dimen108
+\SOUL@ulht=\dimen109
+) ("d:\Programme\MiKTeX 2.5\tex\latex\tools\multicol.sty"
+Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
+\c@tracingmulticols=\count98
+\mult@box=\box28
+\multicol@leftmargin=\dimen110
+\c@unbalance=\count99
+\c@collectmore=\count100
+\doublecol@number=\count101
+\multicoltolerance=\count102
+\multicolpretolerance=\count103
+\full@width=\dimen111
+\page@free=\dimen112
+\premulticols=\dimen113
+\postmulticols=\dimen114
+\multicolsep=\skip48
+\multicolbaselineskip=\skip49
+\partial@page=\box29
+\last@line=\box30
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\c@columnbadness=\count104
+\c@finalcolumnbadness=\count105
+\last@try=\dimen115
+\multicolovershoot=\dimen116
+\multicolundershoot=\dimen117
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+)
+("d:\Programme\MiKTeX 2.5\tex\latex\multirow\multirow.sty"
+\bigstrutjot=\dimen118
+) ("d:\Programme\MiKTeX 2.5\tex\latex\caption\caption.sty"
+Package: caption 2006/03/21 v3.0j Customising captions (AR)
+
+("d:\Programme\MiKTeX 2.5\tex\latex\caption\caption3.sty"
+Package: caption3 2006/03/16 v3.0j caption3 kernel (AR)
+\captionmargin=\dimen119
+\captionmarginx=\dimen120
+\captionwidth=\dimen121
+\captionindent=\dimen122
+\captionparindent=\dimen123
+\captionhangindent=\dimen124
+)
+Package caption Info: hyperref package v6.74m (or newer) detected on input line 301.
+) ("d:\Programme\MiKTeX 2.5\tex\latex\tools\hhline.sty"
+Package: hhline 1994/05/23 v2.03 Table rule package (DPC)
+)
+("d:\Programme\MiKTeX 2.5\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip50
+\LTright=\skip51
+\LTpre=\skip52
+\LTpost=\skip53
+\LTchunksize=\count106
+\LTcapwidth=\dimen125
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@cols=\count107
+\LT@rows=\count108
+\c@LT@tables=\count109
+\c@LT@chunks=\count110
+\LT@p@ftn=\toks27
+)
+Class scrbook Info: longtable captions redefined on input line 30.
+ ("d:\Programme\MiKTeX 2.5\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip54
+
+For additional information on amsmath, use the `?' option.
+("d:\Programme\MiKTeX 2.5\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+ ("d:\Programme\MiKTeX 2.5\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks28
+\ex@=\dimen126
+))
+("d:\Programme\MiKTeX 2.5\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen127
+) ("d:\Programme\MiKTeX 2.5\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count111
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count112
+\leftroot@=\count113
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count114
+\DOTSCASE@=\count115
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box58
+\strutbox@=\box59
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count116
+\c@MaxMatrixCols=\count117
+\dotsspace@=\muskip11
+\c@parentequation=\count118
+\dspbrk@lvl=\count119
+\tag@help=\toks29
+\row@=\count120
+\column@=\count121
+\maxfields@=\count122
+\andhelp@=\toks30
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks31
+\multlinegap=\skip55
+\multlinetaggap=\skip56
+\mathdisplay@stack=\toks32
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("d:\Programme\MiKTeX 2.5\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2002/01/22 v2.2d
+ ("d:\Programme\MiKTeX 2.5\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2001/10/25 v2.2f
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+("d:\Programme\MiKTeX 2.5\tex\latex\tools\array.sty"
+Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
+\col@sep=\dimen135
+\extrarowheight=\dimen136
+\NC@list=\toks33
+\extratabsurround=\skip57
+\backup@length=\skip58
+) ("d:\Programme\MiKTeX 2.5\tex\latex\units\units.sty"
+Package: units 1998/08/04 v0.9b Typesetting units
+
+("d:\Programme\MiKTeX 2.5\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+) ("d:\Programme\MiKTeX 2.5\tex\latex\units\nicefrac.sty"
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip59
+\L@UnitsRaiseTextstyle=\skip60
+\L@UnitsRaiseScriptstyle=\skip61
+))
+("d:\Programme\MiKTeX 2.5\tex\latex\trfsigns\trfsigns.sty"
+Package: trfsigns 
+) ("d:\Programme\MiKTeX 2.5\tex\latex\base\textcomp.sty"
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+("d:\Programme\MiKTeX 2.5\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 42.
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+) ("d:\Programme\MiKTeX 2.5\tex\latex\pdfcprot\pdfcprot.sty"
+Package: pdfcprot 2002/02/27 v1.5 character protruding using pdflatex (cs)
+\c@CPROT@family=\count123
+\c@CPROT@family@temp=\count124
+\c@CPROT@series=\count125
+\c@CPROT@series@temp=\count126
+\c@CPROT@shape=\count127
+\c@CPROT@shape@temp=\count128
+\c@CPROT@size=\count129
+\c@CPROT@size@temp=\count130
+\c@CPROT@temp@chars=\count131
+Package pdfcprot Info: \ifpdfoutput already defined.
+(pdfcprot)             That may happen when using KOMA-Script together
+(pdfcprot)             with ``pdfcprot.sty''. I have changed the definition
+(pdfcprot)             from Markus' KOMA-Script, so if you experience errors
+(pdfcprot)             try \let\ifpdfoutput\relax before loading ``pdfcprot.sty''. on input line 747.
+)
+Package scrkbase Info: \ifpdftex already defined.
+(scrkbase)             If \ifpdftex does not behave like
+(scrkbase)             it was described at the KOMA-Script manual, try to
+(scrkbase)             load `scrkbase.sty' earlier or find out at which
+(scrkbase)             package or class \ifpdftex was defined before.
+
+("d:\Programme\MiKTeX 2.5\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+ ("d:\Programme\MiKTeX 2.5\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("d:\Programme\MiKTeX 2.5\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+) ("d:\Programme\MiKTeX 2.5\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2005/12/29 v1.2 MiKTeX 'graphics' configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("d:\Programme\MiKTeX 2.5\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+) ("d:\Programme\MiKTeX 2.5\tex\latex\wrapfig\wrapfig.sty"
+\wrapoverhang=\dimen139
+\WF@size=\dimen140
+\c@WF@wrappedlines=\count132
+\WF@box=\box60
+\WF@everypar=\toks34
+Package: wrapfig 2003/01/31  v 3.6
+)
+("d:\Programme\MiKTeX 2.5\tex\latex\floatflt\floatflt.sty"
+Package: floatflt 1996/02/27 v. 1.3
+\c@OptionTest=\count133
+\figbox=\box61
+\tabbox=\box62
+\pagebox=\box63
+\ffigcount=\count134
+\ftabcount=\count135
+\fftest=\count136
+\hangcount=\count137
+\nosuccesstryfig=\count138
+\nosuccesstrytab=\count139
+\figgutter=\dimen141
+\tabgutter=\dimen142
+\htdone=\dimen143
+\pageht=\dimen144
+\startpageht=\dimen145
+\tabbredd=\dimen146
+\floatfltwidth=\dimen147
+\fltitemwidth=\dimen148
+\outputpretest=\toks35
+) ("d:\Programme\MiKTeX 2.5\tex\latex\rotating\rotating.sty"
+Package: rotating 1997/09/26 v2.13 Rotation package
+\c@r@tfl@t=\count140
+\rot@float@box=\box64
+)
+("d:\Programme\MiKTeX 2.5\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks36
+\verbatim@line=\toks37
+\verbatim@in@stream=\read1
+) ("d:\Programme\MiKTeX 2.5\tex\latex\geometry\geometry.sty"
+Package: geometry 2002/07/08 v3.2 Page Geometry
+\Gm@cnth=\count141
+\Gm@cntv=\count142
+\c@Gm@tempcnt=\count143
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@dimlist=\toks38
+
+("d:\Programme\MiKTeX 2.5\tex\latex\geometry\geometry.cfg")) (D:\Programmierung\PPM\Doku\Hauptdatei\mandaDef.tex)
+(D:\Programmierung\PPM\Doku\Hauptdatei\userDef.tex) (TemplateStudDipl.aux
+(D:\Programmierung\PPM\Doku\Vorspann\Abkuerzungen.aux) (D:\Programmierung\PPM\Doku\Kapitel1\Kap1.aux)
+(D:\Programmierung\PPM\Doku\Kapitel2\Kap2.aux) (D:\Programmierung\PPM\Doku\Kapitel3\Kap3.aux)
+(D:\Programmierung\PPM\Doku\Anhang\Teila.aux) (D:\Programmierung\PPM\Doku\Anhang\Teilb.aux)
+(D:\Programmierung\PPM\Doku\Anhang\Teilc.aux))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+Package hyperref Info: Link coloring OFF on input line 59.
+ ("d:\Programme\MiKTeX 2.5\tex\latex\hyperref\nameref.sty"
+Package: nameref 2006/08/15 v2.26 Cross-referencing by name of section
+
+("d:\Programme\MiKTeX 2.5\tex\latex\oberdiek\refcount.sty"
+Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+)
+\c@section@level=\count144
+)
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
+ (TemplateStudDipl.out) (TemplateStudDipl.out)
+\@outlinefile=\write3
+
+("d:\Programme\MiKTeX 2.5\tex\latex\ms\ragged2e.sty"
+Package: ragged2e 2003/03/25 v2.04 ragged2e Package (MS)
+ ("d:\Programme\MiKTeX 2.5\tex\latex\ms\everysel.sty"
+Package: everysel 1999/06/08 v1.03 EverySelectfont Package (MS)
+LaTeX Info: Redefining \selectfont on input line 125.
+)
+\CenteringLeftskip=\skip62
+\RaggedLeftLeftskip=\skip63
+\RaggedRightLeftskip=\skip64
+\CenteringRightskip=\skip65
+\RaggedLeftRightskip=\skip66
+\RaggedRightRightskip=\skip67
+\CenteringParfillskip=\skip68
+\RaggedLeftParfillskip=\skip69
+\RaggedRightParfillskip=\skip70
+\JustifyingParfillskip=\skip71
+\CenteringParindent=\skip72
+\RaggedLeftParindent=\skip73
+\RaggedRightParindent=\skip74
+\JustifyingParindent=\skip75
+)
+Package caption Info: KOMA-Script class detected on input line 59.
+Package caption Info: longtable package v3.15 (or newer) detected on input line 59.
+Package caption Info: rotating package v2.0 (or newer) detected on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+
+("d:\Programme\MiKTeX 2.5\tex\latex\pdfcprot\pplmnT1.cpa")
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+ ("d:\Programme\MiKTeX 2.5\tex\latex\pdfcprot\pplmnTS1.cpa")
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssbxnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmrmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmnTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+LaTeX Font Info:    Font shape `T1/cmss/m/it' in size <9> not available
+(Font)              Font shape `T1/cmss/m/sl' tried instead on input line 59.
+LaTeX Font Info:    Font shape `T1/cmss/m/it' in size <12> not available
+(Font)              Font shape `T1/cmss/m/sl' tried instead on input line 59.
+Package pdfcprot Info: I didn't find cmssmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+LaTeX Font Info:    Font shape `TS1/cmss/m/it' in size <12> not available
+(Font)              Font shape `TS1/cmss/m/sl' tried instead on input line 59.
+Package pdfcprot Info: I didn't find cmssmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+LaTeX Font Info:    Font shape `T1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `T1/cmss/m/sl' tried instead on input line 59.
+Package pdfcprot Info: I didn't find cmssmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+LaTeX Font Info:    Font shape `TS1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `TS1/cmss/m/sl' tried instead on input line 59.
+Package pdfcprot Info: I didn't find cmssmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+LaTeX Font Info:    Font shape `T1/cmss/m/it' in size <10> not available
+(Font)              Font shape `T1/cmss/m/sl' tried instead on input line 59.
+Package pdfcprot Info: I didn't find cmssmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+LaTeX Font Info:    Font shape `TS1/cmss/m/it' in size <10> not available
+(Font)              Font shape `TS1/cmss/m/sl' tried instead on input line 59.
+Package pdfcprot Info: I didn't find cmssmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmitT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+LaTeX Font Info:    Font shape `TS1/cmss/m/it' in size <9> not available
+(Font)              Font shape `TS1/cmss/m/sl' tried instead on input line 59.
+Package pdfcprot Info: I didn't find cmssmitTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslT1.cpa.
+(pdfcprot)              As a fallback I will try pplmnT1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnT1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+Package pdfcprot Info: I didn't find cmssmslTS1.cpa.
+(pdfcprot)              As a fallback I will try pplmnTS1.cpa. on input line 59.
+Package pdfcprot Info: File pplmnTS1.cpa{} used for the adjustment
+(pdfcprot)             of the char protruding. It seems that it isn't the one
+(pdfcprot)             you intended to use. on input line 59.
+-------------------- Geometry parameters
+paper: a4paper
+landscape: --
+twocolumn: --
+twoside: true
+asymmetric: --
+h-parts: 99.58464pt, 426.79135pt, 71.13188pt
+v-parts: 71.13188pt, 688.5567pt, 85.35826pt
+hmarginratio: --
+vmarginratio: --
+lines: --
+heightrounded: --
+bindingoffset: 0.0pt
+truedimen: --
+includehead: --
+includefoot: --
+includemp: --
+driver: 
+-------------------- Page layout dimensions and switches
+\paperwidth  597.50787pt
+\paperheight 845.04684pt
+\textwidth  426.79135pt
+\textheight 688.5567pt
+\oddsidemargin  27.31465pt
+\evensidemargin -1.1381pt
+\topmargin  -38.53812pt
+\headheight 28.45274pt
+\headsep    20.40001pt
+\footskip   47.60002pt
+\marginparwidth 89.62619pt
+\marginparsep   12.8401pt
+\columnsep  10.0pt
+\skip\footins  10.0pt plus 4.0pt minus 2.0pt
+\hoffset 0.0pt
+\voffset 0.0pt
+\mag 1000
+\@twosidetrue \@mparswitchtrue 
+(1in=72.27pt, 1cm=28.45pt)
+-----------------------
+
+(D:\Programmierung\PPM\Doku\Titelblatt\titel.tex
+File: D:/Programmierung/PPM/Doku/Titelblatt/tu-logo.eps Graphic file (type eps)
+ <D:/Programmierung/PPM/Doku/Titelblatt/tu-logo.eps>
+LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+
+("d:\Programme\MiKTeX 2.5\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+ ("d:\Programme\MiKTeX 2.5\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+File: ../Titelblatt/Logo_final.eps Graphic file (type eps)
+
+<../Titelblatt/Logo_final.eps> [1
+
+
+
+]) [2
+
+
+] (TemplateStudDipl.toc)
+\tf@toc=\write4
+ [1
+
+
+] (D:\Programmierung\PPM\Doku\Vorspann\Abkuerzungen.tex [2
+
+
+
+]) [3] (D:\Programmierung\PPM\Doku\Vorspann\Erklaerung.tex
+Underfull \hbox (badness 2285) in paragraph at lines 9--12
+\T1/cmr/m/n/10.95 ne frem-de Hil-fe nur un-ter Ver-wen-dung der an-ge-ge-be-nen Hilfs-mit-tel ver-faÿt ha-
+ []
+
+) (D:\Programmierung\PPM\Doku\Vorspann\Danksagung.tex [4
+
+]) (D:\Programmierung\PPM\Doku\Kapitel1\Kap1.tex
+Kapitel 1.
+[1
+
+
+
+
+
+]) [2] (D:\Programmierung\PPM\Doku\Kapitel2\Kap2.tex
+Kapitel 2.
+[3
+
+
+
+
+] [4]
+File: ../Kapitel2/Bilder/formelbeispiel.eps Graphic file (type eps)
+ <../Kapitel2/Bilder/formelbeispiel.eps>
+Overfull \hbox (45.31654pt too wide) in paragraph at lines 91--92
+ \T1/cmss/bx/n/10.95 2.3.3.1.2 Syn-the-se[] \T1/cmr/m/n/10.95 Die Syn-the-se-glei-chung der Fou-rier-trans-for-ma-ti-on 
+lau-tet: 
+ []
+
+) [5] [6] (D:\Programmierung\PPM\Doku\Kapitel3\Kap3.tex
+Kapitel 3.
+File: ../Kapitel3/Bilder/colorbar.eps Graphic file (type eps)
+<../Kapitel3/Bilder/colorbar.eps>
+File: ../Titelblatt/tu-logo.eps Graphic file (type eps)
+ <../Titelblatt/tu-logo.eps>
+File: ../Titelblatt/Logo_final.eps Graphic file (type eps)
+ <../Titelblatt/Logo_final.eps>
+Underfull \hbox (badness 7576) in paragraph at lines 39--41
+\T1/cmr/m/n/10.95 Einbinden von Ver-wei-sen: [[]] Sieht im Text dann ein-fach wie [[]]
+ []
+
+[7
+
+
+
+
+]
+Overfull \hbox (77.65831pt too wide) in paragraph at lines 51--65
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 82
+ []
+
+[8]) [9] [10
+
+
+
+] (TemplateStudDipl.lof)
+\tf@lof=\write5
+ [11] (D:\Programmierung\PPM\Doku\Anhang\Teila.tex [12
+
+
+
+]
+Anhang A.
+) [13] (D:\Programmierung\PPM\Doku\Anhang\Teilb.tex [14
+
+
+
+
+]
+Anhang B.
+) [15] (D:\Programmierung\PPM\Doku\Anhang\Teilc.tex [16
+
+
+
+
+]
+Anhang C.
+[17]) [18] (TemplateStudDipl.bbl)
+No complaints by nag.
+[19
+
+
+
+] (TemplateStudDipl.aux (D:\Programmierung\PPM\Doku\Vorspann\Abkuerzungen.aux)
+(D:\Programmierung\PPM\Doku\Kapitel1\Kap1.aux) (D:\Programmierung\PPM\Doku\Kapitel2\Kap2.aux)
+(D:\Programmierung\PPM\Doku\Kapitel3\Kap3.aux) (D:\Programmierung\PPM\Doku\Anhang\Teila.aux)
+(D:\Programmierung\PPM\Doku\Anhang\Teilb.aux) (D:\Programmierung\PPM\Doku\Anhang\Teilc.aux)) ) 
+Here is how much of TeX's memory you used:
+ 7824 strings out of 95419
+ 104683 string characters out of 1187410
+ 195195 words of memory out of 1189679
+ 10077 multiletter control sequences out of 60000
+ 48505 words of font info for 112 fonts, out of 1000000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 39i,10n,40p,767b,424s stack positions out of 5000i,500n,10000p,200000b,32768s
+
+Output written on TemplateStudDipl.dvi (25 pages, 73068 bytes).

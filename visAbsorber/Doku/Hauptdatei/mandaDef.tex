@@ -1,0 +1,66 @@
+% Allgemeine Schalter - Änderung von Standardeinstellungen
+\frenchspacing																			% keine längeren Leerzeichen nach Satzende
+\setlength{\parindent}{0pt}													% kein Einzug bei neuem Absatz
+\renewcommand{\baselinestretch}{1.2}								% Zeilenabstand 
+\renewcommand{\labelitemi}{*}												% Aufzählungszeichen definieren
+
+% Wortabstände optimal einstellen (use instead of \sloppy) - Verhindern von rausragenden Zeilen
+\tolerance 1414
+\hbadness 1414
+\emergencystretch 1.5em
+\hfuzz 0.3pt
+\widowpenalty=10000
+\vfuzz \hfuzz
+\raggedbottom
+\brokenpenalty=10000																% Trennung bei Seitenumbruch
+
+% Seitenränder bzw. -dimensionen setzen^
+% jetzt mit geometry!!!
+
+%\setlength{\oddsidemargin}{0.1cm} 									% für beidseitigen druck
+%\setlength{\evensidemargin}{-0.7cm} 								% für beidseitigen druck
+%\setlength{\topmargin}{-1.3cm} 
+%\setlength{\headsep}{1cm} 
+%\setlength{\footskip}{1.8cm}
+%\setlength{\textwidth}{14.5cm} 
+%\setlength{\textheight}{23.5cm} 
+%\setlength{\parskip}{1.5ex plus0.5ex minus 0.5ex}	% Abstand zwischen 2 Absätzen 
+
+\setlength{\headheight}{1cm} 
+\addtolength{\footnotesep}{2pt}											% abstand der Fußnote zur Trennlinie 
+
+% Setze Überschriftentiefe
+\setcounter{secnumdepth}{4}													% Nummerierung der Kapitel
+\setcounter{figure}{4}															% Bilder
+\setcounter{tocdepth}{2}														% Gliederungsebene für Inhaltsverzeichnis
+
+% Einstellungen für Kopf- und Fußzeilen
+\pagestyle{scrheadings}       % nutze scrheader  
+\clearscrheadings             % lösche alle vorhandenen header
+
+%\addtokomafont{pagehead}{\normalsize\upshape}  % nichtkursive Kopf-/Fußzeilen
+\setheadsepline{.05pt}					% trennlinie oben
+\setfootsepline{.05pt}					% trennlinie unten
+
+
+\automark[section]{chapter}   % links chapter, rechts section
+
+% variere nach ein-/zweiseitig
+\makeatletter
+\if@twoside											% bei zweiseitig							
+	\lehead{\leftmark}            % setze Kapitel linke Seite oben
+	\rohead{\rightmark}           % setze Abschnitt rechte Seite oben
+	\lefoot{\pagemark}            % Seitennummer unten links
+	\rofoot{\pagemark}            % Seitennummer unten rechts
+	\lofoot{\Autor}       				% Name des Verfassers nur linke Seite 
+\else														% einseitig
+	\ihead{\leftmark}            	% setze linke kopfzeile
+	\ohead{\rightmark}           	% setze rechte kopfzeile
+	\ofoot{\pagemark}             % seitennummer unten rechts
+	\ifoot{\Autor}       					% Name des Verfassers unten links
+\fi 
+\makeatother
+
+
+
+

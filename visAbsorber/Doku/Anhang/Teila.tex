@@ -1,0 +1,29 @@
+% Anhang A - Quellcode
+
+\chapter[Erstellter Programmcode]{Erstellter Programmcode}
+
+\section{Matlab-Code}
+Der folgende Code dient zur Erzeugung des Bildes \ref{kap3:colorbar}.
+\begin{verbatim}
+%----------------------------------------------
+% Make an image that uses only 8 levels/colors.
+%----------------------------------------------
+imagesc(floor(8*rand(20)))
+
+%-----------------------------------------------------------
+% Make an 8-row color map from the original 64-row colormap.
+%-----------------------------------------------------------
+m64 = colormap;
+m8=m64(1:8:end,:);
+colormap(m8);
+
+%---------------------
+% Label new color map.
+%---------------------
+h = colorbar % Make colorbar and save handle.
+set(h, 'ytick', (1:2:16)*7/16) % Assign positions of ticks
+labels = strvcat('zero','one','two','three','four', ...
+'five','six','seven'); %
+%Make  levels for ticks.
+set(h, 'yticklabel', labels) % Assign tick labels.
+\end{verbatim}
