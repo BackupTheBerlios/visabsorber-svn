@@ -1,0 +1,58 @@
+%%**************************************************************
+%% Version: filename    rev date       time     last modified by
+%%     $Id: PPM.tex 76 2006-13-11 13:02:23Z dietmarw $ 
+%%**************************************************************
+%% (The "Id" tag above is updated automatically if 
+%% 	svn propset svn:keywords "Id" <filename>
+%% was set.)
+\documentclass[index]{PPM}
+
+% Zusätzliches Packet für diese Datei und zugehörige Einstellungen
+\usepackage{listings}
+
+\lstset{%
+	tabsize=2,% 
+	basicstyle=\footnotesize\ttfamily,%
+	%numbers=left,% 
+	%numberfirstline,%
+	breaklines=true,%
+	breakatwhitespace=true,%
+	%linewidth=0.9\textwidth,% ´´
+	%xleftmargin=0.05\textwidth,%
+	frame=tlrb,%
+	captionpos=b%
+}
+
+% Interne Definitionen für die Darstellung von ...
+\newcommand{\befehl}[2][x]{\ifthenelse{\equal{#1}{x}}{\index{Befehl!#2}\index{#2}}{}\texttt{$\backslash$#2}}
+\newenvironment{beispiel}[1]{\hfill\begin{minipage}[c]{0.8\textwidth}Beispiel:\small\ifthenelse{\equal{#1}{}}{\\}{\lstinputlisting[linerange={#1}]{PPM.tex}}}{\end{minipage}\hfill}
+\newcommand{\verzeichnis}[1]{\path{#1}}
+\newcommand{\option}[2][x]{\ifthenelse{\equal{#1}{x}}{\index{Option!#2}\index{#2}}{}\mbox{'#2'}}
+\newcommand{\umgebung}[2][x]{\ifthenelse{\equal{#1}{x}}{\index{Umgebung!#2}\index{#2}}{}\texttt{#1}}
+\begin{document}
+	%Schaltet auf römische Seitenzahlen um 
+	\frontmatter
+	
+	%Setzt die Titelseite
+	\titelseite{Dietmar Winkler}{Thomas Liebezeit}{Vorlage für Studien- und Diplomarbeiten}
+		{Anleitung für die Benutzung}
+		{\today}
+		{N.N.}
+
+	%Erzeugt das Inhaltsverzeichnis (inkl. Link in der pdf-Datei)
+	\inhaltsverzeichnis 
+	%Erzeugen der Seite mit den Formelzeichen
+	\input{Glossar/Glossar.tex}
+	\mainmatter
+	\input{Einleitung/Einleitung.tex}
+	\chapter{Kapitel2}
+	% Dummy Literaturverzeichnis
+	\begin{literaturverzeichnis}
+		\bibitem{Test}Winkler, D.; Liebezeit, Th.\\\emph{Vorlage für Studien- und Diplomarbeiten - Anleitung für die Benutzung}\\MDT 2006 (unveröffentlicht)
+	\end{literaturverzeichnis}
+	% Index
+	\indexverzeichnis
+\end{document}
+
+
+	
