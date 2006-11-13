@@ -4,7 +4,7 @@
  * Created on 11. November 2006, 07:37
  *
  * To change this template, choose Tools | Template Manager
- * and open the template in the editor.
+ * and open the template in the editor. test
  */
 
 package visabsorber;
