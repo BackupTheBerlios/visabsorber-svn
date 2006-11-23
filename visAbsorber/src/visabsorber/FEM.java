@@ -13,14 +13,18 @@ package visabsorber;
  *
  * @author Jan-Stefan Fischer
  */
+import java.lang.Math;
+        
 public class FEM {
     NodeList nodeList;
     ElementList elementList;
+    LineList lineList;
     
     /** Creates a new instance of FEM */
-    public FEM(NodeList nl, ElementList el) {
+    public FEM(NodeList nl, ElementList el, LineList ll) {
         nodeList=nl;
         elementList=el;
+        lineList=ll;
     }
     
     public Matrix calcS () {
@@ -39,6 +43,23 @@ public class FEM {
             }
         }
         return S;
+    }
+    
+    public void clacRB(Matrix S, Matrix p) {
+        p.setXCount(1);
+        p.setYCount(nodeList.getCount());
+        //Neumann
+        for (int i=0; i<lineList.getCount(); i++) {
+            Line line = lineList.getLine(i);
+            if (line.hasNeumann()) {
+                double l = Math.sqrt((line.getNode0().getX()-line.getNode1().getX())*(line.getNode0().getX()-line.getNode1().getX()) +  (line.getNode0().getY()-line.getNode1().getY())*(line.getNode0().getY()-line.getNode1().getY()));
+                double p_n = line.getQ()*l/2.0;
+                double p_s = p.getValue(0,line.getNode0().getIndex()) + p_n;
+                p.setValue(0, line.getNode0().getIndex(), p_s);
+                p_s = p.getValue(0,line.getNode1().getIndex()) + p_n;
+                p.setValue(0, line.getNode1().getIndex(), p_s);
+            }
+        }
     }
     
 }
