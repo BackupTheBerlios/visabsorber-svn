@@ -15,13 +15,15 @@ package visabsorber;
  */
 public class Node {
     
-    Double u=null, x, y;
+    double u, x, y;
+    boolean temp;
     int index;
     /** Creates a new instance of node */
-    public Node(double x1, double y1, Double u1, int i) {
+    public Node(double x1, double y1, double u1, boolean temp1, int i) {
        u=u1;
        y=y1;
        x=x1;
+       temp=temp1;
        index=i;
     }   
     
@@ -35,5 +37,13 @@ public class Node {
     
     public int getIndex() {
         return index;
+    }
+    
+    public boolean hasTemp() {
+        return temp;
+    }
+    
+    public double getU() {
+        return u;
     }
 }

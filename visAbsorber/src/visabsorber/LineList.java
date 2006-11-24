@@ -20,12 +20,13 @@ public class LineList {
     /** Creates a new instance of LineList */
     Vector<Line> list;  
     public LineList() {
+        list = new Vector<Line>();
     }
         
     /** Creates a new instance of ElementList */
     
-    public void addLine (Element e) {
-        list = new Vector<Line>();
+    public void addLine (Line e) {
+        list.addElement(e);
     }
     
     public Line getLine(int i) {

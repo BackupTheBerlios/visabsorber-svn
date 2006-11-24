@@ -20,7 +20,7 @@ public class Element {
     Matrix S=new Matrix(3,3);
     /** Creates a new instance of Element */
     
-    public Element(Node n0, Node n1, Node n2, double rho1, double lamda1, double cp1,  int i) {
+    public Element(Node n0, Node n1, Node n2, double lamda1, double rho1, double cp1,  int i) {
         node0=n0;
         node1=n1;
         node2=n2;

@@ -33,6 +33,10 @@ public class Line {
         return neumann;
     }
     
+    public boolean hasCauchy() {
+        return cauchy;
+    }
+    
     public Node getNode0() {
         return node0;
     }
@@ -43,6 +47,14 @@ public class Line {
     
     public double getQ() {
         return q;
+    }
+    
+    public double getAlpha() {
+        return alpha;
+    }
+    
+    public double getT_Fluid() {
+        return t_fluid;
     }
     
 }

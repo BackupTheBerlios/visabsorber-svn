@@ -59,7 +59,72 @@ public class FEM {
                 p_s = p.getValue(0,line.getNode1().getIndex()) + p_n;
                 p.setValue(0, line.getNode1().getIndex(), p_s);
             }
+            if (line.hasCauchy()) {
+                double l = Math.sqrt((line.getNode0().getX()-line.getNode1().getX())*(line.getNode0().getX()-line.getNode1().getX()) +  (line.getNode0().getY()-line.getNode1().getY())*(line.getNode0().getY()-line.getNode1().getY()));
+                double p_n = line.getAlpha()*line.getT_Fluid()*l/2.0;
+                double p_s = p.getValue(0,line.getNode0().getIndex()) + p_n;
+                p.setValue(0, line.getNode0().getIndex(), p_s);
+                p_s = p.getValue(0,line.getNode1().getIndex()) + p_n;
+                p.setValue(0, line.getNode1().getIndex(), p_s);     
+                
+                double s_c=line.getAlpha()*l;
+                double s_c0=s_c/3.0+S.getValue(line.getNode0().getIndex(),line.getNode0().getIndex());
+                double s_c1=s_c/6.0+S.getValue(line.getNode0().getIndex(),line.getNode1().getIndex());
+                double s_c2=s_c/6.0+S.getValue(line.getNode1().getIndex(),line.getNode0().getIndex());
+                double s_c3=s_c/3.0+S.getValue(line.getNode1().getIndex(),line.getNode1().getIndex());
+                S.setValue(line.getNode0().getIndex(),line.getNode0().getIndex(), s_c0);
+                S.setValue(line.getNode0().getIndex(),line.getNode1().getIndex(), s_c1);
+                S.setValue(line.getNode1().getIndex(),line.getNode0().getIndex(), s_c2);
+                S.setValue(line.getNode1().getIndex(),line.getNode1().getIndex(), s_c3);                
+            }
         }
+        for (int i=0; i<nodeList.getCount(); i++) {
+            Node node = nodeList.getNode(i);
+            if (node.hasTemp()) {
+                double u = node.getU();
+                //S.setValue(i,i,1.0);
+                p.setValue(0,i,0.0);
+                S.setValue(i,i,0.0);
+                for (int j=0; j<S.getXCount(); j++) {
+                    
+                    if (j==i) {
+                        double p_n=p.getValue(0,j)+u;
+                        p.setValue(0,j,p_n);
+                        S.setValue(i,j,1.0);
+                    }
+                    else {
+                        double p_n=p.getValue(0,j)-u*S.getValue(i,j);
+                        p.setValue(0,j,p_n);
+                        S.setValue(i,j,0.0);
+                        S.setValue(j,i,0.0);
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    public Matrix calcX() {
+        Matrix S=calcS();
+        Matrix p = new Matrix(1,nodeList.getCount());
+        clacRB(S, p);
+        
+        
+        Calculator calc=new Calculator();
+        Matrix MatrixCholesky = new Matrix (nodeList.getCount(),nodeList.getCount());
+        Matrix VectorY = new Matrix (1,nodeList.getCount());
+        Matrix VectorX = new Matrix (1,nodeList.getCount());
+        String failure=calc.Cholesky(S, MatrixCholesky);
+        if (failure==null) {
+            failure=calc.calc_YX(MatrixCholesky, p, VectorY,0);
+            if (failure==null) {
+                failure=calc.calc_YX(MatrixCholesky.transpont(), VectorY, VectorX,1);
+                if (failure==null) {
+                    return VectorX;
+                }
+            }
+        }
+        return null;
     }
     
 }
