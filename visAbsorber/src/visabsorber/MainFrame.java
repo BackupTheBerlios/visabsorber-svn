@@ -6,6 +6,7 @@
 
 package visabsorber;
 
+import java.io.File;
 import javax.swing.JOptionPane;
 
 /**
@@ -62,18 +63,21 @@ public class MainFrame extends javax.swing.JFrame {
         LineList lineList = new LineList();
         nodeList.addNode(new Node(0.0,0.0,10.0,true,0));
         nodeList.addNode(new Node(0.0,10.0,10.0,true,1));
-        nodeList.addNode(new Node(0.1,5.0,0.0,false,2));
-        nodeList.addNode(new Node(10.0,0.0,0.0,false,3));
-        nodeList.addNode(new Node(10.0,10.0,0.0,false,4));
-        lineList.addLine(new Line (nodeList.getNode(0),nodeList.getNode(1),true,10.0,false,0,0));
+        nodeList.addNode(new Node(5.0,5.0,0.0,false,2));
+        nodeList.addNode(new Node(10.0,0.0,20.0,false,3));
+        nodeList.addNode(new Node(10.0,10.0,20.0,false,4));
+        lineList.addLine(new Line (nodeList.getNode(0),nodeList.getNode(1),true,-10.0,false,0,0));
         lineList.addLine(new Line (nodeList.getNode(3),nodeList.getNode(4),true,-10.0,false,0,0));
-        elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(2),nodeList.getNode(1),1,0,0,0));
-        elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(3),nodeList.getNode(2),1,0,0,1));
-        elementList.addElement(new Element(nodeList.getNode(3),nodeList.getNode(4),nodeList.getNode(2),1,0,0,2));
-        elementList.addElement(new Element(nodeList.getNode(2),nodeList.getNode(4),nodeList.getNode(1),1,0,0,3));
+        elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(2),nodeList.getNode(1),10,0,0,0));
+        elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(3),nodeList.getNode(2),10,0,0,1));
+        elementList.addElement(new Element(nodeList.getNode(3),nodeList.getNode(4),nodeList.getNode(2),10,0,0,2));
+        elementList.addElement(new Element(nodeList.getNode(2),nodeList.getNode(4),nodeList.getNode(1),10,0,0,3));
         FEM fem= new FEM(nodeList, elementList, lineList);
         Matrix X=fem.calcX();
+        X.saveMatrixToFile(new File("x.txt"));
         JOptionPane.showMessageDialog(null, ""+X.getValue(0,2), "test", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, ""+X.getValue(0,3), "test", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(null, ""+X.getValue(0,4), "test", JOptionPane.ERROR_MESSAGE);
     }//GEN-LAST:event_startFEMActionPerformed
     
     /**

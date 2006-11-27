@@ -28,7 +28,7 @@ public class Element {
         rho=rho1;
         lamda=lamda1;
         cp=cp1;
-        J=(node1.getX()-node0.getX()) * (node2.getY()-node1.getY()) - (node2.getX()-node1.getX()) * (node1.getY()-node0.getY());
+        J=(node1.getX()-node0.getX()) * (node2.getY()-node1.getY()) - (node2.getX()-node0.getX()) * (node1.getY()-node0.getY());
         calcS();
     }
     
@@ -44,7 +44,7 @@ public class Element {
         double factor=lamda/(2.0*J);    
         for (int x=0;x<3;x++) {
             for (int y=0;y<3;y++) {
-                S.setValue(x,y, (dx[x]*dx[y]+dy[x]*dy[y]) * factor ) ;
+                S.setValue(x,y, ((dx[x]*dx[y]) + (dy[x]*dy[y])) * factor ) ;
             }
         }
     }
