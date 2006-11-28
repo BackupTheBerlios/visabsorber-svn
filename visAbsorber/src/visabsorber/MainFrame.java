@@ -6,7 +6,11 @@
 
 package visabsorber;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.util.Vector;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +18,7 @@ import javax.swing.JOptionPane;
  * @author  Jan-Stefan Fischer
  */
 public class MainFrame extends javax.swing.JFrame {
+    
     
     /** Creates new form MainFrame */
     public MainFrame() {
@@ -28,8 +33,22 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
     private void initComponents() {
         startFEM = new javax.swing.JButton();
+        scrollPane1 = new java.awt.ScrollPane();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("visAbsorber");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         startFEM.setText("start FEM");
         startFEM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -37,25 +56,190 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Art des Absorbers:");
+
+        jButton1.setText("importiere Querschnittnetz");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Umgebungstemperatur [K]:");
+
+        jLabel3.setText("Temperaturfluid [K]:");
+
+        jLabel4.setText("W\u00e4rmeleitf\u00e4higkeit Absorber:");
+
+        jLabel5.setText("Absorbtionsgrad Beschichtung:");
+
+        jLabel6.setText("Lichtst\u00e4rke (direkt):");
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(startFEM)
-                .addContainerGap(311, Short.MAX_VALUE))
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                        .add(startFEM, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jLabel1)
+                        .add(jTextField1)
+                        .add(jLabel2)
+                        .add(jTextField2)
+                        .add(jTextField3)
+                        .add(jLabel5)
+                        .add(jLabel4)
+                        .add(jLabel3)
+                        .add(jTextField4))
+                    .add(jLabel6))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .add(startFEM)
-                .addContainerGap(266, Short.MAX_VALUE))
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(layout.createSequentialGroup()
+                        .add(jButton1)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel1)
+                        .add(18, 18, 18)
+                        .add(jLabel2)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel3)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel4)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel5)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel6)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 221, Short.MAX_VALUE)
+                        .add(startFEM))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE))
+                .addContainerGap())
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public int getNext(Double value, String string, int start) {
+        char Byte[]=string.toCharArray();
+        int position=start;
+        do {
+                   position++;
+        } while(position<string.length() && Byte[position]!=',');
+        value=Double.valueOf(string.substring(start,position)).doubleValue();
+        if (value.equals(0.0)) JOptionPane.showMessageDialog(null, "Null", "Ende", JOptionPane.ERROR_MESSAGE);
+        position++;
+        return position;
+    }
+    
+    public void loadFromFile(File file) {
+        NodeList nodeList=new NodeList();
+        ElementList elementList = new ElementList();
+        try {
+            FileReader reader = new FileReader(file);
+            BufferedReader buffer = new BufferedReader(reader);
+            String line;
+            do {
+                line=buffer.readLine();
+            }
+            while (line.startsWith("*NODE")==false);
+            
+            //scan Nodes
+            JOptionPane.showMessageDialog(null, "Ende1 ", "Ende", JOptionPane.ERROR_MESSAGE);
+            line=buffer.readLine();
+            while (line.startsWith("*ELEMENT")==false) {
+                int start=0;
+                double x,y;
+                char Byte[]=line.toCharArray();
+                Double bufValue=0.0;
+                start=getNext(bufValue, line, start);               
+                start=getNext(bufValue, line, start);
+                x=bufValue.doubleValue();            
+                start=getNext(bufValue, line, start);
+                y=bufValue.doubleValue();
+                int nodeCount=nodeList.getCount();
+                nodeList.addNode(new Node(x,y,0.0,false,nodeCount));
+                    
+                line=buffer.readLine();     
+            }
+            
+            
+            //scan Elements
+            JOptionPane.showMessageDialog(null, "Ende2", "Ende", JOptionPane.ERROR_MESSAGE);
+            line=buffer.readLine(); 
+            while (line.startsWith("*NSET, NSET=neumann_knoten")==false) {
+                int start=0;
+                int node0,node1,node2;
+                char Byte[]=line.toCharArray();
+                Double bufValue=0.0;
+                start=getNext(bufValue, line, start);                
+                start=getNext(bufValue, line, start);
+                node0=bufValue.intValue();               
+                start=getNext(bufValue, line, start);
+                node1=bufValue.intValue();          
+                start=getNext(bufValue, line, start);
+                node2=bufValue.intValue();
+                
+                elementList.addElement(new Element(nodeList.getNode(node0),nodeList.getNode(node1),nodeList.getNode(node2),0,0,0,0));
+                    
+                line=buffer.readLine();    
+                
+            }
+            JOptionPane.showMessageDialog(null, "Ende3", "Ende", JOptionPane.ERROR_MESSAGE);
+            
+           
+            //int bufX=Integer.valueOf(buffer.readLine()).intValue();
+            //double bufVector[]=new double[bufX*bufX];
+            /*for (int i=0;i<bufX;i++) {
+                String line=buffer.readLine();
+                int position=0;
+                int start=0;
+                char Byte[]=line.toCharArray();
+                for (int j=0;j<bufX;j++) {
+             
+                    do {
+                        position++;
+                    } while(position<line.length() && Byte[position]!=' ');
+             
+                    double bufValue=Double.valueOf(line.substring(start,position)).doubleValue();
+                    start=position;
+                    bufVector[bufX*j+i]=bufValue;
+                }
+            }
+            Vector=bufVector;
+            x=y=bufX;*/
+        } catch(java.lang.Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
+            
+        }
+    }
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JFileChooser fileChooser = new JFileChooser(".");
+        int status = fileChooser.showOpenDialog(null);
+        if (status == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            if (selectedFile.exists()) {
+                loadFromFile(selectedFile);
+                //VectorB.drawMatrix(visMatrix,0,0, "Vektor B");
+            }
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
     private void startFEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startFEMActionPerformed
 // TODO add your handling code here:
         ElementList elementList = new ElementList();
@@ -63,11 +247,11 @@ public class MainFrame extends javax.swing.JFrame {
         LineList lineList = new LineList();
         nodeList.addNode(new Node(0.0,0.0,10.0,false,0));
         nodeList.addNode(new Node(0.0,10.0,10.0,false,1));
-        nodeList.addNode(new Node(1.0,5.0,0.0,false,2));
+        nodeList.addNode(new Node(5.0,5.0,0.0,false,2));
         nodeList.addNode(new Node(10.0,0.0,20.0,false,3));
         nodeList.addNode(new Node(10.0,10.0,20.0,false,4));
-        lineList.addLine(new Line (nodeList.getNode(0),nodeList.getNode(1),false,-10.0,true,10,20));
-        lineList.addLine(new Line (nodeList.getNode(3),nodeList.getNode(4),false,10.0,true,20,10));
+        lineList.addLine(new Line(nodeList.getNode(0),nodeList.getNode(1),false,-10.0,true,10,20));
+        lineList.addLine(new Line(nodeList.getNode(3),nodeList.getNode(4),false,10.0,true,20,10));
         elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(2),nodeList.getNode(1),10,0,0,0));
         elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(3),nodeList.getNode(2),10,0,0,1));
         elementList.addElement(new Element(nodeList.getNode(3),nodeList.getNode(4),nodeList.getNode(2),10,0,0,2));
@@ -75,9 +259,7 @@ public class MainFrame extends javax.swing.JFrame {
         FEM fem= new FEM(nodeList, elementList, lineList);
         Matrix X=fem.calcX();
         X.saveMatrixToFile(new File("x.txt"));
-        JOptionPane.showMessageDialog(null, ""+X.getValue(0,2), "test", JOptionPane.ERROR_MESSAGE);
-        JOptionPane.showMessageDialog(null, ""+X.getValue(0,3), "test", JOptionPane.ERROR_MESSAGE);
-        JOptionPane.showMessageDialog(null, ""+X.getValue(0,4), "test", JOptionPane.ERROR_MESSAGE);
+        
     }//GEN-LAST:event_startFEMActionPerformed
     
     /**
@@ -92,6 +274,18 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private java.awt.ScrollPane scrollPane1;
     private javax.swing.JButton startFEM;
     // End of variables declaration//GEN-END:variables
     

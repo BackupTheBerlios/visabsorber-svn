@@ -26,7 +26,7 @@ public class FEM {
     public Matrix calcS () {
         Matrix S = new Matrix(nodeList.getCount(),nodeList.getCount());
         S.resetVector();
-        S.saveMatrixToFile(new File("S1.txt"));
+        
         for (int e=0;e<elementList.getCount(); e++) {
             int u_i[]= new int [3];
             Element element=elementList.getElement(e);
@@ -40,14 +40,14 @@ public class FEM {
                 }
             }
         }
-        S.saveMatrixToFile(new File("S2.txt"));
+        
         return S;
     }
     
     public void clacRB(Matrix S, Matrix p) {
         p.setXCount(1);
         p.setYCount(nodeList.getCount());
-        p.saveMatrixToFile(new File("p1.txt"));
+        
         //Neumann
         for (int i=0; i<lineList.getCount(); i++) {
             Line line = lineList.getLine(i);
@@ -86,7 +86,7 @@ public class FEM {
                 }
             }
         }
-        S.saveMatrixToFile(new File("S3.txt"));*/
+        */
        for (int i=0; i<nodeList.getCount(); i++) {
             Node node = nodeList.getNode(i);
             if (node.hasTemp()) {
@@ -109,8 +109,8 @@ public class FEM {
                 
             }
         }
-        p.saveMatrixToFile(new File("p2.txt"));
-        S.saveMatrixToFile(new File("S3.txt"));
+        p.saveMatrixToFile(new File("p.txt"));
+        S.saveMatrixToFile(new File("S.txt"));
         
     }
     
