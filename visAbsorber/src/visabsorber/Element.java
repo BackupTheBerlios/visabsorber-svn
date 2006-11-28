@@ -28,7 +28,7 @@ public class Element {
         rho=rho1;
         lamda=lamda1;
         cp=cp1;
-        J=(node1.getX()-node0.getX()) * (node2.getY()-node1.getY()) - (node2.getX()-node0.getX()) * (node1.getY()-node0.getY());
+        J=(node1.getX()-node0.getX()) * (node2.getY()-node0.getY()) - (node2.getX()-node0.getX()) * (node1.getY()-node0.getY());
         calcS();
     }
     
