@@ -6,10 +6,13 @@
 
 package visabsorber;
 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.Vector;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -18,11 +21,45 @@ import javax.swing.JOptionPane;
  * @author  Jan-Stefan Fischer
  */
 public class MainFrame extends javax.swing.JFrame {
-    
+      ElementList elementList = new ElementList();
+        NodeList nodeList = new NodeList();
+        LineList lineList = new LineList();
     
     /** Creates new form MainFrame */
+        class MyCanvas extends Canvas {
+        public void paint(Graphics g) {
+            for (int i=0; i<nodeList.getCount(); i++) {
+                int x=Double.valueOf(nodeList.getNode(i).getX()*1000.0).intValue();
+                int y=Double.valueOf(nodeList.getNode(i).getY()*1000.0).intValue();
+                g.drawString(""+nodeList.getNode(i).getU(),x+30,y+30);
+  
+            }
+            for (int i=0; i<lineList.getCount();i++) {
+                int x0=Double.valueOf(lineList.getLine(i).getNode0().getX()*1000.0).intValue();
+                int y0=Double.valueOf(lineList.getLine(i).getNode0().getY()*1000.0).intValue();
+                int x1=Double.valueOf(lineList.getLine(i).getNode1().getX()*1000.0).intValue();
+                int y1=Double.valueOf(lineList.getLine(i).getNode1().getY()*1000.0).intValue();
+                g.drawLine(x0+30,y0+30,x1+30,y1+30);
+            }
+            g.setColor(Color.RED);
+            for (int i=0; i<elementList.getCount();i++) {
+                 int x0=Double.valueOf(elementList.getElement(i).getNode0().getX()*1000.0).intValue();
+                 int y0=Double.valueOf(elementList.getElement(i).getNode0().getY()*1000.0).intValue();
+                 int x1=Double.valueOf(elementList.getElement(i).getNode1().getX()*1000.0).intValue();
+                 int y1=Double.valueOf(elementList.getElement(i).getNode1().getY()*1000.0).intValue();
+                 int x2=Double.valueOf(elementList.getElement(i).getNode2().getX()*1000.0).intValue();
+                 int y2=Double.valueOf(elementList.getElement(i).getNode2().getY()*1000.0).intValue();
+                 g.drawLine(x0+30,y0+30,x1+30,y1+30);
+                 g.drawLine(x0+30,y0+30,x2+30,y2+30);
+                 g.drawLine(x2+30,y2+30,x1+30,y1+30);
+            }
+            
+        }
+    }
     public MainFrame() {
         initComponents();
+        scrollPane1.add(visMatrix);
+        visMatrix.setSize(new Dimension(3000,1500));
     }
     
     /** This method is called from within the constructor to
@@ -134,14 +171,13 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public int getNext(Double value, String string, int start) {
+    public int getNext(String value, String string, int start) {
         char Byte[]=string.toCharArray();
         int position=start;
         do {
                    position++;
         } while(position<string.length() && Byte[position]!=',');
-        value=Double.valueOf(string.substring(start,position)).doubleValue();
-        if (value.equals(0.0)) JOptionPane.showMessageDialog(null, "Null", "Ende", JOptionPane.ERROR_MESSAGE);
+        value.concat(string.substring(start,position));
         position++;
         return position;
     }
@@ -165,12 +201,16 @@ public class MainFrame extends javax.swing.JFrame {
                 int start=0;
                 double x,y;
                 char Byte[]=line.toCharArray();
-                Double bufValue=0.0;
-                start=getNext(bufValue, line, start);               
+                String bufValue="";
+                start=getNext(bufValue, line, start);    
+                JOptionPane.showMessageDialog(null, ""+bufValue, "1", JOptionPane.ERROR_MESSAGE);
                 start=getNext(bufValue, line, start);
-                x=bufValue.doubleValue();            
+                
+                x=Double.valueOf(bufValue).doubleValue();   
+                JOptionPane.showMessageDialog(null, ""+x, "2", JOptionPane.ERROR_MESSAGE);
                 start=getNext(bufValue, line, start);
-                y=bufValue.doubleValue();
+                y=Double.valueOf(bufValue).doubleValue();    
+                JOptionPane.showMessageDialog(null, ""+y, "3", JOptionPane.ERROR_MESSAGE);
                 int nodeCount=nodeList.getCount();
                 nodeList.addNode(new Node(x,y,0.0,false,nodeCount));
                     
@@ -185,14 +225,14 @@ public class MainFrame extends javax.swing.JFrame {
                 int start=0;
                 int node0,node1,node2;
                 char Byte[]=line.toCharArray();
-                Double bufValue=0.0;
+                String bufValue="";
                 start=getNext(bufValue, line, start);                
                 start=getNext(bufValue, line, start);
-                node0=bufValue.intValue();               
+                node0=Double.valueOf(bufValue).intValue();             
                 start=getNext(bufValue, line, start);
-                node1=bufValue.intValue();          
+                node1=Double.valueOf(bufValue).intValue();    
                 start=getNext(bufValue, line, start);
-                node2=bufValue.intValue();
+                node2=Double.valueOf(bufValue).intValue();    
                 
                 elementList.addElement(new Element(nodeList.getNode(node0),nodeList.getNode(node1),nodeList.getNode(node2),0,0,0,0));
                     
@@ -242,23 +282,61 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void startFEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startFEMActionPerformed
 // TODO add your handling code here:
-        ElementList elementList = new ElementList();
-        NodeList nodeList = new NodeList();
-        LineList lineList = new LineList();
-        nodeList.addNode(new Node(0.0,0.0,10.0,false,0));
+        elementList = new ElementList();
+        nodeList = new NodeList();
+        lineList = new LineList();
+        int XCount=3,YCount=3, Count=0;
+        for (int y=0;y<YCount;y++) {
+            for (int x=0;x<XCount;x++) {
+                nodeList.addNode(new Node(Integer.valueOf(x).doubleValue()*0.05,Integer.valueOf(y).doubleValue()*0.05,0.0,false,Count));
+                if (y!=0) {
+                    if (x>0) {
+                        elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount),nodeList.getNode(Count-1),10,0,0,elementList.getCount()));
+                        elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-2*XCount+1),nodeList.getNode(Count-XCount),10,0,0,elementList.getCount()));
+                    }
+                    if (x<XCount-1) {
+                        elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount+1),nodeList.getNode(Count-2*XCount+1),10,0,0,elementList.getCount()));
+                    }
+                }
+                Count++;
+            }
+            if (y<YCount-1) {
+                for (int x=0;x<XCount-1;x++) {
+                    nodeList.addNode(new Node(Integer.valueOf(x).doubleValue()*0.05+0.025,Integer.valueOf(y).doubleValue()*0.05+0.025,0.0,false,Count));
+                    elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount),nodeList.getNode(Count-XCount+1),10,0,0,elementList.getCount()));
+                    Count++;
+                    
+                } 
+            }
+                     
+        }
+        for (int x=0;x<XCount-1;x++) {
+            lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),true,20.0,false,40,20));
+            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),true,-20.0,false,-40,20));
+            //lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,true,40,20));
+            //lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,true,-40,20));
+        }
+        for (int y=0;y<YCount-1;y++) {
+            //lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y),nodeList.getNode((2*XCount-1)*(y+1)),true,-500.0,false,0.0,0.0));
+        }
+        nodeList.getNode(0).setU(20);
+        //nodeList.addNode(new Node(0.0,0.0,10.0,true,0));
+        /*
+         *
         nodeList.addNode(new Node(0.0,10.0,10.0,false,1));
         nodeList.addNode(new Node(5.0,5.0,0.0,false,2));
         nodeList.addNode(new Node(10.0,0.0,20.0,false,3));
         nodeList.addNode(new Node(10.0,10.0,20.0,false,4));
-        lineList.addLine(new Line(nodeList.getNode(0),nodeList.getNode(1),false,-10.0,true,10,20));
-        lineList.addLine(new Line(nodeList.getNode(3),nodeList.getNode(4),false,10.0,true,20,10));
+        lineList.addLine(new Line(nodeList.getNode(0),nodeList.getNode(1),true,-10.0,false,10,20));
+        lineList.addLine(new Line(nodeList.getNode(3),nodeList.getNode(4),true,10.0,false,20,10));
         elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(2),nodeList.getNode(1),10,0,0,0));
         elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(3),nodeList.getNode(2),10,0,0,1));
         elementList.addElement(new Element(nodeList.getNode(3),nodeList.getNode(4),nodeList.getNode(2),10,0,0,2));
-        elementList.addElement(new Element(nodeList.getNode(2),nodeList.getNode(4),nodeList.getNode(1),10,0,0,3));
+        elementList.addElement(new Element(nodeList.getNode(2),nodeList.getNode(4),nodeList.getNode(1),10,0,0,3));*/
         FEM fem= new FEM(nodeList, elementList, lineList);
         Matrix X=fem.calcX();
         X.saveMatrixToFile(new File("x.txt"));
+        visMatrix.repaint();
         
     }//GEN-LAST:event_startFEMActionPerformed
     
@@ -288,5 +366,5 @@ public class MainFrame extends javax.swing.JFrame {
     private java.awt.ScrollPane scrollPane1;
     private javax.swing.JButton startFEM;
     // End of variables declaration//GEN-END:variables
-    
+    public MyCanvas visMatrix = new MyCanvas();
 }

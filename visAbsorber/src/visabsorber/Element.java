@@ -18,6 +18,7 @@ public class Element {
     int index;
     double rho, lamda, cp, J;
     Matrix S=new Matrix(3,3);
+    
     /** Creates a new instance of Element */
     
     public Element(Node n0, Node n1, Node n2, double lamda1, double rho1, double cp1,  int i) {
@@ -30,6 +31,13 @@ public class Element {
         cp=cp1;
         J=(node1.getX()-node0.getX()) * (node2.getY()-node0.getY()) - (node2.getX()-node0.getX()) * (node1.getY()-node0.getY());
         calcS();
+        node0.addNeighbor(node1);
+        node0.addNeighbor(node2);
+        node1.addNeighbor(node0);
+        node1.addNeighbor(node2);
+        node2.addNeighbor(node0);
+        node2.addNeighbor(node1);
+        
     }
     
     public void calcS() {
@@ -48,6 +56,8 @@ public class Element {
             }
         }
     }
+    
+
     
     public Node getNode0() {
         return node0;
