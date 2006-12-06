@@ -10,6 +10,7 @@
 package visabsorber;
 
 import java.io.File;
+import javax.swing.JOptionPane;
         
 public class FEM {
     NodeList nodeList;
@@ -133,8 +134,11 @@ public class FEM {
                 if (failure==null) {
                     return VectorX;
                 }
+                 JOptionPane.showMessageDialog(null, "Fehler XY2", "Fehler", JOptionPane.ERROR_MESSAGE);
             }
+            JOptionPane.showMessageDialog(null, "Fehler XY1", "Fehler", JOptionPane.ERROR_MESSAGE);
         }
+        JOptionPane.showMessageDialog(null, "Fehler LR", "Fehler", JOptionPane.ERROR_MESSAGE);
         /*String failure=calc.Cholesky(S, MatrixCholesky);
         if (failure==null) {
             failure=calc.calc_YX(MatrixCholesky, p, VectorY,0);

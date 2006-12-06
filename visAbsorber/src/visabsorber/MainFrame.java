@@ -29,26 +29,26 @@ public class MainFrame extends javax.swing.JFrame {
         class MyCanvas extends Canvas {
         public void paint(Graphics g) {
             for (int i=0; i<nodeList.getCount(); i++) {
-                int x=Double.valueOf(nodeList.getNode(i).getX()*1000.0).intValue();
-                int y=Double.valueOf(nodeList.getNode(i).getY()*1000.0).intValue();
-                g.drawString(""+nodeList.getNode(i).getU(),x+30,y+30);
+                int x=Double.valueOf(nodeList.getNode(i).getX()*100.0).intValue();
+                int y=Double.valueOf(nodeList.getNode(i).getY()*100.0).intValue();
+                g.drawString(""+nodeList.getNode(i).getIndex(),x+30,y+30);
   
             }
             for (int i=0; i<lineList.getCount();i++) {
-                int x0=Double.valueOf(lineList.getLine(i).getNode0().getX()*1000.0).intValue();
-                int y0=Double.valueOf(lineList.getLine(i).getNode0().getY()*1000.0).intValue();
-                int x1=Double.valueOf(lineList.getLine(i).getNode1().getX()*1000.0).intValue();
-                int y1=Double.valueOf(lineList.getLine(i).getNode1().getY()*1000.0).intValue();
+                int x0=Double.valueOf(lineList.getLine(i).getNode0().getX()*100.0).intValue();
+                int y0=Double.valueOf(lineList.getLine(i).getNode0().getY()*100.0).intValue();
+                int x1=Double.valueOf(lineList.getLine(i).getNode1().getX()*100.0).intValue();
+                int y1=Double.valueOf(lineList.getLine(i).getNode1().getY()*100.0).intValue();
                 g.drawLine(x0+30,y0+30,x1+30,y1+30);
             }
             g.setColor(Color.RED);
             for (int i=0; i<elementList.getCount();i++) {
-                 int x0=Double.valueOf(elementList.getElement(i).getNode0().getX()*1000.0).intValue();
-                 int y0=Double.valueOf(elementList.getElement(i).getNode0().getY()*1000.0).intValue();
-                 int x1=Double.valueOf(elementList.getElement(i).getNode1().getX()*1000.0).intValue();
-                 int y1=Double.valueOf(elementList.getElement(i).getNode1().getY()*1000.0).intValue();
-                 int x2=Double.valueOf(elementList.getElement(i).getNode2().getX()*1000.0).intValue();
-                 int y2=Double.valueOf(elementList.getElement(i).getNode2().getY()*1000.0).intValue();
+                 int x0=Double.valueOf(elementList.getElement(i).getNode0().getX()*100.0).intValue();
+                 int y0=Double.valueOf(elementList.getElement(i).getNode0().getY()*100.0).intValue();
+                 int x1=Double.valueOf(elementList.getElement(i).getNode1().getX()*100.0).intValue();
+                 int y1=Double.valueOf(elementList.getElement(i).getNode1().getY()*100.0).intValue();
+                 int x2=Double.valueOf(elementList.getElement(i).getNode2().getX()*100.0).intValue();
+                 int y2=Double.valueOf(elementList.getElement(i).getNode2().getY()*100.0).intValue();
                  g.drawLine(x0+30,y0+30,x1+30,y1+30);
                  g.drawLine(x0+30,y0+30,x2+30,y2+30);
                  g.drawLine(x2+30,y2+30,x1+30,y1+30);
@@ -285,24 +285,24 @@ public class MainFrame extends javax.swing.JFrame {
         elementList = new ElementList();
         nodeList = new NodeList();
         lineList = new LineList();
-        int XCount=3,YCount=3, Count=0;
+        int XCount=40,YCount=10, Count=0;
         for (int y=0;y<YCount;y++) {
             for (int x=0;x<XCount;x++) {
-                nodeList.addNode(new Node(Integer.valueOf(x).doubleValue()*0.05,Integer.valueOf(y).doubleValue()*0.05,0.0,false,Count));
+                nodeList.addNode(new Node(x*0.5,y*0.5,0.0,false,Count));
                 if (y!=0) {
                     if (x>0) {
-                        elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount),nodeList.getNode(Count-1),10,0,0,elementList.getCount()));
-                        elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-2*XCount+1),nodeList.getNode(Count-XCount),10,0,0,elementList.getCount()));
+                        elementList.addElement(new Element(nodeList.getNode(Count-XCount),nodeList.getNode(Count),nodeList.getNode(Count-1),10,0,0,elementList.getCount()));
+                        elementList.addElement(new Element(nodeList.getNode(Count-2*XCount+1),nodeList.getNode(Count),nodeList.getNode(Count-XCount),10,0,0,elementList.getCount()));
                     }
                     if (x<XCount-1) {
-                        elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount+1),nodeList.getNode(Count-2*XCount+1),10,0,0,elementList.getCount()));
+                        elementList.addElement(new Element(nodeList.getNode(Count-XCount+1),nodeList.getNode(Count),nodeList.getNode(Count-2*XCount+1),10,0,0,elementList.getCount()));
                     }
                 }
                 Count++;
             }
             if (y<YCount-1) {
                 for (int x=0;x<XCount-1;x++) {
-                    nodeList.addNode(new Node(Integer.valueOf(x).doubleValue()*0.05+0.025,Integer.valueOf(y).doubleValue()*0.05+0.025,0.0,false,Count));
+                    nodeList.addNode(new Node(x*0.5+0.25,y*0.5+0.25,0.0,false,Count));
                     elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount),nodeList.getNode(Count-XCount+1),10,0,0,elementList.getCount()));
                     Count++;
                     
@@ -311,15 +311,46 @@ public class MainFrame extends javax.swing.JFrame {
                      
         }
         for (int x=0;x<XCount-1;x++) {
-            lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),true,20.0,false,40,20));
-            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),true,-20.0,false,-40,20));
+            lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,true,40.0,20.0));
+            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,true,40.0,20.0));
             //lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,true,40,20));
             //lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,true,-40,20));
         }
         for (int y=0;y<YCount-1;y++) {
-            //lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y),nodeList.getNode((2*XCount-1)*(y+1)),true,-500.0,false,0.0,0.0));
+            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y),nodeList.getNode((2*XCount-1)*(y+1)),true,500.0,false,0.0,0.0));
+            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y+XCount-1),nodeList.getNode((2*XCount-1)*(y+1)+XCount-1),false,0.0,true,40.0,20.0));
         }
-        nodeList.getNode(0).setU(20);
+        //nodeList.getNode(0).setU(20);
+        Matrix e=new Matrix(4,elementList.getCount());
+        for (int i=0;i<elementList.getCount();i++) {
+            Element ele=elementList.getElement(i);
+            e.setValue(0,i,ele.index);
+            e.setValue(1,i,ele.getNode0().getIndex());
+            e.setValue(2,i,ele.getNode1().getIndex());
+            e.setValue(3,i,ele.getNode2().getIndex());
+            
+        }
+        
+        e.saveMatrixToFile(new File("elements.txt"));
+        
+        Matrix nl=new Matrix(3,lineList.getCount());
+        for (int i=0;i<lineList.getCount();i++) {
+            Line l=lineList.getLine(i);
+            nl.setValue(0,i,i);
+            nl.setValue(1,i,l.getNode0().getIndex());
+            nl.setValue(2,i, l.getNode1().getIndex());       
+        }
+        nl.saveMatrixToFile(new File("lines.txt"));
+        
+        Matrix nodes=new Matrix(3,nodeList.getCount());
+        for (int i=0;i<nodeList.getCount();i++) {
+            Node n=nodeList.getNode(i);
+            nodes.setValue(0,i,n.getIndex());
+            nodes.setValue(1,i,n.getX());
+            //JOptionPane.showMessageDialog(null, ""+nodes.getValue(1,i), "Fehler", JOptionPane.ERROR_MESSAGE);
+            nodes.setValue(2,i,n.getY());       
+        }
+        nodes.saveMatrixToFile(new File("nodes.txt"));
         //nodeList.addNode(new Node(0.0,0.0,10.0,true,0));
         /*
          *
@@ -335,7 +366,7 @@ public class MainFrame extends javax.swing.JFrame {
         elementList.addElement(new Element(nodeList.getNode(2),nodeList.getNode(4),nodeList.getNode(1),10,0,0,3));*/
         FEM fem= new FEM(nodeList, elementList, lineList);
         Matrix X=fem.calcX();
-        X.saveMatrixToFile(new File("x.txt"));
+        if (X!=null)  X.saveMatrixToFile(new File("x.txt"));
         visMatrix.repaint();
         
     }//GEN-LAST:event_startFEMActionPerformed

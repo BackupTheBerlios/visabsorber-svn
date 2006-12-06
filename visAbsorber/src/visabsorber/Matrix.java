@@ -24,13 +24,17 @@ import javax.swing.JOptionPane;
 public class Matrix {
     int x, y;
     
-    double Vector[];
+    //double Vector[];
+    Double Mtrx[][];
     /** Creates a new instance of Matrix */
     void resetVector() {
-        Vector=new double[y*x];
-        
-        for (int i=0; i<x*y; i++) {
-            Vector[i]=0.0;
+        //Vector=new double[y*x];
+        Mtrx=new Double[x][y];
+        for (int i=0; i<x; i++) {
+            for (int j=0; j<y; j++) {
+                Mtrx[i][j]=0.0;
+            }
+            //Vector[i]=0.0;
             
         }
         
@@ -66,11 +70,13 @@ public class Matrix {
     }
     
     public void setValue(int xPos, int yPos, double Value) {
-        Vector[x*xPos+yPos]=Value;
+        //Vector[x*xPos+yPos]=Value;
+        Mtrx[xPos][yPos]=new Double(Value);
     }
     
     public double getValue(int xPos, int yPos) {
-        return Vector[x*xPos+yPos];
+        return Mtrx[xPos][yPos].doubleValue();
+        //return Vector[x*xPos+yPos];
     }
     
     public boolean saveMatrixToFile(File file) {
@@ -102,7 +108,8 @@ public class Matrix {
                 BufferedReader buffer = new BufferedReader(reader);
                 
                 int bufX=Integer.valueOf(buffer.readLine()).intValue();
-                double bufVector[]=new double[bufX*bufX];
+                //double bufVector[]=new double[bufX*bufX];
+                Double bufMtrx[][]=new Double[bufX][bufX];//new double[bufX*bufX];
                 for (int i=0;i<bufX;i++) {
                     String line=buffer.readLine();
                     int position=0;
@@ -116,10 +123,12 @@ public class Matrix {
                         
                         double bufValue=Double.valueOf(line.substring(start,position)).doubleValue();
                         start=position;
-                        bufVector[bufX*j+i]=bufValue;
+                        //bufVector[bufX*j+i]=bufValue;
+                        bufMtrx[j][x]=bufValue;
                     }
                 }
-                Vector=bufVector;
+                //Vector=bufVector;
+                Mtrx=bufMtrx;
                 x=y=bufX;
             } catch(java.lang.Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler", JOptionPane.ERROR_MESSAGE);
@@ -138,7 +147,8 @@ public class Matrix {
                 BufferedReader buffer = new BufferedReader(reader);
                 
                 int bufX=Integer.valueOf(buffer.readLine()).intValue();
-                double bufVector[]=new double[bufX];
+                //double bufVector[]=new double[bufX];
+                Double bufMtrx[][]=new Double[1][bufX];
                 for (int i=0;i<bufX;i++) {
                     String line=buffer.readLine();
                     int position=0;
@@ -151,11 +161,13 @@ public class Matrix {
                     
                     double bufValue=Double.valueOf(line.substring(start,position)).doubleValue();
                     start=position;
-                    bufVector[i]=bufValue;
+                    //bufVector[i]=bufValue;
+                    bufMtrx[1][i]=bufValue;
                 }
                 
                 
-                Vector=bufVector;
+                //Vector=bufVector;
+                Mtrx=bufMtrx;
                 x=1;
                 y=bufX;
             } catch(java.lang.Exception e) {
