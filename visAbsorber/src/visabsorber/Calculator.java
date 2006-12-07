@@ -146,7 +146,7 @@ public class Calculator {
         for (int j=0;j<n;j++) {
             
             //MatrixL.setValue(j,j,Math.sqrt(MatrixL.getValue(j,j)));
-            for (int i=j+1;i<n;i++) {
+            for (int i=j;i<n;i++) {
                 double Summe=MatrixL.getValue(j,i);
                 //if (MatrixL.getValue(j,j)==0.0) return "Teilung durch Null!";
                 //MatrixL.setValue(j,i,MatrixL.getValue(j,i)/MatrixL.getValue(j,j));
@@ -168,7 +168,8 @@ public class Calculator {
         }
         return null;
         /*
-         *   For i = 1 To n
+         *   
+   For i = 1 To n
        For j = i To n
            Summe = a(i, j)
            For k = i - 1 To 1 Step -1

@@ -132,6 +132,9 @@ public class FEM {
             if (failure==null) {
                 failure=calc.calc_YX(MatrixR, VectorY, VectorX,1);
                 if (failure==null) {
+                    for (int i=0;i<nodeList.getCount();i++) {
+                        nodeList.getNode(i).setU(VectorX.getValue(0,i));
+                    }
                     return VectorX;
                 }
                  JOptionPane.showMessageDialog(null, "Fehler XY2", "Fehler", JOptionPane.ERROR_MESSAGE);
@@ -139,16 +142,24 @@ public class FEM {
             JOptionPane.showMessageDialog(null, "Fehler XY1", "Fehler", JOptionPane.ERROR_MESSAGE);
         }
         JOptionPane.showMessageDialog(null, "Fehler LR", "Fehler", JOptionPane.ERROR_MESSAGE);
-        /*String failure=calc.Cholesky(S, MatrixCholesky);
+        /*String failure=calc.Cholesky(S, MatrixR);
         if (failure==null) {
-            failure=calc.calc_YX(MatrixCholesky, p, VectorY,0);
+            failure=calc.calc_YX(MatrixR, p, VectorY,0);
             if (failure==null) {
-                failure=calc.calc_YX(MatrixCholesky.transpont(), VectorY, VectorX,1);
+                failure=calc.calc_YX(MatrixR.transpont(), VectorY, VectorX,1);
                 if (failure==null) {
+                    for (int i=0;i<nodeList.getCount();i++) {
+                        nodeList.getNode(i).setU(VectorX.getValue(0,i));
+                    }
                     return VectorX;
                 }
+                JOptionPane.showMessageDialog(null, "Fehler XY2", "Fehler", JOptionPane.ERROR_MESSAGE);
+                return null;
             }
-        }*/
+            JOptionPane.showMessageDialog(null, "Fehler XY1", "Fehler", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+        JOptionPane.showMessageDialog(null, "Fehler Cho", "Fehler", JOptionPane.ERROR_MESSAGE);*/
         return null;
     }
     

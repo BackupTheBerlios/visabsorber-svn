@@ -24,38 +24,6 @@ public class MainFrame extends javax.swing.JFrame {
       ElementList elementList = new ElementList();
         NodeList nodeList = new NodeList();
         LineList lineList = new LineList();
-    
-    /** Creates new form MainFrame */
-        class MyCanvas extends Canvas {
-        public void paint(Graphics g) {
-            for (int i=0; i<nodeList.getCount(); i++) {
-                int x=Double.valueOf(nodeList.getNode(i).getX()*100.0).intValue();
-                int y=Double.valueOf(nodeList.getNode(i).getY()*100.0).intValue();
-                g.drawString(""+nodeList.getNode(i).getIndex(),x+30,y+30);
-  
-            }
-            for (int i=0; i<lineList.getCount();i++) {
-                int x0=Double.valueOf(lineList.getLine(i).getNode0().getX()*100.0).intValue();
-                int y0=Double.valueOf(lineList.getLine(i).getNode0().getY()*100.0).intValue();
-                int x1=Double.valueOf(lineList.getLine(i).getNode1().getX()*100.0).intValue();
-                int y1=Double.valueOf(lineList.getLine(i).getNode1().getY()*100.0).intValue();
-                g.drawLine(x0+30,y0+30,x1+30,y1+30);
-            }
-            g.setColor(Color.RED);
-            for (int i=0; i<elementList.getCount();i++) {
-                 int x0=Double.valueOf(elementList.getElement(i).getNode0().getX()*100.0).intValue();
-                 int y0=Double.valueOf(elementList.getElement(i).getNode0().getY()*100.0).intValue();
-                 int x1=Double.valueOf(elementList.getElement(i).getNode1().getX()*100.0).intValue();
-                 int y1=Double.valueOf(elementList.getElement(i).getNode1().getY()*100.0).intValue();
-                 int x2=Double.valueOf(elementList.getElement(i).getNode2().getX()*100.0).intValue();
-                 int y2=Double.valueOf(elementList.getElement(i).getNode2().getY()*100.0).intValue();
-                 g.drawLine(x0+30,y0+30,x1+30,y1+30);
-                 g.drawLine(x0+30,y0+30,x2+30,y2+30);
-                 g.drawLine(x2+30,y2+30,x1+30,y1+30);
-            }
-            
-        }
-    }
     public MainFrame() {
         initComponents();
         scrollPane1.add(visMatrix);
@@ -397,5 +365,5 @@ public class MainFrame extends javax.swing.JFrame {
     private java.awt.ScrollPane scrollPane1;
     private javax.swing.JButton startFEM;
     // End of variables declaration//GEN-END:variables
-    public MyCanvas visMatrix = new MyCanvas();
+    public MyCanvas visMatrix = new MyCanvas(this);
 }
