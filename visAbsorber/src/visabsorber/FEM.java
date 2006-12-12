@@ -12,16 +12,19 @@ package visabsorber;
 import java.io.File;
 import javax.swing.JOptionPane;
         
-public class FEM {
+public class FEM extends Thread {
     NodeList nodeList;
     ElementList elementList;
     LineList lineList;
-    
+    private javax.swing.JLabel statusLabel;
+    private javax.swing.JProgressBar statusBar;
     /** Creates a new instance of FEM */
-    public FEM(NodeList nl, ElementList el, LineList ll) {
+    public FEM(NodeList nl, ElementList el, LineList ll, javax.swing.JLabel label, javax.swing.JProgressBar bar)  {
         nodeList=nl;
         elementList=el;
         lineList=ll;
+        statusLabel=label;
+        statusBar=bar;
     }
     
     public Matrix calcS () {
@@ -29,6 +32,7 @@ public class FEM {
         S.resetVector();
         
         for (int e=0;e<elementList.getCount(); e++) {
+            progress("S calc",e,elementList.getCount());
             int u_i[]= new int [3];
             Element element=elementList.getElement(e);
             u_i[0]=element.getNode0().getIndex();
@@ -51,6 +55,7 @@ public class FEM {
         
         //Neumann
         for (int i=0; i<lineList.getCount(); i++) {
+            progress("RB Calc (Neumann/Cauchy)",i,lineList.getCount());
             Line line = lineList.getLine(i);
             if (line.hasNeumann()) {
                 double l = Math.sqrt((line.getNode0().getX()-line.getNode1().getX())*(line.getNode0().getX()-line.getNode1().getX()) +  (line.getNode0().getY()-line.getNode1().getY())*(line.getNode0().getY()-line.getNode1().getY()));
@@ -89,6 +94,7 @@ public class FEM {
         }
         */
        for (int i=0; i<nodeList.getCount(); i++) {
+            progress("RB Calc (Dirle)",i,nodeList.getCount());
             Node node = nodeList.getNode(i);
             if (node.hasTemp()) {
                 double u = node.getU();
@@ -110,38 +116,70 @@ public class FEM {
                 
             }
         }
-        p.saveMatrixToFile(new File("p.txt"));
-        S.saveMatrixToFile(new File("S.txt"));
+        //p.saveMatrixToFile(new File("p.txt"));
+        //S.saveMatrixToFile(new File("S.txt"));
         
     }
+    public synchronized void progress(String statusName, int position, int max) {
+        statusLabel.setText(statusName);
+        statusBar.setMaximum(max);
+        statusBar.setValue(position);
+        //JOptionPane.showMessageDialog(null, "Fertig", "Fertig", JOptionPane.ERROR_MESSAGE);
+    }
     
-    public Matrix calcX() {
+    public void run() {
+        //JOptionPane.showMessageDialog(null, "Fertig", "Fertig", JOptionPane.ERROR_MESSAGE);
+        progress("S calc",0,0);
         Matrix S=calcS();
         Matrix p = new Matrix(1,nodeList.getCount());
+        progress("RB calc",0,0);
         clacRB(S, p);
+        progress("LR-Zerlegung",0,0);
         
-        
-        Calculator calc=new Calculator();
+        Calculator calc=new Calculator(this);
         Matrix MatrixL = new Matrix (nodeList.getCount(),nodeList.getCount());
         Matrix MatrixR = new Matrix (nodeList.getCount(),nodeList.getCount());
         Matrix VectorY = new Matrix (1,nodeList.getCount());
         Matrix VectorX = new Matrix (1,nodeList.getCount());
         String failure=calc.LRCalc(S, MatrixR, MatrixL);
         if (failure==null) {
+            progress("L*Y",0,0);
             failure=calc.calc_YX(MatrixL, p, VectorY,0);
             if (failure==null) {
+                progress("R*X",0,0);
                 failure=calc.calc_YX(MatrixR, VectorY, VectorX,1);
                 if (failure==null) {
+                    progress("Save X-file",0,0);
+                    Matrix xOutput = new Matrix(4,nodeList.getCount());
                     for (int i=0;i<nodeList.getCount();i++) {
                         nodeList.getNode(i).setU(VectorX.getValue(0,i));
+                        xOutput.setValue(0,i,i);
+                        xOutput.setValue(1,i,nodeList.getNode(i).getX());
+                        xOutput.setValue(2,i,nodeList.getNode(i).getY());
+                        xOutput.setValue(3,i,nodeList.getNode(i).getU());
                     }
-                    return VectorX;
+                    progress("Save ele-file",0,0);
+                    Matrix elOutput = new Matrix(4,elementList.getCount());
+                    xOutput.saveMatrixToFile(new File("x.txt"));
+                    for (int i=0;i<elementList.getCount();i++) {
+                        elOutput.setValue(0,i,i);
+                        elOutput.setValue(1,i,elementList.getElement(i).getNode0().getIndex());
+                        elOutput.setValue(1,i,elementList.getElement(i).getNode1().getIndex());
+                        elOutput.setValue(1,i,elementList.getElement(i).getNode2().getIndex());
+                        
+                    }
+                    elOutput.saveMatrixToFile(new File("ele.txt"));
+                    
+                    
+                    //return VectorX;
                 }
-                 JOptionPane.showMessageDialog(null, "Fehler XY2", "Fehler", JOptionPane.ERROR_MESSAGE);
+                else JOptionPane.showMessageDialog(null, "Fehler XY2", "Fehler", JOptionPane.ERROR_MESSAGE);
             }
-            JOptionPane.showMessageDialog(null, "Fehler XY1", "Fehler", JOptionPane.ERROR_MESSAGE);
+            else JOptionPane.showMessageDialog(null, "Fehler XY1", "Fehler", JOptionPane.ERROR_MESSAGE);
         }
-        JOptionPane.showMessageDialog(null, "Fehler LR", "Fehler", JOptionPane.ERROR_MESSAGE);
+        else JOptionPane.showMessageDialog(null, "Fehler LR", "Fehler", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, "Fertig", "Fertig", JOptionPane.ERROR_MESSAGE);
+        progress("Ende",0,0);
         /*String failure=calc.Cholesky(S, MatrixR);
         if (failure==null) {
             failure=calc.calc_YX(MatrixR, p, VectorY,0);
@@ -160,7 +198,11 @@ public class FEM {
             return null;
         }
         JOptionPane.showMessageDialog(null, "Fehler Cho", "Fehler", JOptionPane.ERROR_MESSAGE);*/
-        return null;
+        //return null;
+    }
+    
+    public void calcX() {
+        run();
     }
     
 }

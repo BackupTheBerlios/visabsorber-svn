@@ -15,7 +15,7 @@ package visabsorber;
  */
 public class Node {
     
-    NodeList neighbors;
+    //NodeList neighbors;
     double u, x, y;
     boolean temp;
     int index;
@@ -27,7 +27,7 @@ public class Node {
        x=x1;
        temp=temp1;
        index=i;
-       neighbors = new NodeList();
+       //neighbors = new NodeList();
        border=0;
     }  
     
@@ -39,13 +39,13 @@ public class Node {
        return border;
     }
     
-    public boolean addNeighbor(Node node) {
+    /*public boolean addNeighbor(Node node) {
         for (int i=0;i<neighbors.getCount(); i++) {
             if (neighbors.getNode(i)==node) return false;
         }
         neighbors.addNode(node);
         return true;
-    }
+    }*/
     
     public double getX() {
         return x;

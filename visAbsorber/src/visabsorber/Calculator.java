@@ -16,7 +16,12 @@ package visabsorber;
 public class Calculator {
     
     /** Creates a new instance of Calculator */
+    FEM fem=null;
     public Calculator() {
+    }
+    
+    public Calculator(FEM f) {
+        fem=f;
     }
     
     public void genHibert_A(Matrix MatrixA, int dim) {
@@ -40,14 +45,16 @@ public class Calculator {
         int n=MatrixA.getXCount();
         Matrix bufMatrix=new Matrix(n,n);
         bufMatrix.resetVector();
-        for (int x=0; x<n;x++) {
+        bufMatrix.Mtrx=MatrixA.Mtrx;
+        /*for (int x=0; x<n;x++) {
             for (int y=0; y<n;y++) {
                 bufMatrix.setValue(x,y,MatrixA.getValue(x,y));
             }
-        }
+        }*/
         
         
         for (int k=0;k<n-1;k++) {
+            if (fem!=null) fem.progress("LR-Zerlegung", k, n-1);
             for (int i=k+1;i<n;i++) {
                 if (bufMatrix.getValue(k,k)!=0.0)
                     //try {
