@@ -16,9 +16,9 @@ package visabsorber;
 public class Element {
     Node node0, node1, node2;
     int index;
-    double rho,  cp, J;
+    
     double lamda;
-    Matrix S=new Matrix(3,3);
+    
     
     /** Creates a new instance of Element */
     
@@ -27,11 +27,11 @@ public class Element {
         node1=n1;
         node2=n2;
         index=i;
-        rho=rho1;
+        //rho=rho1;
         lamda=lamda1;
-        cp=cp1;
-        J=(node1.getX()-node0.getX()) * (node2.getY()-node0.getY()) - (node2.getX()-node0.getX()) * (node1.getY()-node0.getY());
-        calcS();
+        //cp=cp1;
+        
+        //calcS();
         //node0.addNeighbor(node1);
         //node0.addNeighbor(node2);
         //node1.addNeighbor(node0);
@@ -44,26 +44,7 @@ public class Element {
     public double getlamda() {
         return lamda;
     }
-    
-    public void calcS() {
-        double dx[]=new double[3];
-        double dy[]=new double[3];
-        dx[0]=node2.getX()-node1.getX();//x32
-        dx[1]=node0.getX()-node2.getX();//x13
-        dx[2]=node1.getX()-node0.getX();//x21
-        dy[0]=node2.getY()-node1.getY();//y32
-        dy[1]=node0.getY()-node2.getY();//y13
-        dy[2]=node1.getY()-node0.getY();//y21
-        double factor=lamda/(2.0*J);    
-        for (int x=0;x<3;x++) {
-            for (int y=0;y<3;y++) {
-                S.setValue(x,y, ((dx[x]*dx[y]) + (dy[x]*dy[y])) * factor ) ;
-            }
-        }
-    }
-    
-
-    
+   
     public Node getNode0() {
         return node0;
     }
@@ -77,6 +58,22 @@ public class Element {
     }
     
     public Matrix getS() {
+        Matrix S=new Matrix(3,3);
+        double dx[]=new double[3];
+        double dy[]=new double[3];
+        double J=(node1.getX()-node0.getX()) * (node2.getY()-node0.getY()) - (node2.getX()-node0.getX()) * (node1.getY()-node0.getY());
+        dx[0]=node2.getX()-node1.getX();//x32
+        dx[1]=node0.getX()-node2.getX();//x13
+        dx[2]=node1.getX()-node0.getX();//x21
+        dy[0]=node2.getY()-node1.getY();//y32
+        dy[1]=node0.getY()-node2.getY();//y13
+        dy[2]=node1.getY()-node0.getY();//y21
+        double factor=lamda/(2.0*J);    
+        for (int x=0;x<3;x++) {
+            for (int y=0;y<3;y++) {
+                S.setValue(x,y, ((dx[x]*dx[y]) + (dy[x]*dy[y])) * factor ) ;
+            }
+        }
         return S;
     }
     

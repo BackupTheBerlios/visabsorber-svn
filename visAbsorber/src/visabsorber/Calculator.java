@@ -32,7 +32,7 @@ public class Calculator {
             }
         }
     }
-        public void genHibert_B(Matrix VectorB, int dim) {
+    public void genHibert_B(Matrix VectorB, int dim) {
         VectorB.setXCount(1);
         VectorB.setYCount(dim);
         for (int i=0;i<dim;i++) {
@@ -96,8 +96,7 @@ public class Calculator {
             start=0;
             end1=n;
             end2=0;
-        }
-        else {
+        } else {
             d=-1;
             start=n-1;
             end1=-1;
@@ -115,10 +114,10 @@ public class Calculator {
             VectorY.setValue(0,y,(VectorB.getValue(0,y)-Summe)/MatrixL.getValue(y,y));
         }
         return null;
-    
-    
+        
+        
     }
-      
+    
     public String MatrixMulti(Matrix MatrixA, Matrix MatrixB, Matrix Result) {
         double temp=0;
         
@@ -165,8 +164,7 @@ public class Calculator {
                 if (i==j) {
                     if (Summe<=0.0) {
                         return "A ist nicht positiv definit";
-                    }
-                    else {
+                    } else {
                         if (MatrixL.getValue(i,i)==0.0) return "Teilung durch Null!";
                         MatrixL.setValue(i,j,Summe/MatrixL.getValue(i,i));
                     }
@@ -175,14 +173,14 @@ public class Calculator {
         }
         return null;
         /*
-         *   
+         *
    For i = 1 To n
        For j = i To n
            Summe = a(i, j)
            For k = i - 1 To 1 Step -1
                Summe = Summe - a(i, k) * a(j, k)
            Next k
- 
+         
            If i = j Then
                If Summe <= 0 Then EXIT // A ist nicht positiv definit
                else a(j, i) = Sqrt(Summe) // Summe ist positiv
@@ -197,7 +195,7 @@ public class Calculator {
             for (int i=j+1;i<n;i++) {
                 if (MatrixL.getValue(j,j)==0.0) return "Teilung durch Null!";
                 MatrixL.setValue(j,i,MatrixL.getValue(j,i)/MatrixL.getValue(j,j));
-                
+         
                 for (int k=j+1;k<i;k++) {
                     MatrixL.setValue(k,i,MatrixL.getValue(k,i)-(MatrixL.getValue(j,i)*MatrixL.getValue(j,k)));
                 }
@@ -215,5 +213,46 @@ public class Calculator {
             VectorRelFailure.setValue(0,i,VectorAbsFailure.getValue(0,i)/VectorB.getValue(0,i));
         }
         
+    }
+    
+    public void clacJacobi(Matrix A, Matrix b, Matrix x, int maxc) {
+        int n=A.getXCount();
+        //Matrix internalArray = new Matrix(n,n);
+        Matrix tempArray = new Matrix(1,n);
+        for (int k=0;k<maxc;k++) {
+            if (fem!=null) fem.progress("Jacobi",k,maxc);
+            double normr=0.;
+            for (int i=0;i<n;i++) {
+                double c=0;
+                for (int j=0;j<n;j++) {
+                    if (j!=i) c = c+ A.getValue(j,i)*x.getValue(0,j);
+                }
+                c=(b.getValue(0,i)-c)/A.getValue(i,i);
+                tempArray.setValue(0,i,c);
+            }
+            
+            for (int i=0;i<n;i++) {
+                x.setValue(0,i,tempArray.getValue(0,i));
+            }
+            
+        }
+       /*     für k=1 bis c
+        
+        für i=1 bis n
+        
+            xi = 0
+            für j=1 bis n
+        
+                falls j != i
+        
+                    x_i=x_i+a_{i,j}x_j^{(m)};
+        
+            end
+            xi = (bi ? xi) / ai,i;
+        
+        end
+        x(m) = x;
+        
+    end */
     }
 }

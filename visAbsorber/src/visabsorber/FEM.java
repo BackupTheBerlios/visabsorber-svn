@@ -11,7 +11,7 @@ package visabsorber;
 
 import java.io.File;
 import javax.swing.JOptionPane;
-        
+
 public class FEM extends Thread {
     NodeList nodeList;
     ElementList elementList;
@@ -27,9 +27,9 @@ public class FEM extends Thread {
         statusBar=bar;
     }
     
-    public Matrix calcS () {
+    public Matrix calcS() {
         Matrix S = new Matrix(nodeList.getCount(),nodeList.getCount());
-        S.resetVector();
+        //S.resetVector();
         
         for (int e=0;e<elementList.getCount(); e++) {
             progress("S calc",e,elementList.getCount());
@@ -71,7 +71,7 @@ public class FEM extends Thread {
                 double p_s = p.getValue(0,line.getNode0().getIndex()) + p_n;
                 p.setValue(0, line.getNode0().getIndex(), p_s);
                 p_s = p.getValue(0,line.getNode1().getIndex()) + p_n;
-                p.setValue(0, line.getNode1().getIndex(), p_s);     
+                p.setValue(0, line.getNode1().getIndex(), p_s);
                 
                 double s_c=line.getAlpha()*l;
                 double s_c0=s_c/3.0+S.getValue(line.getNode0().getIndex(),line.getNode0().getIndex());
@@ -81,35 +81,34 @@ public class FEM extends Thread {
                 S.setValue(line.getNode0().getIndex(),line.getNode0().getIndex(), s_c0);
                 S.setValue(line.getNode0().getIndex(),line.getNode1().getIndex(), s_c1);
                 S.setValue(line.getNode1().getIndex(),line.getNode0().getIndex(), s_c2);
-                S.setValue(line.getNode1().getIndex(),line.getNode1().getIndex(), s_c3);                
+                S.setValue(line.getNode1().getIndex(),line.getNode1().getIndex(), s_c3);
             }
         }
         /*for (int i=0; i<nodeList.getCount(); i++) { //Löschen der horinzonzalen Zeilen
             Node node = nodeList.getNode(i);
             if (node.hasTemp()) {
                 for (int j=0; j<S.getXCount(); j++) {
-                    S.setValue(j,i,0.0);                
+                    S.setValue(j,i,0.0);
                 }
             }
         }
-        */
-       for (int i=0; i<nodeList.getCount(); i++) {
+         */
+        for (int i=0; i<nodeList.getCount(); i++) {
             progress("RB Calc (Dirle)",i,nodeList.getCount());
             Node node = nodeList.getNode(i);
             if (node.hasTemp()) {
                 double u = node.getU();
                 //S.setValue(i,i,1.0);
                 p.setValue(0,i,0.0);
-                for (int j=0; j<S.getXCount(); j++) {         
+                for (int j=0; j<S.getXCount(); j++) {
                     if (j==i) {
                         p.setValue(0,j,u);
                         S.setValue(i,j,1.0);
-                    }
-                    else {
+                    } else {
                         double p_n=p.getValue(0,j)-(u*S.getValue(i,j));
                         p.setValue(0,j,p_n);
                         S.setValue(i,j,0.0);
-                        S.setValue(j,i,0.0); 
+                        S.setValue(j,i,0.0);
                         
                     }
                 }
@@ -137,11 +136,34 @@ public class FEM extends Thread {
         progress("LR-Zerlegung",0,0);
         
         Calculator calc=new Calculator(this);
-        Matrix MatrixL = new Matrix (nodeList.getCount(),nodeList.getCount());
-        Matrix MatrixR = new Matrix (nodeList.getCount(),nodeList.getCount());
-        Matrix VectorY = new Matrix (1,nodeList.getCount());
-        Matrix VectorX = new Matrix (1,nodeList.getCount());
-        String failure=calc.LRCalc(S, MatrixR, MatrixL);
+        Matrix VectorX = new Matrix(1,nodeList.getCount());
+        calc.clacJacobi(S,p,VectorX,500);
+        progress("Save X-file",0,0);
+        Matrix xOutput = new Matrix(4,nodeList.getCount());
+        for (int i=0;i<nodeList.getCount();i++) {
+            nodeList.getNode(i).setU(VectorX.getValue(0,i));
+            xOutput.setValue(0,i,i);
+            xOutput.setValue(1,i,nodeList.getNode(i).getX());
+            xOutput.setValue(2,i,nodeList.getNode(i).getY());
+            xOutput.setValue(3,i,nodeList.getNode(i).getU());
+        }
+        progress("Save ele-file",0,0);
+        Matrix elOutput = new Matrix(4,elementList.getCount());
+        xOutput.saveMatrixToFile(new File("x.txt"));
+        for (int i=0;i<elementList.getCount();i++) {
+            elOutput.setValue(0,i,i);
+            elOutput.setValue(1,i,elementList.getElement(i).getNode0().getIndex());
+            elOutput.setValue(1,i,elementList.getElement(i).getNode1().getIndex());
+            elOutput.setValue(1,i,elementList.getElement(i).getNode2().getIndex());
+            
+        }
+        progress("Ende",0,0);
+        elOutput.saveMatrixToFile(new File("ele.txt"));
+        //Matrix MatrixL = new Matrix (nodeList.getCount(),nodeList.getCount());
+        //Matrix MatrixR = new Matrix (nodeList.getCount(),nodeList.getCount());
+        //Matrix VectorY = new Matrix (1,nodeList.getCount());
+        //Matrix VectorX = new Matrix (1,nodeList.getCount());
+        /*String failure=calc.LRCalc(S, MatrixR, MatrixL);
         if (failure==null) {
             progress("L*Y",0,0);
             failure=calc.calc_YX(MatrixL, p, VectorY,0);
@@ -166,11 +188,11 @@ public class FEM extends Thread {
                         elOutput.setValue(1,i,elementList.getElement(i).getNode0().getIndex());
                         elOutput.setValue(1,i,elementList.getElement(i).getNode1().getIndex());
                         elOutput.setValue(1,i,elementList.getElement(i).getNode2().getIndex());
-                        
+         
                     }
                     elOutput.saveMatrixToFile(new File("ele.txt"));
-                    
-                    
+         
+         
                     //return VectorX;
                 }
                 else JOptionPane.showMessageDialog(null, "Fehler XY2", "Fehler", JOptionPane.ERROR_MESSAGE);

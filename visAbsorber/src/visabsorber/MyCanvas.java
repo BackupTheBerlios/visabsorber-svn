@@ -3,16 +3,16 @@ package visabsorber;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
+import javax.swing.JOptionPane;
 
 
 /** Creates new form MainFrame */
 class MyCanvas extends Canvas {
     NodeList nodeList;
-    ElementList elementList;    
+    ElementList elementList;
     BufferedImage img;
-    int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0; 
+    int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0;
     double zoom=1000.0, minU=0, maxU=0;
     
     public MyCanvas(NodeList nl, ElementList el) {
@@ -24,16 +24,16 @@ class MyCanvas extends Canvas {
         nodeList=nl;
         elementList=el;
         Node node = nodeList.getNode(0);
-        minX=Double.valueOf(node.getX()*zoom).intValue(); 
-        minY=Double.valueOf(node.getY()*zoom).intValue(); 
-        maxX=Double.valueOf(node.getX()*zoom).intValue(); 
-        maxY=Double.valueOf(node.getY()*zoom).intValue(); 
+        minX=Double.valueOf(node.getX()*zoom).intValue();
+        minY=Double.valueOf(node.getY()*zoom).intValue();
+        maxX=Double.valueOf(node.getX()*zoom).intValue();
+        maxY=Double.valueOf(node.getY()*zoom).intValue();
         minU=node.getU();
         maxU=node.getU();
         for (int i=1;i<nodeList.getCount();i++) {
             node = nodeList.getNode(i);
-            int bufX=Double.valueOf(node.getX()*zoom).intValue(); 
-            int bufY=Double.valueOf(node.getY()*zoom).intValue(); 
+            int bufX=Double.valueOf(node.getX()*zoom).intValue();
+            int bufY=Double.valueOf(node.getY()*zoom).intValue();
             double bufU=node.getU();
             if (minX>bufX) minX=bufX;
             if (minY>bufY) minY=bufY;
@@ -42,6 +42,8 @@ class MyCanvas extends Canvas {
             if (minU>bufU) minU=bufU;
             if (maxU<bufU) maxU=bufU;
         }
+        //JOptionPane.showMessageDialog(null, ""+minU, "1", JOptionPane.ERROR_MESSAGE);
+        //JOptionPane.showMessageDialog(null, ""+maxU, "2", JOptionPane.ERROR_MESSAGE);
         offsetX=0-minX;
         offsetY=0-minY;
         img=new BufferedImage(maxX-minX+1, maxY-minY+1,BufferedImage.TYPE_BYTE_BINARY);
@@ -63,8 +65,8 @@ class MyCanvas extends Canvas {
         
         
     }
-        
-   /* 
+    
+   /*
     Raster3_scan(vert v[3])
     v0 {
         l2
@@ -101,24 +103,39 @@ class MyCanvas extends Canvas {
                 }
     }*/
     
+    public Color clacTempColor(double u) {
+        double mTemp=510.0/(maxU-minU);
+        double offsetTemp=(minU+maxU)/2.0;
+        int re=Double.valueOf(mTemp*(u-offsetTemp)).intValue();
+        if (re<0)re=0;
+        if (re>255)re=255;
+        int gr=Double.valueOf(-mTemp*Math.abs(u-offsetTemp)+255).intValue();
+        if (gr<0)gr=0;
+        if (gr>255)gr=255;
+        int bl=Double.valueOf(-mTemp*(u-minU)+255).intValue();
+        if (bl<0)bl=0;
+        if (bl>255)bl=255;
+        return new Color(re,gr,bl);
+    }
+    
+    public double calcU(Matrix A, Matrix L, Matrix R, double x, double y, double au,double bu, double cu) {
+        Matrix t=new Matrix(1,3);
+        Matrix b=new Matrix(1,3);
+        b.setValue(0,0,1.0);
+        b.setValue(0,1,x);
+        b.setValue(0,1,y);
+        Calculator calc=new Calculator();
+        Matrix Y=new Matrix (1, 3);
+        
+        calc.calc_YX(L, b, Y,0);
+        calc.calc_YX(R, Y, t,1);
+        //calc.clacJacobi(A,b,t,100);
+        return au*t.getValue(0,0)+bu*t.getValue(0,1)+cu*t.getValue(0,2);    
+    }
     
     public void drawDreieck(int ax, int ay, double au, int bx, int by, double bu, int cx, int cy, double  cu, Graphics g) {
         int h;
-      
-        if (ay<by) {
-            h = ay; ay = by; by = h;
-            h = ax; ax = bx; bx = h;
-        }
-        if (by<cy) {
-            h = by; by = cy; cy = h;
-            h = bx; bx = cx; cx = h;
-        }
-        
-        if (ay<by) {
-            h = ay; ay = by; by = h;
-            h = ax; ax = bx; bx = h;
-        }
-        
+        double h1;
         Matrix A=new Matrix(3,3);
         for (int i=0;i<3;i++) {
             A.setValue(i,0,1.0);
@@ -129,15 +146,34 @@ class MyCanvas extends Canvas {
         A.setValue(1,2,by);
         A.setValue(2,1,cx);
         A.setValue(2,2,cy);
-        
+
+        Matrix L = new Matrix  (3,3);
+        Matrix R = new Matrix(3,3);
         Calculator calc=new Calculator();
-        Matrix MatrixL = new Matrix  (3,3);
-        Matrix MatrixR = new Matrix (3,3);
-        String failure=calc.LRCalc(A, MatrixR, MatrixL);
-        if (failure==null) {
+        String failure=calc.LRCalc(A, R, L);     
+        
+        if (ay<by) {
+            h = ay; ay = by; by = h;
+            h = ax; ax = bx; bx = h;
+            //h1= au; au = bu; bu = h1;
+        }
+        if (by<cy) {
+            h = by; by = cy; cy = h;
+            h = bx; bx = cx; cx = h;
+            //h1= bu; bu = cu; cu = h1;
+        }
+        
+        if (ay<by) {
+            h = ay; ay = by; by = h;
+            h = ax; ax = bx; bx = h;
+            //h1= au; au = bu; cu = h1;
+        }
+
+        
             //int y;
             int xA,xE, dir;
             double mAB,mBC,mAC;
+            
             for (int y=ay;y>by;y--) {
                 xA=Math.round(Float.valueOf((ax-bx)/(ay-by)*(y-ay)+ax));
                 xE=Math.round(Float.valueOf((ax-cx)/(ay-cy)*(y-ay)+ax));
@@ -145,36 +181,9 @@ class MyCanvas extends Canvas {
                     dir=1;
                 } else dir=(xE-xA)/Math.abs(xE-xA);
                 for (int x=xA;x!=xE+dir;x=x+dir) {
-                    Matrix t=new Matrix(1,3);
-                    Matrix yVector=new Matrix(1,3);
-                    Matrix b=new Matrix(1,3);
-                    b.setValue(0,0,1.0);
-                    b.setValue(0,1,x);
-                    b.setValue(0,1,y);
-                    failure=calc.calc_YX(MatrixL, b, yVector,0); 
-                    if (failure==null) {
-                        failure=calc.calc_YX(MatrixR, yVector, t,1);
-                        if (failure==null) {
-                            double u = au*t.getValue(0,0)+bu*t.getValue(0,1)+cu*t.getValue(0,2);
-                            /*int xi= new Long(i).intValue();
-                            //int r= new Double(2*(u-20)).intValue();
-                            if (u<0.0||u>255.0) {
-                                //JOptionPane.showMessageDialog(null, ""+au, "2", JOptionPane.ERROR_MESSAGE);
-                            }*/
-                            //else g.setColor(new Color(new Double(u).intValue(), 0, 0));*/
-                            int re=Double.valueOf(-510/(maxU)*(u-minU)+255).intValue();
-                            if (re<0)re=0;
-                            if (re>255)re=255;
-                            int gr=Double.valueOf(-510/(maxU)*Math.abs(u-minU-maxU/2)+255).intValue();
-                            if (gr<0)gr=0;
-                            if (gr>255)gr=255;
-                            int bl=Double.valueOf(510/(maxU)*(u-maxU-minU/2)+255).intValue();
-                            if (bl<0)bl=0;
-                            if (bl>255)bl=255;
-                            g.setColor(new Color(re,gr,bl));
-                            g.drawLine(x,y, x,y);
-                        }
-                    }                    
+                    double u = calcU(A, L, R, x, y, au,bu, cu);                        
+                    g.setColor(clacTempColor(u));
+                    g.drawLine(x,y, x,y);
                 }
             }
             for (int y=by;y>cy;y--) {
@@ -184,39 +193,12 @@ class MyCanvas extends Canvas {
                     dir=1;
                 } else dir=(xE-xA)/Math.abs(xE-xA);
                 for (int x=xA;x!=xE+dir;x=x+dir) {
-                    Matrix t=new Matrix(1,3);
-                    Matrix yVector=new Matrix(1,3);
-                    Matrix b=new Matrix(1,3);
-                    b.setValue(0,0,1.0);
-                    b.setValue(0,1,x);
-                    b.setValue(0,1,y);
-                    failure=calc.calc_YX(MatrixL, b, yVector,0); 
-                    if (failure==null) {
-                        failure=calc.calc_YX(MatrixR, yVector, t,1);
-                        if (failure==null) {
-                            double u = au*t.getValue(0,0)+bu*t.getValue(0,1)+cu*t.getValue(0,2);
-                            /*int xi= new Long(i).intValue();
-                            //int r= new Double(2*(u-20)).intValue();
-                            if (u<0.0||u>255.0) {
-                                //JOptionPane.showMessageDialog(null, ""+au, "2", JOptionPane.ERROR_MESSAGE);
-                            }*/
-                            //else g.setColor(new Color(new Double(u).intValue(), 0, 0));*/
-                            int re=Double.valueOf(-510.0/(maxU)*(u-minU)+255).intValue();
-                            if (re<0)re=0;
-                            if (re>255)re=255;
-                            int gr=Double.valueOf(-510/(maxU)*Math.abs(u-minU-maxU/2)+255).intValue();
-                            if (gr<0)gr=0;
-                            if (gr>255)gr=255;
-                            int bl=Double.valueOf(510/(maxU)*(u-maxU-minU/2)+255).intValue();
-                            if (bl<0)bl=0;
-                            if (bl>255)bl=255;
-                            g.setColor(new Color(re,gr,bl));
-                            g.drawLine(x,y, x,y);
-                        }
-                    }                    
+                    double u = calcU(A, L, R, x, y, au,bu, cu);                        
+                    g.setColor(clacTempColor(u));
+                    g.drawLine(x,y, x,y);
                 }
             }
-        }   
+        
     }
     
     public void paint(Graphics g) {
