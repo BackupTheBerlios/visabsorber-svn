@@ -236,23 +236,5 @@ public class Calculator {
             }
             
         }
-       /*     für k=1 bis c
-        
-        für i=1 bis n
-        
-            xi = 0
-            für j=1 bis n
-        
-                falls j != i
-        
-                    x_i=x_i+a_{i,j}x_j^{(m)};
-        
-            end
-            xi = (bi ? xi) / ai,i;
-        
-        end
-        x(m) = x;
-        
-    end */
     }
 }

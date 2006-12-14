@@ -133,7 +133,7 @@ public class FEM extends Thread {
         Matrix p = new Matrix(1,nodeList.getCount());
         progress("RB calc",0,0);
         clacRB(S, p);
-        progress("LR-Zerlegung",0,0);
+        progress("Jacobi",0,0);
         
         Calculator calc=new Calculator(this);
         Matrix VectorX = new Matrix(1,nodeList.getCount());

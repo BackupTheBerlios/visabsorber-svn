@@ -18,7 +18,13 @@ public class Line {
     boolean neumann;
     boolean cauchy;
     double q, alpha, t_fluid;
+    int type;
     /** Creates a new instance of Line */
+    public Line(Node n0, Node n1, int typ) {
+        node0 = n0;
+        node1 = n1;  
+        type=typ;
+    }
     public Line(Node n0, Node n1, boolean neumann1, double q1, boolean cauchy1, double alpha1, double t_fluid1 ) {
         node0 = n0;
         node1 = n1;
@@ -27,6 +33,18 @@ public class Line {
         q = q1;
         alpha = alpha1;
         t_fluid = t_fluid1;   
+    }
+    
+    public int getTyp() {
+        return type;
+    }
+    
+    public void setProperties(boolean neumann1, double q1, boolean cauchy1, double alpha1, double t_fluid1) {
+        neumann = neumann1;
+        cauchy = cauchy1;
+        q = q1;
+        alpha = alpha1;
+        t_fluid = t_fluid1;          
     }
     
     public boolean hasNeumann() {

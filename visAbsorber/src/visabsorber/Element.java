@@ -16,19 +16,20 @@ package visabsorber;
 public class Element {
     Node node0, node1, node2;
     int index;
-    
+    int mat;
     double lamda;
     
     
     /** Creates a new instance of Element */
     
-    public Element(Node n0, Node n1, Node n2, double lamda1, double rho1, double cp1,  int i) {
+    public Element(Node n0, Node n1, Node n2, int matirial, double lamda1,  int i) {
         node0=n0;
         node1=n1;
         node2=n2;
         index=i;
         //rho=rho1;
         lamda=lamda1;
+        mat=matirial;
         //cp=cp1;
         
         //calcS();
@@ -40,9 +41,17 @@ public class Element {
         //node2.addNeighbor(node1);
         
     }
+    public void setlamda(double l) {
+        lamda=l;
+    }
+    
     
     public double getlamda() {
         return lamda;
+    }
+    
+    public int getMatirial() {
+        return mat;
     }
    
     public Node getNode0() {

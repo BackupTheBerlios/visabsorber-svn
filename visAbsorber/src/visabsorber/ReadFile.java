@@ -33,7 +33,7 @@ public class ReadFile {
         return null;
     }
 
-    private double[] readLine(String line, int numberCount, char c) {
+    private static double[] readLine(String line, int numberCount, char c) {
         int position=0;
         int start=0;
         double buf[] = new double[numberCount];
@@ -52,7 +52,7 @@ public class ReadFile {
         return buf;
     }
     
-    public ElementList loadElementsFromFile(File file, NodeList nodeList) {
+    public static ElementList loadElementsFromFile(File file, NodeList nodeList) {
         ElementList el= new ElementList();
         if (file.exists()) {
             try {
@@ -63,7 +63,7 @@ public class ReadFile {
                 for (int i=0;i<bufX;i++) {
                     String line=buffer.readLine();
                     buf=readLine(line, 6, ' ');
-                    el.addElement(new Element(nodeList.getNode(Double.valueOf(buf[1]).intValue()-1),nodeList.getNode(Double.valueOf(buf[2]).intValue()-1),nodeList.getNode(Double.valueOf(buf[3]).intValue()-1), buf[5], 0,0,el.getCount()));
+                    el.addElement(new Element(nodeList.getNode(Double.valueOf(buf[1]).intValue()-1),nodeList.getNode(Double.valueOf(buf[2]).intValue()-1),nodeList.getNode(Double.valueOf(buf[3]).intValue()-1), Double.valueOf(buf[5]).intValue(), 0, el.getCount()));
                 }
    
             } catch(java.lang.Exception e) {
@@ -75,7 +75,31 @@ public class ReadFile {
         return null;
     }
     
-    public NodeList loadNodesFromFile(File file) {
+        public static LineList loadLinesFromFile(File file, NodeList nodeList) {
+        LineList li= new LineList();
+        if (file.exists()) {
+            try {
+                FileReader reader = new FileReader(file);
+                BufferedReader buffer = new BufferedReader(reader);              
+                int bufX=Integer.valueOf(buffer.readLine()).intValue();
+                double buf[] = new double[5];
+                for (int i=0;i<bufX;i++) {
+                    String line=buffer.readLine();
+                    buf=readLine(line, 5, ' ');
+                    li.addLine(new Line(nodeList.getNode(Double.valueOf(buf[1]).intValue()-1),nodeList.getNode(Double.valueOf(buf[2]).intValue()-1), Double.valueOf(buf[4]).intValue()));
+                    
+                }
+   
+            } catch(java.lang.Exception e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Fehler Elementenliste", JOptionPane.ERROR_MESSAGE);
+                return null;
+            }
+            return li;         
+        }
+        return null;
+    }
+    
+    public static NodeList loadNodesFromFile(File file) {
         NodeList nl= new NodeList();
         if (file.exists()) {
             try {
