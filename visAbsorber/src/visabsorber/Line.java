@@ -15,8 +15,8 @@ package visabsorber;
  */
 public class Line {
     Node node0, node1;
-    boolean neumann;
-    boolean cauchy;
+    boolean neumann=false;
+    boolean cauchy=false;
     double q, alpha, t_fluid;
     int type;
     /** Creates a new instance of Line */
@@ -35,7 +35,7 @@ public class Line {
         t_fluid = t_fluid1;   
     }
     
-    public int getTyp() {
+    public int getType() {
         return type;
     }
     

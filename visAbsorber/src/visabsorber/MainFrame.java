@@ -21,9 +21,9 @@ import javax.swing.JOptionPane;
  * @author  Jan-Stefan Fischer
  */
 public class MainFrame extends javax.swing.JFrame {
-      ElementList elementList = new ElementList();
-        NodeList nodeList = new NodeList();
-        LineList lineList = new LineList();
+    ElementList elementList = new ElementList();
+    NodeList nodeList = new NodeList();
+    LineList lineList = new LineList();
     public MainFrame() {
         initComponents();
         scrollPane1.add(visMatrix);
@@ -37,6 +37,14 @@ public class MainFrame extends javax.swing.JFrame {
      */
     // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
     private void initComponents() {
+        jPanel2 = new javax.swing.JPanel();
+        statusLabel = new javax.swing.JLabel();
+        statusBar = new javax.swing.JProgressBar();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        scrollPane1 = new java.awt.ScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -68,20 +76,80 @@ public class MainFrame extends javax.swing.JFrame {
         jTextField7 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
-        jPanel2 = new javax.swing.JPanel();
-        statusLabel = new javax.swing.JLabel();
-        statusBar = new javax.swing.JProgressBar();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        scrollPane1 = new java.awt.ScrollPane();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("visAbsorber");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocationByPlatform(true);
+        statusLabel.setText("Status");
+
+        jButton6.setText("zoom +10");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("zoom -10");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jToggleButton1.setText("show Temp.");
+
+        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                            .add(statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton7)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jToggleButton1)
+                        .addContainerGap(177, Short.MAX_VALUE))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(statusLabel)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(statusBar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(11, 11, 11)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton7)
+                    .add(jToggleButton1)
+                    .add(jButton6))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
+        );
+
         jLabel8.setText("Elementenliste");
 
         jLabel9.setText("Randbedingungsliste");
+
+        rbdFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\12_12\\Test\\test1.rbd");
+
+        elementFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\12_12\\Test\\test1.ele");
+
+        nodeFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\12_12\\Test\\test1.knt");
 
         jButton3.setText("...");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -137,27 +205,57 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel5.setText("Umgebungseigenschaften:");
 
-        jTextField2.setText("5");
+        jTextField4.setText("20");
 
-        jTextField1.setText("20");
+        jTextField3.setText("200");
+
+        jTextField2.setText("30");
+
+        jTextField1.setText("500");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("W\u00e4rmeleitf\u00e4higkeit (Platte+Rohr):");
 
         jLabel10.setText("W\u00e4rme\u00fcbergang an Umgebung:");
 
+        jTextField5.setText("50");
+
         jLabel11.setText("Wassertemperatur:");
+
+        jTextField6.setText("15");
 
         jLabel12.setText("W\u00e4rme\u00fcbergang an Wasser:");
 
+        jTextField7.setText("200");
+
         jLabel13.setText("W\u00e4rmestromdichte durch Strahlung:");
+
+        jTextField8.setText("500");
+
+        jLabel14.setText("FEM-Eigenschaften");
+
+        jLabel15.setText("Anzahl der Ittartionen:");
+
+        jTextField9.setText("1000");
+
+        jLabel16.setText("Maximales Resdiuum:");
+
+        jTextField10.setText("0.0000001");
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1Layout.createSequentialGroup()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jTextField9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel7)
@@ -165,51 +263,61 @@ public class MainFrame extends javax.swing.JFrame {
                             .add(jLabel9)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, rbdFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, elementFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                                    .add(nodeFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, rbdFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, elementFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                                    .add(nodeFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                         .add(jButton3)
                                         .add(jButton2))
                                     .add(jButton4)))))
-                    .add(jPanel1Layout.createSequentialGroup()
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jLabel1))
-                    .add(jPanel1Layout.createSequentialGroup()
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
                         .add(20, 20, 20)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jTextField1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                            .add(jTextField1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                             .add(jLabel2)
                             .add(jLabel3)
-                            .add(jTextField2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                            .add(jTextField2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                             .add(jLabel4)
-                            .add(jTextField3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)))
-                    .add(jPanel1Layout.createSequentialGroup()
+                            .add(jTextField3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel5)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(10, 10, 10)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jTextField4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                    .add(jTextField4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                                     .add(jLabel6)
                                     .add(jLabel10)
-                                    .add(jTextField5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                    .add(jTextField5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                                     .add(jLabel11)
-                                    .add(jTextField6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                    .add(jTextField6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                                     .add(jLabel12)
-                                    .add(jTextField7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                                    .add(jTextField7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                                     .add(jLabel13)
-                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))))))
-                .addContainerGap())
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, startFEM, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                    .add(jButton5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE))
+                                    .add(jTextField8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jLabel14)
+                            .add(jPanel1Layout.createSequentialGroup()
+                                .add(10, 10, 10)
+                                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jLabel15)
+                                    .add(jLabel16))))
+                        .add(170, 170, 170))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .add(startFEM, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -269,115 +377,76 @@ public class MainFrame extends javax.swing.JFrame {
                 .add(jLabel13)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jTextField8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(22, 22, 22)
+                .add(20, 20, 20)
+                .add(jLabel14)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel15)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jTextField9, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel16)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jTextField10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jButton5)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jButton1)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(startFEM)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
-
-        statusLabel.setText("Status");
-
-        jButton6.setText("zoom +10");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setText("zoom -10");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jToggleButton1.setText("show Temp.");
-
-        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
-                                .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jButton7)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jToggleButton1))
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE))
-                        .addContainerGap())))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .add(statusLabel)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(statusBar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(11, 11, 11)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jButton7)
-                    .add(jToggleButton1)
-                    .add(jButton6))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 637, Short.MAX_VALUE))
-        );
+        jScrollPane1.setViewportView(jPanel1);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(16, 16, 16)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 339, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+// TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+    
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         visMatrix.zoomMinus();
-        visMatrix.refreshImg(nodeList, elementList);
+        visMatrix.refreshImg(nodeList, elementList, lineList);
         visMatrix.repaint();
     }//GEN-LAST:event_jButton7ActionPerformed
-
+    
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         visMatrix.zoomPlus();
-        visMatrix.refreshImg(nodeList, elementList);
+        visMatrix.refreshImg(nodeList, elementList, lineList);
         visMatrix.repaint();
     }//GEN-LAST:event_jButton6ActionPerformed
-
+    
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        visMatrix.refreshImg(nodeList, elementList);
+        visMatrix.refreshImg(nodeList, elementList, lineList);
         visMatrix.repaint();
         /*nodeList=loadNodesFromFile(new File(nodeFileField.getText()));
         JOptionPane.showMessageDialog(null, ""+nodeList.getCount(), "Fehler Elementenliste", JOptionPane.ERROR_MESSAGE);
         elementList=loadElementsFromFile(new File(elementFileField.getText()));*/
         
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         rbdFileField.setText(ReadFile.openDialog().toString());
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         elementFileField.setText(ReadFile.openDialog().toString());
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         nodeFileField.setText(ReadFile.openDialog().toString());
@@ -385,13 +454,21 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         nodeList = ReadFile.loadNodesFromFile(new File(nodeFileField.getText()));
-        elementList = ReadFile.loadElementsFromFile(new File(elementFileField.getText()), nodeList);
-        lineList = ReadFile.loadLinesFromFile(new File(rbdFileField.getText()), nodeList);
+        if (nodeList != null) {
+            elementList = ReadFile.loadElementsFromFile(new File(elementFileField.getText()), nodeList);
+            if (elementList != null) {
+                lineList = ReadFile.loadLinesFromFile(new File(rbdFileField.getText()), nodeList);
+                if (lineList == null) {
+                    JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Randliste","Fehler", JOptionPane.ERROR_MESSAGE);
+                } else JOptionPane.showMessageDialog(null, "Fertig","Fertig", JOptionPane.ERROR_MESSAGE);
+            } else JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Elementenliste","Fehler", JOptionPane.ERROR_MESSAGE);
+        } else JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Knotenliste","Fehler", JOptionPane.ERROR_MESSAGE);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
     
     private void startFEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startFEMActionPerformed
 // TODO add your handling code here:
-        elementList = new ElementList();
+        /*elementList = new ElementList();
         nodeList = new NodeList();
         lineList = new LineList();
         int XCount=Integer.valueOf(jTextField1.getText()),YCount=Integer.valueOf(jTextField2.getText()), Count=0;
@@ -414,10 +491,8 @@ public class MainFrame extends javax.swing.JFrame {
                     nodeList.addNode(new Node(x*0.05+0.025,y*0.05+0.025,0.0,false,Count));
                     elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount),nodeList.getNode(Count-XCount+1),0,10,elementList.getCount()));
                     Count++;
-                    
-                } 
+                }
             }
-                     
         }
         for (int x=0;x<XCount-1;x++) {
             lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,true,40.0,20.0));
@@ -437,27 +512,27 @@ public class MainFrame extends javax.swing.JFrame {
             e.setValue(1,i,ele.getNode0().getIndex());
             e.setValue(2,i,ele.getNode1().getIndex());
             e.setValue(3,i,ele.getNode2().getIndex());
-            
+         
         }
-        
+         
         e.saveMatrixToFile(new File("elements.txt"));
-        
+         
         Matrix nl=new Matrix(3,lineList.getCount());
         for (int i=0;i<lineList.getCount();i++) {
             Line l=lineList.getLine(i);
             nl.setValue(0,i,i);
             nl.setValue(1,i,l.getNode0().getIndex());
-            nl.setValue(2,i, l.getNode1().getIndex());       
+            nl.setValue(2,i, l.getNode1().getIndex());
         }
         nl.saveMatrixToFile(new File("lines.txt"));
-        
+         
         Matrix nodes=new Matrix(3,nodeList.getCount());
         for (int i=0;i<nodeList.getCount();i++) {
             Node n=nodeList.getNode(i);
             nodes.setValue(0,i,n.getIndex());
             nodes.setValue(1,i,n.getX());
             //JOptionPane.showMessageDialog(null, ""+nodes.getValue(1,i), "Fehler", JOptionPane.ERROR_MESSAGE);
-            nodes.setValue(2,i,n.getY());       
+            nodes.setValue(2,i,n.getY());
         }
         nodes.saveMatrixToFile(new File("nodes.txt"));
         //nodeList.addNode(new Node(0.0,0.0,10.0,true,0));
@@ -473,14 +548,48 @@ public class MainFrame extends javax.swing.JFrame {
         elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(3),nodeList.getNode(2),10,0,0,1));
         elementList.addElement(new Element(nodeList.getNode(3),nodeList.getNode(4),nodeList.getNode(2),10,0,0,2));
         elementList.addElement(new Element(nodeList.getNode(2),nodeList.getNode(4),nodeList.getNode(1),10,0,0,3));*/
-        FEM fem= new FEM(nodeList, elementList, lineList, statusLabel, statusBar);
-        try {
-                fem.join();
+        double lAbs=Double.valueOf(jTextField1.getText()).doubleValue();
+        double lDam=Double.valueOf(jTextField2.getText()).doubleValue();
+        double lBod=Double.valueOf(jTextField3.getText()).doubleValue();
+        double tU=Double.valueOf(jTextField4.getText()).doubleValue();
+        double tF=Double.valueOf(jTextField6.getText()).doubleValue();
+        double q=Double.valueOf(jTextField8.getText()).doubleValue();
+        double aU=Double.valueOf(jTextField5.getText()).doubleValue();
+        double aF=Double.valueOf(jTextField7.getText()).doubleValue();
+        int it=Double.valueOf(jTextField9.getText()).intValue();
+        double res=Double.valueOf(jTextField10.getText()).doubleValue();
+        
+        for (int i = 0; i < elementList.getCount(); i++) {
+            Element e = elementList.getElement(i);
+            switch (e.getMatirial()) {
+                case 0: e.setlamda(lAbs);
+                break;
+                case 1: e.setlamda(lDam);
+                break;
+                case 2: e.setlamda(lBod);
+                break;
             }
-        catch (Exception exc) {
+        }
+        
+        for (int i = 0; i < lineList.getCount(); i++) {
+            Line line = lineList.getLine(i);
+                switch (line.getType()) {
+                    case 0: line.setProperties(true,q,false,0,0);
+                    break;
+                    case 1: line.setProperties(false,0,true,aF,tF);
+                    break;
+                    case 2: line.setProperties(false,0,true,aU,tU);
+                    break;
+                }
+            }
+        
+        FEM fem= new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
+        try {
+            fem.join();
+        } catch (Exception exc) {
             JOptionPane.showMessageDialog(null, exc.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
         }
-        fem = new FEM(nodeList, elementList, lineList, statusLabel, statusBar);;
+        fem = new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
         fem.start();
         //if (X!=null)  X.saveMatrixToFile(new File("x.txt"));
         //visMatrix.repaint();
@@ -512,6 +621,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -522,7 +634,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -530,6 +644,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField nodeFileField;
     private javax.swing.JTextField rbdFileField;

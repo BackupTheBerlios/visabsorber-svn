@@ -13,7 +13,7 @@ class MyCanvas extends Canvas {
     ElementList elementList;
     Image imgTemp, imgGird;
     int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0;
-    double zoom=500.0, minU=0, maxU=0;
+    double zoom=1.0, minU=0, maxU=0;
     
     public MyCanvas(NodeList nl, ElementList el) {
         nodeList=nl;
@@ -27,7 +27,7 @@ class MyCanvas extends Canvas {
         zoom=zoom/2;
     } 
     
-    public void refreshImg(NodeList nl, ElementList el) {
+    public void refreshImg(NodeList nl, ElementList el, LineList ll) {
         if (nl.getCount()>0) {
             nodeList=nl;
             elementList=el;
@@ -58,6 +58,8 @@ class MyCanvas extends Canvas {
             //canvas.setSize(maxX-minX,maxY-minY);
             int h=maxX+offsetX;//Double.valueOf((maxX+offsetX)*zoom).intValue();
             int w=maxY+offsetY;//Double.valueOf((maxX+offsetX)*zoom).intValue();
+            if (h<1) h=1;
+            if (w<1) w=1;
             imgTemp=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB); 
             Graphics gTemp=imgTemp.getGraphics();
             imgGird=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB); 
@@ -65,19 +67,48 @@ class MyCanvas extends Canvas {
             
             
             //this.getGraphics()
-            for (int i = 0; i < elementList.getCount(); i++) {
+            for (int i = 0; i < el.getCount(); i++) {
                 //g.setColor(new Color(new Double(mainFrame.elementList.getElement(i).getlamda()*100.0).intValue(), 0, 0));
-                int x0 = Double.valueOf(elementList.getElement(i).getNode0().getX()*zoom).intValue();
-                int y0 = Double.valueOf(elementList.getElement(i).getNode0().getY()*zoom).intValue();
-                int x1 = Double.valueOf(elementList.getElement(i).getNode1().getX()*zoom).intValue();
-                int y1 = Double.valueOf(elementList.getElement(i).getNode1().getY()*zoom).intValue();
-                int x2 = Double.valueOf(elementList.getElement(i).getNode2().getX()*zoom).intValue();
-                int y2 = Double.valueOf(elementList.getElement(i).getNode2().getY()*zoom).intValue();
-                drawDreieck(x0, y0, elementList.getElement(i).getNode0().getU(), x1,  y1, elementList.getElement(i).getNode1().getU(), x2,  y2, elementList.getElement(i).getNode2().getU(),  gTemp);
+                int x0 = Double.valueOf(el.getElement(i).getNode0().getX()*zoom).intValue()+offsetX;
+                int y0 = Double.valueOf(el.getElement(i).getNode0().getY()*zoom).intValue()+offsetY;
+                int x1 = Double.valueOf(el.getElement(i).getNode1().getX()*zoom).intValue()+offsetX;
+                int y1 = Double.valueOf(el.getElement(i).getNode1().getY()*zoom).intValue()+offsetY;
+                int x2 = Double.valueOf(el.getElement(i).getNode2().getX()*zoom).intValue()+offsetX;
+                int y2 = Double.valueOf(el.getElement(i).getNode2().getY()*zoom).intValue()+offsetY;
+                drawDreieck(x0, y0, el.getElement(i).getNode0().getU(), x1,  y1, el.getElement(i).getNode1().getU(), x2,  y2, el.getElement(i).getNode2().getU(),  gTemp);
+                switch (el.getElement(i).getMatirial()) {
+                    case 0: gGird.setColor(Color.RED);
+                    break;
+                    case 1: gGird.setColor(Color.GREEN);
+                    break;
+                    case 2: gGird.setColor(Color.BLUE);
+                    break;
+                }
                 gGird.drawLine(x0,y0,x1,y1);
                 gGird.drawLine(x0,y0,x2,y2);
                 gGird.drawLine(x2,y2,x1,y1);
             }
+            for (int i = 0; i < ll.getCount(); i++) {
+                int x0 = Double.valueOf(ll.getLine(i).getNode0().getX()*zoom).intValue();
+                int y0 = Double.valueOf(ll.getLine(i).getNode0().getY()*zoom).intValue();
+                int x1 = Double.valueOf(ll.getLine(i).getNode1().getX()*zoom).intValue();
+                int y1 = Double.valueOf(ll.getLine(i).getNode1().getY()*zoom).intValue();
+                switch (ll.getLine(i).getType()) {
+                    case 0: gGird.setColor(Color.BLACK);
+                    break;
+                    case 1: gGird.setColor(Color.YELLOW);
+                    break;
+                    case 2: gGird.setColor(Color.cyan);
+                    break;
+                    case 3: gGird.setColor(Color.WHITE);
+                    break;
+                    case 4: gGird.setColor(Color.orange);
+                    break;
+                }
+                gGird.drawLine(x0+offsetX,y0+offsetY,x1+offsetX,y1+offsetY);
+
+            }
+            
             //img=canvas.createImage(maxX-minX,maxY-minY);
         }
         
@@ -226,6 +257,8 @@ class MyCanvas extends Canvas {
         //refreshImg(nodeList, elementList);
         //this.setSize(new Dimension(imgTemp.getWidth(null),imgTemp.getHeight(null)));
         g.drawImage(imgTemp,0,0, null);
+        //g.drawImage(imgGird,0,0, null);
+        
         
         /*for (int i = 0; i < this.mainFrame.nodeList.getCount(); i++) {
             int x = Double.valueOf(mainFrame.nodeList.getNode(i).getX()*100.0).intValue();

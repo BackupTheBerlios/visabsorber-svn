@@ -16,15 +16,19 @@ public class FEM extends Thread {
     NodeList nodeList;
     ElementList elementList;
     LineList lineList;
+    int iter;
+    double resi;
     private javax.swing.JLabel statusLabel;
     private javax.swing.JProgressBar statusBar;
     /** Creates a new instance of FEM */
-    public FEM(NodeList nl, ElementList el, LineList ll, javax.swing.JLabel label, javax.swing.JProgressBar bar)  {
+    public FEM(NodeList nl, ElementList el, LineList ll, javax.swing.JLabel label, javax.swing.JProgressBar bar, int it, double res)  {
         nodeList=nl;
         elementList=el;
         lineList=ll;
         statusLabel=label;
         statusBar=bar;
+        iter=it;
+        resi=res;
     }
     
     public Matrix calcS() {
@@ -137,7 +141,7 @@ public class FEM extends Thread {
         
         Calculator calc=new Calculator(this);
         Matrix VectorX = new Matrix(1,nodeList.getCount());
-        calc.clacJacobi(S,p,VectorX,500);
+        double res=calc.calcGauss(S,p,VectorX,iter,resi);
         progress("Save X-file",0,0);
         Matrix xOutput = new Matrix(4,nodeList.getCount());
         for (int i=0;i<nodeList.getCount();i++) {
@@ -157,7 +161,7 @@ public class FEM extends Thread {
             elOutput.setValue(1,i,elementList.getElement(i).getNode2().getIndex());
             
         }
-        progress("Ende",0,0);
+        progress("Ende (Residuum: " + res + ")",0,0);
         elOutput.saveMatrixToFile(new File("ele.txt"));
         //Matrix MatrixL = new Matrix (nodeList.getCount(),nodeList.getCount());
         //Matrix MatrixR = new Matrix (nodeList.getCount(),nodeList.getCount());
