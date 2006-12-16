@@ -208,4 +208,87 @@ public class Calculator {
         }
         
     }
+    
+        public int max1(Matrix vector, int jmax, int absVal) {
+        double tmp1 = 0, tmp2 = 0;
+        int j, n=0;
+        
+        for (j=0; j<jmax; j++) {
+            if (absVal == 1) {
+                if (vector.getValue(0,j) < 0) {
+                    tmp1=-vector.getValue(0,j);
+                } else {
+                    tmp1=vector.getValue(0,j);
+                }
+            }
+            
+            if (tmp1 > tmp2) {
+                tmp2 = tmp1;
+                n = j;
+            }
+        }
+        
+        // GEBE DIE ZEILE MIT DEM MAXIMALEN WERT ZURÜCK
+        return n;
+    }
+    
+    public double clacJacobi(Matrix A, Matrix b, Matrix x, int maxc, double eps) {
+        int n=A.getXCount();
+        x.setXCount(1);
+        x.setYCount(n);
+        //Matrix internalArray = new Matrix(n,n);
+        Matrix tempArray = new Matrix(1,n);
+        Matrix res=new Matrix(1,n);
+        double Residuum=eps+1,globRes=0;
+        
+        for (int k=0;k<maxc && Residuum > eps;k++) {
+            //if (fem!=null) fem.progress("Jacobi (Residuum: " + Residuum + ")",k,maxc);
+            double normr=0.;
+            for (int i=0;i<n;i++) {
+
+                double sum = 0;
+                for (int j=0; j<i; j++) {
+                    sum = sum + A.getValue(j,i)*tempArray.getValue(0,j);
+                }
+                for (int j=i+1; j<n; j++) {
+                    sum = sum + A.getValue(j,i)*x.getValue(0,j);
+
+                }
+                // DIAGONALELEMENT A_ii = matrixPtr[i*(jmax+1)]
+                tempArray.setValue(0,i,1.0/A.getValue(i,i)*(b.getValue(0,i) - sum));
+            }
+            
+            
+            for (int i=0;i<n;i++) {
+                res.setValue(0,i,tempArray.getValue(0,i)-x.getValue(0,i));
+                x.setValue(0,i,tempArray.getValue(0,i));
+               
+            }
+            Matrix bF =new Matrix(1,n);
+            /*MatrixMulti(A, x, bF);
+            calc_Failure(b, bF, res, null);*/
+            int m = max1(res, n, 1);
+            if (res.getValue(0,m) < 0) {
+                Residuum=-res.getValue(0,m);
+                        /*// BERECHNE GLOBALES RESIDUUM
+                        globRes = 0;
+                        for (int j=0; j<n; j++) {
+                                globRes = globRes + res.getValue(0,j);
+                        }
+                        if (globRes < 0) globRes=globRes*(-1);*/
+            } else {
+                Residuum=+res.getValue(0,m);
+                // BERECHNE GLOBALES RESIDUUM
+                        /*globRes = 0;
+                        for (int j=0; j<n; j++) {
+                                globRes = globRes + res.getValue(0,j);
+                        }
+                        if (globRes < 0) globRes=globRes*(-1);*/
+            }
+            
+        }
+        return Residuum;
+        
+
+    }
 }

@@ -44,7 +44,7 @@ public class MainFrame extends javax.swing.JFrame {
                     VectorX.drawMatrix(this,90*VectorY.x+50,90+20*MatrixA.y+20*MatrixCholesky.y, "Vektor X");
                     VectorBFailure.drawMatrix(this,90*VectorY.x+50 + 90*VectorX.x+50,90+20*MatrixA.y+20*MatrixCholesky.y, "A*x=b(F)");
                     VectorAbsFailure.drawMatrix(this,90*VectorY.x+50 + 90*VectorX.x+50 + 90*VectorBFailure.x+50,90+20*MatrixA.y + 20*MatrixL.y, "F-Real");
-                    VectorRelFailure.drawMatrix(this,90*VectorY.x+50 + 90*VectorX.x+50 + 90*VectorBFailure.x+50 + 90*VectorAbsFailure.x+50,90+20*MatrixA.y + 20*MatrixL.y, "F-Relativ");
+                    //VectorRelFailure.drawMatrix(this,90*VectorY.x+50 + 90*VectorX.x+50 + 90*VectorBFailure.x+50 + 90*VectorAbsFailure.x+50,90+20*MatrixA.y + 20*MatrixL.y, "F-Relativ");
                 }
             } else {
                 g.drawString("Fehler: "+failure,0,45+20*MatrixA.y);
@@ -112,6 +112,7 @@ public class MainFrame extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         scrollPane1 = new java.awt.ScrollPane();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PPM_Matrix");
@@ -175,6 +176,13 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,7 +190,7 @@ public class MainFrame extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 702, Short.MAX_VALUE)
+                    .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 763, Short.MAX_VALUE)
                     .add(layout.createSequentialGroup()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(buttonMatrixA)
@@ -198,37 +206,64 @@ public class MainFrame extends javax.swing.JFrame {
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(jButton4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(buttonCholesky, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .add(41, 41, 41)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton5)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jButton3)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(layout.createSequentialGroup()
-                        .add(buttonCholesky)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton4))
-                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                        .add(layout.createSequentialGroup()
-                            .add(buttonLR)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                .add(jButton1)
-                                .add(jButton2)))
-                        .add(layout.createSequentialGroup()
-                            .add(buttonMatrixA)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                            .add(buttonVectorB))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 58, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(layout.createSequentialGroup()
+                                .add(buttonCholesky)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jButton4))
+                            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                                .add(layout.createSequentialGroup()
+                                    .add(buttonLR)
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                        .add(jButton1)
+                                        .add(jButton2)))
+                                .add(layout.createSequentialGroup()
+                                    .add(buttonMatrixA)
+                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                    .add(buttonVectorB))))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jButton5)
+                        .add(1, 1, 1)))
+                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        Calculator calc=new Calculator();
+        operation=CHOLESKY;
+        calc.clacJacobi(MatrixA, VectorB, VectorX, 10000, 0.000001);
+        calc.MatrixMulti(MatrixA, VectorX, VectorBFailure);
+        calc.calc_Failure(VectorB, VectorBFailure, VectorAbsFailure, VectorRelFailure);
+        /*if (failure==null) {
+            failure=calc.calc_YX(MatrixCholesky, VectorB, VectorY,0);
+            if (failure==null) {
+                failure=calc.calc_YX(MatrixCholesky.transpont(), VectorY, VectorX,1);
+                if (failure==null) {
+                    calc.MatrixMulti(MatrixA, VectorX, VectorBFailure);
+                    calc.calc_Failure(VectorB, VectorBFailure, VectorAbsFailure, VectorRelFailure);
+                }
+            }
+        }*/
+        visMatrix.repaint();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     public void SaveToFile(Matrix matrix) {
         if (failure==null) {
@@ -335,6 +370,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
     public MyCanvas visMatrix = new MyCanvas();
