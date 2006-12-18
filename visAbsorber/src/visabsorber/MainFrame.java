@@ -468,7 +468,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void startFEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startFEMActionPerformed
 // TODO add your handling code here:
-        /*elementList = new ElementList();
+       /*elementList = new ElementList();
         nodeList = new NodeList();
         lineList = new LineList();
         int XCount=Integer.valueOf(jTextField1.getText()),YCount=Integer.valueOf(jTextField2.getText()), Count=0;
@@ -495,13 +495,13 @@ public class MainFrame extends javax.swing.JFrame {
             }
         }
         for (int x=0;x<XCount-1;x++) {
-            lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,true,40.0,20.0));
-            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,true,40.0,20.0));
+            lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,false,40.0,20.0));
+            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,false,40.0,20.0));
             //lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,true,40,20));
             //lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,true,-40,20));
         }
         for (int y=0;y<YCount-1;y++) {
-            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y),nodeList.getNode((2*XCount-1)*(y+1)),true,0.0,false,0.0,0.0));
+            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y),nodeList.getNode((2*XCount-1)*(y+1)),true,500.0,false,40.0,20.0));
             lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y+XCount-1),nodeList.getNode((2*XCount-1)*(y+1)+XCount-1),false,500.0,true,40.0,20.0));
         }
         //nodeList.getNode(0).setU(20);
@@ -534,20 +534,8 @@ public class MainFrame extends javax.swing.JFrame {
             //JOptionPane.showMessageDialog(null, ""+nodes.getValue(1,i), "Fehler", JOptionPane.ERROR_MESSAGE);
             nodes.setValue(2,i,n.getY());
         }
-        nodes.saveMatrixToFile(new File("nodes.txt"));
-        //nodeList.addNode(new Node(0.0,0.0,10.0,true,0));
-        /*
-         *
-        nodeList.addNode(new Node(0.0,10.0,10.0,false,1));
-        nodeList.addNode(new Node(5.0,5.0,0.0,false,2));
-        nodeList.addNode(new Node(10.0,0.0,20.0,false,3));
-        nodeList.addNode(new Node(10.0,10.0,20.0,false,4));
-        lineList.addLine(new Line(nodeList.getNode(0),nodeList.getNode(1),true,-10.0,false,10,20));
-        lineList.addLine(new Line(nodeList.getNode(3),nodeList.getNode(4),true,10.0,false,20,10));
-        elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(2),nodeList.getNode(1),10,0,0,0));
-        elementList.addElement(new Element(nodeList.getNode(0),nodeList.getNode(3),nodeList.getNode(2),10,0,0,1));
-        elementList.addElement(new Element(nodeList.getNode(3),nodeList.getNode(4),nodeList.getNode(2),10,0,0,2));
-        elementList.addElement(new Element(nodeList.getNode(2),nodeList.getNode(4),nodeList.getNode(1),10,0,0,3));*/
+        //nodes.saveMatrixToFile(new File("nodes.txt"));*/
+
         double lAbs=Double.valueOf(jTextField1.getText()).doubleValue();
         double lDam=Double.valueOf(jTextField2.getText()).doubleValue();
         double lBod=Double.valueOf(jTextField3.getText()).doubleValue();
@@ -574,15 +562,23 @@ public class MainFrame extends javax.swing.JFrame {
         for (int i = 0; i < lineList.getCount(); i++) {
             Line line = lineList.getLine(i);
                 switch (line.getType()) {
-                    case 0: line.setProperties(true,q,false,0,0);
+                    case 0: line.setProperties(true,q,false,aU,tU);
+                            //line.getNode0().setU(80.0);
+                            //line.getNode1().setU(80.0);
                     break;
                     case 1: line.setProperties(false,0,true,aF,tF);
                     break;
                     case 2: line.setProperties(false,0,true,aU,tU);
+                        //line.getNode0().setU(20.0);
+                        //line.getNode1().setU(20.0);
+                    break;
+                    case 3: line.setProperties(false,0,false,0,0);
+                    break;
+                    case 4: line.setProperties(false,0,false,0,0);
                     break;
                 }
             }
-        
+        //nodeList.getNode(10).setU(80.0);*/
         FEM fem= new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
         try {
             fem.join();

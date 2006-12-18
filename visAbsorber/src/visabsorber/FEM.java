@@ -49,7 +49,7 @@ public class FEM extends Thread {
                 }
             }
         }
-        
+        //S.saveMatrixToFile(new File("s_gross.txt"));
         return S;
     }
     
@@ -115,13 +115,9 @@ public class FEM extends Thread {
                         S.setValue(j,i,0.0);
                         
                     }
-                }
-                
+                }                
             }
-        }
-        //p.saveMatrixToFile(new File("p.txt"));
-        //S.saveMatrixToFile(new File("S.txt"));
-        
+        }   
     }
     public synchronized void progress(String statusName, int position, int max) {
         statusLabel.setText(statusName);
@@ -141,7 +137,11 @@ public class FEM extends Thread {
         
         Calculator calc=new Calculator(this);
         Matrix VectorX = new Matrix(1,nodeList.getCount());
-        double res=calc.calcGauss(S,p,VectorX,iter,resi);
+        //calc.calcLUShort (S, p, VectorX);
+        for (int i=0;i<VectorX.getYCount();i++) {
+            VectorX.setValue(0,i,20.0);
+        }
+        double res=calc.calcGauss(S,p,VectorX,iter,resi,1.5);
         progress("Save X-file",0,0);
         Matrix xOutput = new Matrix(4,nodeList.getCount());
         for (int i=0;i<nodeList.getCount();i++) {

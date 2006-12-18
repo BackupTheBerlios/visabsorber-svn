@@ -76,19 +76,20 @@ class MyCanvas extends Canvas {
                 int x2 = Double.valueOf(el.getElement(i).getNode2().getX()*zoom).intValue()+offsetX;
                 int y2 = Double.valueOf(el.getElement(i).getNode2().getY()*zoom).intValue()+offsetY;
                 drawDreieck(x0, y0, el.getElement(i).getNode0().getU(), x1,  y1, el.getElement(i).getNode1().getU(), x2,  y2, el.getElement(i).getNode2().getU(),  gTemp);
-                switch (el.getElement(i).getMatirial()) {
+                /*switch (el.getElement(i).getMatirial()) {
                     case 0: gGird.setColor(Color.RED);
                     break;
                     case 1: gGird.setColor(Color.GREEN);
                     break;
                     case 2: gGird.setColor(Color.BLUE);
                     break;
-                }
-                gGird.drawLine(x0,y0,x1,y1);
-                gGird.drawLine(x0,y0,x2,y2);
-                gGird.drawLine(x2,y2,x1,y1);
+                }*/
+                gTemp.setColor(Color.BLACK);
+                gTemp.drawLine(x0,y0,x1,y1);
+                gTemp.drawLine(x0,y0,x2,y2);
+                gTemp.drawLine(x2,y2,x1,y1);
             }
-            for (int i = 0; i < ll.getCount(); i++) {
+            /*for (int i = 0; i < ll.getCount(); i++) {
                 int x0 = Double.valueOf(ll.getLine(i).getNode0().getX()*zoom).intValue();
                 int y0 = Double.valueOf(ll.getLine(i).getNode0().getY()*zoom).intValue();
                 int x1 = Double.valueOf(ll.getLine(i).getNode1().getX()*zoom).intValue();
@@ -107,7 +108,7 @@ class MyCanvas extends Canvas {
                 }
                 gGird.drawLine(x0+offsetX,y0+offsetY,x1+offsetX,y1+offsetY);
 
-            }
+            }*/
             
             //img=canvas.createImage(maxX-minX,maxY-minY);
         }

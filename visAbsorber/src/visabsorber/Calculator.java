@@ -9,6 +9,8 @@
 
 package visabsorber;
 
+import java.util.Vector;
+
 /**
  *
  * @author Jan-Stefan Fischer
@@ -238,30 +240,55 @@ public class Calculator {
         return n;
     }
     
-    public double calcGauss(Matrix A, Matrix b, Matrix x, int maxc, double eps) {
+    public Vector<Integer>[] optS(Matrix S) {
+        Vector<Integer>[] optS;
+        optS=new <Integer>Vector[S.getYCount()];
+        int n=S.getYCount();
+        for (int y=0;y<n;y++)
+        {
+            fem.progress("optimiere S" ,y,n);
+            Vector<Integer> line = new Vector<Integer>();
+            for (int x=0;x<S.getXCount();x++) {
+                if (S.getValue(x,y)!=0.0) {
+                    line.add(new Integer(x));
+                }
+            }
+            optS[y]=line;
+            
+        }
+        return optS;
+    }
+    
+    public double calcGauss(Matrix A, Matrix b, Matrix x, int maxc, double eps, double w) {
         int n=A.getXCount();
-        x.setXCount(1);
-        x.setYCount(n);
+        //x.setXCount(1);
+        //x.setYCount(n);
         //Matrix internalArray = new Matrix(n,n);
         Matrix tempArray = new Matrix(1,n);
         Matrix res=new Matrix(1,n);
         double Residuum=eps+1,globRes=0;
-        
+        Vector<Integer>[] oS = optS(A);
         for (int k=0;k<maxc && Residuum > eps;k++) {
-            if (fem!=null) fem.progress("Jacobi (Residuum: " + Residuum + ")",k,maxc);
+            if (fem!=null) fem.progress("Gauss (Residuum: " + Residuum + ")",k,maxc);
             double normr=0.;
             for (int i=0;i<n;i++) {
 
                 double sum = 0;
-                for (int j=0; j<i; j++) {
+                Vector<Integer> line = oS[i];
+                for (int j=0;j<line.size();j++) {
+                    int x1= line.get(j).intValue();
+                    if (x1<i) sum = sum + A.getValue(x1,i)*tempArray.getValue(0,x1);
+                    if (x1>i) sum = sum + A.getValue(x1,i)*x.getValue(0,x1);
+                }
+                /*for (int j=0; j<i; j++) {
                     sum = sum + A.getValue(j,i)*tempArray.getValue(0,j);
                 }
                 for (int j=i+1; j<n; j++) {
                     sum = sum + A.getValue(j,i)*x.getValue(0,j);
 
-                }
+                }*/
                 // DIAGONALELEMENT A_ii = matrixPtr[i*(jmax+1)]
-                tempArray.setValue(0,i,1.0/A.getValue(i,i)*(b.getValue(0,i) - sum));
+                tempArray.setValue(0,i,w*(1.0/A.getValue(i,i)*(b.getValue(0,i) - sum)) + (1.0-w)*x.getValue(0,i));
             }
             
             
@@ -274,6 +301,7 @@ public class Calculator {
             /*MatrixMulti(A, x, bF);
             calc_Failure(b, bF, res, null);*/
             int m = max1(res, n, 1);
+            double ResiduumOld=Residuum;
             if (res.getValue(0,m) < 0) {
                 Residuum=-res.getValue(0,m);
                         /*// BERECHNE GLOBALES RESIDUUM
@@ -291,6 +319,9 @@ public class Calculator {
                         }
                         if (globRes < 0) globRes=globRes*(-1);*/
             }
+            if (ResiduumOld<Residuum) w=w+0.01;
+            else w=w-0.01;
+            if (w<0.1) w=0.1;
             
         }
         return Residuum;
@@ -358,5 +389,46 @@ public class Calculator {
             
         }
         return Residuum;
+    }
+    
+    public String calcLUShort (Matrix MatrixA, Matrix b, Matrix x) {
+        int n=MatrixA.getXCount();
+         for (int k=0;k<n-1;k++) {
+            if (fem!=null) fem.progress("LR-Zerlegung",k,n-1);
+            for (int i=k+1;i<n;i++) {
+                MatrixA.setValue(k,i,MatrixA.getValue(k,i)/MatrixA.getValue(k,k));
+                
+                //} catch(java.lang.Exception e) {
+                //return "Teilung durch Null!";
+                //}
+                for (int j=k+1;j<n;j++) {
+                    double temp=MatrixA.getValue(j,i)-(MatrixA.getValue(k,i)*MatrixA.getValue(j,k));
+                    MatrixA.setValue(j,i,temp);
+                }
+            }
+        }
+        Matrix y=new Matrix(1,n);
+        for (int i=0;i<n;i++) {
+            if (fem!=null) fem.progress("Vorwärtsrechnung",i,n);
+            double sum=0.0;
+            for (int k=0;k<i;k++) {
+                double Lik=MatrixA.getValue(k,i);
+                sum=sum+(Lik*y.getValue(0,k));
+            }
+            y.setValue(0,i,(b.getValue(0,i)-sum));
+        }
+        
+        for (int i=n-1;i>-1;i--) {
+            if (fem!=null) fem.progress("Rückwärtsrechnung",n-i,n);
+            double sum=0.0;
+            for (int k=i+1;k<n;k++) {
+                double Rik;
+                Rik=MatrixA.getValue(k,i);
+                sum=sum+(Rik*x.getValue(0,k));
+            }
+            x.setValue(0,i,(y.getValue(0,i)-sum)/MatrixA.getValue(i,i));
+        }
+     return null;
+    
     }
 }
