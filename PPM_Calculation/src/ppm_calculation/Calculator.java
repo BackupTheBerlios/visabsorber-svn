@@ -291,4 +291,45 @@ public class Calculator {
         
 
     }
+    
+     public String calcLUShort (Matrix MatrixA, Matrix b, Matrix x) {
+        int n=MatrixA.getXCount();
+        x.setXCount(1);
+        x.setYCount(n);
+         for (int k=0;k<n-1;k++) {
+            for (int i=k+1;i<n;i++) {
+                if (MatrixA.getValue(k,k)!=0.0)
+                    //try {
+                    MatrixA.setValue(k,i,MatrixA.getValue(k,i)/MatrixA.getValue(k,k));
+                else return "Teilung durch Null!";
+                //} catch(java.lang.Exception e) {
+                //return "Teilung durch Null!";
+                //}
+                for (int j=k+1;j<n;j++) {
+                    double temp=MatrixA.getValue(j,i)-(MatrixA.getValue(k,i)*MatrixA.getValue(j,k));
+                    MatrixA.setValue(j,i,temp);
+                }
+            }
+        }
+        Matrix y=new Matrix(1,n);
+        for (int i=0;i<n;i++) {
+            double sum=0.0;
+            for (int k=0;k<i;k++) {
+                double Lik=MatrixA.getValue(k,i);
+                sum=sum+(Lik*y.getValue(0,k));
+            }
+            y.setValue(0,i,(b.getValue(0,i)-sum));
+        }
+        
+        for (int i=n-1;i>-1;i--) {
+            double sum=0.0;
+            for (int k=i+1;k<n;k++) {
+                double Rik;
+                Rik=MatrixA.getValue(k,i);
+                sum=sum+(Rik*x.getValue(0,k));
+            }
+            x.setValue(0,i,(y.getValue(0,i)-sum)/MatrixA.getValue(i,i));
+        }
+     return null;
+    }
 }

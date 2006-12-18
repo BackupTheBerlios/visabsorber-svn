@@ -249,7 +249,8 @@ public class MainFrame extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         Calculator calc=new Calculator();
         operation=CHOLESKY;
-        calc.clacJacobi(MatrixA, VectorB, VectorX, 10000, 0.000001);
+        calc.clacJacobi(MatrixA, VectorB, VectorX, 1000, 0.0000000001);
+        //calc.calcLUShort (MatrixA, VectorB, VectorX);
         calc.MatrixMulti(MatrixA, VectorX, VectorBFailure);
         calc.calc_Failure(VectorB, VectorBFailure, VectorAbsFailure, VectorRelFailure);
         /*if (failure==null) {
