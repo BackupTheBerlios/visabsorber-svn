@@ -209,9 +209,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTextField3.setText("200");
 
-        jTextField2.setText("30");
+        jTextField2.setText("0.04");
 
-        jTextField1.setText("500");
+        jTextField1.setText("380");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -222,7 +222,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel10.setText("W\u00e4rme\u00fcbergang an Umgebung:");
 
-        jTextField5.setText("50");
+        jTextField5.setText("20");
 
         jLabel11.setText("Wassertemperatur:");
 
@@ -234,13 +234,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel13.setText("W\u00e4rmestromdichte durch Strahlung:");
 
-        jTextField8.setText("500");
+        jTextField8.setText("1300");
 
         jLabel14.setText("FEM-Eigenschaften");
 
         jLabel15.setText("Anzahl der Ittartionen:");
 
-        jTextField9.setText("1000");
+        jTextField9.setText("1000000");
 
         jLabel16.setText("Maximales Resdiuum:");
 

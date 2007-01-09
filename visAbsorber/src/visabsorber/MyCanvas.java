@@ -203,7 +203,7 @@ class MyCanvas extends Canvas {
         if (ay<by) {
             h = ay; ay = by; by = h;
             h = ax; ax = bx; bx = h;
-            h1= au; au = bu; cu = h1;
+            h1= au; au = bu; bu = h1;
         }
         Matrix L = new Matrix  (3,3);
         Matrix R = new Matrix(3,3);
@@ -226,8 +226,8 @@ class MyCanvas extends Canvas {
         double mAB,mBC,mAC;
         
         for (int y=ay;y>by;y--) {
-            xA=Math.round(Float.valueOf((ax-bx)/(ay-by)*(y-ay)+ax));
-            xE=Math.round(Float.valueOf((ax-cx)/(ay-cy)*(y-ay)+ax));
+            xA=Math.round((float)1.0*(ax-bx)/(ay-by)*(y-ay)+ax);
+            xE=Math.round((float)1.0*(ax-cx)/(ay-cy)*(y-ay)+ax);
             if (xE-xA==0) {
                 dir=1;
             } else dir=(xE-xA)/Math.abs(xE-xA);
@@ -238,8 +238,8 @@ class MyCanvas extends Canvas {
             }
         }
         for (int y=by;y>cy;y--) {
-            xA=Math.round(Float.valueOf((bx-cx)/(by-cy)*(y-by)+bx));
-            xE=Math.round(Float.valueOf((ax-cx)/(ay-cy)*(y-ay)+ax));
+            xA=Math.round((float)1.0*(bx-cx)/(by-cy)*(y-by)+bx);
+            xE=Math.round((float)1.0*(ax-cx)/(ay-cy)*(y-ay)+ax);
             if (xE-xA==0) {
                 dir=1;
             } else dir=(xE-xA)/Math.abs(xE-xA);
