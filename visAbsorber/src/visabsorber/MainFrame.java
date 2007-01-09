@@ -24,9 +24,11 @@ public class MainFrame extends javax.swing.JFrame {
     ElementList elementList = new ElementList();
     NodeList nodeList = new NodeList();
     LineList lineList = new LineList();
+    
     public MainFrame() {
         initComponents();
         scrollPane1.add(visMatrix);
+        //jScrollPane2.add(visMatrix);
         visMatrix.setSize(new Dimension(5000,5000));
     }
     
@@ -44,6 +46,7 @@ public class MainFrame extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jToggleButton1 = new javax.swing.JToggleButton();
         scrollPane1 = new java.awt.ScrollPane();
+        jButton5 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -55,9 +58,7 @@ public class MainFrame extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        startFEM = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -102,7 +103,19 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("show Temp.");
+        jToggleButton1.setText("show Grid");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("refresh");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -111,11 +124,11 @@ public class MainFrame extends javax.swing.JFrame {
             .add(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                    .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
-                            .add(statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                            .add(statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE))
                         .addContainerGap())
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -123,7 +136,9 @@ public class MainFrame extends javax.swing.JFrame {
                         .add(jButton7)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jToggleButton1)
-                        .addContainerGap(177, Short.MAX_VALUE))))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton5)
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -136,9 +151,10 @@ public class MainFrame extends javax.swing.JFrame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton7)
                     .add(jToggleButton1)
-                    .add(jButton6))
+                    .add(jButton6)
+                    .add(jButton5))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 652, Short.MAX_VALUE))
+                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE))
         );
 
         jLabel8.setText("Elementenliste");
@@ -174,24 +190,10 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel7.setText("Knotenliste");
 
-        startFEM.setText("start FEM");
-        startFEM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startFEMActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("importiere Querschnittnetz");
+        jButton1.setText("start FEM");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setText("Zeichne Absorber");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
             }
         });
 
@@ -240,7 +242,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel15.setText("Anzahl der Ittartionen:");
 
-        jTextField9.setText("1000000");
+        jTextField9.setText("10");
 
         jLabel16.setText("Maximales Resdiuum:");
 
@@ -250,12 +252,12 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
-                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jPanel1Layout.createSequentialGroup()
+            .add(jPanel1Layout.createSequentialGroup()
+                .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jTextField9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                    .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel7)
@@ -272,10 +274,10 @@ public class MainFrame extends javax.swing.JFrame {
                                         .add(jButton3)
                                         .add(jButton2))
                                     .add(jButton4)))))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                    .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jLabel1))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                    .add(jPanel1Layout.createSequentialGroup()
                         .add(20, 20, 20)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jTextField1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
@@ -284,7 +286,7 @@ public class MainFrame extends javax.swing.JFrame {
                             .add(jTextField2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                             .add(jLabel4)
                             .add(jTextField3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                    .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel5)
@@ -301,7 +303,7 @@ public class MainFrame extends javax.swing.JFrame {
                                     .add(jTextField7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                                     .add(jLabel13)
                                     .add(jTextField8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                    .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jLabel14)
@@ -311,13 +313,12 @@ public class MainFrame extends javax.swing.JFrame {
                                     .add(jLabel15)
                                     .add(jLabel16))))
                         .add(170, 170, 170))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel1Layout.createSequentialGroup()
+                    .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .add(startFEM, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))))
+                        .add(jTextField10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -388,12 +389,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jTextField10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton5)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jButton1)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(startFEM)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         jScrollPane1.setViewportView(jPanel1);
 
@@ -403,16 +400,23 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 339, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(16, 16, 16)
                 .add(jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 745, Short.MAX_VALUE)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+// TODO add your handling code here:
+        visMatrix.changeGridView();
+        visMatrix.refreshImg(nodeList, elementList, lineList);
+        visMatrix.repaint();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
     
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 // TODO add your handling code here:
@@ -460,138 +464,67 @@ public class MainFrame extends javax.swing.JFrame {
                 lineList = ReadFile.loadLinesFromFile(new File(rbdFileField.getText()), nodeList);
                 if (lineList == null) {
                     JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Randliste","Fehler", JOptionPane.ERROR_MESSAGE);
-                } else JOptionPane.showMessageDialog(null, "Fertig","Fertig", JOptionPane.ERROR_MESSAGE);
+                } else {
+//JOptionPane.showMessageDialog(null, "Fertig","Fertig", JOptionPane.ERROR_MESSAGE);
+                    double lAbs=Double.valueOf(jTextField1.getText()).doubleValue();
+                    double lDam=Double.valueOf(jTextField2.getText()).doubleValue();
+                    double lBod=Double.valueOf(jTextField3.getText()).doubleValue();
+                    double tU=Double.valueOf(jTextField4.getText()).doubleValue();
+                    double tF=Double.valueOf(jTextField6.getText()).doubleValue();
+                    double q=Double.valueOf(jTextField8.getText()).doubleValue();
+                    double aU=Double.valueOf(jTextField5.getText()).doubleValue();
+                    double aF=Double.valueOf(jTextField7.getText()).doubleValue();
+                    int it=Double.valueOf(jTextField9.getText()).intValue();
+                    double res=Double.valueOf(jTextField10.getText()).doubleValue();
+                    
+                    for (int i = 0; i < elementList.getCount(); i++) {
+                        Element e = elementList.getElement(i);
+                        switch (e.getMatirial()) {
+                            case 0: e.setlamda(lAbs);
+                            break;
+                            case 1: e.setlamda(lDam);
+                            break;
+                            case 2: e.setlamda(lBod);
+                            break;
+                        }
+                    }
+                    
+                    for (int i = 0; i < lineList.getCount(); i++) {
+                        Line line = lineList.getLine(i);
+                        switch (line.getType()) {
+                            case 0: line.setProperties(true,q,false,aU,tU);
+                            //line.getNode0().setU(80.0);
+                            //line.getNode1().setU(80.0);
+                            break;
+                            case 1: line.setProperties(false,-400,true,aF,tF);
+                            break;
+                            case 2: line.setProperties(false,-100,true,aU,tU);
+                            //line.getNode0().setU(20.0);
+                            //line.getNode1().setU(20.0);
+                            break;
+                            case 3: line.setProperties(true,0,false,0,0);
+                            break;
+                            case 4: line.setProperties(true,0,false,0,0);
+                            break;
+                        }
+                    }
+                    //nodeList.getNode(10).setU(80.0);*/
+                    FEM fem= new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
+                    try {
+                        fem.join();
+                    } catch (Exception exc) {
+                        JOptionPane.showMessageDialog(null, exc.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
+                    }
+                    fem = new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
+                    fem.start();
+                    //if (X!=null)  X.saveMatrixToFile(new File("x.txt"));
+                    //visMatrix.repaint();
+                }
             } else JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Elementenliste","Fehler", JOptionPane.ERROR_MESSAGE);
         } else JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Knotenliste","Fehler", JOptionPane.ERROR_MESSAGE);
         
     }//GEN-LAST:event_jButton1ActionPerformed
-    
-    private void startFEMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startFEMActionPerformed
-// TODO add your handling code here:
-       /*elementList = new ElementList();
-        nodeList = new NodeList();
-        lineList = new LineList();
-        int XCount=Integer.valueOf(jTextField1.getText()),YCount=Integer.valueOf(jTextField2.getText()), Count=0;
-        for (int y=0;y<YCount;y++) {
-            for (int x=0;x<XCount;x++) {
-                nodeList.addNode(new Node(x*0.05,y*0.05,0.0,false,Count));
-                if (y!=0) {
-                    if (x>0) {
-                        elementList.addElement(new Element(nodeList.getNode(Count-XCount),nodeList.getNode(Count),nodeList.getNode(Count-1),0,10,elementList.getCount()));
-                        elementList.addElement(new Element(nodeList.getNode(Count-2*XCount+1),nodeList.getNode(Count),nodeList.getNode(Count-XCount),0,10,elementList.getCount()));
-                    }
-                    if (x<XCount-1) {
-                        elementList.addElement(new Element(nodeList.getNode(Count-XCount+1),nodeList.getNode(Count),nodeList.getNode(Count-2*XCount+1),0,10,elementList.getCount()));
-                    }
-                }
-                Count++;
-            }
-            if (y<YCount-1) {
-                for (int x=0;x<XCount-1;x++) {
-                    nodeList.addNode(new Node(x*0.05+0.025,y*0.05+0.025,0.0,false,Count));
-                    elementList.addElement(new Element(nodeList.getNode(Count),nodeList.getNode(Count-XCount),nodeList.getNode(Count-XCount+1),0,10,elementList.getCount()));
-                    Count++;
-                }
-            }
-        }
-        for (int x=0;x<XCount-1;x++) {
-            lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,false,40.0,20.0));
-            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,false,40.0,20.0));
-            //lineList.addLine(new Line(nodeList.getNode(x),nodeList.getNode(x+1),false,0.0,true,40,20));
-            //lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*(YCount-1)+x),nodeList.getNode((2*XCount-1)*(YCount-1)+x+1),false,0.0,true,-40,20));
-        }
-        for (int y=0;y<YCount-1;y++) {
-            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y),nodeList.getNode((2*XCount-1)*(y+1)),true,500.0,false,40.0,20.0));
-            lineList.addLine(new Line(nodeList.getNode((2*XCount-1)*y+XCount-1),nodeList.getNode((2*XCount-1)*(y+1)+XCount-1),false,500.0,true,40.0,20.0));
-        }
-        //nodeList.getNode(0).setU(20);
-        /*Matrix e=new Matrix(4,elementList.getCount());
-        for (int i=0;i<elementList.getCount();i++) {
-            Element ele=elementList.getElement(i);
-            e.setValue(0,i,ele.index);
-            e.setValue(1,i,ele.getNode0().getIndex());
-            e.setValue(2,i,ele.getNode1().getIndex());
-            e.setValue(3,i,ele.getNode2().getIndex());
-         
-        }
-         
-        e.saveMatrixToFile(new File("elements.txt"));
-         
-        Matrix nl=new Matrix(3,lineList.getCount());
-        for (int i=0;i<lineList.getCount();i++) {
-            Line l=lineList.getLine(i);
-            nl.setValue(0,i,i);
-            nl.setValue(1,i,l.getNode0().getIndex());
-            nl.setValue(2,i, l.getNode1().getIndex());
-        }
-        nl.saveMatrixToFile(new File("lines.txt"));
-         
-        Matrix nodes=new Matrix(3,nodeList.getCount());
-        for (int i=0;i<nodeList.getCount();i++) {
-            Node n=nodeList.getNode(i);
-            nodes.setValue(0,i,n.getIndex());
-            nodes.setValue(1,i,n.getX());
-            //JOptionPane.showMessageDialog(null, ""+nodes.getValue(1,i), "Fehler", JOptionPane.ERROR_MESSAGE);
-            nodes.setValue(2,i,n.getY());
-        }
-        //nodes.saveMatrixToFile(new File("nodes.txt"));*/
-
-        double lAbs=Double.valueOf(jTextField1.getText()).doubleValue();
-        double lDam=Double.valueOf(jTextField2.getText()).doubleValue();
-        double lBod=Double.valueOf(jTextField3.getText()).doubleValue();
-        double tU=Double.valueOf(jTextField4.getText()).doubleValue();
-        double tF=Double.valueOf(jTextField6.getText()).doubleValue();
-        double q=Double.valueOf(jTextField8.getText()).doubleValue();
-        double aU=Double.valueOf(jTextField5.getText()).doubleValue();
-        double aF=Double.valueOf(jTextField7.getText()).doubleValue();
-        int it=Double.valueOf(jTextField9.getText()).intValue();
-        double res=Double.valueOf(jTextField10.getText()).doubleValue();
         
-        for (int i = 0; i < elementList.getCount(); i++) {
-            Element e = elementList.getElement(i);
-            switch (e.getMatirial()) {
-                case 0: e.setlamda(lAbs);
-                break;
-                case 1: e.setlamda(lDam);
-                break;
-                case 2: e.setlamda(lBod);
-                break;
-            }
-        }
-        
-        for (int i = 0; i < lineList.getCount(); i++) {
-            Line line = lineList.getLine(i);
-                switch (line.getType()) {
-                    case 0: line.setProperties(true,q,false,aU,tU);
-                            //line.getNode0().setU(80.0);
-                            //line.getNode1().setU(80.0);
-                    break;
-                    case 1: line.setProperties(false,0,true,aF,tF);
-                    break;
-                    case 2: line.setProperties(false,0,true,aU,tU);
-                        //line.getNode0().setU(20.0);
-                        //line.getNode1().setU(20.0);
-                    break;
-                    case 3: line.setProperties(false,0,false,0,0);
-                    break;
-                    case 4: line.setProperties(false,0,false,0,0);
-                    break;
-                }
-            }
-        //nodeList.getNode(10).setU(80.0);*/
-        FEM fem= new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
-        try {
-            fem.join();
-        } catch (Exception exc) {
-            JOptionPane.showMessageDialog(null, exc.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
-        }
-        fem = new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
-        fem.start();
-        //if (X!=null)  X.saveMatrixToFile(new File("x.txt"));
-        //visMatrix.repaint();
-        
-    }//GEN-LAST:event_startFEMActionPerformed
-    
     /**
      * @param args the command line arguments
      */
@@ -645,7 +578,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nodeFileField;
     private javax.swing.JTextField rbdFileField;
     private java.awt.ScrollPane scrollPane1;
-    private javax.swing.JButton startFEM;
     private javax.swing.JProgressBar statusBar;
     private javax.swing.JLabel statusLabel;
     // End of variables declaration//GEN-END:variables

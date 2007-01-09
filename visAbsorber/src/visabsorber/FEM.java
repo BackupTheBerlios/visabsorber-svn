@@ -141,7 +141,7 @@ public class FEM extends Thread {
         for (int i=0;i<VectorX.getYCount();i++) {
             VectorX.setValue(0,i,20.0);
         }
-        double res=calc.calcGauss(S,p,VectorX,iter,resi,1.5);
+        double res=calc.calcGauss(S,p,VectorX,iter,resi,1.0);
         progress("Save X-file",0,0);
         Matrix xOutput = new Matrix(4,nodeList.getCount());
         for (int i=0;i<nodeList.getCount();i++) {

@@ -319,9 +319,10 @@ public class Calculator {
                         }
                         if (globRes < 0) globRes=globRes*(-1);*/
             }
-            if (ResiduumOld<Residuum) w=w+0.01;
+            /*if (ResiduumOld<Residuum) w=w+0.01;
             else w=w-0.01;
             if (w<0.1) w=0.1;
+            if (w>2.0) w=2.0;*/
             
         }
         return Residuum;

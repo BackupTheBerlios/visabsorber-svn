@@ -2,10 +2,12 @@ package visabsorber;
 
 import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 /** Creates new form MainFrame */
 class MyCanvas extends Canvas {
@@ -13,7 +15,12 @@ class MyCanvas extends Canvas {
     ElementList elementList;
     Image imgTemp, imgGird;
     int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0;
-    double zoom=1.0, minU=0, maxU=0;
+    double zoom=64.0, minU=0, maxU=0;
+    boolean netz=false;
+    
+    public void changeGridView() {
+        netz=!netz;
+    }
     
     public MyCanvas(NodeList nl, ElementList el) {
         nodeList=nl;
@@ -22,10 +29,10 @@ class MyCanvas extends Canvas {
     
     public void zoomPlus() {
         zoom=zoom*2;
-    } 
+    }
     public void zoomMinus() {
         zoom=zoom/2;
-    } 
+    }
     
     public void refreshImg(NodeList nl, ElementList el, LineList ll) {
         if (nl.getCount()>0) {
@@ -52,19 +59,32 @@ class MyCanvas extends Canvas {
             }
             //JOptionPane.showMessageDialog(null, ""+minU, "1", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(null, ""+maxU, "2", JOptionPane.ERROR_MESSAGE);
-            offsetX=0-minX;
-            offsetY=0-minY;
+            offsetX=0-minX+150;
+            offsetY=0-minY+5;
             //Canvas canvas= new Canvas();
             //canvas.setSize(maxX-minX,maxY-minY);
             int h=maxX+offsetX;//Double.valueOf((maxX+offsetX)*zoom).intValue();
             int w=maxY+offsetY;//Double.valueOf((maxX+offsetX)*zoom).intValue();
-            if (h<1) h=1;
-            if (w<1) w=1;
-            imgTemp=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB); 
+            if (h<150) h=150;
+            if (w<510) w=510;
+            imgTemp=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB);
             Graphics gTemp=imgTemp.getGraphics();
-            imgGird=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB); 
+            imgGird=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB);
             Graphics gGird=imgGird.getGraphics();
             
+            for (int i=5; i<485;i++) {
+                gTemp.setColor(clacTempColor((minU-maxU)/480.0*i+maxU));
+                gTemp.drawLine(5,i,50,i);
+            }
+            gTemp.setColor(Color.BLACK);
+            for (int i=0; i<9;i++) {
+                gTemp.drawLine(50,5+i*60,55,5+i*60);
+                double temp=(minU-maxU)/8.0*i+maxU;
+                
+                gTemp.drawString("" +  new BigDecimal(temp,new MathContext(4,RoundingMode.HALF_UP)), 58,9+i*60);
+            }
+            
+            gTemp.drawRect(5,5,45,480);
             
             //this.getGraphics()
             for (int i = 0; i < el.getCount(); i++) {
@@ -84,10 +104,14 @@ class MyCanvas extends Canvas {
                     case 2: gGird.setColor(Color.BLUE);
                     break;
                 }*/
-                gTemp.setColor(Color.BLACK);
-                gTemp.drawLine(x0,y0,x1,y1);
-                gTemp.drawLine(x0,y0,x2,y2);
-                gTemp.drawLine(x2,y2,x1,y1);
+                if (netz) {
+                    gTemp.setColor(Color.BLACK);
+                    gTemp.drawLine(x0,y0,x1,y1);
+                    gTemp.drawLine(x0,y0,x2,y2);
+                    gTemp.drawLine(x2,y2,x1,y1);
+                }
+                
+                //this.getGraphics().drawImage(imgTemp,0,0, null);
             }
             /*for (int i = 0; i < ll.getCount(); i++) {
                 int x0 = Double.valueOf(ll.getLine(i).getNode0().getX()*zoom).intValue();
@@ -107,7 +131,7 @@ class MyCanvas extends Canvas {
                     break;
                 }
                 gGird.drawLine(x0+offsetX,y0+offsetY,x1+offsetX,y1+offsetY);
-
+             
             }*/
             
             //img=canvas.createImage(maxX-minX,maxY-minY);
@@ -165,7 +189,13 @@ class MyCanvas extends Canvas {
         int bl=Double.valueOf(-mTemp*(u-(4*minU+maxU)/3.0)+255).intValue();
         if (bl<0)bl=0;
         if (bl>255)bl=255;*/
-        return  Color.getHSBColor(Double.valueOf((-240.0/(maxU-minU)*(u-maxU))/360.0).floatValue(), 1,  1) ;
+        double d=maxU-minU;
+        
+        
+        double color=-240.0/(maxU-minU)*(u-maxU);
+        if (color > 240.0) color=240.0;
+        if (color < 0.0) color=0.0;
+        return  Color.getHSBColor(Double.valueOf(color/360.0).floatValue(), 1,  1) ;
     }
     
     public double calcU(Matrix A, Matrix L, Matrix R, double x, double y, double au,double bu, double cu) {
@@ -226,10 +256,10 @@ class MyCanvas extends Canvas {
         double mAB,mBC,mAC;
         
         for (int y=ay;y>by;y--) {
-            xA=Math.round((float)1.0*(ax-bx)/(ay-by)*(y-ay)+ax);
-            xE=Math.round((float)1.0*(ax-cx)/(ay-cy)*(y-ay)+ax);
+            xA=(int)Math.round(1.0*(ax-bx)/(ay-by)*(y-ay)+ax);
+            xE=(int)Math.round(1.0*(ax-cx)/(ay-cy)*(y-ay)+ax);
             if (xE-xA==0) {
-                dir=1;
+                dir=0;
             } else dir=(xE-xA)/Math.abs(xE-xA);
             for (int x=xA;x!=xE+dir;x=x+dir) {
                 double u = calcU(A, L, R, x, y, au,bu, cu);
@@ -238,10 +268,10 @@ class MyCanvas extends Canvas {
             }
         }
         for (int y=by;y>cy;y--) {
-            xA=Math.round((float)1.0*(bx-cx)/(by-cy)*(y-by)+bx);
-            xE=Math.round((float)1.0*(ax-cx)/(ay-cy)*(y-ay)+ax);
+            xA=(int)Math.round(1.0*(bx-cx)/(by-cy)*(y-by)+bx);
+            xE=(int)Math.round(1.0*(ax-cx)/(ay-cy)*(y-ay)+ax);
             if (xE-xA==0) {
-                dir=1;
+                dir=0;
             } else dir=(xE-xA)/Math.abs(xE-xA);
             for (int x=xA;x!=xE+dir;x=x+dir) {
                 double u = calcU(A, L, R, x, y, au,bu, cu);
