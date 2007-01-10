@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Abstract}{1}{section.1}
+\contentsline {section}{\numberline {2}Aufgabenstellung}{1}{section.2}
+\contentsline {section}{\numberline {3}Formulierung der Kriterien}{1}{section.3}
+\contentsline {section}{\numberline {4}Prozessauswahl}{1}{section.4}
+\contentsline {subsection}{\numberline {4.1}Wandlung von Wellenenergie}{1}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}technische Realisation}{1}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Bewertung}{3}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Kernfusion}{3}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}k\active@dq \dq@prtct {u}nstliche Kohleerzeugung}{3}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}regenerative Energien}{3}{subsection.4.4}
+\contentsline {section}{Literatur}{3}{subsection.4.4}
