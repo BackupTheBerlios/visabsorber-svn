@@ -1,6 +1,6 @@
 % Hier kommen zunaechst generelle Einstellungen fuer LaTeX:
 \documentclass[11pt,titlepage]{article}     % Allgemeine Einstellungen fuer LaTeX:
-                                            %  - Format des Textes: article
+                                            %  - Format des Textes: article\begin{figure}[htbp]
                                             %  - Schriftgroesse   : 11
                                             %  - Titelseite
 
@@ -16,21 +16,23 @@
 \usepackage{float}
 
 \setlength{\parindent}{0mm}                 % Keine Einrueckung am Absatzanfang
-\setlength{\parskip}{3mm}                   % Leerraum zwischen den Zeilen
+\setlength{\parskip}{3mm}                   % Leerraum zwischen den Umbruch
 \setlength{\headheight}{5mm}               % Hoehe der Kopfzeile
 
 \usepackage{textcomp}                       %f"ur °C und €
 \usepackage{a4wide}                        % kleinere Seitenr"ander als bei article
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\usepackage{hyperref}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{graphicx}
 %Brüche
  %  \begin{equation}
   %   f(x,y) = \frac{\sin x \cos y}{dx dy}
   % \end{equation}
 
 %Mit dem folgendem Befehl kann man einen Seitenumbruch erzwingen:
-\pagebreak
+%\pagebreak
 
 %Darstellung ohne Gleichungsnummer
 
@@ -84,8 +86,9 @@
 
 % Festlegen des Inhaltes der Titelseite
 
-\author{Simon~Kamaryt, Max~Schmidt, Jan~..., Sinan~Teske }
-\title{Chancen heutiger Energiekonzepte im Jahr 2030\\ WS 06/07\\ (Grundlagen wissenschaftliches Arbeiten) }
+\author{Sinan Teske	220990\\ Max Schmidt	222845\\Simon Kamaryt	170552\\Jan-Stefan Fischer	304694 }
+
+\title{Chancen heutiger Energiekonzepte im Jahr 2030\\ WS 06/07\\ (Grundlagen wissenschaftlichen Arbeitens) }
 
 % Hier beginnt das eigentliche Dokument:
 \begin{document}
@@ -106,9 +109,27 @@
 % Und jetzt kommt der eigentliche Text. Kapitelueberschriften werden dabei (das gilt fuer das Format article)
 % mit den Befehlen \section, \subsection und \subsubsection erzeugt.
 
+\section{Abstract}
+
 \section{Aufgabenstellung}
 
 \section{Formulierung der Kriterien}
+
+
+
+\begin{table}[htdp]
+\caption{default}
+\begin{center}
+\begin{tabular}{|c|c|clclcl}
+ \hline $C_{\mu}$ & $C_{\epsilon 1}$ & $C_{\epsilon 2}$ & $\sigma_k$ & $\sigma_{\epsilon}$ \\
+ \hline 0,09 & 1,44 & 1,92 & 1,0 & 1,3 \\
+ \hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+
+
 
 \section{Prozessauswahl}
 
@@ -116,14 +137,14 @@
 	
 		\subsubsection{technische Realisation}
 
-Die Nutzung von Wasser für Energieumwandlungsanlagen besitzt seit jeher einen hohen Stellenwert in der menschlichen Geschichte. Bereits 1200 v. Chr. wurden die ersten Wassersch"opfr"ader erfunden\cite{wiki} und zur Wandlung von kinetischer Str"omungsenergie in mechanische Energie genutzt. Dies erm"oglichte u.a. die Anhebung von Wasser auf ein höheres Potential sowie eine Bew"asserung der Felder mit deutlicher Ersparnis an Muskelkraft. Heute wandeln Pumpspeicherwerke bei "ortlich gro\ss en Höhendifferenzen die potenzielle Energie des angesammelten Wassers aus einem vorgelagerten Stausee in elektrische Energie um. Dabei wird die potenzielle Energie des Wassers durch den H"ohenunterschied in kinetische Energie gewandelt und anschlie\ss end in einer Turbine entspannt. Obwohl das gr"o\ss te Kraftwerk der Welt ein Pumpspeicherkraftwerk in Paraguay ist, und den Strombedarf von ganz Paraguay sowie dreizig Prozent des brasilianischen Strombedarfs deckt\cite{bund}, ist die Nutzung von Str"omungen auf dem Festland stark limitiert. Die Gewinnung von elektrischer Energie in gro\ss er Menge bleibt auf wenige Standorte beschrängt, weswegen diese Art der Energiewandlung hier nicht betrachtet wird.\\
+Die Nutzung von Wasser für Energieumwandlungsanlagen besitzt seit jeher einen hohen Stellenwert in der menschlichen Geschichte. Bereits 1200 v. Chr. wurden die ersten Wassersch"opfr"ader erfunden\cite{wiki} und zur Wandlung von kinetischer Str"omungsenergie in mechanische Energie genutzt. Dies erm"oglichte u.a. die Anhebung von Wasser auf ein höheres Potential sowie eine Bew"asserung der Felder mit deutlicher Ersparnis an Muskelkraft. Heute wandeln Pumpspeicherwerke bei "ortlich gro\ss en Höhendifferenzen die potenzielle Energie des angesammelten Wassers aus einem vorgelagerten Stausee in elektrische Energie um. Dabei wird die potenzielle Energie des Wassers durch den H"ohenunterschied in kinetische Energie gewandelt und anschlie\ss end in einer Turbine entspannt. Obwohl das gr"o\ss te Kraftwerk der Welt ein Pumpspeicherkraftwerk in Paraguay ist, und den Strombedarf von ganz Paraguay sowie dreizig Prozent des brasilianischen Strombedarfs deckt \cite{bund}, ist die Nutzung von Str"omungen auf dem Festland stark limitiert. Die Gewinnung von elektrischer Energie in gro\ss er Menge bleibt auf wenige Standorte beschrängt, weswegen diese Art der Energiewandlung hier nicht betrachtet wird.\\
 Unter Wandlung von Wellenenergie werden hier drei verschiedene Verfahren beurteilt. Dazu zählen die Nutzung eines Rampensystems oder einer Pneumatikkammer sowie die Energiewandlung durch Hydraulikzylinder.\\
-Das Rampensystem nutzt das Prinzip eines Wellenkonzentrators. Dazu werden zwei v-förmig angeordnete Barrieren zur Mitte hin konzentriert. Die Wellen werden so verstärkt und flie\ss en nach Überwinden der Rampe durch eine Turbine, welche durch Verbindung zu einem Generator die zugeführte Energie speichert. Das Wasser gelangt anschlie\ss end zurück ins Meer. Die Anlage kann flexibel eingesetzt werden, da sie ein schwimmendes Offshore-Kraftwerk ist. Die folgende Abbildung zeigt das Funktionsprinzip des Projekts $Wave~Dragon$. 
+Das Rampensystem nutzt das Prinzip eines Wellenkonzentrators. Dazu werden zwei v-förmig angeordnete Barrieren zur Mitte hin konzentriert. Die Wellen werden so verstärkt und flie\ss en nach Überwinden der Rampe durch eine Turbine, welche durch Verbindung zu einem Generator die zugeführte Energie speichert. Das Wasser gelangt anschlie\ss end zurück ins Meer. Die Anlage kann flexibel eingesetzt werden, da sie ein schwimmendes Offshore-Kraftwerk ist. Die folgende Abbildung zeigt das Funktionsprinzip des Projekts \textit{Wave~Dragon}. 
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=9cm]{PrinzipRampe.jpg}
-\caption{Prinzipskizze Wave Dragon\cite{wd}}
+\caption{Prinzipskizze Wave Dragon (aus \cite{wd})}
 \end{center}
 \end{figure}
 
@@ -140,11 +161,11 @@ Eine weitere Möglichkeit zur Nutzung der Wellenenergie besteht in der Reihenscha
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=11cm]{PrinzipPelamis.jpg}
+\includegraphics[width=13cm]{PrinzipPelamis2.jpg}
 \caption{Prinzipskizze Hydraulikzylinder}
 \end{center}
 \end{figure}
-
+  
 		\subsubsection{Bewertung}
 
 	\subsection{Kernfusion}
@@ -158,13 +179,13 @@ Eine weitere Möglichkeit zur Nutzung der Wellenenergie besteht in der Reihenscha
 \addcontentsline{toc}{section}{Literatur}
 
 \begin{thebibliography}{99}
-  \bibitem{wiki}					www.wikipedia.de\\
+  \bibitem{wiki}					http://www.wikipedia.de\\
   													03.12.2006 
-  \bibitem{bund} 							Dr.Daniel Lübbert, $Das~Meer~als~Eneriequelle$\\
-  													Info-Brief der wissenschaftlichen Dienste des deutschen Bundestages
-  \bibitem{wd}            www.wavedragon.net\\
+  \bibitem{bund} 						Lübbert D., Das Meer als Eneriequelle, 
+  									Info-Brief der wissenschaftlichen Dienste des deutschen Bundestages, Berlin, 2005
+  \bibitem{wd}            http://www.wavedragon.net\\
                            07.12.2006
-  \bibitem{pela}         www.oceanpd.com\\
+  \bibitem{pela}         http://www.oceanpd.com\\
                            03.12.2006
 \end{thebibliography}
 
