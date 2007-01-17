@@ -325,17 +325,17 @@
             </Component>
             <Component class="javax.swing.JTextField" name="rbdFileField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="D:\Programmierung\PPM\visAbsorber\Netze\12_12\Test\test1.rbd"/>
+                <Property name="text" type="java.lang.String" value="D:\Programmierung\PPM\visAbsorber\Netze\grob\1.rbd"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="elementFileField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="D:\Programmierung\PPM\visAbsorber\Netze\12_12\Test\test1.ele"/>
+                <Property name="text" type="java.lang.String" value="D:\Programmierung\PPM\visAbsorber\Netze\grob\1.ele"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nodeFileField">
               <Properties>
-                <Property name="text" type="java.lang.String" value="D:\Programmierung\PPM\visAbsorber\Netze\12_12\Test\test1.knt"/>
+                <Property name="text" type="java.lang.String" value="D:\Programmierung\PPM\visAbsorber\Netze\grob\1.knt"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">

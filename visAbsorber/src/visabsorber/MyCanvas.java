@@ -90,11 +90,11 @@ class MyCanvas extends Canvas {
             for (int i = 0; i < el.getCount(); i++) {
                 //g.setColor(new Color(new Double(mainFrame.elementList.getElement(i).getlamda()*100.0).intValue(), 0, 0));
                 int x0 = Double.valueOf(el.getElement(i).getNode0().getX()*zoom).intValue()+offsetX;
-                int y0 = Double.valueOf(el.getElement(i).getNode0().getY()*zoom).intValue()+offsetY;
+                int y0 = w-(Double.valueOf(el.getElement(i).getNode0().getY()*zoom).intValue()+offsetY);
                 int x1 = Double.valueOf(el.getElement(i).getNode1().getX()*zoom).intValue()+offsetX;
-                int y1 = Double.valueOf(el.getElement(i).getNode1().getY()*zoom).intValue()+offsetY;
+                int y1 = w-(Double.valueOf(el.getElement(i).getNode1().getY()*zoom).intValue()+offsetY);
                 int x2 = Double.valueOf(el.getElement(i).getNode2().getX()*zoom).intValue()+offsetX;
-                int y2 = Double.valueOf(el.getElement(i).getNode2().getY()*zoom).intValue()+offsetY;
+                int y2 = w-(Double.valueOf(el.getElement(i).getNode2().getY()*zoom).intValue()+offsetY);
                 drawDreieck(x0, y0, el.getElement(i).getNode0().getU(), x1,  y1, el.getElement(i).getNode1().getU(), x2,  y2, el.getElement(i).getNode2().getU(),  gTemp);
                 /*switch (el.getElement(i).getMatirial()) {
                     case 0: gGird.setColor(Color.RED);

@@ -161,11 +161,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel9.setText("Randbedingungsliste");
 
-        rbdFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\12_12\\Test\\test1.rbd");
+        rbdFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\grob\\1.rbd");
 
-        elementFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\12_12\\Test\\test1.ele");
+        elementFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\grob\\1.ele");
 
-        nodeFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\12_12\\Test\\test1.knt");
+        nodeFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\grob\\1.knt");
 
         jButton3.setText("...");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
