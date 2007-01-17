@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.30.4-2.2 (Web2C 7.5.5) (format=pdflatex 2006.11.9)  10 JAN 2007 14:37
+This is pdfeTeX, Version 3.141592-1.30.4-2.2 (Web2C 7.5.5) (format=pdflatex 2006.11.9)  10 JAN 2007 22:06
 entering extended mode
 \write18 enabled.
 **DokuGWA.tex
@@ -296,7 +296,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {/usr/local/teTeX/share/texmf.local/fonts/map/pdftex/updmap/pdftex.map}] (./Dok
-uGWA.toc)
+uGWA.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 5.
+)
 \tf@toc=\write5
 \openout5 = `DokuGWA.toc'.
 
@@ -307,21 +310,9 @@ s been already used, duplicate ignored
                    \penalty 
 l.101 \newpage
                                                   % Seitenwechsel [1]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 123.
-
-
-LaTeX Warning: Citation `wiki' on page 1 undefined on input line 140.
-
-
-LaTeX Warning: Citation `bund' on page 1 undefined on input line 140.
-
-<PrinzipRampe.jpg, id=25, 687.7695pt x 277.5168pt>
+<PrinzipRampe.jpg, id=85, 687.7695pt x 277.5168pt>
 File: PrinzipRampe.jpg Graphic file (type jpg)
  <use PrinzipRampe.jpg>
-
-LaTeX Warning: Citation `wd' on page 1 undefined on input line 147.
-
 ! pdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
@@ -334,51 +325,38 @@ Overfull \hbox (28.98471pt too wide) in paragraph at lines 151--152
 /10.95 ).
  []
 
-<Kammer.jpg, id=60, 867.24pt x 603.0028pt>
+<Kammer.jpg, id=112, 867.24pt x 603.0028pt>
 File: Kammer.jpg Graphic file (type jpg)
  <use Kammer.jpg>
-
-LaTeX Warning: Citation `wiki' on page 2 undefined on input line 156.
-
-
-LaTeX Warning: Citation `pela' on page 2 undefined on input line 160.
-
-<PrinzipPelamis2.jpg, id=61, 854.44218pt x 427.5975pt>
+<PrinzipPelamis2.jpg, id=113, 854.44218pt x 427.5975pt>
 File: PrinzipPelamis2.jpg Graphic file (type jpg)
 
 <use PrinzipPelamis2.jpg> [2 <./PrinzipRampe.jpg> <./Kammer.jpg>] [3 <./Prinzip
-Pelamis2.jpg>] (./DokuGWA.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+Pelamis2.jpg>] (./DokuGWA.aux) ) 
 Here is how much of TeX's memory you used:
- 3591 strings out of 94412
- 48812 string characters out of 1172319
- 2092117 words of memory out of 4543681
- 6750 multiletter control sequences out of 10000+50000
+ 3602 strings out of 94412
+ 48964 string characters out of 1172319
+ 2092263 words of memory out of 4543827
+ 6761 multiletter control sequences out of 10000+50000
  14900 words of font info for 37 fonts, out of 2000000 for 2000
  582 hyphenation exceptions out of 5000
  32i,9n,37p,1235b,252s stack positions out of 5000i,500n,6000p,200000b,40000s
 PDF statistics:
- 87 PDF objects out of 300000
+ 136 PDF objects out of 300000
  24 named destinations out of 131072
- 32 words of extra memory for PDF output out of 10000
-</usr/local/teTeX/share/texmf.tetex/fonts/type1/bluesky/cm/cmsy10.pfb></usr/l
-ocal/teTeX/share/texmf.tetex/fonts/type1/bluesky/cm/cmr10.pfb>{/usr/local/teTeX
-/share/texmf.local/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/teTeX/s
-hare/texmf.local/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/teTeX/sha
-re/texmf.local/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/teTeX/share
-/texmf.local/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/teTeX/share/t
-exmf.tetex/fonts/type1/bluesky/cm/cmr8.pfb></usr/local/teTeX/share/texmf.tetex/
-fonts/type1/bluesky/cm/cmmi8.pfb></usr/local/teTeX/share/texmf.tetex/fonts/type
-1/bluesky/cm/cmmi10.pfb></usr/local/teTeX/share/texmf.local/fonts/type1/public/
-cm-super/sfrm1095.pfb></usr/local/teTeX/share/texmf.local/fonts/type1/public/cm
--super/sfsl1095.pfb></usr/local/teTeX/share/texmf.local/fonts/type1/public/cm-s
-uper/sfbx1440.pfb></usr/local/teTeX/share/texmf.local/fonts/type1/public/cm-sup
-er/sfrm1200.pfb></usr/local/teTeX/share/texmf.local/fonts/type1/public/cm-super
-/sfrm1728.pfb>
-Output written on DokuGWA.pdf (5 pages, 448115 bytes).
+ 120 words of extra memory for PDF output out of 10000
+</usr/local/teTeX/share/texmf.tetex/fonts/type1
+/bluesky/cm/cmsy10.pfb></usr/local/teTeX/share/texmf.tetex/fonts/type1/bluesky/
+cm/cmr10.pfb>{/usr/local/teTeX/share/texmf.local/fonts/enc/dvips/cm-super/cm-su
+per-t1.enc}</usr/local/teTeX/share/texmf.local/fonts/type1/public/cm-super/sfti
+1095.pfb></usr/local/teTeX/share/texmf.local/fonts/type1/public/cm-super/sfbx12
+00.pfb></usr/local/teTeX/share/texmf.tetex/fonts/type1/bluesky/cm/cmr8.pfb></us
+r/local/teTeX/share/texmf.tetex/fonts/type1/bluesky/cm/cmmi8.pfb></usr/local/te
+TeX/share/texmf.tetex/fonts/type1/bluesky/cm/cmmi10.pfb></usr/local/teTeX/share
+/texmf.local/fonts/type1/public/cm-super/sfsl1095.pfb></usr/local/teTeX/share/t
+exmf.local/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/teTeX/share/tex
+mf.local/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/teTeX/share/texmf
+.local/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/teTeX/share/texmf.l
+ocal/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/teTeX/share/texmf.loc
+al/fonts/type1/public/cm-super/sfrm1728.pfb>
+Output written on DokuGWA.pdf (5 pages, 456530 bytes).
