@@ -1,0 +1,326 @@
+%\documentclass[11pt]{article}
+%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{epstopdf}
+%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+%\title{Brief Article}
+%\author{The Author}
+%\date{}                                           % Activate to display a given date or no date
+
+%\begin{document}
+%\maketitle
+%\section{}
+%\subsection{}
+
+
+
+%\end{document}  % Hier kommen zunaechst generelle Einstellungen fuer LaTeX:
+\documentclass[11pt,titlepage]{article}     % Allgemeine Einstellungen fuer LaTeX:
+                                            %  - Format des Textes: article
+                                            %  - Schriftgroesse   : 11
+                                            %  - Titelseite
+\usepackage[ansinew]{inputenc}		%sagt Latex, dass es ein von Microsoft kodiertes dokument 										vor sich hat
+%\usepackage[applemac]{inputenc}		%sagt Latex, dass es ein von  Mac OS kodiertes dokument 										vor sich hat
+
+\usepackage{german}                         % Sorgt dafuer, dass das Papierformat A4 verwendet wird, die
+                                            % deutschen Umlaute zur Verfuegung stehen, feststehende
+                                            % Bezeichnungen wie Inhaltsverzeichnis, Zusammenfassung auch in
+                                             % deutscher Sprache erscheinen, usw.
+\usepackage {hyperref}
+\usepackage[T1]{fontenc}
+%\usepackage{epsf}  
+%\usepackage{epsfig}                          
+%\usepackage{isolatin1}                      % Umlaute koennen direkt ueber die Tastatur eingegeben werden
+%\usepackage{float}
+
+\setlength{\parindent}{0mm}                 % Keine Einrueckung am Absatzanfang
+\setlength{\parskip}{3mm}                   % Leerraum zwischen den Zeilen
+\setlength{\headheight}{5mm}               % Hoehe der Kopfzeile
+
+\usepackage{textcomp}                       %f"ur °C und "a
+\usepackage{a4wide}                        % kleinere Seitenr"ander als bei article
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Brüche
+ %  \begin{equation}
+  %   f(x,y) = \frac{\sin x \cos y}{dx dy}
+  % \end{equation}
+
+%Mit dem folgendem Befehl kann man einen Seitenumbruch erzwingen:
+
+%Darstellung ohne Gleichungsnummer
+
+%\begin{displaymath}
+%\end{displaymath}
+
+%{Einbinden von Bildern}
+
+%\begin{figure}[h]
+ % \begin{center}
+ %   \epsffile{frogduck.eps}
+ % \end{center}
+ % \caption{Der Frosch und die Ente}
+ % \label{frosch}
+%\end{figure}
+
+% Auf Abb. \ref{frosch} kann man sich mit \verb| \ref{frosch} | beziehen.
+
+% Einbinden des Kapitels Schlusswort.
+%\include{schlusswort}
+
+% ein paar Befehle fuer Latex:
+
+% \boldsymbol: fett und schraeg
+% \bf x: x fett
+% \cdot: Skalarprodukt-Punkt
+% \dot{}: Punkt ueber Buchstabe
+% \label{}: Name fuer Gleichung oder Abbildung um Verweise machen zu koennen
+% \ref{}: Verweis auf Gleichung oder Abbildung
+% \frac{]{}: Bruchstrich
+%   Darstellung Matrix oder Vektor (Anzahl c ist Anzahl der Spalten):
+% \begin{array}{c c c}
+%   2 & 1 & 0 \\
+%   1 & 2 & 0 \\
+%   0 & 0 & 0
+%   \end{array}
+% $ ... $  : Um im Text mathematische Schreibweise darzustellen mit $ einrahmen
+% \int_{}^{} : Integral
+% x_{} : Index unten
+% x^{} : Index oben
+% \noindent verhindert Zeileneinschub nach einer Gleichung oder Abbildung
+% \left[ und \right] stellt grosse eckige Klammern dar, geht auch mit allen anderen Klammern
+% bei geschweifter Klammer aber ein bissel anders: \left\{ und \right\}
+% \tilde{} : schlange ueber Buchstabe
+% \partial : partielle ableitung
+% \, : kleiner Abstand
+% ~ : auch kleiner Abstand und die Zeichen werden nicht durch Zeilenumbruch getrennt
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Festlegen des Inhaltes der Titelseite
+
+\author{Simon~Kamaryt, Max~Schmidt, Jan~..., Sinan~Teske }
+\title{Chancen heutiger Energiekonzepte im Jahr 2030\\ WS 06/07\\ (Grundlagen wissenschaftliches Arbeiten) }
+
+% Hier beginnt das eigentliche Dokument:
+\begin{document}
+
+% Erstellt das Titelblatt
+\maketitle
+
+\thispagestyle{empty}                       % Auch auf dieser Seite keine Kopfzeilen
+\tableofcontents                            % Erstellt das Inhaltsverzeichnis
+%\newpage                                    % Seitenwechsel
+
+% Ab dieser Seite gibt es Kopfzeilen mit Seitenzahl und Kapitelueberschrift
+\pagestyle{headings}
+
+% Der Seitenzaehler wird auf 1 gesetzt
+\setcounter{page}{1}
+
+% Und jetzt kommt der eigentliche Text. Kapitelueberschriften werden dabei (das gilt fuer das Format article)
+% mit den Befehlen \section, \subsection und \subsubsection erzeugt.
+
+\section*{Abstract}
+In dieser Abhandlung soll dem Leser ein Überblick über die Entwicklung des globalen Energiebedarfs im bis Mitte des 21. Jahrhunderts verschafft und ihm die Möglichkeit gegeben werden einen Vergleich zur aktuellen Situation nachzuvollziehen. Dabei sollen ihm die Ziele und allgemeinen Anforderungen an die Energieversorgung anhand von 4 Beispielen verdeutlicht und der zukünftige Einsatz dieser Konzepte in der globalen Energieversorgung beurteilt werden.
+
+
+\section{Einleitung}
+- 	Abschmelzen von Gletschern und Polareis, die längeren Sommer und das vordringen von Insekten und Pflanzen in Richtung der Pole Zeichen für die von Menschen verursachte Erderwärmung?
+
+- Deutsche Institut für Wirtschaftsforschung hat den bisherigen Trend bis 2050 hochgerechnet: Allein in Deutschland würden die volkswirtschaftlichen Schäden des Klimawandels sich dann auf 137 Milliarden belaufen. Als Gegenmittel müssten die Treibhausgasemissionen drastisch - um 60 bis 80 Prozent bis 2100 - gesenkt werden, so die Klimaexperten des Intergovernmental Panel of Climate Change. Die im Kyoto-Protokoll bis 2012 vereinbarten fünf Prozent weltweit sind da nur ein bescheidener Anfang.
+
+$http://www.ipp.mpg.de/ippcms/ep/ausgaben/ep200404/editorial.html$
+
+- 	Klimaforschungspolitik Kyotoprotokoll 
+
+$http://www.ipp.mpg.de/ippcms/ep/ausgaben/ep200404/0404_kyoto.html$
+\section{Einblick in die Entwicklungsprognosen}
+
+Zur Sicherung der künftigen Energieversorgung sind kontinuierliche Forschung und Entwicklung sowie frühzeitige Weichenstellungen und Investitionen erforderlich. Deshalb sind nationale und internationale Behörden und Organisationen, wie auch Unternehmen der Energiewirtschaft daran interessiert mit Hilfe von Prognosen und Szenarien mögliche und wahrscheinliche Entwicklungen der Energiemärkte zu analysieren. 
+Eine Reihe von Institutionen erarbeiten eigenständige Studien zur Entwicklung der Weltenergiemärkte in den kommenden Jahrzehnten. In diesem Bericht wird überwiegend auf die jüngste Studie, der International Energy Agency (IEA), dem ""World Energy Outlook"" (WEO) vom 7. November 2006 Bezug genommen. Zur Darstellung anschaulicher Vergleiche oder bestimmter Aussagen wird zudem der ""World Energy Technology Outlook - H2"" (WETO-H2) der Europäischen Kommission herangezogen. Die Informationen über den WEO und WETO-H2 wurden dem Energie-Fachmagazin BWK entnommen und Die Ergebnisse und Aussagen wurden nur stichprobenartig überprüft.
+
+Der Analyse des WEO liegen zwei Szenarien zu Grunde basierend auf bestimmten Annahmen über die politische Rahmensetzung, volkswirtschaftliche Bedingungen, Bevölkerungswachstum, Energiepreise und Technologien.
+Das Referenzszenario (RS) berücksichtigt alle zum 7. November 2006 in Kraft gewesenen politischen Regelwerke und Maßnahmen, jedoch nicht künftig mögliche politische Initiativen. Dazu wird ein World Alternative Policy Scenario (APS) presäntiert, welcher auf verstärkte Maßnahmen zur Verbesserung der Energieeffizienz sowie auf den Ausbau der regenerativen Energien und der Kernernergie setzt. Dieser APS soll als Leitziel für die Regierungen verstanden werden, um den im RS drohenden Ergebnissen entgegenzuwirken.
+
+\subsection{Grundannahmen der Studie}
+
+Im folgenden Absatz werden die Grundannahmen der Studie erläutert. Das Wachstum der Weltbevölkerung bis 2030 mit jährlichen Wachstumsraten von 1 Prozent und danach mit 0,5 Prozent. Die hätte ein Anwachsen der Weltbevölkerung von derzeit 6,5 Mrd. auf etwa 8 Mrd. Menschen im Jahr 2030 und auf knapp 9 Mrd. Menschen im Jahr 2050. Die Entwicklung der weltweiten Wirtschaftsleistung wird mit 3-4 Prozent Jahresdurchschnitt abgeschätzt und anschließend mit 2-3 Prozent bis 2050. Dies hätte eine Vervierfachung der gegenwärtigen Weltwirtschaftsleistung zur Folge. Der Weltmarktpreis für Öl wird mit 55 US-\textdollar /Barrel (in 2005er US-\textdollar) angenommen, was einem nominalen Preis von 97 US-\textdollar entspricht.
+
+\subsection{Ergebnisse}
+
+\subsection{Bewertung der Ergebnisse}
+
+Es ist zu beachten, dass die Herausgeber dieser Arbeiten politische Zwecke verfolgen. Wie zu Beginn beschrieben soll den Regierungen der Mitgliedsstaaten und wenn möglich auch anderer Staaten ein Leitfaden zur nachhaltigen Energieversorgung gegeben werden und die Ergebnisse verdeutlicht werden. Jedoch ist wie bei jeder Überzeugungsarbeit ein gewisses Maß Übertreibung bzw. Untertreibung, um eine bestimmte Ansicht zu verteidigen nicht ausgeschlossen. Deshalb könnte unter Umständen die Entwicklung der Weltenergieversorgung etwas kritischer dargestellt sein, als sie sich entwickeln wird. Die unterschiedlichen Mitgliedsstaaten und die Aussagen verschiedener Studien lassen aber auf eine objektive Einschätzung der erläuterten Prognosen hoffen.
+
+\subsection{zu lösende Probleme}
+- Entwicklungsländer (alle Staaten) müssen mitmachen
+- China vs USA
+
+
+
+\section{Formulierung der Kriterien}
+
+Auf Grund der sich zuspitzenden Rohstoffknappheit und der 
+\section{Prozessauswahl}
+
+	\subsection{Wandlung von Wellenenergie}
+	
+		\subsubsection{technische Realisation}
+
+Die Nutzung von Wasser für Energieumwandlungsanlagen besitzt seit jeher einen hohen Stellenwert in der menschlichen Geschichte. Bereits 1200 v. Chr. wurden die ersten Wassersch"opfr"ader erfunden\cite{wiki} und zur Wandlung von kinetischer Str"omungsenergie in mechanische Energie genutzt. Dies erm"oglichte u.a. die Anhebung von Wasser auf ein höheres Potential sowie eine Bewässerung der Felder mit deutlicher Ersparnis an Muskelkraft. Heute wandeln Pumpspeicherwerke bei "ortlich gro\ss en Höhendifferenzen die potenzielle Energie des angesammelten Wassers aus einem vorgelagerten Stausee in elektrische Energie um. Dabei wird die potenzielle Energie des Wassers durch den H"ohenunterschied in kinetische Energie gewandelt und anschlie\ss end in einer Turbine entspannt. Obwohl das gr"o\ss te Kraftwerk der Welt ein Pumpspeicherkraftwerk in Paraguay ist, und den Strombedarf von ganz Paraguay sowie dreizig Prozent des brasilianischen Strombedarfs deckt\cite{bund}, ist die Nutzung von Str"omungen auf dem Festland stark limitiert. Die Gewinnung von elektrischer Energie in gro\ss er Menge bleibt auf wenige Standorte beschrängt, weswegen diese Art der Energiewandlung hier nicht betrachtet wird.\\
+Unter Wandlung von Wellenenergie werden hier drei verschiedene Verfahren beurteilt. Dazu zählen die Nutzung eines Rampensystems oder einer Pneumatikkammer sowie die Energiewandlung durch Hydraulikzylinder.\\
+Das Rampensystem nutzt das Prinzip eines Wellenkonzentrators. Dazu werden zwei v-förmig angeordnete Barrieren zur Mitte hin konzentriert. Die Wellen werden so verstärkt und flie\ss en nach Überwinden der Rampe durch eine Turbine, welche durch Verbindung zu einem Generator die zugeführte Energie speichert. Das Wasser gelangt anschlie\ss end zurück ins Meer. Die Anlage kann flexibel eingesetzt werden, da sie ein schwimmendes Offshore-Kraftwerk ist. Die folgende Abbildung zeigt das Funktionsprinzip des Projekts $Wave~Dragon$. 
+
+%\begin{figure}[H]
+%\begin{center}
+%\includegraphics[width=9cm]{PrinzipRampe.jpg}
+%\caption{Prinzipskizze Wave Dragon\cite{wd}}
+%\end{center}
+%\end{figure}
+
+Das weltweit erste Wellenkraftwerk funktioniert nach dem OWC-Prinzip ($oscillating~water~column$). Dazu wird jede Welle durch Betonröhren in eine Pneumatikkammer geleitet, wobei weitere Betonröhren auf einer anderen Seite in einer so genannten Wells-Turbine enden. Durch die Ein- und Ausleitung der Wellen zirkuliert die in der Kammer enthaltene Luft und treibt so eine Turbine an. Diese kennzeichnet sich durch ein symmetrisches Flügelprofil, welches senkrecht zum Luftstrom angeordnet ist, und ist somit unabhängig von der Strömungsrichtung.
+
+%\begin{figure}[H]
+%\begin{center}
+%\includegraphics[width=9cm]{Kammer.jpg}
+%\caption{Prinzipskizze OWC\cite{wiki}}
+%\end{center}
+%\end{figure}
+
+Eine weitere Möglichkeit zur Nutzung der Wellenenergie besteht in der Reihenschaltung von Modulen auf der Wasseroberfläche, welche durch bewegliche Gelenke miteinander verbunden sind. In diesen Gelenken befinden sich Hydraulikzylinder, welche durch die Relativbewegung der der Module zueinander die enthaltene Hydraulikflüssigkeit in einen Ausgleichsbehälter leiten. Durch Zwischenschalten einer Turbine mit einem Generatoranschluss kann die Wellenenergie so gespeichert werden. Das System schwimmt etwa $50-60$ m über dem Meeresboden und wird durch drei Sicherheitsleinen befestigt\cite{pela}.
+
+%\begin{figure}[H]
+%\begin{center}
+%\includegraphics[width=11cm]{PrinzipPelamis.jpg}
+%\caption{Prinzipskizze Hydraulikzylinder}
+%\end{center}
+%\end{figure}
+
+		\subsubsection{Bewertung}
+
+	\subsection{Kernfusion}
+		\subsubsection{Allgemein}
+\textbf{Die nachfolgenden Erläuterungen und (Quellenverweise)}
+
+Die Kernfusion benennt das Verschmelzen von Atomkernen, z.B. von Wasserstoffatomen. Bei dieser Verschmelzung werden enorme Mengen an Energie frei, welche die Protonen und Neutronen zusammenhielt. Es ist aber schwierig die positiv geladenen Atomkerne so nah aneinander zu bringen, dass eine Verschmelzung m"oglich w"are. Dazu wird eine hohe Aktivierungsenergie benötigt. Dieser Prozess ist in der Natur nur bei Sternen zu Beobachten. Diese besitzen durch ihre enorme Masse starke Gravitationskräfte und auf Grund dessen eine hohe Dichte. Folglich reicht eine Temperatur von ca. 10 - 15 Millionen °C aus, um eine Fusion in einem Stern am laufen zu halten. 
+
+\subsubsection{technische Realisierung}
+
+Die zuvor beschriebenen thermodynamischen Bedingungen, die innerhalb eines Sternes herrschen, sind unmöglich ohne weitere technischen Maßnahmen in dieser Form auf der Erde zu realisieren. Bei diesen Temperaturen liegen die Stoffe im Zustand eines Plasmas vor. Jeder Kontakt mit der Umwelt würde zu einem sehr hohen Wärmeverlust führen und das Plasma kollabieren lassen. Um das Plasma vor dem Kontakt mit der Wand des Reaktors zu schützen werden die elektrischen Eigenschaften des Plasmas genutzt. Das heiße Plasma wird durch viele supraleitende Elektromagneten in eine Torusform gezwungen. Dieser Bautyp des Reaktors wird Tokamak genannt. Zusätzlich muss ein Längsstrom in das Plasma induziert werden, der zum einen zum Plasmaeinschluss beiträgt, zum anderen wird dieser auch als ohmsche Startheizung verwendet, da am Anfang der ohmsche Widerstand des Plasmas noch ausreichend groß ist. Bei etwa 15 Millionen °C besitzt das Plasma kaum noch Widerstand, weshalb die Heizfunktion des induzierten Stroms nicht mehr besteht.
+
+\textbf{(!!!Bild Tokamak!!!)}
+
+Die verschiedenen elektrischen Felder und der in das Plasma induzierte Strom, welcher ebenfalls ein elektromagnetisches Feld erzeugt, bewirken eine starke Verdrehung der magnetischen Feldlinien im Plasma. Eine solches Verdrillen der magnetischen Feldlinien sorgt für die Verringerung schwacher Randzonen im magnetischen Feld, durch die das Plasma sonst entweichen könnte, was eine empfindliche Abkühlung und ein Kollabieren des Plasmas zur Folge hätte. Des Weiteren sorgt diese ungeordnete Struktur der magnetischen Feldlienien für ungeordnete Teilchenbewegungen, um die Wahrscheinlichkeit eines Zusammenstoßes zwischen zwei Atomkernen zu erhöhen. Dass heißt es wird verhindert, dass die geladenen Teilchen sich in geordnete Bahnen einreihen.
+
+\textbf{(!!!Bild elektrisches Feld!!!)}
+
+Dem Plasma wird bis zur Zündung durch eine Startheizung für einige Sekunden eine Leistung von 50 bis 100 MW zugeführt. Eine $Mikrowellenheizung$, eine $Neutralteilcheninjektion$ und die zuvor angesprochene $ohmsche Heizung$ realisieren das Aufheizen des Plasmas.
+
+\textbf{(!!! Plasmaheizverfahren beim Tokamak !!!)}
+
+Da man dem Plasma nur durch die Elektromagneten einen Druck aufprägen kann und dieser relativ gering ist, müssen in einem Fusionsreaktor höhere Temperaturen als sie in der Sonne realisiert werden. Zudem sind der geringe Druck und die geringe Dichte des Plasmas eine Maßnahme zur sicheren Prozessführung. Die Temperaturen im Plasma eines Fusionskraftwerkes betragen bis zu 150 Millionen Grad Celsius. Bei solchen Temperaturen besitzen die Atomkerne eine sehr hohe kinetische Energie, die Geschwindigkeit der Atomkerne im Plasma beträgt 1000 km / s \cite{cdefda}, wodurch die Kraft der elektrischen Abstoßung der Kerne voneinander überwunden wird und die Kerne fusionieren. Dabei entsteht ein Helium-Kern, außerdem wird ein Neutron frei sowie große Mengen an Energie. Die freiwerdende  Energie und Neutronen werden in der Reaktorwand umgewandelt.
+
+Das \textbf{\textit{Blanket}}, wie die spezielle innere Auskleidung des Plasmagefäßes bezeichnet wird, erfüllt folgende drei wesentliche Funktionen:
+
+\begin{enumerate}
+\item Umwandlung der Neutronenenergie aus der Fusionsreaktion
+
+\begin{equation}
+	D+T~\rightharpoonup~^{4}He+n+17,58MeV
+\end{equation}
+
+in nutzbare Wärme.
+\item Erbrüten des Brennstoffs Tritium durch die Kernreaktionen
+
+\begin{equation}
+	^7Li+n\rightharpoonup^4He+T+n-2,47MeV
+\end{equation}
+
+und
+
+\begin{equation}
+	^6Li+n\rightharpoonup^4He+T+4,78MeV
+\end{equation}
+
+Da die erste Reaktion aufgrund ihrer Energieschwelle wenig Beitrag leistet, wird der Natürliche Anteil des $^6Li$ von 7,5 je nach Konzept auf 30 bis 90 Prozent angereichert.
+
+\item Abschirmung des Vakuumgefäßes und der supraleitenden Magnete gegen Neutronen und Gamma-Strahlung, um Strahlenschäden zu minimieren. Die Hauptlast trägt jedoch eine direkt hinter dem Blanket angebrachte Abschirmung, in der die Neutronen weiter moderiert und eingefangen werden.
+\end{enumerate}
+
+\textbf{!!! Blanket Bild !!!}
+
+Das Blanket wird durch einen Heliumkreislauf gekühlt, da Helium den Vorteil bietet chemisch und neutronisch inert zu sein, zudem können höhere Temperaturen erreicht werden. Das Helium tritt bei einer Temperatur von ca. 300°C in die Blanketstruktur ein und bei ca.  500°C wieder aus. An den Heliumkreislauf ist ein konventioneller Dampf-Wasser-Kreislauf angeschlossen.
+Zusätzlich gibt es noch einen Helium-Spülkreislauf, der das im Brutmaterial und Beryllium (Lithium-Titanoxid) erzeugte Trtium aus dem Blanket abtransportiert. Vom Spühlkreislauf wird das Tritium in das Extraktionssystem eingespeist, um es als Brennstoff mit Deuterium vermischt in das Plasma wieder einzuspeisen.
+
+
+\subsubsection{Brennstoff und Brennstoffkreislauf}
+
+Unter irdischen Bedingungen verschmelzen am leichtesten die beiden Wasserstoffisotope Deuterium und Tritium. Der Atomkern des Deuteriums besitzt ein zusätzliches Neutron und ist in unserer natürlichen Umgebung reichlich vorhanden. In einem Liter gewöhnlichen Wassers existieren ca. 35 mg Deuterium. Fusioniert mit Tritium entspricht es der Energiefreisetzung von 340 Litern Benzin. \cite{cdefda} Das Isotop Tritium besitzt zwei zusätzliche Neutronen verglichen zum elementaren Wasserstoffatom dem leichtesten Wasserstoffisotop, welches in der Fusionstechnologie auch 
+\textbf{\textit{Protium}} genannt wird. Diese Bezeichnung verhindert eine Verwechslung, da der Begriff Wasserstoff häufig für seine Isotopengemische verwendet wird. Tritium besitzt eine Halbwertszeit von 12,3 Jahren und ist deshalb in der Natur praktisch nicht zu finden, kann aber im Reaktor aus Lithium 	gewonnen werden. Dabei zerfällt ein Lithiumatom durch Beschuss mit einem Neutron in ein Helium- und ein Tritiumatom. Die Wandlung von Lithium in Helium und Tritium innerhalb des Fusionsreaktors wird Brüten genannt und wird wie oben beschrieben im Blanket realisiert. Lithium ist in der Erdkruste und in den Weltmeeren nahezu unbegrenzt zu finden.
+Die Vorkommen an Deuterium und Lithium würden bei heutigem Energieverbrauch mehrere tausend Jahre die Energieversorgung sichern. (!!! QUELLE !!! )
+Die Prinzipien des Brennstoffkreislaufs eines Fusionsreaktors sind in Abb. !!!!! dargestellt. Der innere Brennstoffkreislauf (gelb) umfasst die Einspeisung des gasförmigen oder als gefrorenes Pellet injizierten Brennstoffgemisches, das Vakuumsystem aus Kryopumpen und mechanische Pumpen zum Abpumpen des Heliums aus der Deuterium-Tritium-Reaktion und des überschüssigen Brennstoffgemischs sowie die Tritiumanlage mit den Systemen zur Gasreinigung, Isotopentrennung, Speicherung, Einspeisung und Analytik.
+Im äußeren Brennstoffkreislauf (blau) wird das Tritium, das im Blanket aus Lithium erbrütet wurde, durch das Helium-Spülgas extrahiert anschließend abgetrennt und in den inneren Brennstoffkreislauf eingespeist.
+
+Etwa 20 Gramm Tritium und 13 Gramm Deuterium pro Stunde wird ein 1000 MW-Kraftwerk verbrauchen.
+Ein Gramm Brennstoff könnte in einem Kraftwerk 90 000 Kilowattstunden Energie erzeugen - die Verbrennungswärme von 11 Tonnen Kohle.  \cite{fusion21}
+
+
+	
+\subsubsection{Sicherheits- und Umwelteigenschaften der Fusion}
+
+Aussagen über Sicherheit und zu erwartende Umwelteinflüsse eines späteren Fusionskraftwerkes werden durch Kraftwerksentwürfe wie z.B. dem internationalen Experimentalreaktor ITER und durch schon bestehende Fusionsanlagen möglich. ITER soll eine Fusionsleistung von 500 MW haben und entspricht insofern schon einem Leistungsreaktor. Auf Grundlage dieser Projekte kann man folgende Aussagen treffen.
+
+Keine der verwendeten Brennstoffe, weder die Edukte Deuterium und Lithium, noch das Reaktionsprodukt Helium sind radioaktiv. Im Zusammenhang mit dem im Kraftwerk erzeugten radioaktiven Tritium und den aktivierten plasmanahen Bauteilen, wie z.B. dem Blanket sind entsprechende Sicherheitsüberlegungen nötig. Die Intensität dieser Aktivierung hängt sehr stark von dem Aktivierungspotential der verwendeten Materialien zusammen. Tritium ist als der energetisch schwächste bekannte Beta-Strahler mit einer maximalen Energie 18,6 Kiloelektronenvolt bekannt. Die größtmögliche Reichweite der Strahlung in atmosphärischer Luft beträgt 6 mm und ist zu schwach um menschliche Haut zu durchdringen.
+
+Die Menge an natürlichem Tritium, welches durch die Höhenstrahlung entsteht, wird auf 7 kg geschätzt. Die EU ordnet Tritium als niedrig radiotoxisch. Im Ökosystem verdünnt sich Tritium schnell und kann Landstriche nicht für längere Zeit kontaminieren. 
+In einem Fusionskraftwerk ist ein Unfall mit katastrophalen Folgen unmöglich. Die Brennstoffmenge in der Plasmakammer ist mit etwa einem Gramm sehr gering und reicht für eine Brenndauer von ca. einer Minute. Die Leistungsdichte im Plasma und im Blanket beträgt etwa drei bis zwanzig Watt pro Kubikzentimeter, dies entspricht in etwa der Leistungsdichte einer normalen Glühbirne.
+Zudem sind Kettenreaktionen oder ähmliche Leistungssteigerungen, die zu einem Durchgehen der Reaktion führen könnten, nicht möglich, denn jede Änderung der Betriebsbedingungen erzeugen Plasma instabilitäten, welche den Brennvorgang sehr schnell zum Erlöschen bringen.
+Die Nachwärme bei einem Ausfall der Kühlsysteme reicht nicht zum Schmelzen ganzer Bauteile. Folglich kann ein Fusionskraftwerk so konstruiert werden, dass keine Energiequellen existieren, die die Sicherheitshülle von innen zerstören könnten.
+
+
+-ultrahochvakuum um austreten von Tritium zu minimieren. Verunreinigungen zu verringern.
+
+
+- 
+
+
+\subsubsection{Kosten}
+
+
+
+
+
+
+	\subsection{k"unstliche Kohleerzeugung}
+
+	\subsection{regenerative Energien}
+
+
+
+\addcontentsline{toc}{section}{Literatur}
+
+\begin{thebibliography}{99}
+  \bibitem{wiki}					www.wikipedia.de\\
+  													03.12.2006 
+  \bibitem{bund} 							Dr.Daniel Lübbert, $Das~Meer~als~Eneriequelle$\\
+  													Info-Brief der wissenschaftlichen Dienste des deutschen Bundestages
+  \bibitem{wd}            www.wavedragon.net\\
+                           07.12.2006
+  \bibitem{pela}         www.oceanpd.com\\
+                           03.12.2006
+\bibitem{fusion21}  http://www.ipp.mpg.de/ippcms/de/pr/fusion21\\
+Stand: 12.01.2007	Max-Planck-Institut für Plasmaphysik
+\bibitem{cdefda}	CD-Rom \textit{"`Fusion, an Energy Option for the Future"'} EFDA - European Fusion Development Agreement\\
+\textit{http://www.iter.org/fusioncd/fusion\underline{ }en.swf}\\
+Stand: 29.09.2005
+\end{thebibliography}
+
+\end{document}
