@@ -117,7 +117,7 @@
 
 \thispagestyle{empty}                       % Auch auf dieser Seite keine Kopfzeilen
 \tableofcontents                            % Erstellt das Inhaltsverzeichnis
-%\newpage                                    % Seitenwechsel
+\newpage                                    % Seitenwechsel
 
 % Ab dieser Seite gibt es Kopfzeilen mit Seitenzahl und Kapitelueberschrift
 \pagestyle{headings}
@@ -216,7 +216,12 @@ Die Kernfusion benennt das Verschmelzen von Atomkernen, z.B. von Wasserstoffatom
 
 Die zuvor beschriebenen thermodynamischen Bedingungen, die innerhalb eines Sternes herrschen, sind unmöglich ohne weitere technischen Maßnahmen in dieser Form auf der Erde zu realisieren. Bei diesen Temperaturen liegen die Stoffe im Zustand eines Plasmas vor. Jeder Kontakt mit der Umwelt würde zu einem sehr hohen Wärmeverlust führen und das Plasma kollabieren lassen. Um das Plasma vor dem Kontakt mit der Wand des Reaktors zu schützen werden die elektrischen Eigenschaften des Plasmas genutzt. Das heiße Plasma wird durch viele supraleitende Elektromagneten in eine Torusform gezwungen. Dieser Bautyp des Reaktors wird Tokamak genannt. Zusätzlich muss ein Längsstrom in das Plasma induziert werden, der zum einen zum Plasmaeinschluss beiträgt, zum anderen wird dieser auch als ohmsche Startheizung verwendet, da am Anfang der ohmsche Widerstand des Plasmas noch ausreichend groß ist. Bei etwa 15 Millionen °C besitzt das Plasma kaum noch Widerstand, weshalb die Heizfunktion des induzierten Stroms nicht mehr besteht.
 
-\textbf{(!!!Bild Tokamak!!!)}
+%\begin{figure}[H]
+%\begin{center}
+%\includegraphics[width=9cm]{Tokamak.jpg}
+%\caption{Tokamak}
+%\end{center}
+%\end{figure}
 
 Die verschiedenen elektrischen Felder und der in das Plasma induzierte Strom, welcher ebenfalls ein elektromagnetisches Feld erzeugt, bewirken eine starke Verdrehung der magnetischen Feldlinien im Plasma. Eine solches Verdrillen der magnetischen Feldlinien sorgt für die Verringerung schwacher Randzonen im magnetischen Feld, durch die das Plasma sonst entweichen könnte, was eine empfindliche Abkühlung und ein Kollabieren des Plasmas zur Folge hätte. Des Weiteren sorgt diese ungeordnete Struktur der magnetischen Feldlienien für ungeordnete Teilchenbewegungen, um die Wahrscheinlichkeit eines Zusammenstoßes zwischen zwei Atomkernen zu erhöhen. Dass heißt es wird verhindert, dass die geladenen Teilchen sich in geordnete Bahnen einreihen.
 
@@ -224,11 +229,16 @@ Die verschiedenen elektrischen Felder und der in das Plasma induzierte Strom, we
 
 Dem Plasma wird bis zur Zündung durch eine Startheizung für einige Sekunden eine Leistung von 50 bis 100 MW zugeführt. Eine $Mikrowellenheizung$, eine $Neutralteilcheninjektion$ und die zuvor angesprochene $ohmsche Heizung$ realisieren das Aufheizen des Plasmas.
 
-\textbf{(!!! Plasmaheizverfahren beim Tokamak !!!)}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=9]{PrinzipStromheizung.jpg}
+\caption{hdhd}
+\end{center}
+\end{figure}
 
 Da man dem Plasma nur durch die Elektromagneten einen Druck aufprägen kann und dieser relativ gering ist, müssen in einem Fusionsreaktor höhere Temperaturen als sie in der Sonne realisiert werden. Zudem sind der geringe Druck und die geringe Dichte des Plasmas eine Maßnahme zur sicheren Prozessführung. Die Temperaturen im Plasma eines Fusionskraftwerkes betragen bis zu 150 Millionen Grad Celsius. Bei solchen Temperaturen besitzen die Atomkerne eine sehr hohe kinetische Energie, die Geschwindigkeit der Atomkerne im Plasma beträgt 1000 km / s \cite{cdefda}, wodurch die Kraft der elektrischen Abstoßung der Kerne voneinander überwunden wird und die Kerne fusionieren. Dabei entsteht ein Helium-Kern, außerdem wird ein Neutron frei sowie große Mengen an Energie. Die freiwerdende  Energie und Neutronen werden in der Reaktorwand umgewandelt.
 
-Das \textbf{\textit{Blanket}}, wie die spezielle innere Auskleidung des Plasmagefäßes bezeichnet wird, erfüllt folgende drei wesentliche Funktionen:
+Das \textit{Blanket}, wie die spezielle innere Auskleidung des Plasmagefäßes bezeichnet wird, erfüllt folgende drei wesentliche Funktionen:
 
 \begin{enumerate}
 \item Umwandlung der Neutronenenergie aus der Fusionsreaktion
