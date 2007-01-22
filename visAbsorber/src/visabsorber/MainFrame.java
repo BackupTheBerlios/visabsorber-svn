@@ -492,13 +492,13 @@ public class MainFrame extends javax.swing.JFrame {
                     for (int i = 0; i < lineList.getCount(); i++) {
                         Line line = lineList.getLine(i);
                         switch (line.getType()) {
-                            case 0: line.setProperties(true,q,false,aU,tU);
+                            case 0: line.setProperties(true,q,false,0,0);
                             //line.getNode0().setU(80.0);
                             //line.getNode1().setU(80.0);
                             break;
-                            case 1: line.setProperties(false,-400,true,aF,tF);
+                            case 1: line.setProperties(false,0,true,aF,tF);
                             break;
-                            case 2: line.setProperties(false,-100,true,aU,tU);
+                            case 2: line.setProperties(false,0,true,aU,tU);
                             //line.getNode0().setU(20.0);
                             //line.getNode1().setU(20.0);
                             break;
@@ -581,5 +581,5 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JProgressBar statusBar;
     private javax.swing.JLabel statusLabel;
     // End of variables declaration//GEN-END:variables
-    public MyCanvas visMatrix = new MyCanvas(nodeList, elementList);
+    public MyCanvas visMatrix = new MyCanvas(nodeList, elementList, lineList);
 }

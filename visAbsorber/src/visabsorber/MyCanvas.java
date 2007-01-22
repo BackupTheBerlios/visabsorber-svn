@@ -13,6 +13,7 @@ import java.math.RoundingMode;
 class MyCanvas extends Canvas {
     NodeList nodeList;
     ElementList elementList;
+    LineList lineList;
     Image imgTemp, imgGird;
     int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0;
     double zoom=64.0, minU=0, maxU=0;
@@ -22,9 +23,10 @@ class MyCanvas extends Canvas {
         netz=!netz;
     }
     
-    public MyCanvas(NodeList nl, ElementList el) {
+    public MyCanvas(NodeList nl, ElementList el, LineList ll) {
         nodeList=nl;
         elementList=el;
+        lineList=ll;
     }
     
     public void zoomPlus() {
@@ -38,6 +40,7 @@ class MyCanvas extends Canvas {
         if (nl.getCount()>0) {
             nodeList=nl;
             elementList=el;
+            lineList=ll;
             Node node = nodeList.getNode(0);
             minX=Double.valueOf(node.getX()*zoom).intValue();
             minY=Double.valueOf(node.getY()*zoom).intValue();
@@ -112,6 +115,14 @@ class MyCanvas extends Canvas {
                 }
                 
                 //this.getGraphics().drawImage(imgTemp,0,0, null);
+            }
+            
+            double qRohr=0;
+            double qOberfl=0;
+            double qLuft;
+            for (int i=0;i<lineList.getCount();i++) {
+                Line line = lineList.getLine(i);
+                if (line.getType()==)
             }
             /*for (int i = 0; i < ll.getCount(); i++) {
                 int x0 = Double.valueOf(ll.getLine(i).getNode0().getX()*zoom).intValue();
@@ -189,10 +200,13 @@ class MyCanvas extends Canvas {
         int bl=Double.valueOf(-mTemp*(u-(4*minU+maxU)/3.0)+255).intValue();
         if (bl<0)bl=0;
         if (bl>255)bl=255;*/
-        double d=maxU-minU;
+        //double d=maxU-minU;
         
-        
-        double color=-240.0/(maxU-minU)*(u-maxU);
+        double m= (-240.0)*Math.PI/2.0;
+        double x= (u-minU)/(maxU-minU); 
+        if (x==0.25) x=0.2500001;
+        if (x==0.75) x=0.7500001;
+        double color=m*Math.sin(2.0*Math.PI*x)*Math.signum(Math.cos(2.0*Math.PI*x))/(2.0*Math.PI) + m*Math.floor(2.0*x + 0.5)/Math.PI+240;//-240.0/(maxU-minU)*(u-maxU)+60    ;
         if (color > 240.0) color=240.0;
         if (color < 0.0) color=0.0;
         return  Color.getHSBColor(Double.valueOf(color/360.0).floatValue(), 1,  1) ;
@@ -238,7 +252,9 @@ class MyCanvas extends Canvas {
         Matrix L = new Matrix  (3,3);
         Matrix R = new Matrix(3,3);
         Matrix A=new Matrix(3,3);
-        for (int i=0;i<3;i++) {
+        Matrix bV=new Matrix(1,3);
+        Matrix xV=new Matrix(1,3);
+        /*for (int i=0;i<3;i++) {
             A.setValue(i,0,1.0);
         }
         A.setValue(0,1,ax);
@@ -246,10 +262,28 @@ class MyCanvas extends Canvas {
         A.setValue(1,1,bx);
         A.setValue(1,2,by);
         A.setValue(2,1,cx);
-        A.setValue(2,2,cy);
+        A.setValue(2,2,cy);*/
+        for (int i=0;i<3;i++) {
+            A.setValue(2,i,1.0);
+            
+        }
+        bV.setValue(0,0,au);
+        bV.setValue(0,1,bu);
+        bV.setValue(0,2,cu);
+        
+        A.setValue(0,0,ax);
+        A.setValue(1,0,ay);
+        A.setValue(0,1,bx);
+        A.setValue(1,1,by);
+        A.setValue(0,2,cx);
+        A.setValue(1,2,cy);
         
         Calculator calc=new Calculator();
-        String failure=calc.LRCalc(A, R, L);
+        calc.calcLUShort(A,bV,xV);
+        //String failure=calc.LRCalc(A, R, L);
+        double a=xV.getValue(0,0);
+        double b=xV.getValue(0,1);
+        double c=xV.getValue(0,2);
         
         //int y;
         int xA,xE, dir;
@@ -262,7 +296,7 @@ class MyCanvas extends Canvas {
                 dir=0;
             } else dir=(xE-xA)/Math.abs(xE-xA);
             for (int x=xA;x!=xE+dir;x=x+dir) {
-                double u = calcU(A, L, R, x, y, au,bu, cu);
+                double u = a*x+b*y+c;//calcU(A, L, R, x, y, au,bu, cu);
                 g.setColor(clacTempColor(u));
                 g.drawLine(x,y, x,y);
             }
@@ -274,7 +308,7 @@ class MyCanvas extends Canvas {
                 dir=0;
             } else dir=(xE-xA)/Math.abs(xE-xA);
             for (int x=xA;x!=xE+dir;x=x+dir) {
-                double u = calcU(A, L, R, x, y, au,bu, cu);
+                double u = a*x+b*y+c;//calcU(A, L, R, x, y, au,bu, cu);
                 g.setColor(clacTempColor(u));
                 g.drawLine(x,y, x,y);
             }
