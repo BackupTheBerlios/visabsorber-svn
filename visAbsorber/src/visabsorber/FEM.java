@@ -18,15 +18,13 @@ public class FEM extends Thread {
     LineList lineList;
     int iter;
     double resi;
-    private javax.swing.JLabel statusLabel;
-    private javax.swing.JProgressBar statusBar;
+    private MainFrame main;
     /** Creates a new instance of FEM */
-    public FEM(NodeList nl, ElementList el, LineList ll, javax.swing.JLabel label, javax.swing.JProgressBar bar, int it, double res)  {
+    public FEM(NodeList nl, ElementList el, LineList ll, MainFrame m, int it, double res)  {
         nodeList=nl;
         elementList=el;
         lineList=ll;
-        statusLabel=label;
-        statusBar=bar;
+        main = m;
         iter=it;
         resi=res;
     }
@@ -118,11 +116,16 @@ public class FEM extends Thread {
                 }                
             }
         }   
+        
     }
+     public synchronized void finish () {
+         main.femFinish();
+     }
+    
     public synchronized void progress(String statusName, int position, int max) {
-        statusLabel.setText(statusName);
-        statusBar.setMaximum(max);
-        statusBar.setValue(position);
+        main.statusLabel.setText(statusName);
+        main.statusBar.setMaximum(max);
+        main.statusBar.setValue(position);
         //JOptionPane.showMessageDialog(null, "Fertig", "Fertig", JOptionPane.ERROR_MESSAGE);
     }
     
@@ -161,6 +164,8 @@ public class FEM extends Thread {
             elOutput.setValue(1,i,elementList.getElement(i).getNode2().getIndex());
             
         }
+        progress("Refresh Image",0,0);
+        finish ();
         progress("Ende (Residuum: " + res + ")",0,0);
         elOutput.saveMatrixToFile(new File("ele.txt"));
         //Matrix MatrixL = new Matrix (nodeList.getCount(),nodeList.getCount());

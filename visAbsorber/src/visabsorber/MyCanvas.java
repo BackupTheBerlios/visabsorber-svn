@@ -5,9 +5,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
 
 /** Creates new form MainFrame */
 class MyCanvas extends Canvas {
@@ -35,8 +39,24 @@ class MyCanvas extends Canvas {
     public void zoomMinus() {
         zoom=zoom/2;
     }
+    public void save() {
+        try {
+            JFileChooser fileChooser = new JFileChooser(".");
+            int status = fileChooser.showSaveDialog(null);
+            if (status == JFileChooser.APPROVE_OPTION) {
+                File outputfile = fileChooser.getSelectedFile();
+                BufferedImage bi=(BufferedImage)imgTemp;
+                
+                ImageIO.write(bi, "png", outputfile);
+            }
+            
+        } catch (IOException e) {
+        }
+        
+        
+    }
     
-    public void refreshImg(NodeList nl, ElementList el, LineList ll) {
+    public void refreshImg(NodeList nl, ElementList el, LineList ll, double qRohr, double qOberfl, double qLuft) {
         if (nl.getCount()>0) {
             nodeList=nl;
             elementList=el;
@@ -62,7 +82,7 @@ class MyCanvas extends Canvas {
             }
             //JOptionPane.showMessageDialog(null, ""+minU, "1", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(null, ""+maxU, "2", JOptionPane.ERROR_MESSAGE);
-            offsetX=0-minX+150;
+            offsetX=0-minX+400;
             offsetY=0-minY+5;
             //Canvas canvas= new Canvas();
             //canvas.setSize(maxX-minX,maxY-minY);
@@ -75,19 +95,19 @@ class MyCanvas extends Canvas {
             imgGird=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB);
             Graphics gGird=imgGird.getGraphics();
             
-            for (int i=5; i<485;i++) {
+            for (int i=10; i<490;i++) {
                 gTemp.setColor(clacTempColor((minU-maxU)/480.0*i+maxU));
                 gTemp.drawLine(5,i,50,i);
             }
             gTemp.setColor(Color.BLACK);
             for (int i=0; i<9;i++) {
-                gTemp.drawLine(50,5+i*60,55,5+i*60);
+                gTemp.drawLine(50,10+i*60,55,10+i*60);
                 double temp=(minU-maxU)/8.0*i+maxU;
                 
-                gTemp.drawString("" +  new BigDecimal(temp,new MathContext(4,RoundingMode.HALF_UP)), 58,9+i*60);
+                gTemp.drawString("" +  new BigDecimal(temp,new MathContext(4,RoundingMode.HALF_UP)), 58,16+i*60);
             }
             
-            gTemp.drawRect(5,5,45,480);
+            gTemp.drawRect(5,10,45,480);
             
             //this.getGraphics()
             for (int i = 0; i < el.getCount(); i++) {
@@ -116,14 +136,12 @@ class MyCanvas extends Canvas {
                 
                 //this.getGraphics().drawImage(imgTemp,0,0, null);
             }
+            gTemp.setColor(Color.BLACK);
+            gTemp.drawString("Wärmestrom/Meter Rohr:      " +  new BigDecimal(qRohr,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,20);
+            gTemp.drawString("Wärmestrom/Meter Oberfl:    " +  new BigDecimal(qOberfl,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,35);
+            gTemp.drawString("Wärmestrom/Meter Umgeb: " +  new BigDecimal(qLuft,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,50);
             
-            double qRohr=0;
-            double qOberfl=0;
-            double qLuft;
-            for (int i=0;i<lineList.getCount();i++) {
-                Line line = lineList.getLine(i);
-                if (line.getType()==)
-            }
+            
             /*for (int i = 0; i < ll.getCount(); i++) {
                 int x0 = Double.valueOf(ll.getLine(i).getNode0().getX()*zoom).intValue();
                 int y0 = Double.valueOf(ll.getLine(i).getNode0().getY()*zoom).intValue();
@@ -203,7 +221,7 @@ class MyCanvas extends Canvas {
         //double d=maxU-minU;
         
         double m= (-240.0)*Math.PI/2.0;
-        double x= (u-minU)/(maxU-minU); 
+        double x= (u-minU)/(maxU-minU);
         if (x==0.25) x=0.2500001;
         if (x==0.75) x=0.7500001;
         double color=m*Math.sin(2.0*Math.PI*x)*Math.signum(Math.cos(2.0*Math.PI*x))/(2.0*Math.PI) + m*Math.floor(2.0*x + 0.5)/Math.PI+240;//-240.0/(maxU-minU)*(u-maxU)+60    ;

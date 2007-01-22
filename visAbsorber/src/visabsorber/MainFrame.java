@@ -47,6 +47,7 @@ public class MainFrame extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         scrollPane1 = new java.awt.ScrollPane();
         jButton5 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -117,6 +118,13 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setText("save");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -138,6 +146,8 @@ public class MainFrame extends javax.swing.JFrame {
                         .add(jToggleButton1)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jButton5)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton8)
                         .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
@@ -152,7 +162,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .add(jButton7)
                     .add(jToggleButton1)
                     .add(jButton6)
-                    .add(jButton5))
+                    .add(jButton5)
+                    .add(jButton8))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE))
         );
@@ -411,11 +422,14 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        visMatrix.save();
+    }//GEN-LAST:event_jButton8ActionPerformed
+    
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
 // TODO add your handling code here:
         visMatrix.changeGridView();
-        visMatrix.refreshImg(nodeList, elementList, lineList);
-        visMatrix.repaint();
+        femFinish();
     }//GEN-LAST:event_jToggleButton1ActionPerformed
     
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -424,19 +438,17 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         visMatrix.zoomMinus();
-        visMatrix.refreshImg(nodeList, elementList, lineList);
-        visMatrix.repaint();
+        femFinish();
     }//GEN-LAST:event_jButton7ActionPerformed
     
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         visMatrix.zoomPlus();
-        visMatrix.refreshImg(nodeList, elementList, lineList);
-        visMatrix.repaint();
+        femFinish();
     }//GEN-LAST:event_jButton6ActionPerformed
     
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        visMatrix.refreshImg(nodeList, elementList, lineList);
-        visMatrix.repaint();
+        femFinish();
+        
         /*nodeList=loadNodesFromFile(new File(nodeFileField.getText()));
         JOptionPane.showMessageDialog(null, ""+nodeList.getCount(), "Fehler Elementenliste", JOptionPane.ERROR_MESSAGE);
         elementList=loadElementsFromFile(new File(elementFileField.getText()));*/
@@ -509,13 +521,13 @@ public class MainFrame extends javax.swing.JFrame {
                         }
                     }
                     //nodeList.getNode(10).setU(80.0);*/
-                    FEM fem= new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
+                    FEM fem= new FEM(nodeList, elementList, lineList, this, it,res);
                     try {
                         fem.join();
                     } catch (Exception exc) {
                         JOptionPane.showMessageDialog(null, exc.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
                     }
-                    fem = new FEM(nodeList, elementList, lineList, statusLabel, statusBar,it,res);
+                    fem = new FEM(nodeList, elementList, lineList, this, it,res);
                     fem.start();
                     //if (X!=null)  X.saveMatrixToFile(new File("x.txt"));
                     //visMatrix.repaint();
@@ -524,7 +536,26 @@ public class MainFrame extends javax.swing.JFrame {
         } else JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Knotenliste","Fehler", JOptionPane.ERROR_MESSAGE);
         
     }//GEN-LAST:event_jButton1ActionPerformed
-        
+    
+    public void femFinish() {
+        double qRohr=0;
+        double qOberfl=0;
+        double qLuft=0;
+        for (int i=0;i<lineList.getCount();i++) {
+            Line line = lineList.getLine(i);
+            if (line.getType()==0) {
+                qOberfl=qOberfl+line.getQProMeter();
+            }
+            if (line.getType()==1) {
+                qRohr=qRohr+line.getQProMeter();
+            }
+            if (line.getType()==2) {
+                qLuft=qLuft+line.getQProMeter();
+            }
+        }
+        visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft);
+        visMatrix.repaint();
+    }
     /**
      * @param args the command line arguments
      */
@@ -545,6 +576,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -578,8 +610,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nodeFileField;
     private javax.swing.JTextField rbdFileField;
     private java.awt.ScrollPane scrollPane1;
-    private javax.swing.JProgressBar statusBar;
-    private javax.swing.JLabel statusLabel;
+    public javax.swing.JProgressBar statusBar;
+    public javax.swing.JLabel statusLabel;
     // End of variables declaration//GEN-END:variables
     public MyCanvas visMatrix = new MyCanvas(nodeList, elementList, lineList);
 }

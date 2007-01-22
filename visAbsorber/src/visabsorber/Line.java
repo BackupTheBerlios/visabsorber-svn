@@ -75,4 +75,19 @@ public class Line {
         return t_fluid;
     }
     
+    public double getLength() {
+        return Math.sqrt((node0.getX()-node1.getX())*(node0.getX()-node1.getX())+ (node0.getY()-node1.getY())*(node0.getY()-node1.getY()));
+    }
+    
+    public double getQProMeter() {
+        double l=getLength();
+        if (neumann) {
+            return q*l;
+        }
+        else {
+            double t0=(node0.getU()+node1.getU())/2.0;
+            return alpha*l*(t_fluid-t0);
+        }
+    }
+    
 }
