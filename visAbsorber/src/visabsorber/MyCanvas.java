@@ -20,7 +20,7 @@ class MyCanvas extends Canvas {
     LineList lineList;
     Image imgTemp, imgGird;
     int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0;
-    double zoom=64.0, minU=0, maxU=0;
+    double zoom=4112.0, minU=0, maxU=0;
     boolean netz=false;
     
     public void changeGridView() {
@@ -55,8 +55,19 @@ class MyCanvas extends Canvas {
         
         
     }
+    public void saveToFile(File outputfile) {
+        try {
+                BufferedImage bi=(BufferedImage)imgTemp;    
+                ImageIO.write(bi, "png", outputfile);
+            
+            
+        } catch (IOException e) {
+        }
+        
+        
+    }
     
-    public void refreshImg(NodeList nl, ElementList el, LineList ll, double qRohr, double qOberfl, double qLuft) {
+    public void refreshImg(NodeList nl, ElementList el, LineList ll, double qRohr, double qOberfl, double qLuft, double tF) {
         if (nl.getCount()>0) {
             nodeList=nl;
             elementList=el;
@@ -80,6 +91,8 @@ class MyCanvas extends Canvas {
                 if (minU>bufU) minU=bufU;
                 if (maxU<bufU) maxU=bufU;
             }
+            maxU=50.0;
+            minU=15.0;
             //JOptionPane.showMessageDialog(null, ""+minU, "1", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(null, ""+maxU, "2", JOptionPane.ERROR_MESSAGE);
             offsetX=0-minX+400;
@@ -140,6 +153,7 @@ class MyCanvas extends Canvas {
             gTemp.drawString("Wärmestrom/Meter Rohr:      " +  new BigDecimal(qRohr,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,20);
             gTemp.drawString("Wärmestrom/Meter Oberfl:    " +  new BigDecimal(qOberfl,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,35);
             gTemp.drawString("Wärmestrom/Meter Umgeb: " +  new BigDecimal(qLuft,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,50);
+            gTemp.drawString("Wassertemperatur:                " +  new BigDecimal(tF,new MathContext(6,RoundingMode.HALF_UP)) + " °C", 100,65);
             
             
             /*for (int i = 0; i < ll.getCount(); i++) {

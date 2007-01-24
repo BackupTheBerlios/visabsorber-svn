@@ -34,4 +34,11 @@ public class NodeList {
         return list.size();
     }
     
+    public void resetNodeList() {
+        for (int i=0;i<getCount();i++) {
+            Node node = getNode(i);
+            node.reset();
+        }
+    }
+    
 }

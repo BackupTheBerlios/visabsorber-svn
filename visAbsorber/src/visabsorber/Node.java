@@ -71,4 +71,8 @@ public class Node {
         temp=true;
         u=u1;
     }
+    
+    public void reset() {
+        temp=false;
+    }
 }
