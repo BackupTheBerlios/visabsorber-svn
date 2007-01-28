@@ -29,4 +29,7 @@
 \contentsline {paragraph}{\active@dq \dq@prtct {O}konomie\\ \\}{10}{section*.16}
 \contentsline {paragraph}{\active@dq \dq@prtct {O}kologie\\ \\}{11}{section*.17}
 \contentsline {subsubsection}{\numberline {4.4.5}Potentiale der betrachteten Energiesysteme}{12}{subsubsection.4.4.5}
-\contentsline {section}{Literatur}{12}{subsubsection.4.4.5}
+\contentsline {paragraph}{Erdwärme\\ \\}{13}{section*.18}
+\contentsline {paragraph}{Photovoltaik\\ \\}{13}{section*.19}
+\contentsline {paragraph}{Windenergie\\ \\}{14}{section*.20}
+\contentsline {section}{Literatur}{14}{section*.20}
