@@ -1,58 +1,40 @@
-%\documentclass[11pt]{article}
-%\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-%\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
-%\geometry{landscape}                % Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
-%\usepackage{graphicx}
-%\usepackage{amssymb}
-%\usepackage{epstopdf}
-%\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
-
-%\title{Brief Article}
-%\author{The Author}
-%\date{}                                           % Activate to display a given date or no date
-
-%\begin{document}
-%\maketitle
-%\section{}
-%\subsection{}
-
-
-
-%\end{document}  % Hier kommen zunaechst generelle Einstellungen fuer LaTeX:
-\documentclass[11pt,titlepage]{article}     % Allgemeine Einstellungen fuer LaTeX:
-                                            %  - Format des Textes: article
+% Hier kommen zunaechst generelle Einstellungen fuer LaTeX:
+\documentclass[11pt,titlepage]{article}     % Allgemeine Einstellungen fuer LaTeX:\
+                                            %  - Format des Textes: article\begin{figure}[htbp]
                                             %  - Schriftgroesse   : 11
                                             %  - Titelseite
-\usepackage[ansinew]{inputenc}		%sagt Latex, dass es ein von Microsoft kodiertes dokument 										vor sich hat
-%\usepackage[applemac]{inputenc}		%sagt Latex, dass es ein von  Mac OS kodiertes dokument 										vor sich hat
-
+\usepackage[pdftex]{color}			%farbiger Hintergrung für Tabelle
+\definecolor{lightgray}{rgb}{0.8,0.8,0.8}     %definition einer farbe
+\usepackage[ansinew]{inputenc}	%ermöglicht ß-ausschreiben
 \usepackage{german}                         % Sorgt dafuer, dass das Papierformat A4 verwendet wird, die
                                             % deutschen Umlaute zur Verfuegung stehen, feststehende
                                             % Bezeichnungen wie Inhaltsverzeichnis, Zusammenfassung auch in
                                              % deutscher Sprache erscheinen, usw.
-\usepackage {hyperref}
+\usepackage{multirow}
 \usepackage[T1]{fontenc}
-%\usepackage{epsf}  
-%\usepackage{epsfig}                          
+\usepackage{epsf}  
+\usepackage{epsfig}                          
 %\usepackage{isolatin1}                      % Umlaute koennen direkt ueber die Tastatur eingegeben werden
-%\usepackage{float}
+\usepackage{float}
 
 \setlength{\parindent}{0mm}                 % Keine Einrueckung am Absatzanfang
-\setlength{\parskip}{3mm}                   % Leerraum zwischen den Zeilen
+\setlength{\parskip}{3mm}                   % Leerraum zwischen den Umbruch
 \setlength{\headheight}{5mm}               % Hoehe der Kopfzeile
 
-\usepackage{textcomp}                       %f"ur °C und "a
+\usepackage{textcomp}                       %f"ur °C und €
 \usepackage{a4wide}                        % kleinere Seitenr"ander als bei article
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\usepackage{hyperref}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{graphicx}
 %Brüche
  %  \begin{equation}
   %   f(x,y) = \frac{\sin x \cos y}{dx dy}
   % \end{equation}
 
 %Mit dem folgendem Befehl kann man einen Seitenumbruch erzwingen:
+%\pagebreak
 
 %Darstellung ohne Gleichungsnummer
 
@@ -133,38 +115,80 @@ In dieser Abhandlung soll dem Leser ein Überblick über die Entwicklung des globa
 
 
 \section{Einleitung}
-- 	Abschmelzen von Gletschern und Polareis, die längeren Sommer und das vordringen von Insekten und Pflanzen in Richtung der Pole Zeichen für die von Menschen verursachte Erderwärmung?
 
-- Deutsche Institut für Wirtschaftsforschung hat den bisherigen Trend bis 2050 hochgerechnet: Allein in Deutschland würden die volkswirtschaftlichen Schäden des Klimawandels sich dann auf 137 Milliarden belaufen. Als Gegenmittel müssten die Treibhausgasemissionen drastisch - um 60 bis 80 Prozent bis 2100 - gesenkt werden, so die Klimaexperten des Intergovernmental Panel of Climate Change. Die im Kyoto-Protokoll bis 2012 vereinbarten fünf Prozent weltweit sind da nur ein bescheidener Anfang.
+Im Oktober 2006 veröffentlichte der ehemalige Weltbank-Chefökonomen und jetzige Leiter des volkswirtschaftlichen Dienstes der britischen Regierung Sir Nicholas Stern seinen Bericht $Stern~Review~ on~the~Economics~of~Climate~Change$, kurz $Stern-Report$ genannt. In dem im Auftrag der britischen Regierung erstellten Bericht wurde ein breites Spektrum von Erkenntnissen über die Auswirkungen des Klimawandels sowie über dessen wirtschaftliche Kosten untersucht, wobei unterschiedliche Techniken zur Bewertung der Kosten und Risiken zum Einsatz gekommen sind. Die aus diesen Perspektiven gewonnen Ergebnisse lassen sich kurz zusammengefasst wie folgt darstellen.
+Der Nutzen eines entschlossenen und sofortigen bzw. sehr kurzfristigen Handelns übersteigt bei weitem die wirtschaftlichen Kosten, die getragen werden müssten, wenn ein solches Handeln zu spät oder gar nicht einsetzen sollte.
 
-$http://www.ipp.mpg.de/ippcms/ep/ausgaben/ep200404/editorial.html$
+Die Folgen des Klimawandels haben direkte Auswirkung auf die elementaren Lebensbedingungen auf der ganzen Welt. Dieser erschwert oder verhindert den Zugang zu Trinkwasser, die Produktion von Nahrungsmitteln und wirkt sich auf Gesundheit und Umwelt aus. Die Erderwärmung könnte für Millionen Menschen Hunger, Wassermangel und Naturkatastrophen bedeuten. Auch die wirtschaftlichen Folgen wären verheerend. Sollte ein entsprechendes Handeln ausgelassen werden, würde ausgehend von wirtschaftlichen Modellrechnungen eine jährliche Einbuße von mindestens 5 Prozent des globalen BIP nach sich ziehen. Bei einer detaillierteren Betrachtung wird der Schaden auf mögliche 20 Prozent oder mehr des globalen BIP geschätzt. Das Deutsche Institut für Wirtschaftsforschung hat den bisherigen Trend bis 2050 hochgerechnet und festgestellt, dass allein in Deutschland die volkswirtschaftlichen Schäden des Klimawandels sich auf 137 Milliarden belaufen würden\cite{ippw}.
 
-- 	Klimaforschungspolitik Kyotoprotokoll 
+Die Gefahr, dass die schlimmsten Folgen des Klimawandels eintreten, lässt sich deutlich mindern, wenn die Treibhausgaskonzentration in der Atmosphäre zwischen 450 und 550ppm (ppm=Teile pro Million) CO2-Äquivalente (CO2e) stabilisiert wird. Die Konzentration von Treibhausgasen in der Atmosphäre ist gegenüber dem Stand vor der industriellen Revolution bereits von 280 ppm auf heute 430 ppm gestiegen und steigt jährlich um über 2 ppm. Bei einer Stabilisierung in diesem Bereich müssten die Emissionen bis 2050 um mindestens 25 Prozent, wenn nicht um einen noch viel höheren Prozentsatz, unter den heutigen Stand gebracht werden.
+Eine Stabilisierung unabhängig auf welchem Niveau, erfordert letzten Endes eine Reduzierung der jährlichen Emissionen um über 80 Prozent des jetzigen Niveaus.
+Dies ist eine große Herausforderung, aber durch nachhaltige, langfristige Maßnahmen könnte eine Stabilisierung dennoch zu Kosten erreicht werden, die im Vergleich zu den Risiken, wenn nicht entsprechend gehandelt wird, gering sind. Die jährlichen Kosten einer Stabilisierung zwischen 500 und 550ppm CO2e werden auf ca. 1Prozent des globalen BIP geschätzt, vorausgesetzt, dass unverzüglich und entschieden vorgegangen wird.
+Alle Informationen in den drei vorhergehenden Absätzen sind, wenn nicht anders gekennzeichnet der Quelle \cite{stern} entnommen.
 
-$http://www.ipp.mpg.de/ippcms/ep/ausgaben/ep200404/0404_kyoto.html$
+Das der Klimawandel eine ernste globale Bedrohung darstellt ist wissenschaftlich bewiesen. 
+Letzten Endes sind Alternativen zur heutigen Energie- und Rohstoffversorgung zu entwickeln und in die vorhandenen Strukturen einzugliedern bzw. entsprechende Strukturen und politische Rahmenbedingungen müssen geschaffen werden. Eine wettbewerbsfähige Energie- und Rohstoffversorgung muss immer gleichzeitig drei Kriterien erfüllen, sie soll umweltfreundlich, zuverlässig und wirtschaftlich sein. Langfristig darf keines dieser Kriterien zu Lasten der anderen bevorzugt werden.
+
+In diesem Bericht wird dem Leser ein grober Einblick in Problemstellungen der Energie- und Rohstoffversorgung gegeben und anhand von vier Beispielen Vor- und Nachteile ausgewählter Alternativen verdeutlicht. Zusätzlich soll dem Leser klar werden welche komplexen Zusammenhänge es erschweren, dass sich regenerative Technologien etablieren und eventuell im Vergleich zur fossilen Energie- und Rohstoffgewinnung führende Rolle einnehmen könnten.
+
 \section{Einblick in die Entwicklungsprognosen}
 
-Zur Sicherung der künftigen Energieversorgung sind kontinuierliche Forschung und Entwicklung sowie frühzeitige Weichenstellungen und Investitionen erforderlich. Deshalb sind nationale und internationale Behörden und Organisationen, wie auch Unternehmen der Energiewirtschaft daran interessiert mit Hilfe von Prognosen und Szenarien mögliche und wahrscheinliche Entwicklungen der Energiemärkte zu analysieren. 
-Eine Reihe von Institutionen erarbeiten eigenständige Studien zur Entwicklung der Weltenergiemärkte in den kommenden Jahrzehnten. In diesem Bericht wird überwiegend auf die jüngste Studie, der International Energy Agency (IEA), dem ""World Energy Outlook"" (WEO) vom 7. November 2006 Bezug genommen. Zur Darstellung anschaulicher Vergleiche oder bestimmter Aussagen wird zudem der ""World Energy Technology Outlook - H2"" (WETO-H2) der Europäischen Kommission herangezogen. Die Informationen über den WEO und WETO-H2 wurden dem Energie-Fachmagazin BWK entnommen und Die Ergebnisse und Aussagen wurden nur stichprobenartig überprüft.
+Zur Sicherung der künftigen Energieversorgung sind kontinuierliche Forschung und Entwicklung sowie frühzeitige Weichenstellungen und Investitionen erforderlich. Deshalb sind nationale und internationale Behörden und Organisationen, wie auch Unternehmen der Energiewirtschaft daran interessiert mit Hilfe von Prognosen und Szenarien mögliche und wahrscheinliche Entwicklungen der Energiemärkte zu analysieren.
+Folgende Informationen und Angaben sowie Darstellungen sind der Quelle \cite{bwk} entnommen, welche als Grundlage die drei Studien $International~Energy~Outlook$ der EIA, $World~Energy~Outlook$ (WEO) der IEA und $World~Energy~Technology~Outlook - H2$ der EU-Commission angibt. \\\\\textbf{!!! ABkürzungen !!!}\\\\
+Eine Reihe von Institutionen erarbeiten eigenständige Studien zur Entwicklung der Weltenergiemärkte in den kommenden Jahrzehnten. In diesem Bericht wird überwiegend auf die jüngste Studie, der International Energy Agency (IEA), dem $World~Energy~Outlook$ (WEO) vom 7. November 2006 Bezug genommen. Zur Darstellung anschaulicher Vergleiche oder bestimmter Aussagen wird zudem der $World~Energy~Technology~Outlook - H2$ (WETO-H2) der Europäischen Kommission herangezogen. Die Informationen über den WEO und WETO-H2 wurden dem Energie-Fachmagazin BWK entnommen und Die Ergebnisse und Aussagen wurden nur stichprobenartig überprüft.
 
 Der Analyse des WEO liegen zwei Szenarien zu Grunde basierend auf bestimmten Annahmen über die politische Rahmensetzung, volkswirtschaftliche Bedingungen, Bevölkerungswachstum, Energiepreise und Technologien.
 Das Referenzszenario (RS) berücksichtigt alle zum 7. November 2006 in Kraft gewesenen politischen Regelwerke und Maßnahmen, jedoch nicht künftig mögliche politische Initiativen. Dazu wird ein World Alternative Policy Scenario (APS) presäntiert, welcher auf verstärkte Maßnahmen zur Verbesserung der Energieeffizienz sowie auf den Ausbau der regenerativen Energien und der Kernernergie setzt. Dieser APS soll als Leitziel für die Regierungen verstanden werden, um den im RS drohenden Ergebnissen entgegenzuwirken.
 
-\subsection{Grundannahmen der Studie}
+	\subsection{Grundannahmen der Studie}
 
 Im folgenden Absatz werden die Grundannahmen der Studie erläutert. Das Wachstum der Weltbevölkerung bis 2030 mit jährlichen Wachstumsraten von 1 Prozent und danach mit 0,5 Prozent. Die hätte ein Anwachsen der Weltbevölkerung von derzeit 6,5 Mrd. auf etwa 8 Mrd. Menschen im Jahr 2030 und auf knapp 9 Mrd. Menschen im Jahr 2050. Die Entwicklung der weltweiten Wirtschaftsleistung wird mit 3-4 Prozent Jahresdurchschnitt abgeschätzt und anschließend mit 2-3 Prozent bis 2050. Dies hätte eine Vervierfachung der gegenwärtigen Weltwirtschaftsleistung zur Folge. Der Weltmarktpreis für Öl wird mit 55 US-\textdollar /Barrel (in 2005er US-\textdollar) angenommen, was einem nominalen Preis von 97 US-\textdollar entspricht.
 
-\subsection{Ergebnisse}
+	\subsection{Ergebnisse}
+		\subsubsection{Referenzszenario}
+		
+Im Referenzszenario wird für den Zeitraum von 2004 bis 2030 ein deutlich wachsender Welt-Primärenergieverbrauch abgeschätzt. Die IEA schätzt ein Wachstum von 1,6 Prozent pro Jahr. Sollten diese Trends sich bestätigen, würde sich im Jahr 2030 ein Weltenergieverbrauch zwischen 17 und 18 Mrd. t Öleinheiten (oe) \\\\\textbf{!!! oe erklären !!!}\\\\einstellen. Dies sind ca. 6 Mrd. toe bzw. 50 Prozent mehr als im Jahr 2004. In Abbildung \ref{referenz} sind zusätzlich zum Referenzszenario der IEA auch die Referenzszenarien der \textit{Energy Information Administration} (EIA) und der EU-Commission aufgetragen. Es ist zu erkennen, dass alle Szenarien bei der Abschätzung des Weltenergieverbrauchs relativ eng beieinander liegen. Weiter auseinander liegen die drei Studien bei den Erwartungen zur Entwicklung des Primärenergiemix der Welt. 
 
-\subsection{Bewertung der Ergebnisse}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm]{Referenz}
+\caption[Vergleich der Referenzszenarien]{}
+\label{referenz}
+\end{center}
+\end{figure}
+ 
+Die IEA erwartet ein geringeres Wachstum des Ölverbrauch, als das des Weltenergieverbrauchs. Dadurch vermindert sich der Anteil des Öls am weltweiten Primärenergiemix, dennoch bleibt Öl der wichtigste Energieträger.
+Der Erdgasverbrauch erhöht sich stark und schließt deshalb hinsichtlich des Stellenwerts für die weltweite Energieversorgung zur Kohle auf. Das jährliche Wachstum des Kohleverbrauchs wird von der IEA auf 1,8 Prozent eingeschätzt.
+In der Kernenergiefrage sei auf die deutlich unterschiedliche Einschätzung der IEA und der EU-Commission hingewiesen. Mit Jahresraten von 0,7 Prozent liegt die IEA deutlich unter den Angaben der EU-Commission, die mit einem Wachstum der Kernenergieversorgung von 3 Prozent der Kernenergie einen großen Stellenwert zuordnet. Die weltweiten Kapazitäten der Kernkraftwerke werden im Referenzfall der IEA mit einem Anstieg von 368 GW auf 416 GW abgeschätzt.
+Die regenerativen Energien wachsen nach Einschätzung der IEA mit 1,8 Prozent pro Jahr und erreichen nicht einen wesentlich größeren Anteil am Weltenergieverbrauch. Ferner halten die fossilen Energieträger bis 2030 mit Anteilen um die 80 Prozent ihre dominierende Position.
 
-Es ist zu beachten, dass die Herausgeber dieser Arbeiten politische Zwecke verfolgen. Wie zu Beginn beschrieben soll den Regierungen der Mitgliedsstaaten und wenn möglich auch anderer Staaten ein Leitfaden zur nachhaltigen Energieversorgung gegeben werden und die Ergebnisse verdeutlicht werden. Jedoch ist wie bei jeder Überzeugungsarbeit ein gewisses Maß Übertreibung bzw. Untertreibung, um eine bestimmte Ansicht zu verteidigen nicht ausgeschlossen. Deshalb könnte unter Umständen die Entwicklung der Weltenergieversorgung etwas kritischer dargestellt sein, als sie sich entwickeln wird. Die unterschiedlichen Mitgliedsstaaten und die Aussagen verschiedener Studien lassen aber auf eine objektive Einschätzung der erläuterten Prognosen hoffen.
 
-\subsection{zu lösende Probleme}
-- Entwicklungsländer (alle Staaten) müssen mitmachen
-- China vs USA
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm]{IEA}
+\caption[IEA Prognosen]{}
+\label{iea}
+\end{center}
+\end{figure}
 
 
+Da sich in dem Referenzszenario die Energieträgerstruktur bis 2030 kaum verändert, ist eine Zunahme der $CO_{2}$-Emission nicht abzuwenden. Jedoch stellt IEA im Referenzszenario die Annahme auf, dass keine über die bereits bestehenden Maßnahmen hinausgehenden Schritte zur Klimavorsorge unternommen werden.
+
+		\subsubsection{Alternativ Szenario}
+		\label{sec:alternativ}
+
+Laut Aussage der Quelle \cite{bwk} verbindet die IEA mit der Vorlage dieses Alternativ-Szenarios die Aufforderung an die Regierungen, zielgerichtete Maßnahmen zu ergreifen, um das Energiesystem auf einen nachhaltigen Pfad zu lenken. Dazu werden insbesondere Maßnahmen zur Effizienzsteigerung sowie zum Ausbau regenerativer Energien und der Kernenergie gezählt.
+Im alternativen Politikszenario der IEA sind die abgeschätzten Konsequenzen einer veränderten Politik im folgenden Absatz dargestellt.
+
+Der weltweite Primärenergieverbrauch fällt 2030 um 10 Prozent niedriger aus als im Referenzszenario. Diese Differenz entspricht ungefähr dem heutigen Gesamtenergieverbrauch Chinas. Erdölimporte der OECD-Staaten stagnieren im Alternativszenario um das Jahr 2015 und beginnen in den Folgejahren zu sinken. Die energiebezogenen $CO_{2}$-Emissionen sind 2030 um 6,3 Mrd. t, dies entspricht 16 Prozent, niedriger als im Referenzfall. Der größte Teil der Emissionseinsparungen, rund 80 Prozent, können durch die erfolgreiche Einführung der Maßnahmen zur effizienteren Energieerzeugung und -nutzung eingespart werden. Die restlichen 20 Prozent können der Umstellung auf Kohlenstoffarme oder -neutrale Brennstoffe zurückgeführt werden.
+Nach Angaben der IEA erhöhen sich die weltweiten Kapazitäten der Kernkraftwerke von 368 GW im Jahr 2005 auf 519 GW im Jahr 2030. Dies bedeutet ein Anstieg des Anteils der Kernenergie am Energiemix. \textbf{HINWEIS IM FAZIT AUF DEN HOHEN STELLENWERT DER KERNENERGIE} Durch die angenommenen Maßnahmen und Politiken können die anfänglich höheren Investitionsmehrkosten, vor allem im Energiesektor, durch finanzielle Einsparungen begünstigt werden, so dass sich die Investition in nachhaltige Strukturen wirtschaftlicher gestalten lassen als in gegenteilige Strukturen.
+
+Für viele überraschend beläuft sich der Anteil an fossilem Energieverbrauch trotz des Alternativszenarios auf knapp 70 Prozent. Dafür sorgt die fortschreitende Technologieentwicklung der $CO_{2}$-Abscheidung und die trotz Preissteigerungen fortwährend günstigen Preise für fossile Energieträger.
+Mit diesen Ergebnissen lässt sich eine Aussage schon im voraus treffen, auf die jedoch erst zu einem späteren Zeitpunkt eingegangen werden soll, nachdem ein Einblick in die möglichen Alternativen und die bestehenden Problemstellungen gegeben werden konnte.
+	
+	\subsection{Bewertung der Ergebnisse}
+
+Es ist zu beachten, dass die Herausgeber dieser Studien politische Zwecke verfolgen. Wie zu Beginn beschrieben soll den Regierungen der Mitgliedsstaaten und wenn möglich auch anderer Staaten ein Leitfaden zur nachhaltigen Energieversorgung gegeben werden und die Ergebnisse der Studien deutlich gemacht werden. Jedoch ist wie bei jeder Überzeugungsarbeit ein gewisses Maß Übertreibung bzw. Untertreibung nicht ausgeschlossen, da eine bestimmte Ansicht verteidigt bzw. durchgesetzt werden soll. Deshalb könnte unter Umständen die Entwicklung der Weltenergieversorgung etwas kritischer dargestellt sein, als sie sich entwickeln wird.  Als markantes Beispiel sei hier die deutlich differierende Einschätzung der EU-Commission zum Wachstum des Kernenergieverbrauchs angeführt. Aufgrund der Energiewirtschaft Frankreichs ein herausstechendes Merkmal, welches die zuvor angeführten Aspekte der Verteidigung von Ansichten stützt. Die Anzahl der mitwirkenden Mitgliedsstaaten in der IEA und die relativ identischen Aussagen verschiedener Studien lassen aber auf eine objektive Einschätzung der erläuterten Prognosen hoffen.
 
 \section{Formulierung der Kriterien}
 
@@ -205,16 +229,18 @@ Eine weitere Möglichkeit zur Nutzung der Wellenenergie besteht in der Reihenscha
 %\end{figure}
 
 		\subsubsection{Bewertung}
+\newpage
 
 	\subsection{Kernfusion}
+	
+In diesem Kapitel zu Grunde gelegte Quellen sind im Quellenverzeichnis unter \cite{mpg}, \cite{ippw}, \cite{fusion21} und \cite{cdefda} aufgeführt.
 		\subsubsection{Allgemein}
-\textbf{Die nachfolgenden Erläuterungen und (Quellenverweise)}
 
-Die Kernfusion benennt das Verschmelzen von Atomkernen, z.B. von Wasserstoffatomen. Bei dieser Verschmelzung werden enorme Mengen an Energie frei, welche die Protonen und Neutronen zusammenhielt. Es ist aber schwierig die positiv geladenen Atomkerne so nah aneinander zu bringen, dass eine Verschmelzung m"oglich w"are. Dazu wird eine hohe Aktivierungsenergie benötigt. Dieser Prozess ist in der Natur nur bei Sternen zu Beobachten. Diese besitzen durch ihre enorme Masse starke Gravitationskräfte und auf Grund dessen eine hohe Dichte. Folglich reicht eine Temperatur von ca. 10 - 15 Millionen °C aus, um eine Fusion in einem Stern am laufen zu halten. 
+Das Prinzip der Kernfusion beruht auf der Verschmelzung von Atomkernen, z.B. von Wasserstoffatomen. Bei dieser Verschmelzung werden enorme Mengen an Energie freigesetzt, gewandelt aus der starken Kernkraft, welche die Protonen und Neutronen zusammenhält. Als Folge der gleichen Ladung der Atomkerne ist eine große Abstoßung dieser voneinander zu beobachten. Kurz gefasst kann man dies als Grund für die hohe Aktivierungsenergie dieser Reaktion nennen. Die Fusion ist in der Natur nur bei Sternen zu beobachten, da diese bedingt durch ihre enorme Masse starke Gravitationskräfte und aufgrund dessen eine hohe Dichte besitzen. Folglich reicht eine Temperatur von ca. 10 - 15 Millionen °C aus, um eine Fusion in einem Stern am laufen zu halten. 
 
 \subsubsection{technische Realisierung}
 
-Die zuvor beschriebenen thermodynamischen Bedingungen, die innerhalb eines Sternes herrschen, sind unmöglich ohne weitere technischen Maßnahmen in dieser Form auf der Erde zu realisieren. Bei diesen Temperaturen liegen die Stoffe im Zustand eines Plasmas vor. Jeder Kontakt mit der Umwelt würde zu einem sehr hohen Wärmeverlust führen und das Plasma kollabieren lassen. Um das Plasma vor dem Kontakt mit der Wand des Reaktors zu schützen werden die elektrischen Eigenschaften des Plasmas genutzt. Das heiße Plasma wird durch viele supraleitende Elektromagneten in eine Torusform gezwungen. Dieser Bautyp des Reaktors wird Tokamak genannt. Zusätzlich muss ein Längsstrom in das Plasma induziert werden, der zum einen zum Plasmaeinschluss beiträgt, zum anderen wird dieser auch als ohmsche Startheizung verwendet, da am Anfang der ohmsche Widerstand des Plasmas noch ausreichend groß ist. Bei etwa 15 Millionen °C besitzt das Plasma kaum noch Widerstand, weshalb die Heizfunktion des induzierten Stroms nicht mehr besteht.
+Die zuvor beschriebenen thermodynamischen Bedingungen, die innerhalb eines Sternes herrschen, sind unmöglich mit technischen Maßnahmen in dieser Form auf der Erde zu realisieren. Bei diesen Temperaturen liegen die Stoffe im Zustand eines Plasmas vor. Jeder Kontakt mit der Umwelt würde zu einem sehr hohen Wärmeverlust führen und das Plasma kollabieren lassen, da dessen Volumen im Gegensatz zur Sonne sehr gering ist. Um das Plasma vor dem Kontakt mit der Wand des Reaktors zu schützen werden die elektrischen Eigenschaften des Plasmas genutzt. Das heiße Plasma wird durch viele supraleitende Elektromagneten in eine Torusform gezwungen. Dieser Bautyp des Reaktors wird Tokamak genannt. Zusätzlich muss ein Längsstrom in das Plasma induziert werden, der zum einen zum Plasmaeinschluss beiträgt, zum anderen wird dieser auch als ohmsche Startheizung verwendet, da am Anfang der ohmsche Widerstand des Plasmas noch ausreichend groß ist. Bei etwa 15 Millionen °C besitzt das Plasma kaum noch Widerstand, weshalb die Heizfunktion des induzierten Stroms nicht mehr besteht.
 
 %\begin{figure}[H]
 %\begin{center}
@@ -223,49 +249,63 @@ Die zuvor beschriebenen thermodynamischen Bedingungen, die innerhalb eines Stern
 %\end{center}
 %\end{figure}
 
-Die verschiedenen elektrischen Felder und der in das Plasma induzierte Strom, welcher ebenfalls ein elektromagnetisches Feld erzeugt, bewirken eine starke Verdrehung der magnetischen Feldlinien im Plasma. Eine solches Verdrillen der magnetischen Feldlinien sorgt für die Verringerung schwacher Randzonen im magnetischen Feld, durch die das Plasma sonst entweichen könnte, was eine empfindliche Abkühlung und ein Kollabieren des Plasmas zur Folge hätte. Des Weiteren sorgt diese ungeordnete Struktur der magnetischen Feldlienien für ungeordnete Teilchenbewegungen, um die Wahrscheinlichkeit eines Zusammenstoßes zwischen zwei Atomkernen zu erhöhen. Dass heißt es wird verhindert, dass die geladenen Teilchen sich in geordnete Bahnen einreihen.
+Die verschiedenen elektrischen Felder und der in das Plasma induzierte Strom, welcher ebenfalls ein elektromagnetisches Feld erzeugt, bewirken eine starke Verdrehung der magnetischen Feldlinien im Plasma. Eine solches Verdrillen der magnetischen Feldlinien sorgt für die Verringerung schwacher Randzonen im magnetischen Feld, durch die das Plasma sonst entweichen könnte, was eine empfindliche Abkühlung und ein Kollabieren des Plasmas zur Folge hätte. Des Weiteren sorgt diese ungeordnete Struktur der magnetischen Feldlienien für ungeordnete Teilchenbewegungen, um die Wahrscheinlichkeit eines Zusammenstoßes zwischen zwei Atomkernen zu erhöhen. Dass heißt es wird verhindert, dass die geladenen Teilchen sich in geordnete Bahnen einreihen, wie in Abbildung \ref{magnetfeld} zu erkennen ist..
 
-\textbf{(!!!Bild elektrisches Feld!!!)}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{Magnetfeld}
+\caption[Magnetfeldverhältnisse bei unterschiedlichen Magnetkombinationen]{\textbf{a)} \textit{Magnetfeld ausgeschaltet --> kein Einschluss der Teilchen;}	\textbf{b)} \textit{Toroidalfeldmagneten beschränken das Plasma, jedoch sorgt ein Effekt dafür, dass Elektronen nach oben wandern und die Atomkerne nach unten wandern;} 		\textbf{c)} \textit{Induktionsstrom durch Transformatormagneten --> Teilchen bewegen sich auf Kreisbahnen um die Torusachse, aber Teilchen können nicht von der Reaktorwand fern gehalten werden;} 	\textbf{d)} \textit{erst beide Magnetfelder in Kombination sorgen für ein optimales Magnetfeld}}
+\label{magnetfeld}
+\end{center}
+\end{figure}
 
 Dem Plasma wird bis zur Zündung durch eine Startheizung für einige Sekunden eine Leistung von 50 bis 100 MW zugeführt. Eine $Mikrowellenheizung$, eine $Neutralteilcheninjektion$ und die zuvor angesprochene $ohmsche Heizung$ realisieren das Aufheizen des Plasmas.
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=9]{PrinzipStromheizung.jpg}
-\caption{hdhd}
+\includegraphics[width=12cm]{PrinzipStromheizung.jpg}
+\caption[Stromheizung]{}
 \end{center}
 \end{figure}
 
-Da man dem Plasma nur durch die Elektromagneten einen Druck aufprägen kann und dieser relativ gering ist, müssen in einem Fusionsreaktor höhere Temperaturen als sie in der Sonne realisiert werden. Zudem sind der geringe Druck und die geringe Dichte des Plasmas eine Maßnahme zur sicheren Prozessführung. Die Temperaturen im Plasma eines Fusionskraftwerkes betragen bis zu 150 Millionen Grad Celsius. Bei solchen Temperaturen besitzen die Atomkerne eine sehr hohe kinetische Energie, die Geschwindigkeit der Atomkerne im Plasma beträgt 1000 km / s \cite{cdefda}, wodurch die Kraft der elektrischen Abstoßung der Kerne voneinander überwunden wird und die Kerne fusionieren. Dabei entsteht ein Helium-Kern, außerdem wird ein Neutron frei sowie große Mengen an Energie. Die freiwerdende  Energie und Neutronen werden in der Reaktorwand umgewandelt.
+
+Da man dem Plasma nur durch die Elektromagneten einen Druck aufprägen kann und dieser relativ gering ist, müssen in einem Fusionsreaktor höhere Temperaturen als in der Sonne realisiert werden. Zudem sind der geringe Druck und die geringe Dichte des Plasmas eine Maßnahme zur sicheren Prozessführung. Die Temperaturen im Plasma eines Fusionskraftwerkes betragen bis zu 150 Millionen Grad Celsius. Bei solchen Temperaturen besitzen die Atomkerne eine sehr hohe kinetische Energie, die Geschwindigkeit der Atomkerne im Plasma beträgt 1000 km / s \cite{cdefda}, wodurch die Kraft der elektrischen Abstoßung der Kerne voneinander überwunden wird und die Kerne fusionieren. Dabei entsteht ein Helium-Kern, außerdem wird ein Neutron frei sowie große Mengen an Energie. Die freiwerdende  Energie und Neutronen werden in der Reaktorwand, hauptsächlich im Blanket, umgewandelt.
 
 Das \textit{Blanket}, wie die spezielle innere Auskleidung des Plasmagefäßes bezeichnet wird, erfüllt folgende drei wesentliche Funktionen:
 
 \begin{enumerate}
 \item Umwandlung der Neutronenenergie aus der Fusionsreaktion
 
-\begin{equation}
-	D+T~\rightharpoonup~^{4}He+n+17,58MeV
-\end{equation}
+%\begin{equation}
+%	D+T~\rightharpoonup~^{4}He+n+17,58MeV
+%\end{equation}
 
 in nutzbare Wärme.
-\item Erbrüten des Brennstoffs Tritium durch die Kernreaktionen
+\item Erbrüten des Brennstoffs Tritium durch Kernreaktionen
 
-\begin{equation}
-	^7Li+n\rightharpoonup^4He+T+n-2,47MeV
-\end{equation}
+%\begin{equation}
+%	^7Li+n\rightharpoonup^4He+T+n-2,47MeV
+%\end{equation}
 
-und
+%und
 
-\begin{equation}
-	^6Li+n\rightharpoonup^4He+T+4,78MeV
-\end{equation}
+%\begin{equation}
+%	^6Li+n\rightharpoonup^4He+T+4,78MeV
+%\end{equation}
 
-Da die erste Reaktion aufgrund ihrer Energieschwelle wenig Beitrag leistet, wird der Natürliche Anteil des $^6Li$ von 7,5 je nach Konzept auf 30 bis 90 Prozent angereichert.
+%Da die erste Reaktion aufgrund ihrer Energieschwelle wenig Beitrag leistet, wird der Natürliche Anteil des $^6Li$ von 7,5 je nach Konzept auf 30 bis 90 Prozent angereichert.
 
 \item Abschirmung des Vakuumgefäßes und der supraleitenden Magnete gegen Neutronen und Gamma-Strahlung, um Strahlenschäden zu minimieren. Die Hauptlast trägt jedoch eine direkt hinter dem Blanket angebrachte Abschirmung, in der die Neutronen weiter moderiert und eingefangen werden.
 \end{enumerate}
-
-\textbf{!!! Blanket Bild !!!}
+\newpage
+In der folgenden Abbildung \ref{blanket} ist ein Schnitt durch ein Blanket dargestellt, welches eines von mehreren Konzepten repräsentiert .
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm]{Blanket}
+\caption[Schnitt durch Blanket eines Fusionsreaktors]{}
+\label{blanket}
+\end{center}
+\end{figure}
 
 Das Blanket wird durch einen Heliumkreislauf gekühlt, da Helium den Vorteil bietet chemisch und neutronisch inert zu sein, zudem können höhere Temperaturen erreicht werden. Das Helium tritt bei einer Temperatur von ca. 300°C in die Blanketstruktur ein und bei ca.  500°C wieder aus. An den Heliumkreislauf ist ein konventioneller Dampf-Wasser-Kreislauf angeschlossen.
 Zusätzlich gibt es noch einen Helium-Spülkreislauf, der das im Brutmaterial und Beryllium (Lithium-Titanoxid) erzeugte Trtium aus dem Blanket abtransportiert. Vom Spühlkreislauf wird das Tritium in das Extraktionssystem eingespeist, um es als Brennstoff mit Deuterium vermischt in das Plasma wieder einzuspeisen.
@@ -273,16 +313,22 @@ Zusätzlich gibt es noch einen Helium-Spülkreislauf, der das im Brutmaterial und 
 
 \subsubsection{Brennstoff und Brennstoffkreislauf}
 
-Unter irdischen Bedingungen verschmelzen am leichtesten die beiden Wasserstoffisotope Deuterium und Tritium. Der Atomkern des Deuteriums besitzt ein zusätzliches Neutron und ist in unserer natürlichen Umgebung reichlich vorhanden. In einem Liter gewöhnlichen Wassers existieren ca. 35 mg Deuterium. Fusioniert mit Tritium entspricht es der Energiefreisetzung von 340 Litern Benzin. \cite{cdefda} Das Isotop Tritium besitzt zwei zusätzliche Neutronen verglichen zum elementaren Wasserstoffatom dem leichtesten Wasserstoffisotop, welches in der Fusionstechnologie auch 
-\textbf{\textit{Protium}} genannt wird. Diese Bezeichnung verhindert eine Verwechslung, da der Begriff Wasserstoff häufig für seine Isotopengemische verwendet wird. Tritium besitzt eine Halbwertszeit von 12,3 Jahren und ist deshalb in der Natur praktisch nicht zu finden, kann aber im Reaktor aus Lithium 	gewonnen werden. Dabei zerfällt ein Lithiumatom durch Beschuss mit einem Neutron in ein Helium- und ein Tritiumatom. Die Wandlung von Lithium in Helium und Tritium innerhalb des Fusionsreaktors wird Brüten genannt und wird wie oben beschrieben im Blanket realisiert. Lithium ist in der Erdkruste und in den Weltmeeren nahezu unbegrenzt zu finden.
-Die Vorkommen an Deuterium und Lithium würden bei heutigem Energieverbrauch mehrere tausend Jahre die Energieversorgung sichern. (!!! QUELLE !!! )
-Die Prinzipien des Brennstoffkreislaufs eines Fusionsreaktors sind in Abb. !!!!! dargestellt. Der innere Brennstoffkreislauf (gelb) umfasst die Einspeisung des gasförmigen oder als gefrorenes Pellet injizierten Brennstoffgemisches, das Vakuumsystem aus Kryopumpen und mechanische Pumpen zum Abpumpen des Heliums aus der Deuterium-Tritium-Reaktion und des überschüssigen Brennstoffgemischs sowie die Tritiumanlage mit den Systemen zur Gasreinigung, Isotopentrennung, Speicherung, Einspeisung und Analytik.
+Unter irdischen Bedingungen verschmelzen am leichtesten die beiden Wasserstoffisotope Deuterium und Tritium. Der Atomkern des Deuteriums besitzt ein zusätzliches Neutron und ist in unserer natürlichen Umgebung reichlich vorhanden. In einem Liter gewöhnlichen Wassers existieren ca. 35 mg Deuterium. Fusioniert mit Tritium entspricht es der Energiefreisetzung von 340 Litern Benzin \cite{cdefda}. Das Isotop Tritium besitzt zwei zusätzliche Neutronen verglichen zum elementaren Wasserstoffatom dem leichtesten Wasserstoffisotop, welches in der Fusionstechnologie auch 
+\textit{Protium} genannt wird. Diese Bezeichnung verhindert eine Verwechslung, da der Begriff Wasserstoff häufig für seine Isotopengemische verwendet wird. Tritium besitzt eine Halbwertszeit von 12,3 Jahren und ist deshalb in der Natur praktisch nicht zu finden, kann aber im Reaktor aus Lithium 	gewonnen werden. Dabei zerfällt ein Lithiumatom durch Beschuss mit einem Neutron in ein Helium- und ein Tritiumatom. Die Wandlung von Lithium in Helium und Tritium innerhalb des Fusionsreaktors wird Brüten genannt und wird wie oben beschrieben im Blanket realisiert. Lithium ist in der Erdkruste und in den Weltmeeren nahezu unbegrenzt zu finden.
+Die Vorkommen an Deuterium und Lithium würden bei heutigem Energieverbrauch mehrere Millionen Jahre die Energieversorgung sichern \cite{cdefda}.
+Die Prinzipien des Brennstoffkreislaufs eines Fusionsreaktors sind in Abbildung \ref{brennstoffkreislauf} dargestellt. Der innere Brennstoffkreislauf (gelb) umfasst die Einspeisung des gasförmigen oder als gefrorenes Pellet injizierten Brennstoffgemisches, das Vakuumsystem aus Kryopumpen und mechanische Pumpen zum Abpumpen des Heliums aus der Deuterium-Tritium-Reaktion und des überschüssigen Brennstoffgemischs sowie die Tritiumanlage mit den Systemen zur Gasreinigung, Isotopentrennung, Speicherung, Einspeisung und Analytik.
 Im äußeren Brennstoffkreislauf (blau) wird das Tritium, das im Blanket aus Lithium erbrütet wurde, durch das Helium-Spülgas extrahiert anschließend abgetrennt und in den inneren Brennstoffkreislauf eingespeist.
 
 Etwa 20 Gramm Tritium und 13 Gramm Deuterium pro Stunde wird ein 1000 MW-Kraftwerk verbrauchen.
-Ein Gramm Brennstoff könnte in einem Kraftwerk 90 000 Kilowattstunden Energie erzeugen - die Verbrennungswärme von 11 Tonnen Kohle.  \cite{fusion21}
+Ein Gramm Brennstoff könnte in einem Kraftwerk 90 000 Kilowattstunden Energie erzeugen - die Verbrennungswärme von 11 Tonnen Kohle \cite{fusion21}.
 
-
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=10cm]{Brennstoffkreislauf}
+\caption{Brennstoffkreislauf eines Fusionskraftwerks}
+\label{brennstoffkreislauf}
+\end{center}
+\end{figure}
 	
 \subsubsection{Sicherheits- und Umwelteigenschaften der Fusion}
 
@@ -290,30 +336,57 @@ Aussagen über Sicherheit und zu erwartende Umwelteinflüsse eines späteren Fusion
 
 Keine der verwendeten Brennstoffe, weder die Edukte Deuterium und Lithium, noch das Reaktionsprodukt Helium sind radioaktiv. Im Zusammenhang mit dem im Kraftwerk erzeugten radioaktiven Tritium und den aktivierten plasmanahen Bauteilen, wie z.B. dem Blanket sind entsprechende Sicherheitsüberlegungen nötig. Die Intensität dieser Aktivierung hängt sehr stark von dem Aktivierungspotential der verwendeten Materialien zusammen. Tritium ist als der energetisch schwächste bekannte Beta-Strahler mit einer maximalen Energie 18,6 Kiloelektronenvolt bekannt. Die größtmögliche Reichweite der Strahlung in atmosphärischer Luft beträgt 6 mm und ist zu schwach um menschliche Haut zu durchdringen.
 
-Die Menge an natürlichem Tritium, welches durch die Höhenstrahlung entsteht, wird auf 7 kg geschätzt. Die EU ordnet Tritium als niedrig radiotoxisch. Im Ökosystem verdünnt sich Tritium schnell und kann Landstriche nicht für längere Zeit kontaminieren. 
+Die Menge an natürlichem Tritium, welches durch die Höhenstrahlung entsteht, wird auf 7 kg geschätzt. Die EU ordnet Tritium als niedrig radiotoxisch ein. Im Ökosystem verdünnt sich Tritium schnell und kann Landstriche nicht für längere Zeit kontaminieren.
 In einem Fusionskraftwerk ist ein Unfall mit katastrophalen Folgen unmöglich. Die Brennstoffmenge in der Plasmakammer ist mit etwa einem Gramm sehr gering und reicht für eine Brenndauer von ca. einer Minute. Die Leistungsdichte im Plasma und im Blanket beträgt etwa drei bis zwanzig Watt pro Kubikzentimeter, dies entspricht in etwa der Leistungsdichte einer normalen Glühbirne.
-Zudem sind Kettenreaktionen oder ähmliche Leistungssteigerungen, die zu einem Durchgehen der Reaktion führen könnten, nicht möglich, denn jede Änderung der Betriebsbedingungen erzeugen Plasma instabilitäten, welche den Brennvorgang sehr schnell zum Erlöschen bringen.
-Die Nachwärme bei einem Ausfall der Kühlsysteme reicht nicht zum Schmelzen ganzer Bauteile. Folglich kann ein Fusionskraftwerk so konstruiert werden, dass keine Energiequellen existieren, die die Sicherheitshülle von innen zerstören könnten.
+Zudem sind Kettenreaktionen oder ähnliche Leistungssteigerungen, die zu einem Durchgehen der Reaktion führen könnten, nicht möglich, denn jede Änderung der Betriebsbedingungen erzeugen Plasmainstabilitäten, welche den Brennvorgang sehr schnell zum Erlöschen bringen.
+
+Die Nachwärme bei einem Ausfall der Kühlsysteme reicht nicht zum Schmelzen ganzer Bauteile aus. Folglich kann ein Fusionskraftwerk so konstruiert werden, dass keine Energiequellen existieren, die die Sicherheitshülle von innen zerstören könnten. Auslegungsstörfälle würden den zur Anlagengenehmigung in Deutschland vorgeschriebenen Strahlungsgrenzwert von 50 Millisievert und den Grenzwert zur Evakuierung von 100 Millisievert nicht überschreiten.
+Sollte die äußere Sicherheitshülle durch einen Katastrophenfall beschädigt werden, würde etwa ein Kilogramm Tritium in die Umgebung freigesetzt. In diesem Fall wird die maximale Belastung den Grenzwert zur Evakuierung um das 4,5-fache übertroffen werden. Die Strahlungsbelastung würde nicht lange anhaltende Wirkung im Ökosystem aufweisen.
+
+Wie in jedem Kraftwerk entstehen auch bei einem Fusionskraftwerk Abfälle. Einige Bauteile, besonders Bauteile im inneren des Plasmagefäßes werden während der Laufzeit des Fusionskraftwerks aktiviert. Blanket und Divertor müssen in dieser Zeit mehrfach ausgetauscht werden. Zusammen mit Bauteilen, welche nach Demontage zurückbleiben, erzeugt ein Fusionskraftwerk je nach Bauart insgesamt zwischen 65.000 und 95.000 Tonnen radioaktiven Materials. Verglichen mit Spaltreaktoren würde ein Fusionskraftwerk das gleiche bis doppelte an radioaktiven Material erzeugen. Unberücksichtigt bleibt dabei die beim Uranabbau anfallenden 1,5 Millionen Kubikmeter Erzreste, welche weiterhin radioaktives Radongas und Radioaktive Stäube freisetzt.
+Deutlich herauszustellen sind die unterschiedlichen Umwelteigenschaften von Fusions- und Spaltabfall. In Abbildung \ref{abfaelle} wird die zeitliche Entwicklung der Radiotoxizität aller Abfälle eines Kraftwerkes dargestellt. So sind die Halbwertszeiten von Fusionsrückständen mit 1 bis 5 Jahren bedeutend geringer als die der Spaltrückstände mit 100 bis 10.000 Jahren. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm]{Abfaelle}
+\caption{Radiotoxizität verschiedener Kraftwerkstypen}
+\label{abfaelle}
+\end{center}
+\end{figure}
 
 
--ultrahochvakuum um austreten von Tritium zu minimieren. Verunreinigungen zu verringern.
-
-
-- 
-
+Nach etwa hundert Jahren ist die Radiotoxizität der Fusionsrückstände mehr als tausendfach geringer. Zwischen 100 und 500 Jahren ist sie vergleichbar mit dem Gefährdungspotential der gesamten Kohlenasche eines Kohlekraftwerks.
+Durch Materialentwicklung kann diese Zeit verkürzt werden und die Rezyklierung der Bauteile innerhalb der ersten 100 Jahre sorgt für geringe bis nahezu keine radiotoxischen Abfällen für die Endlagerung.
+Ein Lichtblick um noch geringere Materialaktivierung zu erreichen ist die Materielforschung sowie die Fusionsforschung an anderen Fusionsreaktionen, wie z.B. eine Deuterium-Deuterium Fusion.
 
 \subsubsection{Kosten}
 
+Grundlagen für die Stromgestehungskosten eines Fusionskraftwerkes liefern Systemstudien sowie die für den Testreaktor $ITER$ abgeschätzten Kosten. Aufgrund dessen lassen sie sich nur mit großen Unsicherheiten angeben. Zudem werden die Kosten der Fusion stark von den physikalischen und technischen Fortschritten beeinflusst, die in den nächsten Jahrzehnten erzielt werden können.
+Die Stromgestehungskosten setzen sich aus den Investitionskosten, den Betriebs- und Brennstoffkosten sowie den Kosten für den Abbau der Anlage und die Lagerung der Abfälle. In Abb. !!!! ist ein Vergleich zwischen einer Abschätzung der Investitionskosten für die wesentlichen Elemente eines Fusionskraftwerks und der entsprechenden Kosten für $ITER$ dargestellt. Die Brennstoffkosten eines Fusionskraftwerks fallen sehr niedrig aus. Zu den Betriebskosten gehören vor allem die regelmäßig anfallenden Kosten für den Austausch des Blankets und Divertorplatten.
+Das Max-Planck-Institut für Plasmaphysik schätzt die Stromgestehungskosten bei der zehnten Anlage unter Berücksichtigung aller anfallenden Kosten, wie die der Brennstoffgewinnung, Bau der Anlage Betrieb und Abbau des Kraftwerks sowie Lagerung der Rückstände, auf 5 bis 10 Cent pro erzeugter Kilowattstunde.
 
-
-
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm]{Kosten}
+\caption[Kostenabschätzung Fusionskraftwerk]{Abschätzung der Investitionskosten für die wesentlichen Elemente eines Fusionskraftwerks}
+\label{kosten}
+\end{center}
+\end{figure}
 
 
 	\subsection{k"unstliche Kohleerzeugung}
 
 	\subsection{regenerative Energien}
 
+\section{Fazit}
 
+Auffällig ist, dass die IEA in ihrem Alternativszenario von einem alternativen Politikszenario spricht. Die Gründe dafür sollen im Folgenden erläutert werden.
+
+Wie im Kapitel \ref{sec:alternativ} angesprochen, ist aus den Prognosen der IEA eine wesentliche Aussage im Voraus zu treffen. Der Weltenergieverbrauch wird in jedem Fall wachsen. Zudem bleibt, laut Prognose, der Anteil an fossil erzeugter Energie auf hohem Niveau mit einem Anteil von mindestens 70 Prozent. 
+
+Deshalb ist es wichtig... Verschwendung... Bewusstsein der Bevölkerung .... Entwicklungsländer (Zertifikate- Zeitungsartikel)
+
+... jedes Kraftwerk eingriff in die Natur ... regenerativ vom Preis der fossilen Energieträger ...
 
 \addcontentsline{toc}{section}{Literatur}
 
@@ -325,12 +398,20 @@ Die Nachwärme bei einem Ausfall der Kühlsysteme reicht nicht zum Schmelzen ganze
   \bibitem{wd}            www.wavedragon.net\\
                            07.12.2006
   \bibitem{pela}         www.oceanpd.com\\
-                           03.12.2006
+                           	03.12.2006
 \bibitem{fusion21}  http://www.ipp.mpg.de/ippcms/de/pr/fusion21\\
-Stand: 12.01.2007	Max-Planck-Institut für Plasmaphysik
-\bibitem{cdefda}	CD-Rom \textit{"`Fusion, an Energy Option for the Future"'} EFDA - European Fusion Development Agreement\\
-\textit{http://www.iter.org/fusioncd/fusion\underline{ }en.swf}\\
-Stand: 29.09.2005
-\end{thebibliography}
+				Stand: 12.01.2007	Max-Planck-Institut für Plasmaphysik
+\bibitem{ippw} 	$http://www.ipp.mpg.de/ippcms/ep/ausgaben/ep200404/editorial.html$
+			Stand: 12.01.2007	Max-Planck-Institut für Plasmaphysik
+\bibitem{cdefda}	CD-Rom \textit{"`Fusion, an Energy Option for the Future"'} EFDA - European 					Fusion Development Agreement\\
+				\textit{http://www.iter.org/fusioncd/fusion\underline{ }en.swf}\\
+				Stand: 29.09.2005
+\bibitem{mpg}	Kernfusion - Max-Planck-Institut für Plasmaphysik, Forschungszentrum Karlsruhe GmbH, Forschungszentrum Jülich GmbH
+\bibitem{stern}	Zusammenfassung der Schlussfolgerungen der Studie von Sir Nicholas Stern\\
+			http://www.britischebotschaft.de/de/news/items/061030.htm
+			Stand: 24.01.2007 22:18 MEZ
+\bibitem{bwk} 	BWK - Das Energie-Fachmagazin Bd.58 (2006) Nr.12
 
+\end{thebibliography}
+\listoffigures
 \end{document}
