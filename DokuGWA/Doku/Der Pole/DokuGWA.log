@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2006.11.2)  28 JAN 2007 19:56
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2006.11.2)  29 JAN 2007 22:08
 entering extended mode
 **D:/Programmierung/PPM/DokuGWA/Doku/Der*Pole/DokuGWA.tex
 ("D:\Programmierung\PPM\DokuGWA\Doku\Der Pole\DokuGWA.tex"
@@ -298,7 +298,7 @@ s been already used, duplicate ignored
                    \relax 
 l.101 \newpage
                                                   % Seitenwechsel [1]
-<PrinzipRampe.jpg, id=101, 687.7695pt x 277.5168pt>
+<PrinzipRampe.jpg, id=106, 687.7695pt x 277.5168pt>
 File: PrinzipRampe.jpg Graphic file (type jpg)
  <use PrinzipRampe.jpg>
 ! pdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
@@ -313,10 +313,10 @@ Overfull \hbox (28.98471pt too wide) in paragraph at lines 151--152
 /10.95 ).
  []
 
-<Kammer.jpg, id=122, 867.24pt x 603.0028pt>
+<Kammer.jpg, id=127, 867.24pt x 603.0028pt>
 File: Kammer.jpg Graphic file (type jpg)
  <use Kammer.jpg>
-<PrinzipPelamis2.jpg, id=123, 854.44218pt x 427.5975pt>
+<PrinzipPelamis2.jpg, id=128, 854.44218pt x 427.5975pt>
 File: PrinzipPelamis2.jpg Graphic file (type jpg)
 
 <use PrinzipPelamis2.jpg> [2 <PrinzipRampe.jpg> <Kammer.jpg>]
@@ -414,11 +414,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 490--493
 
  []
 
-[11] <pot_allg.png, id=209, 882.29625pt x 534.99875pt>
+[11] <pot_allg.png, id=214, 882.29625pt x 534.99875pt>
 File: pot_allg.png Graphic file (type png)
  <use pot_allg.png>
 [12 <pot_allg.png (PNG copy)>]
-<pot_cost.png, id=216, 890.32625pt x 510.90875pt>
+<pot_cost.png, id=221, 890.32625pt x 510.90875pt>
 File: pot_cost.png Graphic file (type png)
  <use pot_cost.png>
 Underfull \hbox (badness 10000) in paragraph at lines 522--523
@@ -435,23 +435,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 528--529
 
  []
 
-[13 <pot_cost.png (PNG copy)>] [14] (DokuGWA.aux)
+[13 <pot_cost.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 534--536
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--545
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 548--549
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--553
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
+
+ []
+
+[15] [16] (DokuGWA.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3944 strings out of 95419
- 50677 string characters out of 1187410
+ 3954 strings out of 95419
+ 50797 string characters out of 1187410
  102457 words of memory out of 1101037
- 6888 multiletter control sequences out of 60000
+ 6889 multiletter control sequences out of 60000
  14551 words of font info for 36 fonts, out of 1000000 for 2000
  14 hyphenation exceptions out of 8191
- 32i,9n,37p,1279b,367s stack positions out of 5000i,500n,10000p,200000b,32768s
+ 32i,9n,37p,1279b,405s stack positions out of 5000i,500n,10000p,200000b,32768s
 PDF statistics:
- 228 PDF objects out of 300000
- 67 named destinations out of 300000
- 170 words of extra memory for PDF output out of 10000
+ 247 PDF objects out of 300000
+ 76 named destinations out of 300000
+ 178 words of extra memory for PDF output out of 10000
  <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2.5\fonts\p
 k\ljfour\jknappen\ec\dpi600\tcrm1095.pk><d:/Programme/MiKTeX 2.5/fonts/type1/bl
 uesky/cm/cmsy10.pfb><d:/Programme/MiKTeX 2.5/fonts/type1/bluesky/cm/cmr10.pfb> 
@@ -470,4 +500,4 @@ fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Dokumente und Einstellungen
 ts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Dokumente und Einstellungen\Al
 l Users\Anwendungsdaten\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.
 pk>
-Output written on DokuGWA.pdf (16 pages, 517088 bytes).
+Output written on DokuGWA.pdf (18 pages, 525287 bytes).
