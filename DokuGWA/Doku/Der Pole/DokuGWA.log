@@ -1,4 +1,4 @@
-This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2006.11.2)  29 JAN 2007 22:08
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2006.11.2)  31 JAN 2007 21:09
 entering extended mode
 **D:/Programmierung/PPM/DokuGWA/Doku/Der*Pole/DokuGWA.tex
 ("D:\Programmierung\PPM\DokuGWA\Doku\Der Pole\DokuGWA.tex"
@@ -298,206 +298,153 @@ s been already used, duplicate ignored
                    \relax 
 l.101 \newpage
                                                   % Seitenwechsel [1]
-<PrinzipRampe.jpg, id=106, 687.7695pt x 277.5168pt>
-File: PrinzipRampe.jpg Graphic file (type jpg)
- <use PrinzipRampe.jpg>
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
+
+ []
+
 ! pdfTeX warning (ext4): destination with the same identifier (name{page.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.150 
+l.156 
        [1]
-Overfull \hbox (28.98471pt too wide) in paragraph at lines 151--152
-[]\T1/cmr/m/n/10.95 Das welt-weit er-ste Wel-len-kraft-werk funk-tio-niert nach
- dem OWC-Prinzip ($\OML/cmm/m/it/10.95 oscillating []water []column$\T1/cmr/m/n
-/10.95 ).
- []
-
-<Kammer.jpg, id=127, 867.24pt x 603.0028pt>
-File: Kammer.jpg Graphic file (type jpg)
- <use Kammer.jpg>
-<PrinzipPelamis2.jpg, id=128, 854.44218pt x 427.5975pt>
-File: PrinzipPelamis2.jpg Graphic file (type jpg)
-
-<use PrinzipPelamis2.jpg> [2 <PrinzipRampe.jpg> <Kammer.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
-
- []
-
-[3 <PrinzipPelamis2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 203--206
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 166--170
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 231--232
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--290
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 308--310
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
-
- []
-
-
-Overfull \hbox (11.10326pt too wide) in paragraph at lines 318--335
+[2]
+Overfull \hbox (11.10326pt too wide) in paragraph at lines 178--195
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
-
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
+Underfull \hbox (badness 10000) in paragraph at lines 174--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--370
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 411--412
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--419
+Underfull \hbox (badness 10000) in paragraph at lines 224--246
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--269
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
+
+ []
+
+<pot_allg.png, id=130, 882.29625pt x 534.99875pt>
+File: pot_allg.png Graphic file (type png)
+ <use pot_allg.png> [6]
+<pot_cost.png, id=138, 890.32625pt x 510.90875pt>
+File: pot_cost.png Graphic file (type png)
+ <use pot_cost.png> [7 <pot_allg.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
+ []
+
+[8 <pot_cost.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--343
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 434--436
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 438--439
-
- []
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 490--493
-
- []
-
-[11] <pot_allg.png, id=214, 882.29625pt x 534.99875pt>
-File: pot_allg.png Graphic file (type png)
- <use pot_allg.png>
-[12 <pot_allg.png (PNG copy)>]
-<pot_cost.png, id=221, 890.32625pt x 510.90875pt>
-File: pot_cost.png Graphic file (type png)
- <use pot_cost.png>
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 528--529
-
- []
-
-[13 <pot_cost.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 534--536
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 539--541
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 544--545
-
- []
-
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 556--557
-
- []
-
-[15] [16] (DokuGWA.aux)
+[10] [11] (DokuGWA.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3954 strings out of 95419
- 50797 string characters out of 1187410
- 102457 words of memory out of 1101037
- 6889 multiletter control sequences out of 60000
- 14551 words of font info for 36 fonts, out of 1000000 for 2000
+ 3907 strings out of 95419
+ 50153 string characters out of 1187410
+ 104505 words of memory out of 1101037
+ 6869 multiletter control sequences out of 60000
+ 13521 words of font info for 34 fonts, out of 1000000 for 2000
  14 hyphenation exceptions out of 8191
- 32i,9n,37p,1279b,405s stack positions out of 5000i,500n,10000p,200000b,32768s
+ 32i,9n,36p,1405b,406s stack positions out of 5000i,500n,10000p,200000b,32768s
 PDF statistics:
- 247 PDF objects out of 300000
- 76 named destinations out of 300000
- 178 words of extra memory for PDF output out of 10000
+ 174 PDF objects out of 300000
+ 57 named destinations out of 300000
+ 123 words of extra memory for PDF output out of 10000
  <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2.5\fonts\p
-k\ljfour\jknappen\ec\dpi600\tcrm1095.pk><d:/Programme/MiKTeX 2.5/fonts/type1/bl
-uesky/cm/cmsy10.pfb><d:/Programme/MiKTeX 2.5/fonts/type1/bluesky/cm/cmr10.pfb> 
-<C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2.5\fonts\pk\l
-jfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Dokumente und Einstellungen\All Users
-\Anwendungsdaten\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk><d:/
-Programme/MiKTeX 2.5/fonts/type1/bluesky/cm/cmr8.pfb><d:/Programme/MiKTeX 2.5/f
-onts/type1/bluesky/cm/cmmi8.pfb><d:/Programme/MiKTeX 2.5/fonts/type1/bluesky/cm
-/cmmi10.pfb> <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2
-.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1095.pk> <C:\Dokumente und Einstellun
+k\ljfour\jknappen\ec\dpi600\ecbx1200.pk><d:/Programme/MiKTeX 2.5/fonts/type1/bl
+uesky/cm/cmr8.pfb><d:/Programme/MiKTeX 2.5/fonts/type1/bluesky/cm/cmmi8.pfb><d:
+/Programme/MiKTeX 2.5/fonts/type1/bluesky/cm/cmmi10.pfb> <C:\Dokumente und Eins
+tellungen\All Users\Anwendungsdaten\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi6
+00\ecsl1095.pk> <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTe
+X\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Dokumente und Einstel
+lungen\All Users\Anwendungsdaten\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\
+ecbx1095.pk> <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2
+.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Dokumente und Einstellun
 gen\All Users\Anwendungsdaten\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecr
-m1095.pk> <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2.5\
-fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Dokumente und Einstellungen
-\All Users\Anwendungsdaten\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx14
-40.pk> <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2.5\fon
-ts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Dokumente und Einstellungen\Al
-l Users\Anwendungsdaten\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.
-pk>
-Output written on DokuGWA.pdf (18 pages, 525287 bytes).
+m1200.pk> <C:\Dokumente und Einstellungen\All Users\Anwendungsdaten\MiKTeX\2.5\
+fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk>
+Output written on DokuGWA.pdf (13 pages, 203762 bytes).
