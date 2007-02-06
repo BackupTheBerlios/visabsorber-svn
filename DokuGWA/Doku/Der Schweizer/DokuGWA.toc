@@ -1,0 +1,52 @@
+\contentsline {section}{\numberline {1}Abstract}{2}{section.1}
+\contentsline {section}{\numberline {2}Aufgabenstellung}{2}{section.2}
+\contentsline {section}{\numberline {3}Formulierung der Kriterien}{2}{section.3}
+\contentsline {section}{\numberline {4}Prozessauswahl}{2}{section.4}
+\contentsline {subsection}{\numberline {4.1}Wandlung von Wellenenergie}{2}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}technische Realisation}{2}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Bewertung}{4}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Kernfusion}{4}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Kohle und Biomasse}{5}{subsection.4.3}
+\contentsline {paragraph}{Kohlenstoff aus Biomasse\\ \\}{6}{section*.2}
+\contentsline {subsubsection}{\numberline {4.3.1}Verfahren zur Nutzung von Biomasse als Kohlenstofflieferant}{6}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Hydrothermale Karbonisierung}{6}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Umwandlung von Biomasse in Kraftstoffe und Energie}{7}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Bewertung}{10}{subsubsection.4.3.4}
+\contentsline {paragraph}{Energieträger\\ \\}{10}{section*.3}
+\contentsline {paragraph}{Standortfaktor und politische Unabhängigkeit\\ \\}{11}{section*.4}
+\contentsline {paragraph}{Gesicherte Energieversorgung\\ \\}{11}{section*.5}
+\contentsline {paragraph}{Reifefaktor und Eingliederung in bestehende Infrastruktur\\ \\}{11}{section*.6}
+\contentsline {paragraph}{Emissionen und Sicherheit\\ \\}{12}{section*.7}
+\contentsline {subsection}{\numberline {4.4}regenerative Energien}{13}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Quellen und Nutzung regenerative Energie}{13}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Erdw\active@dq \dq@prtct {a}rme}{13}{subsubsection.4.4.2}
+\contentsline {paragraph}{Energiequelle\\ \\}{13}{section*.8}
+\contentsline {paragraph}{Elektrische Energieversorgung durch Erdw\active@dq \dq@prtct {a}rme\\ \\}{13}{section*.9}
+\contentsline {paragraph}{Stromerzeugung\\ \\}{14}{section*.10}
+\contentsline {paragraph}{\active@dq \dq@prtct {O}konomie\\ \\}{15}{section*.11}
+\contentsline {paragraph}{\active@dq \dq@prtct {O}kologie\\ \\}{16}{section*.12}
+\contentsline {subsubsection}{\numberline {4.4.3}Photovoltaik}{16}{subsubsection.4.4.3}
+\contentsline {paragraph}{Energiequelle\\ \\}{16}{section*.13}
+\contentsline {paragraph}{Elektrische Energieversorgung durch Photovoltaik\\ \\}{17}{section*.14}
+\contentsline {paragraph}{technische Umsetzung\\ \\}{17}{section*.15}
+\contentsline {paragraph}{Wirkungsgrad\\ \\}{17}{section*.16}
+\contentsline {paragraph}{\active@dq \dq@prtct {O}konomische Analyse\\ \\}{18}{section*.17}
+\contentsline {paragraph}{\active@dq \dq@prtct {O}kologische Analyse\\ \\}{19}{section*.18}
+\contentsline {subsubsection}{\numberline {4.4.4}Windenergie}{19}{subsubsection.4.4.4}
+\contentsline {paragraph}{Energiequelle\\ \\}{19}{section*.19}
+\contentsline {paragraph}{Technische Realisierung\\ \\}{19}{section*.20}
+\contentsline {paragraph}{Wirkungsgrad/Verluste\\ \\}{20}{section*.21}
+\contentsline {paragraph}{\active@dq \dq@prtct {O}konomie\\ \\}{20}{section*.22}
+\contentsline {paragraph}{\active@dq \dq@prtct {O}kologie\\ \\}{21}{section*.23}
+\contentsline {subsubsection}{\numberline {4.4.5}Potentiale der betrachteten Energiesysteme}{22}{subsubsection.4.4.5}
+\contentsline {paragraph}{Erdwärme\\ \\}{23}{section*.24}
+\contentsline {paragraph}{Photovoltaik\\ \\}{23}{section*.25}
+\contentsline {paragraph}{Windenergie\\ \\}{23}{section*.26}
+\contentsline {subsubsection}{\numberline {4.4.6}Beurteilung der regenerativen Energiesysteme}{24}{subsubsection.4.4.6}
+\contentsline {paragraph}{Energieträger\\ \\}{24}{section*.27}
+\contentsline {paragraph}{Standortfaktor, politische Unabhängigkeit\\ \\}{24}{section*.28}
+\contentsline {paragraph}{gesicherte Energieversorgung \\ \\}{24}{section*.29}
+\contentsline {paragraph}{Reifefaktor\\ \\}{25}{section*.30}
+\contentsline {paragraph}{Wirtschaftlichkeit \\ \\}{25}{section*.31}
+\contentsline {paragraph}{Emissionen, Umweltaspekte\\ \\}{25}{section*.32}
+\contentsline {section}{Literatur}{25}{section*.32}

@@ -1,0 +1,680 @@
+% Hier kommen zunaechst generelle Einstellungen fuer LaTeX:
+\documentclass[11pt,titlepage]{article}     % Allgemeine Einstellungen fuer LaTeX:
+                                            %  - Format des Textes: article\begin{figure}[htbp]
+                                            %  - Schriftgroesse   : 11
+                                            %  - Titelseite
+
+\usepackage{german}                         % Sorgt dafuer, dass das Papierformat A4 verwendet wird, die
+                                            % deutschen Umlaute zur Verfuegung stehen, feststehende
+                                            % Bezeichnungen wie Inhaltsverzeichnis, Zusammenfassung auch in
+                                             % deutscher Sprache erscheinen, usw.
+
+\usepackage[T1]{fontenc}
+\usepackage{epsf}  
+\usepackage{epsfig}                          
+%\usepackage{isolatin1}                      % Umlaute koennen direkt ueber die Tastatur eingegeben werden
+\usepackage{float}
+
+\setlength{\parindent}{0mm}                 % Keine Einrueckung am Absatzanfang
+\setlength{\parskip}{3mm}                   % Leerraum zwischen den Umbruch
+\setlength{\headheight}{5mm}               % Hoehe der Kopfzeile
+
+\usepackage{textcomp}                       %f"ur °C und €
+\usepackage{a4wide}                        % kleinere Seitenr"ander als bei article
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{graphicx}
+%Brüche
+ %  \begin{equation}
+  %   f(x,y) = \frac{\sin x \cos y}{dx dy}
+  % \end{equation}
+
+%Mit dem folgendem Befehl kann man einen Seitenumbruch erzwingen:
+%\pagebreak
+
+%Darstellung ohne Gleichungsnummer
+
+%\begin{displaymath}
+%\end{displaymath}
+
+%{Einbinden von Bildern}
+
+%\begin{figure}[h]
+ % \begin{center}
+ %   \epsffile{frogduck.eps}
+ % \end{center}
+ % \caption{Der Frosch und die Ente}
+ % \label{frosch}
+%\end{figure}
+
+% Auf Abb. \ref{frosch} kann man sich mit \verb| \ref{frosch} | beziehen.
+
+% Einbinden des Kapitels Schlusswort.
+%\include{schlusswort}
+
+% ein paar Befehle fuer Latex:
+
+% \boldsymbol: fett und schraeg
+% \bf x: x fett
+% \cdot: Skalarprodukt-Punkt
+% \dot{}: Punkt ueber Buchstabe
+% \label{}: Name fuer Gleichung oder Abbildung um Verweise machen zu koennen
+% \ref{}: Verweis auf Gleichung oder Abbildung
+% \frac{]{}: Bruchstrich
+%   Darstellung Matrix oder Vektor (Anzahl c ist Anzahl der Spalten):
+% \begin{array}{c c c}
+%   2 & 1 & 0 \\
+%   1 & 2 & 0 \\
+%   0 & 0 & 0
+%   \end{array}
+% $ ... $  : Um im Text mathematische Schreibweise darzustellen mit $ einrahmen
+% \int_{}^{} : Integral
+% x_{} : Index unten
+% x^{} : Index oben
+% \noindent verhindert Zeileneinschub nach einer Gleichung oder Abbildung
+% \left[ und \right] stellt grosse eckige Klammern dar, geht auch mit allen anderen Klammern
+% bei geschweifter Klammer aber ein bissel anders: \left\{ und \right\}
+% \tilde{} : schlange ueber Buchstabe
+% \partial : partielle ableitung
+% \, : kleiner Abstand
+% ~ : auch kleiner Abstand und die Zeichen werden nicht durch Zeilenumbruch getrennt
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Festlegen des Inhaltes der Titelseite
+
+\author{Sinan Teske	220990\\ Max Schmidt	222845\\Simon Kamaryt	170552\\Jan-Stefan Fischer	304694 }
+
+\title{Chancen heutiger Energiekonzepte im Jahr 2030\\ WS 06/07\\ (Grundlagen wissenschaftlichen Arbeitens) }
+
+% Hier beginnt das eigentliche Dokument:
+\begin{document}
+
+% Erstellt das Titelblatt
+\maketitle
+
+\thispagestyle{empty}                       % Auch auf dieser Seite keine Kopfzeilen
+\tableofcontents                            % Erstellt das Inhaltsverzeichnis
+\newpage                                    % Seitenwechsel
+
+% Ab dieser Seite gibt es Kopfzeilen mit Seitenzahl und Kapitelueberschrift
+\pagestyle{headings}
+
+% Der Seitenzaehler wird auf 1 gesetzt
+\setcounter{page}{1}
+
+% Und jetzt kommt der eigentliche Text. Kapitelueberschriften werden dabei (das gilt fuer das Format article)
+% mit den Befehlen \section, \subsection und \subsubsection erzeugt.
+
+\section{Abstract}
+
+\section{Aufgabenstellung}
+
+\section{Formulierung der Kriterien}
+
+
+
+\begin{table}[htdp]
+\caption{default}
+\begin{center}
+\begin{tabular}{|c|c|clclcl}
+ \hline $C_{\mu}$ & $C_{\epsilon 1}$ & $C_{\epsilon 2}$ & $\sigma_k$ & $\sigma_{\epsilon}$ \\
+ \hline 0,09 & 1,44 & 1,92 & 1,0 & 1,3 \\
+ \hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+
+
+
+\section{Prozessauswahl}
+
+	\subsection{Wandlung von Wellenenergie}
+	
+		\subsubsection{technische Realisation}
+
+Die Nutzung von Wasser für Energieumwandlungsanlagen besitzt seit jeher einen hohen Stellenwert in der menschlichen Geschichte. Bereits 1200 v. Chr. wurden die ersten Wassersch"opfr"ader erfunden\cite{wiki} und zur Wandlung von kinetischer Str"omungsenergie in mechanische Energie genutzt. Dies erm"oglichte u.a. die Anhebung von Wasser auf ein höheres Potential sowie eine Bew"asserung der Felder mit deutlicher Ersparnis an Muskelkraft. Heute wandeln Pumpspeicherwerke bei "ortlich gro\ss en Höhendifferenzen die potenzielle Energie des angesammelten Wassers aus einem vorgelagerten Stausee in elektrische Energie um. Dabei wird die potenzielle Energie des Wassers durch den H"ohenunterschied in kinetische Energie gewandelt und anschlie\ss end in einer Turbine entspannt. Obwohl das gr"o\ss te Kraftwerk der Welt ein Pumpspeicherkraftwerk in Paraguay ist, und den Strombedarf von ganz Paraguay sowie dreizig Prozent des brasilianischen Strombedarfs deckt \cite{bund}, ist die Nutzung von Str"omungen auf dem Festland stark limitiert. Die Gewinnung von elektrischer Energie in gro\ss er Menge bleibt auf wenige Standorte beschrängt, weswegen diese Art der Energiewandlung hier nicht betrachtet wird.\\
+Unter Wandlung von Wellenenergie werden hier drei verschiedene Verfahren beurteilt. Dazu zählen die Nutzung eines Rampensystems oder einer Pneumatikkammer sowie die Energiewandlung durch Hydraulikzylinder.\\
+Das Rampensystem nutzt das Prinzip eines Wellenkonzentrators. Dazu werden zwei v-förmig angeordnete Barrieren zur Mitte hin konzentriert. Die Wellen werden so verstärkt und flie\ss en nach Überwinden der Rampe durch eine Turbine, welche durch Verbindung zu einem Generator die zugeführte Energie speichert. Das Wasser gelangt anschlie\ss end zurück ins Meer. Die Anlage kann flexibel eingesetzt werden, da sie ein schwimmendes Offshore-Kraftwerk ist. Die folgende Abbildung zeigt das Funktionsprinzip des Projekts \textit{Wave~Dragon}. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=9cm]{PrinzipRampe.jpg}
+\caption{Prinzipskizze Wave Dragon (aus \cite{wd})}
+\end{center}
+\end{figure}
+
+Das weltweit erste Wellenkraftwerk funktioniert nach dem OWC-Prinzip ($oscillating~water~column$). Dazu wird jede Welle durch Betonröhren in eine Pneumatikkammer geleitet, wobei weitere Betonröhren auf einer anderen Seite in einer so genannten Wells-Turbine enden. Durch die Ein- und Ausleitung der Wellen zirkuliert die in der Kammer enthaltene Luft und treibt so eine Turbine an. Diese kennzeichnet sich durch ein symmetrisches Flügelprofil, welches senkrecht zum Luftstrom angeordnet ist, und ist somit unabhängig von der Strömungsrichtung.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=9cm]{Kammer.jpg}
+\caption{Prinzipskizze OWC\cite{wiki}}
+\end{center}
+\end{figure}
+
+Eine weitere Möglichkeit zur Nutzung der Wellenenergie besteht in der Reihenschaltung von Modulen auf der Wasseroberfläche, welche durch bewegliche Gelenke miteinander verbunden sind. In diesen Gelenken befinden sich Hydraulikzylinder, welche durch die Relativbewegung der der Module zueinander die enthaltene Hydraulikflüssigkeit in einen Ausgleichsbehälter leiten. Durch Zwischenschalten einer Turbine mit einem Generatoranschluss kann die Wellenenergie so gespeichert werden. Das System schwimmt etwa $50-60$ m über dem Meeresboden und wird durch drei Sicherheitsleinen befestigt\cite{pela}.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{PrinzipPelamis.jpg}
+\caption{Prinzipskizze Hydraulikzylinder}
+\end{center}
+\end{figure}
+  
+		\subsubsection{Bewertung}
+
+	\subsection{Kernfusion}
+
+	\subsection{Biomasse und Kohle}
+	
+
+	4.1 Kohle ist einer der wichtigsten fossilen Energieträger mit einer Förderungsrate von 4.791 Millionen Tonnen pro Jahr weltweit. Der Anteil von Kohle an der Stromerzeugung ist mit  ca. 39 Prozent weltweit relativ groß. In Europa liegt er bei ca. 38 Prozent. Laut IEA wird der Bedarf bis 2030 auf bis zu 79 Prozent weltweit ansteigen. 
+
+Auch die Industrie hat heute, zum Beispiel für die Produktion von Stahl, einen hohen Bedarf an hochqualitativem Kohlenstoff, welcher momentan noch mit einem Anteil von 16 Prozent der weltweiten Förderung von Kohle gedeckt wird. Da die erwiesenen Kohlenreserven bei gleichbleibenden Förderungsraten für ca. 200 Jahre reichen werden nimmt Kohle als Energieträger und Kohlenstofflieferant gegenüber Erdöl eine wichtige Rolle ein.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=11cm]{Kohlebedarf.png}
+\caption{Anteile des Kohlebedarfes}
+\end{center}
+\end{figure}
+
+
+Die hinter der Inkohlung stehenden chemischen und physikalischen Wandlungsprozesse, also die Umwandlung von Biomasse in Kohlenstoff, sind auch heute noch nicht vollständig geklärt. Das Ergebnis ist ein komplexes Gemisch aus teils hochpolymeren Stoffen.
+Im Verlaufe längerer Zeiträume, unter Luftabschluss und hohem Sedimentdruck, kommt es in Folge von Huminsäurebildung zur Polymerisation und zur Senkung des pH-Wertes und aus lignozelluloser Biomasse, wie Pflanzenresten, entsteht zunächst Torf. Die mikrobiologischen und chemischen Prozesse, die zur Inkohlung führen, bezeichnet man gemeinhin als Vertorfung.
+Im weiteren Gefolge bilden sich dann Braunkohle, Steinkohle, Anthrazit und eventuell Grafit mit Kohlenstoffanteilen von je 70 Prozent - 100 Prozent. Während dieses Inkohlungsprozesses werden die Moleküle völlig umgebaut, so dass die molekularen Ausgangsstrukturen verloren gehen. Es verflüchtigen sich die Anteile von Wasserstoff, Sauerstoff und Stickstoff, so dass der Kohlenstoffgehalt zum Schluss auf nahezu 100 Prozent(Grafit) ansteigen kann.
+
+		\subsubsection{Verfahren zum Ersatz von Kohle als Kohlenstofflieferant}
+
+		\subsubsection{Hydrothermale Karbonisierung}
+Es ist nun Markus Antonietti, Direktor am Max-Planck-Institut für Kolloid- und Grenzflächenforschung in Potsdam, gelungen den Inkohlungsprozess im Labor nachzuvollziehen und somit Kohlenstoff aus Biomasse, im Versuch waren dies Gartenabfälle wie Eichenlaub, Tannennadeln, Holzstückchen und Pinienzapfen, zu gewinnen. In einem Druckkessel werden Biomasse, Wasser und Zitronensäure(C6H8O7) als Katalysator unter luftabschluß und hohem Druck auf ca. 180 Grad Celsius erhitzt und 12 Stunden lang gekocht. Nach dem Abkühlen findet man einen schwarzen Schlamm, welcher aus feinstverteilten Kohlenstoffpartikeln und Wasser besteht. Da es sich hierbei um eine exotherme Reaktion handelt wird sogar noch Wärme frei welche genutzt werden kann.
+Mittlerweile ist es möglich den Inkohlungsprozess so einzustellen, dass alle Vorstufen von Kohle also auch Mutterboden, Torf, und andere, erzeugt werden können.
+Der Reifegrad dieses Verfahrens ist wohl schon sehr hoch ein zu schätzen. Eine Umsetzung im industriellen Maßstab scheint sehr bald möglich zu sein.
+
+Ein Vorteil der selbst gemachten Kohle ist dass sie den Kohlendioxid-Haushalt nicht weiter belastet, da nur soviel CO2 freigesetzt wird wie die Pflanzen, welche zur Gewinnung genutzt wurden, vorher aus der Luft aufgenommen haben.
+Sie lässt sich aus jeder Art von Biomasse erzeugen, also z.B.: aus Stroh, Holzabfällen, Gartenabfällen.
+Das jetzt gefundene Verfahren kann also dazu dienen Kohle zur Energiegewinnung und Synthese von Polymeren zu erzeugen ohne das weiter die Kohlevorkommen in der Erde ausgebeutet werden müssen. 
+Der Kohlenstoffschlamm kann auch in einer neuartigen Brennstoffzelle, welche sich momentan auch im Max-Planck-Institut für Kolloid- und Grenzflächenforschung in Potsdam in der Erprobungsphase befindet, direkt in Strom umgewandelt werden.
+
+Die folgende Abbildung [] zeigt eine Übersicht über die Möglichkeiten die in der Nutzung von   Biomasse stecken.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{Alternatives Biomasse-Management.png}
+\caption{Vision eines alternativen Biomasse-Managements}
+\end{center}
+\end{figure}
+
+	\subsubsection{Umwandlung von Kohlenstoff in Kraftstoffe und Energie}
+	
+	Da Kohlenstoff nur die Grundlage beziehungsweise den Rohstoff für eine Vielzahl an Anwendungen darstellt, sind dadurch weitere Verfahren nötig um die gewünschten Produkte  zu erzeugen. Aus einigen dieser Verfahren, zum Beispiel dem Bergius-Pier-Verfahren oder dem Fischer-Tropsch-Verfahren, erhält man flüssige Endprodukte.
+Dies sind so genannte CtL, also Coal to Liquide-Verfahren, bei welchen Benzin, Diesel, Heizöl und Aromaten für die chem. Industrie erzeugt werden.
+Beim Bergius-Pier-Verfahren  wird Kohle (C) mit Wasserstoff (H2) in einer exothermen Reaktion in Kohlenwasserstoffe umgewandelt.
+Beim Fischer-Tropsch-Verfahren wird die Kohle erst mit Wasserdampf und Luft in ein Synthesegas umgesetzt wird. Als weiteres Endprodukt erhält man hierbei noch Wasser. 
+Die CtL sind in Ländern ohne eigene Ölproduktion interessante Alternativen zur Kraftstoffgewinnung. Allein schon aus politischen Aspekten ist eine Unabhängigkeit von Öl als Energielieferant zweckmäßig.
+Südafrika deckt heute, bedingt durch die Ölembargos während der Apartheit, immer noch einen Großteil seines petrochemischen Kraftstoffbedarfs mit Hilfe des Fischer-Tropsch-Verfahrens.
+Aktuelle Anlagen erreichen einen Umsatz von 4 Kilogramm Holz zu 1 Liter Kraftstoff. Es ist für 2009 eine Anlage  mit einer Produktion von 200.000 Tonnen pro Jahr geplant. Es sind verschiedenste Kraftstoffe möglich wobei Diesel den Schwerpunkt bildet.
+
+
+Eine weitere Möglichkeit zur Erzeugung von Kohlenwasserstoffen sind die BtL, so genannte Biomass to Liquide-Verfahren. Bei diesen wird Biomasse durch einen Vergasungsprozess zu kohlenstoffhaltigen Verbindungen umgesetzt und kann dann wie bei den CtL in Kraftstoffe und Produkte für die chemische Industrie weiterverarbeitet werden.
+Schätzungen zufolge soll sich auf einem Hektar Ackerland soviel Biomasse anbauen lassen, dass daraus jährlich ca. 4000 Liter BtL-Kraftstoff hergestellt werden können. Mit Hilfe  bestehender Anlagen lassen sich jährlich 50000 Tonnen Bioabfälle in 25000 Tonnen Kohlenstoff umsetzen.
+
+Bei dem in der folgenden Abbildung [2] gezeigten Biomassevergasungsverfahren wird aus Holzabfällen und anderer Biomasse ein Synthesegas und daraus später Biokraftstoff und elektrische Energie erzeugt. Das dargestellte Verfahren zeigt den von der deutschen Choren Industries GmbH seit 2003 in einer Pilotanlage verwendeten Prozess zur Gewinnung von Biodiesel welcher unter den Handelsnahmen Biotrol, SunFuel und SunDiesel auf dem Markt ist und unter anderem von DaimlerChrysler und Volkswagen vertrieben wird.
+
+	Die Pyrolyse ist ein BtL-Verfahren zur Gewinnung von kurzkettigen Kohlenwasserstoffen wie z.B. Ethen und Propen aus nachwachsenden Rohstoffen, durch Vergasung von Holz.
+Das Holz wird dabei unter Sauerstoffabschluss auf 700°C - 800°C erhitzt und somit eine Lösung der bestehenden chemischen Verbindungen im Holz bewirkt. Die Hauptbestandteile des Holzgases sind Kohlenstoffdioxid, Kohlenstoffmonooxid, Methan, Ethen, Wasserstoff und Wasserdampf, welche sich in nachgelagerten Prozessen weiter nutzen lassen. Es ist auch möglich entsprechend konzipierte Fahrzeuge mit Holzgas zu betreiben.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=16cm]{Biotrol.png} 
+\caption{Synthese von Biotrol-Kraftstoff}
+\end{center}
+\end{figure}
+
+	\subsubsection{Fazit/Bewertung}
+
+	- Energieträger:
+Kohle ist und bleibt auch weiterhin ein wichtiger Energieträger welcher uns, wie oben im Text bereits erwähnt, noch länger zur Verfügung stehen wird als Öl, bei welchem man mit einem Förderungsende in 50 - 100 Jahren rechnet. In Ländern mit großen Kohlenreserven wie zum Beispiel China, Kanada und Australien ist davon auszugehen, dass es auch bei steigendem Bedarf nicht zu Engpässen in der Energieversorgung durch Kohle kommen wird. Durch einen weltweiten Handel mit Kohle wird auch der steigende Bedarf anderer Länder gedeckt werden können.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=11cm]{Kohlenhandel.png}
+\caption{weltweiter Kohlehandel}
+\end{center}
+\end{figure}
+
+	- Standortfaktor und politische Unabhängigkeit:
+Wie beim Erdöl spielt der Standort bei der Kohle eine wichtige Rolle da sonst wieder eine Abhängigkeit zu Kohle fördernden Ländern entsteht. Diese Abhängigkeit lässt sich nur durch eine verstärkte Nutzung von Biomasse als Energieträger und regenerative Energiegewinnung verringern. Die Abhängigkeit von den Öl produzierenden Staaten der OPEC und anderen welche durch Absprache großen Einfluss auf den Ölpreis an den internationalen Märkten haben.
+	
+	-gesicherte Energieversorgung: 
+Es hat sich gezeigt, dass mit Kohlenstoff angereicherte Erde in Nährstoff ärmeren Regionen ertragreicher ist und Pflanzen mit höheren Energiegehalten wachsen, da der Kohlenstoff zu einer besseren Bindung der Nährstoffe an das Erdreich führt und diese nicht mehr so schnell durch Niederschläge herausgewaschen werden können. 
+Laut WEO2004 wird der Anteil von Biokraftstoffen 
+
+-Reifefaktor und Eingliederung in bestehende Infrastruktur:
+Die in diesem Bericht beschriebenen Verfahren sind über das Laborstadium hinaus und zum Teil schon seit Jahren in industriellem Maßstab in Gebrauch. Die Kohleverflüssigung mit Hilfe des  
+Ihre Effizienz lässt sich zum Beispiel wie bei der oben dargestellten Herstellung von Biotrol durch eine Kombination von Kraftstoffsynthese und Stromerzeugung beziehungsweise Fernwärme steigern.
+
+	- Wirtschaftlichkeit:
+Der Einsatz von aus Biomasse gewonnenen Kraftstoffen rechnet sich heute ab einem Rohölpreis von 60 US-Dollar/Barrel; einer Marke die dieses Jahr bereits überschritten wurde. 
+Beim Fischer-Tropsch-Verfahren liegen die Preise bei 8-10 US-Dollar/GigaJoule bei einem Kohlepreis von 1 US-Dollar/GigaJoule. 
+
+	- Emissionen und Sicherheit:
+Durch die Verwendung alternativer Energiegewinnungsverfahren wie Biomasseverkohlung, -vergasung, Geothermie und anderen ist es allerdings möglich die Abhängigkeiten von Kohle und Erdgas fördernden Staaten zu minimieren. Nachteil bei der Nutzung von Kohle als Energieträger ist allerdings der Ausstoß von CO2 in die Atmosphäre.
+Die in diesem Kapitel beschriebenen Verfahren zeichnen sich allerdings, im Gegensatz zu geförderter Kohle, durch ihre CO2-Neutralität aus. Dies bedeutet dass nur soviel CO2 in die Atmosphäre gelangt wie vorher von den Pflanzen, welche zur Energiegewinnung genutzt werden, aus ihr entnommen wurde.
+
+
+Quellen: 
+- Focus 2/06 (Magazin der Max-Planck-Gesellschaft)
+- Wikipedia (06/07)
+- ERNEUERBARE ENERGIEN 9/2005
+- www.choren.com
+- World Energy Outlook 2004
+
+
+	\subsection{regenerative Energien}
+
+Die Informationen dieses Kapitel basieren zum gr"o\ss ten aus Quelle \cite{Kaltschmitt}.
+
+
+\textit{Regenerative Energiequelle} sind Lieferanten, die in zeitlicher Hinsicht nicht ersch"opfen bzw. erst nach einen extrem langen Zeit. Sie sind Bestandteil des nat"urlichen Energiekreislaufs auf der Erde und im Sonnensystem. Durch ihre Nutzung wird dadurch nicht global das Gleichgewicht gest"ort. Im Gegensatz dazu die fossilen Energietr"ager, die zur Erderw"armung und Klimawandel beitragen.
+
+\subsubsection{Quellen und Nutzung regenerative Energie}
+
+Es gibt drei nat"urliche Energiequellen, die zur elektrischen Energiegewinnung direkt bzw. indirekt genutzt werden k"onnen. Folgendes Schema zeigt diese und die jeweilige Nutzungsm"oglichkeit:
+
+//Abb 1.7
+
+In den n"achsten Unterkapiteln werden auf drei verschiedene Systeme zur Grund -bzw. Teillastdeckung ausf"uhrlich eingegangen.
+
+ 
+\subsubsection{Erdw"arme}
+
+\paragraph{Energiequelle\\ \\}
+Die Erdw"arme bezieht ihre Energie aus drei verschieden Quellen:
+\begin{itemize}
+	\item Die innere gespeicherte Energie, die bei dem Aufprall von Massen (Himmelsk"orpern) auf die Erde freigesetzt wurde. Diese Gravitationskraft wurde fast vollst"andig in W"arme umgewandelt. 
+	\item Die so genannte Ursprungsw"arme, stammt noch aus den Anfangszeit bei der eigentlichen Erdentstehung.
+	\item Im inneren befinden radiaktive Elemente darunter vor allem Uran 238 und Uran 235, Th 232 und K 40. Sie zerfallen und die dadurch freigewordene Energie wird in form von W"arme gespeichert.
+Da die Erdkruste ein schlechter W"armeleiter ist, wurde ein Gro\ss teil dieser Energie gespeichert.
+\end{itemize}
+
+\paragraph{Elektrische Energieversorgung durch Erdw"arme\\ \\}
+Sie ist unabh"angig von Umwelteinfl"ussen wie Tagen -bzw. Jahreszeit, Wind und Sonneneinstrahlung. Aus diesem Grund eignet sich diese Form der Energiegewinnung sehr gut zur Deckung der Grundlast.
+Dabei werden Hei\ss wasser -und Dampfquellen mit Temperaturen "uber 100°C und einer tiefen mehr als 1000m genutzt. 
+Hauptproblem neben zumeist niedrigen Wassertemperaturen ist die geringe hydraulische Permeabilit"at (Durchl"assigkeit) des Bodens, jedoch gibt es grunds"atzlich drei technisch relevante M"oglichkeiten die Erdw"arme zunutzen f"ur die elektrische Energiegewinnung:
+
+\textit{Hei\ss wasseraquiferen}\\
+Erdschichten die hei\ss es (>100°C) Grund- oder Mineralwasser enthalten nennt man Hei\ss wasseraquiferen. Diese lassen sich vor allem in Sandsteinen, Muschelkalk, Karbonatgesteinen verwenden. Um diese Schichten zu nutzen  werden zwei Bohrungen ben"otigt. Aus dem Produktionrohr wird das Thermalwasser gef"ordert. Mit einen mindest Abstand von einem Kilometer befindet sich die Reinjektionsbohrung. Diese dient zum herunterpumpen des genutzten Thermalwassers.Bohrtechniken werden zum gr"o\ss ten Teil aus der Erd"ol/Erdgas-Industrie genutzt.
+
+\textit{St"orzonen}\\
+St"orzonen sind Gebiete mit regionalen Ausma\ss en, die Risse und Kl"uften im tiefen Erdreich besitzen. Diese dehnen sich mitunter mehrere 10 Kilometer aus. Kl"ufte in St"orzonen dringen steil in die Erde ein. Dabei sto\ss en sie in tiefen von mehr als 10 Kilometer vor. St"orzonen lassen sich vor allem in Karbonat -und kristallinen Steinen nutzen. 
+
+\textit{Kristalline Tiefengesteine}\\
+Die Gesteine besitzen meist eine zu geringe Permeabilit"at. Um diese niedrige Durchl"assigkeit auszugleichen, wird kaltes Wasser in die Reinjektionbohrung unter hohen Druck (bis 150bar) eingepumpt. Dieses erw"armt sich in den Rissen der Formation auf die Gesteintemperatur. Das Erdreich fungiert so als W"arme"ubertrager. Das erw"armte Wasser wird "uber die Produktionsbohrung gef"ordert. 
+
+\paragraph{Stromerzeugung\\ \\}
+Grunds"atzlich gibt es zwei Prinzipien, um die Erdw"arme in elektrische Energie umzuwandeln. Diese Methoden k"onnen einzeln f"ur sich oder in Kombination verwendet werden.
+
+\textit{Offene Systeme}\\
+Bei den offenen Systemen werden wiederum 2 Arten unterscheiden.
+Um eine direkte Dampfnutzung zu betreiben, muss die Thermalquelle "uberhitzten Dampf liefern. Bei diesem Verfahren wird sofort nach einer Tropen -und Feststoffabscheidung, der Dampf in eine Turbine geleitet. 
+Das andere Prinzip nennt man Flashsystem. Dabei wird das gef"orderte thermal Wasser/Dampfgemisch in einen Flashbeh"alter geleitet und teilentspannt. Danach folgt Feststoffabscheidung und die Trennung von Dampf -und Fl"ussigphase. Der fl"ussige Anteil wird reinjeziert. In der Turbine entspannt sich der Dampf auf Atmosph"arendruck. Das Kondensat wird entweder "uber einen Diffusor an die Atmosph"are abgegeben oder in einem Kondensator zur"uckgek"uhlt und reinjeziert.
+
+\textit{Geschlossene Systeme}\\
+In einem geschlossenen System wird zur Energieumwandlung ein anderes Arbeitmedium verwendet. W"arme"ubertrager und Verdampfer eignen sich als Energie"ubertrager von dem Thermalwasser zum Arbeitsmittel. Das zu verwendende Arbeitsmedium muss tiefsiedend sein, so k"onnen auch Thermalquellen mit niedriger Temperatur und Druck genutzt werden. Dies gilt auch f"ur Thermalwasser mit negativen chemischen Eigenschaften.
+Auch beim geschlossenen System gibt es zwei h"aufig verwendete Verfahren.
+Beim Rankine-Prozess werden oft organische Stoffe als Arbeitsmedium (vor allem Kohlenwasserstoffe oder Fluorkohlenwasserstoffe)genutzt. 
+Das zweite Verfahren nennt man Kalina-Prozess. Das hier verwendete Arbeitsmedium ist ein Stoffgemisch aus Ammoniak und Wasser. Vorteil dieses Prozesses ist es, das die Verdampfung nicht isotherm abl"auft (im Gegensatz zu reinen Stoffen). Dadurch werden die Verluste in den W"arme"ubertragern reduziert und somit der Wirkungsgrad erh"oht.
+
+\paragraph{"Okonomie\\ \\}
+Die "okonomischen Aspekte eine Erdw"arme-Kraftwerks wird im folgenden anhand eines Beispielanlage mit eine Leistung von 850kW untersucht. Die Thermalquelle befindet sich in einer Tiefe von 2700-4600m, hat eine Wassertemperatur von 150°C und eine F"orderrate von 100m³/h.
+
+\textit{Investitionskosten}\\
+Folgende Aufzählung enthält die Kosten f"ur Bau und Planung eines solchen Kraftwerks. Die n"otigen Investitionen f"ur die Bohrung sind gro\ss en Schwankungen ausgesetzt, da sie abh"angig von der Tiefe und Art des Gesteins sind. 
+
+\begin{itemize}
+	\item Bohrung bis 3000m	ca. 1000€/m
+	\item Bohrung 4000-5000m	ca. 1150€/m
+	\item Tiefenpumpen	150000€
+	\item St"utzmittel f"ur Gestein	360000-550000€
+	\item Rohre, Ventile, Reglungen f"ur Thermalwasserkreislauf	390000€
+	\item Systemelemente (z.B. Filter)	25€/kW
+	\item Rankine-Anlage mit 850kW	1,5 Mio €
+	\item W"arme"ubertrager	10€/kW
+	\item Geb"aude	150000€
+	\item Planung / Vorbereitung / Gutachten	500000€
+\end{itemize}
+
+\textit{Betriebskosten}\\
+Die j"ahrlich anfallenden Kosten f"ur den Betrieb der Anlage werden anhand von dem Prozentanteil der jeweiligen Investitionskosten gesch"atzt.
+\begin{itemize}
+	\item 0,5\% Bohrung
+	\item 4\% Rohrleitungen, W"arme"ubertrager, Filter, etc.
+	\item 1\% Rankine-Anlage
+\end{itemize}
+
+\textit{Stromkosten}\\
+Die tats"achlichen Stromkosten sind vor allem abh"angig von den Investitions -und j"ahrlichen Betriebskosten, da der Rohstoff (Thermalwasser) kostenlos zu Verf"ugung steht. Die weiteren ausschlagenden Einflussgr"o\ss en sind die Temperatur und F"ordermenge des Thermalfluids. Die hier betrachtete Referenzanlage ergibt sich ein Betrag von ca. 0,13-0,22€/kWh.
+
+\paragraph{"Okologie\\ \\}
+
+Die "okologischen Auswirkungen werden in diesen Kapitel und die gesamte Lebensdauer, sowie Planung und Bau. 85-90\% der Emission werden beim Bau ausgesto\ss en. Wenn man die Erdw"arme mit einer Kraftw"armekopplung betreibt, verbessert sich der Wirkungsgrad und somit wird der Aussto\ss  von Schadstoffen pro Kilowattstunde reduziert. 	
+
+\textit{Herstellung/Bau}\\
+Die Umweltfolgen und Gefahren beim Bau des Kraftwerks sind zu vergleich mit denen der Erd"ol/Gas Industrie. Im Allgemeinen sind die Folgen als gering anzusehen. L"armbel"astigungen sind eng zeitlich begrenzt.
+
+\textit{Normalbetrieb}\\
+Beim der normalen Betriebszeit k"onnen aus dem Untergrund Salze und Mineralien gel"ost werden und das Thermalwasser weiter verunreinigen. Schwermetall und Schwefelverbindungen sind nur in Vulkangebieten nachweisbar. F"ur die Umwelt ist dies unproblematisch, wenn man ein geschlossenes System verwendet und das Thermalwasser aufdringt aus dem Kreislauf und zur"uck in den Boden gepresst wird. 
+
+\textit{St"orfall}\\
+Da das Thermalwasser mit Salzen und Mineralien versetzt ist, k"onnen bei dem  m"oglichen Austritt an der Oberfl"ache geringe Umweltsch"aden entstehen. Auch k"onnten toxische Gase im Falle einer St"orung in Umwelt gelangen, aber mit den richten Vorschriften kann das Risiko deutlich gesenkt werden. Folgen eines derartigen Austritts w"aren nur von lokaler Natur.
+
+\textit{Betriebsende}\\
+Um Umweltsch"aden auch nach dem Betriebsende auszuschlie\ss en, m"ussen die Bohrungen versiegelt werden, sodass kein Thermalwasser an die Oberfl"ache Ger"at.
+
+%\paragraph{Potential}
+%
+%Heute sind Bohrungen von 3-7 Kilometer Tiefe technisch m"oglich. Damit werden Gebiete erreicht mit Temperaturen von 100-220°C. Auch durch massive Nutzung der Erdw"arme "uber einen Zeitraum von 1000 Jahren, w"urde sich der Boden nicht ausk"uhlen und somit bleibt das Erzeugungspotential konstant. Das technische Potential in Deutschland sind rund 321TWh/a. Im Vergleich war der Energiebedarf 606TWh im Jahr 2004. Dies entspricht eine Abdeckung von 53%.
+ 
+\subsubsection{Photovoltaik}
+
+\paragraph{Energiequelle\\ \\}
+
+Bei der Photovoltaik wird die Sonnenenergie direkt zur Umwandlung in elektrischen Strom genutzt. Die Sonne sendet Strahlung in form von Photonen aus. Diese dringt durch die Atmosph"are und entweder direkt ohne Umwege auf die Erdoberfl"ache treffen (Direktstrahlung) oder durch Streuung an Partikeln in der Luft abgelenkt werden und so auftreffen (Diffusionsstrahlung). Die Addition beider Strahlungsarten ist die nutzbare globale Strahlung. 
+
+\paragraph{Elektrische Energieversorgung durch Photovoltaik\\ \\}
+
+Solarzellen bestehen zum gr"o\ss ten Teil aus Halbleitermaterialien.
+Durch Bestrahlung einer Solarzelle mit Sonnenlicht, dringen Photonen ein. Sie werden vom Material. Die dabei freigesetzte Energie l"ost Elektronen. Es entsteht eine Potentialdifferenz. Durch Anschluss von Verbindungsleitungen kann ein Stromkreis erstellt werden. 
+
+%{
+%Solarzellen bestehen zum gr"o\ss ten Teil aus Halbleitermaterialien
+%
+%p-n "Ubergang in Halbleitern
+%
+%Durch gezielte Zugabe von Fremdatomen in die Kristallstruktur des Halbleiters, k"onnen p -und n-Gebiete erzeugt werden. Diffusion, Legierung, Ionenmanipulation sind Methoden zur Ver"anderung des Kristalls.
+%Ein n-Gebiet entsteht durch Zugabe von Donatoren. Dies sind Atome mit mehr Elektronen als die des Halbleiters. Diese "ubersch"ussigen negativen Ladungen sind nur schwach an ihren St"orstellen gebunden und lassen sich leicht von ihnen l"osen.
+%Elemente mit weniger Elektronen werden in das p-Gebiet eingebaut. Diese nennt man Akzeptoren. Die St"orstellen wo sich nun keine negative Ladung befindet nennt man Loch oder Defektelektron. Diese Defekte k"onnen sich auch bewegen, indem ein benachbartes Elektron hineinspringt und an der Ursprungsstelle ein Loch zur"uckl"asst.
+%Ein p-n "Ubergang ensteht, wenn die beiden Gebiete in engen Kontakt gebracht werden. Bei diesem Vorgang entsteht ein Konzentrationsunterschied. Durch die Diffusionskraft dringen die L"ocher in n-Gebiet ein und die freien Elektronen in das p-Gebiet. Aufgrund dieser Bewegung entsteht ein elektrisches Feld. Die von ihr ausgehende Kraft ist entgegengesetzt zur Diffusionskraft. Dies geschieht solange bis das Gleichgewicht erreicht ist. Es entsteht ein Grenzgebiet, welches Raumladungszone genannt wird. Dort sind die Ladungen der Donatoren und Akzeptoren ortsfest.
+
+%Photoelektrischer Effekt
+
+%Durch Bestrahlung eines Halbleiters mit p-n "Ubergang mit Sonnenlicht, dringen Photonen ein. Wenn diese die Raumladungszone erreichen und dort absorbiert werden, wird ihre Energie frei. Diese Energie wird genutzt um wieder Elektron und Loch zutrennen. 
+%----k"urzung}
+
+\paragraph{technische Umsetzung\\ \\}
+
+Solarzellen werden mit verschieden M"oglichkeiten zusammen geschalten (Abb. [??]). Dadurch werden unterschiedlich Stromst"arken bzw. Spannung erreicht. Die Anzahl der Zellen bestimmt die maximale Leistung des Moduls. Die Lebensdauer betr"agt ca. 20-30Jahre.
+Da das Modul nur Gleichstrom produziert, muss ein Wechselrichter ihn in Wechselstrom umwandeln, damit man ihn ins Stromnetz einspeisen kann.
+
+\paragraph{Wirkungsgrad\\ \\}
+
+Der Wirkungsgrad einer Solarzelle ist sehr abh"angig vom Material (folgende Tabelle). Die theoretisch maximale Leistung liegt bei nur ca. 30\%. Dies liegt vor allem an Photonen mit zu geringer Energie, die keine Elektronen anregen k"onnen. Real sind der Wirkungsgrade noch geringer, aufgrund von z.B. Reflexionen.
+
+\begin{table}[htdp]
+\caption{Wirkungsgard verschiedener Solarzellentypen (\cite{Kaltschmitt}, S.214)}
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+\multicolumn{1}{c}{Matrial} & \multicolumn{1}{c}{Typ} & \multicolumn{2}{c}{Wirkungsgrad in \%} & \multicolumn{1}{c}{Stand der Technik} \\ 
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{Labor} & \multicolumn{1}{c}{Produktion} & \multicolumn{1}{c}{} \\ 
+\hline
+Silicium & Einkristall & 24,7 & 14-18 & großtechnische Prod. \\ 
+Poly-Silicium & Polykristall & 19,8 & 13,0-15,5 & großtechnische Prod. \\ 
+MIS-Inversionsschicht (Si) & Einkristall & 17,9 & 16,0 & Kleinproduktion \\ 
+Konzentratorzelle (Si) & Einkristall & 26,8 & 25,0 & Kleinproduktion \\ 
+Si auf Glassubstrat & Transfertechnik & 16,6 &  & Labormaßstab \\ 
+Amorphes Si & Dünnschicht & 13,0 & 8,0 & großtechnische Prod. \\ 
+Tandem 2-Schicht, amor. Si & Dünnschicht & 13,0 & 8,8 & Kleinproduktion \\ 
+Tandem 3-Schicht, amor. Si & Dünnschicht & 14,6 & 10,4 & großtechnische Prod. \\ 
+GaInP/GaAs & Tademzelle & 30,3 & 21,0 & Kleinproduktion \\ 
+Cadmium-Tellurid & Dünnschicht & 16,5 & 10,7 & Kleinproduktion \\ 
+Kupfer-Indium-Di-Selenid & Dünnschicht & 18,4 & 12,0 & Kleinproduktion/ \\ 
+ &  &  &  & Pilotprojekt \\ 
+\end{tabular}\end{center}
+\label{default}
+\end{table}%
+
+Andere Verluste treten beim Wechselrichten auf. Ein "Uberblick "uber diese liefert folgende Abbildung.
+
+//abb 5.30
+
+\paragraph{"Okonomische Analyse\\ \\}
+
+Bei einer "okonomischen Analyse von Photovoltaikanlagen muss man zwischen einfachen Dachanlagen und gro\ss en Solarkraftwerken unterscheiden. In diesem Kapitel werden, deshalb diese getrennt betrachtet. Folgende Tabelle zeigt die Eigenschaften von den exemplarisch untersuchtend Anlagen.
+
+\begin{table}[htdp]
+\caption{Technische Daten von den exemplarischen Photovoltaik-Anlagen (\cite{Kaltschmitt}, S.260)}
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ & Dachanlage & Kraftwerk \\ 
+\hline
+Modulnennleistung in kW & \multicolumn{1}{c}{5} & \multicolumn{1}{c}{1000} \\ 
+Basismaterial & \multicolumn{1}{c}{Si} & \multicolumn{1}{c}{Si} \\ 
+Solorzellentyp & \multicolumn{1}{c}{multi} & \multicolumn{1}{c}{multi} \\ 
+Wirkungsgrad in \% & \multicolumn{1}{c}{13,5} & \multicolumn{1}{c}{13,5} \\ 
+Lebensdauer in a & \multicolumn{1}{c}{30} & \multicolumn{1}{c}{30} \\ 
+Volllaststunden in h/a & \multicolumn{1}{c}{800} & \multicolumn{1}{c}{860} \\ 
+
+\end{tabular}\end{center}
+
+\end{table}%
+
+\textit{Investitionskosten}\\
+
+Der gr"o\ss te Teil der Kosten f"ur Inversionen f"allt ab auf die Module (55-65\%). Die Wechselrichter nehmen einen Anteil von 7-12\% ein. Dar"uber hinaus m"ussen 10-15\% f"ur Befestigungsgestelle veranschlagt werden. 
+
+\textit{Betriebskosten}\\
+
+Je nach Bauart schwanken die j"ahrlichen Kosten pro installierter Kilowattstunde der Anlagen zwischen 30 und 60€/kW. Die folgende Tabelle zeigt die Gesamtkosten f"ur die Refernzanlagen.
+
+\begin{table}[htdp]
+\caption{durchschnittliche Investitions-, Bertriebs- und Stromgestehungskosten (\cite{Kaltschmitt}, S.262)}
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ & Dachanlage & Kraftwerk \\ 
+\hline
+Investitionen &  &  \\ 
+  Module in k€ & \multicolumn{1}{r}{16,3} & \multicolumn{1}{r}{2582} \\ 
+  Wechselrichter in k€ & \multicolumn{1}{r}{2,5} & \multicolumn{1}{r}{415} \\ 
+  Sonstige Bauteile in k€ & \multicolumn{1}{r}{2,7} & \multicolumn{1}{r}{486} \\ 
+  Sonstiges in k€ & \multicolumn{1}{r}{6,3} & \multicolumn{1}{r}{648} \\ 
+  Summe in k€ & \multicolumn{1}{r}{27,8} & \multicolumn{1}{r}{4131} \\ 
+\hline
+Betriebskosten €/a & \multicolumn{1}{r}{280} & \multicolumn{1}{r}{42000} \\ 
+\hline
+Stromgestehungskosten in €/kWh & \multicolumn{1}{r}{0,50} & \multicolumn{1}{r}{0,34} \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{table}%
+
+\paragraph{"Okologische Analyse\\ \\}
+	
+Der Materialaufwand ist hoch, da eine gro\ss e Oberfl"ache vorhanden sein muss, um die Sonnenstrahlen zu absorbieren. Der "uberwiegende Teil der Emissionen wird beim Bau der Anlage ausgesto\ss en. Hierbei spielt vor allem der Herstellungsaufwand der Solarzelle eine Rolle.
+
+//abb 5.34
+
+\textit{Herstellung}\\
+Umweltbelastungen entstehen vor allem in der Produktion von den Solarzellen.
+Bei Anlagen mit CdTe- und CIS-Technologie, sind gro\ss en Anteile von Cadnium, Tellur und Kupfer problematisch. Sie sind vergleichbar mit den Umweltproblemen die durch die Halbleiterindustrie entstehen. Es k"onnen auch in der Herstellung toxische Gase (z.B. Selenwasserstoff) austreten, jedoch mit bestehenden Gesetzesvorgaben kann diese Gefahr gering gehalten werden. 
+
+\textit{Betriebsende}\\
+Das Recycling der Solarmodule ist weitgehend m"oglich. Bei  CdTe und CIS-Zellen kann der hohe Schwermetallgehalt zu Problemen f"uhren.
+
+\subsubsection{Windenergie}
+
+\paragraph{Energiequelle\\ \\}
+Bei der elektrischen Stromerzeugung wird die kinetische Energie der str"omenden Luftmassen verwendet. Aufgrund der Sonneneinstrahlung auf die Erde heizt sich die die Atmosph"are unterschiedlich auf. Dadurch entstehen gebiete mit unterschiedlichen Luftdr"ucken, worauf der Luft beginnt vom Hochdruck -zum Tiefdruckgebiet zustr"omen.
+
+\paragraph{Technische Realisierung\\ \\}
+Es gibt zwei Prinzipien um die kinetische Energie zu nutzen.
+Widerstandsprinzip
+Hierbei wird die Windstandskraft genutzt. Durch die direkte Anstr"omung der Rotorblattfl"ache bewegt sich der Rotor. Die Leistung ist abh"angig von der Windgeschwindigkeit, der Fl"achengr"o\ss e und Anzahl der Rotorbl"atter. Dieses Prinzip ist weniger effektiv und wird heutzutage nur noch selten genutzt.
+Auftriebsprinzip
+Bei diesem Prinzip wird die gleichen Auftriebseffekte wie bei Flugzeug -oder V"ogelfl"ugel genutzt. Die Luft str"omt unsymmetrisch um das Rotorblatt, da der Fl"ugel in einen bestimmten Winkel zum Wind gestellt wird. Diese Unsysmmetrie hat die Folge, dass die Luftmassen unterschiedlich lange Wege oberhalb und unterhalb des Rotorblattes zur"ucklegen m"ussen. Der Teil mit der l"angeren Strecke besitzt eine h"ohere Geschwindigkeit. Somit kommt es zu Druckunterschieden, die zu einer nutzbaren Auftriebskraft f"uhren. Abblildung [??] veranschaulicht das Prinzip graphisch.
+
+//Abb 6.5
+
+Die K"arfte k"onnen "uber einen oder mehreren Rotorbl"attern mithilfe einer Drehbewegung in mechanische Energie umgewandelt. Diese wiederum kann z.B. "uber ein Getriebe zu einem Generator weitergeleitet werden, um sie in elektrischen Strom umzuformen.
+
+\textit{Bauformen}\\
+Es gibt unterschiedliche Methoden/Formen um Windenergie zu nutzen. Folgende Haupteigenschaften charakterisieren sie:
+\begin{itemize}
+	\item Rotorachse (vertikal/horizontal)
+	\item Anzahl der Rotorbl"atter
+	\item Schnelll"aufigkeit / Rotordrehzahl (konstant/variabel)
+\end{itemize}
+Heutzutage werden vor allem zwei -bzw. dreibl"attrige Horizontalachsenwindanlagen genutzt.
+//Abb 6.11
+\paragraph{Wirkungsgrad/Verluste\\ \\}
+//Abb 6.15
+Die obige Abbildung zeigt die durchschnittlichen Verluste einer Windkraftanlage. Die aerodynamischen nehmen gr"o\ss ten Teil ein. Auch die Umwandlungsprozesse f"uhren zu Verlusten. Heutige Anlagen besitzen einen maximalen Wirkungsgrad von 30-45%.
+
+\paragraph{"Okonomie\\ \\}
+In diesem Kapitel werden drei Referenzanlagen mit einander verglichen. Sie besitzen eine Nennleistung von je 600, 1500 und 2500 Kilowatt. In folgender Tabelle sind die einzelnen charakteristischen Eigenschaften aufgef"uhrt. Pro Anlage werden au\ss erdem noch drei unterschiedliche mittlere Windgeschwindigkeiten (5,5; 6,5; 7,5m/s) f"ur den Vergleich betrachtet.
+
+\begin{table}[htdp]
+\caption{Eigenschaften der Beispiel-Windanlagen (\cite{Kaltschmitt}, S.325)}
+\begin{center}
+\begin{tabular}{llll}
+\hline
+ & \multicolumn{1}{c}{600kW-Klasse} & \multicolumn{1}{c}{1,5MW-Klasse} & \multicolumn{1}{c}{2,5MW-Klasse} \\ 
+\hline
+Nennleistung in kW & \multicolumn{1}{c}{600} & \multicolumn{1}{c}{1500} & \multicolumn{1}{c}{2500} \\ 
+Lebensdauer in a & \multicolumn{1}{c}{20} & \multicolumn{1}{c}{20} & \multicolumn{1}{c}{20} \\ 
+Volllaststunden in h/a & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{r}{5,5m/s} & \multicolumn{1}{c}{1600} & \multicolumn{1}{c}{1550} & \multicolumn{1}{c}{1650} \\ 
+\multicolumn{1}{r}{6,5m/s} & \multicolumn{1}{c}{2300} & \multicolumn{1}{c}{2200} & \multicolumn{1}{c}{2450} \\ 
+\multicolumn{1}{r}{7,5m/s} & \multicolumn{1}{c}{3000} & \multicolumn{1}{c}{2900} & \multicolumn{1}{c}{3050} \\ 
+ &  &  &  \\ 
+\end{tabular}
+\end{center}
+\end{table}%
+
+\textit{Investitionskosten}\\
+Den gr"o\ss ten Teil der Investitionen fallen auf den eigentlichen Windkonverter (ca. 60-80\%). Weitere Kosten entstehen durch die Netzanbindung, Landerschlie\ss ung, Fundament und Planung.
+
+\textit{Betriebskosten}\\
+2 bis 4\% der Gesamtinvestitionskosten m"ussen j"ahrlich f"ur den Betrieb aufgewendet werden. Darunter fallen Kosten f"ur Instandhaltung, Wartung und Pachtgeb"uhren.
+
+\textit{Stromkosten}\\
+Aus den j"ahrlichen Betriebsleistung und Aufwendungen f"ur die Investition und Betrieb entstehen die Kosten pro Kilowattstunde. Im vergleich zu den vorher betrachten regenerativen Systemen sind diese deutlich g"unstiger. Die Referenzanlage mit 2,5 Megawatt Leistung ist dabei die "okonomisch beste L"osung. Sie hat Stromentstehungskosten von ca. 3,9 bis 7,2 €Cent pro Kilowattstunde.
+
+\begin{table}[htdp]
+\caption{durchschnittliche Investitions-, Bertriebs- und Stromgestehungskosten (\cite{Kaltschmitt}, S.328)}
+\begin{center}
+\begin{tabular}{llll}
+\hline
+ & \multicolumn{1}{c}{600kW-Klasse} & \multicolumn{1}{c}{1,5MW-Klasse} & \multicolumn{1}{c}{2,5MW-Klasse} \\ 
+\hline
+Investitionen & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ 
+\multicolumn{1}{r}{Windkonverter in k€} & \multicolumn{1}{c}{520} & \multicolumn{1}{c}{1443} & \multicolumn{1}{c}{2332} \\ 
+\multicolumn{1}{r}{Netzanbindung in k€} & \multicolumn{1}{c}{104} & \multicolumn{1}{c}{216} & \multicolumn{1}{c}{233} \\ 
+\multicolumn{1}{r}{Sonstiges in k€} & \multicolumn{1}{c}{130} & \multicolumn{1}{c}{216} & \multicolumn{1}{c}{233} \\ 
+\multicolumn{1}{r}{Summe k€} & \multicolumn{1}{c}{754} & \multicolumn{1}{c}{1876} & \multicolumn{1}{c}{2800} \\ 
+\multicolumn{1}{r}{Betriebskosten in k€/a} & \multicolumn{1}{c}{18,2} & \multicolumn{1}{c}{50,5} & \multicolumn{1}{c}{81,6} \\ 
+Stromgestehungskosten in €/kWh &  &  &  \\ 
+\multicolumn{1}{r}{5,5m/s} & \multicolumn{1}{c}{0,079} & \multicolumn{1}{c}{0,084} & \multicolumn{1}{c}{0,072} \\ 
+\multicolumn{1}{r}{6,5m/s} & \multicolumn{1}{c}{0,055} & \multicolumn{1}{c}{0,059} & \multicolumn{1}{c}{0,048} \\ 
+\multicolumn{1}{r}{7,5m/s} & \multicolumn{1}{c}{0,042} & \multicolumn{1}{c}{0,045} & \multicolumn{1}{c}{0,039} \\ 
+\end{tabular}
+\end{center}
+\end{table}%
+
+\paragraph{"Okologie\\ \\}
+
+\textit{Emissionen}\\
+Im Vergleich ist die Referenzanlage mit 600 Kilowatt Nennleistung die "okologisch beste Variante, da bei der Herstellung und Betrieb am wenigsten Schadstoffemissionen entstehen (\cite{Kaltschmitt}, S.332). Rund 80\% des produzierten CO2 wird beim Bau der Windkraftanlage ausgesto\ss en. Folgende Abbildung schl"usselt den kompletten Aussto\ss  auf. 
+Die beim Betrieb entstehenden CO2-Emissionen sind auf Wartung und Reparatur der Anlagen zur"uck zuf"uhren.
+
+//Abb 6.26 
+
+\textit{Herstellung}\\
+Umweltsch"aden bei der Herstellung einer Windkraftanlage sind zu vergleichen mit den Belastungen durch die Industriezweige des Maschinenbaus und Elektrotechnik. Da die Umweltauflagen in den Branchen schon meist sehr hoch sind, sind die Effekte auf Umwelt und Mensch eher gering.
+
+\textit{Normalbetrieb}\\
+Hauptumweltbelastung durch Windkraftanlagen im normalen Betrieb entsteht durch L"armbelastung. Diese werden haupts"achlich durch aerodynamische Effekte, Rotor, Getriebe und Generator erzeugt. Diese Belastung kann vor allem auf Tiere wie V"ogel Einfluss nehmen. 
+
+\subsubsection{Potentiale der betrachteten Energiesysteme}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{pot_allg.png}
+\caption{Entwicklung des jährlichen Produktionsleistung von regnerativen Energiequellen (au\ss er Wasser)}
+\end{center}
+\end{figure}
+
+Die vorangegangene Abbildung zeigt die mögliche Entwicklung der Energiegewinnung durch regenerative Systeme. Dabei zeigt sich, dass die in diesem Kapitel betrachteten Energiequellen den deutlich größten Teil einnehmen werden.
+Die nächste Abbildung zeigt die Entwicklung der Investitionskosten pro Kilowatt. Auffällig ist der Rückgang der Kosten bei der Photovoltaik, jedoch wird sie weiterhin deutlich über denen der anderen Systemen. Am kostengünstigsten wird weiterhin die Windenergie sein. Sie wird dadurch auch in Zukunft einen wichtigen Platz einnehmen.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{pot_cost.png}
+\caption{Entwicklung der Investitionskosten pro Kilowatt bei regnerativen Energiesystemen}
+\end{center}
+\end{figure}
+
+\paragraph{Erdwärme\\ \\}
+2002 wurden 57TWh elektrische Energie mittels Geothermie produziert. Der größte Teil der Anlagen stehen in den USA. In Ländern mit günstigen Bodenbedingungen, kann die Erdwärme eine wichtige Rolle im Energie-Mix spielen. So wird in El Salvador fast 25\% des Bedarfs damit gedeckt. Bis 2030 soll sich die jährliche weltweite Produktion auf bis 167TWh steigern.
+
+\paragraph{Photovoltaik\\ \\}
+Da die Solarzelle eine Reihe von Einschränkungen besitzt, wird sich in der Zukunft diese form der Energiegewinnung weiterhin nur begrenzt zum Einsatz kommen. Hauptprobleme sind der hohe Materialverbrauch von knappen Ressourcen und der niedrige Wirkungsgrad. Aus diesen Gründen folgen die hohen Investitionskosten. Auch zur Grundlastdeckung kann sie nicht betragen, da die Sonnenenergie nicht ständig zur Verfügung steht. 119TWh jährliche elektrische Leistung sollen mit Hilfe von Sonnenstrahlen produziert werden. Photovoltaik stellt 80\% davon zur Verfügung.
+
+\paragraph{Windenergie\\ \\}
+Die Energiegewinnung aus Wind wird auch in Zukunft den größten Teil der regenerativen Quellen einnehmen. Zwar ist der Anteil am gesamten Energie-Mix noch mit jährlich 52TWh (0,3\% im Jahr 2002) gering, aber wird sich bis zum Jahr 2030 auf 3\% und 929TWh steigern. Dieser Anstieg ist, im Sektor der umweltfreundlichen Energiesysteme, der Größte.
+
+\subsubsection{Beurteilung der regenerativen Energiesysteme}
+
+\paragraph{Energieträger\\ \\}
+
+Bei der Wind- und Sonneenergie steht der Energieträger direkt zur Verfügung. Sie müssen nicht noch aufbereitet werden. Wind und Sonnenstrahlung sind kostenlos und können von jedem frei genutzt werden. Sie sind nahezu unverbrauchbar. Beschreckend wirkt, dass diese nicht immer zeitlich verfügbar sind. Bei Windstille bzw. nachts sind sie nicht nutzbar. Aus diesem Grund können diese Energieträger keinen kontinuierliche Stromversorgung liefern, so eigenen sie sich vor allem zur günstigen Spitzenlastdeckung oder für Insellösungen, bei denen einen Netzanbindungen unwirtschaftlich wären.
+Erdwärme kann noch über extrem lange Zeit  genutzt werden, da gigantische Energiereserven sich noch im Erdinneren befinden. Weiterer Vorteil ist, dass diese Wärme kontinuierliche abgegeben wird und so zeitlich immer genutzt werden kann und nicht von äußeren Einflüssen abhängt. Dadurch ist diese Energieform gut für ein Teil der Grundlastdeckung geeignet.
+
+\paragraph{Standortfaktor, politische Unabhängigkeit\\ \\}
+
+Der Standort spielt eine größere Rolle beim den hier betrachteten regenerativen Systemen, da die Anlagen in einer Umgebung stehen müssen, wo der Energieträger nutzbar zur Verfügung steht. Der Wirkungsgrad ist ortsabhängig (z.B. von Einstrahlwinkel, mittlere Windgeschwindigkeit, Thermalwassertemperatur) Für die Windenergie sind vor allem  Küstengebiete und erhöhte Hügel bzw. Berge vorteilhaft. Bei der Nutzung von Sonnenenergie empfehlen sich Orte mit einem großen Sonneneinstrahlwinkel und günstige Metrologie (viele Sonnenstunden). Die Erdwärmenutzung erfordert gute Bodenbeschaffenheit mit hohen Temperaturen des geförderten Wassers. Aus diesen Gründen kann man diese Anlagen nicht ohne weiteres an den Stellen errichten, wo der Bedarf tatsächlich da ist. Viele günstige Orte liegen weit ab von Industriezentren (Solarenergie aus der Sahara oder Wind-offshore-Anlagen auf dem Meer). Jedoch gibt es genügen Gebiete auf der Welt, wo ein wirtschaftliche Betrieb der regenerativen Systeme möglich ist, sodass eine breite Nutzung zur Deckung des Energiebedarfs empfehlenswert ist.
+Solche Anlagen können auch, wenn sie im eigenen Land betrieben werden, genutzt werden um die politische und Rohstoffabhängigkeit (z.B. Erdöl / Erdgas) von anderen Ländern zu reduzieren, da der Energieträger frei verfügbar ist.
+
+\paragraph{gesicherte Energieversorgung \\ \\}
+
+Da bei der Sonnen -und Windenergieanlagen sind abhängig von veränderlichen Umweltfaktoren, sodass nicht zu jeder Zeit elektrischen Strom liefern. Jedoch kann man mit moderner Metrologie gute Vorhersagen machen und bei Engpässen zum Beispiel schnell anlaufende Gaskraftwerke starten. Geothermie ist davon unabhängig, sodass eine hohe Sicherheit garantiert ist. Alle drei Typen haben gemein, dass sie nicht von Rohstofflieferungen abhängen und somit eine krisensichere Versorgung garantieren. Da Solar -und Windanlagen meist aus mehreren Modulen (bei Windparks mehrere Windräder) bestehen, hat ein defekt eines Moduls keine schwerwiegenden Folgen, da die anderen meist problemlos weiter arbeiten können.
+
+\paragraph{Reifefaktor\\ \\}
+
+Die Nutzung von Windenergie besitzt eine lange Geschichte, sodass auch die Entwicklung weit voran geschritten ist. Moderne Anlagen besitzen einen Wirkungsgrad von bis zu 45\%, sind erprobt und werden schon in großen Stückzahlen produziert. Bei der Photovoltaik wird vor allem noch an den Halbleitermaterialien geforscht, da sie nur begrenzt sind und kleine Wirkungsgrade liefern. Solaranlagen werden jedoch schon breit genutzt, sowohl als Insellösungen als auch großen Photovoltaikkraftwerken. Die Energienutzung aus der Erdwärme ist noch nicht so weit verbreitet und es müssen noch technische Hindernisse über wunden werden (z.B. Bohrlochtiefen). Aus der Erdöl -und Erdgasindustrie kommen sehr viele hilfreiche Erkenntnisse, wie neue Bohrtechniken, die die Möglichkeiten von Erdwärme erweitern.
+
+\paragraph{Wirtschaftlichkeit \\ \\}
+
+Bei der Wirtschaftlichkeitsrechnung besticht vor allem die Windenergie. Sie ist schon heute, mit günstigen Randbedingungen, konkurrenzfähig zu anderen klassischen Energiesystemen. Dies liegt vor allem an den niedrigen Investitions -und Betriebskosten. Die Photovoltaik hat das Problem des hohen Materialverbrauchs von Halbleitern, dies führt zu sehr hohen Investitionskosten. Dadurch ist dies Form der Stromproduktion oft unrentabel, obwohl die kosten bis 2030 um die Hälfte sinken soll. Dadurch wird auch in Zukunft die Photovoltaik ein Randprodukt bleiben und nur in spezial Gebieten (wie Insellösungen)  zum größten Teil zum Einsatz kommen. Die Geothermie liegt im Mittelfeld bei Wirtschaftlichkeitsfaktor. Sie lohnt sie vor allem bei günstigen Randbedingungen (z.B. vulkanisches Gebiet), da dort die Produktionsleistung deutlich erhöht werden kann. Beste Beispiele hierfür sind Island und El Salvador.
+
+\paragraph{Emissionen, Umweltaspekte\\ \\}
+
+Bei den Umwelt und Emissionsaspekte sind die drei betrachteten Systeme mit in der Spitzengruppe. Da sie während des Betriebs kaum CO2 oder andere schädliche Stoffe produzieren oder ausgestoßen. Bis zu 90\% des CO2 werden nur bei Herstellung und Bau der Anlage frei gesetzt. Einen kleinen Nachteil besitzt die Photovoltaik, da die Herstellung des benötigen Halbleiters viel Energie und Ressourcen benötigt, sodass die gesamt Bilanz etwas schlechter ausfällt. Alle Auswirkungen auf die globale und lokale Umwelt sind vernachlässigbar klein.
+
+
+
+
+\addcontentsline{toc}{section}{Literatur}
+
+\begin{thebibliography}{99}
+  \bibitem{wiki}					http://www.wikipedia.de\\
+  													03.12.2006 
+  \bibitem{bund} 						Lübbert D., Das Meer als Eneriequelle, 
+  									Info-Brief der wissenschaftlichen Dienste des deutschen Bundestages, Berlin, 2005
+  \bibitem{wd}            http://www.wavedragon.net\\
+                           07.12.2006
+  \bibitem{pela}         http://www.oceanpd.com\\
+                           03.12.2006                          
+  \bibitem{Kaltschmitt} 						Kaltschmitt M. / Streicher W. / Wiese A., Erneuerbare Energien 4. Auflage, 
+  									Springer Verlag, Berlin Heidelberg, 2006
+\end{thebibliography}
+
+\end{document}
