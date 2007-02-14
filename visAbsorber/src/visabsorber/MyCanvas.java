@@ -67,7 +67,7 @@ class MyCanvas extends Canvas {
         
     }
     
-    public void refreshImg(NodeList nl, ElementList el, LineList ll, double qRohr, double qOberfl, double qLuft, double tF) {
+    public void refreshImg(NodeList nl, ElementList el, LineList ll, double qRohr, double qOberfl, double qLuft, double tF, double length) {
         if (nl.getCount()>0) {
             nodeList=nl;
             elementList=el;
@@ -91,8 +91,8 @@ class MyCanvas extends Canvas {
                 if (minU>bufU) minU=bufU;
                 if (maxU<bufU) maxU=bufU;
             }
-            maxU=50.0;
-            minU=15.0;
+            maxU=70.0;
+            minU=20.0;
             //JOptionPane.showMessageDialog(null, ""+minU, "1", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(null, ""+maxU, "2", JOptionPane.ERROR_MESSAGE);
             offsetX=0-minX+400;
@@ -154,6 +154,7 @@ class MyCanvas extends Canvas {
             gTemp.drawString("Wärmestrom/Meter Oberfl:    " +  new BigDecimal(qOberfl,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,35);
             gTemp.drawString("Wärmestrom/Meter Umgeb: " +  new BigDecimal(qLuft,new MathContext(6,RoundingMode.HALF_UP)) + " W/m", 100,50);
             gTemp.drawString("Wassertemperatur:                " +  new BigDecimal(tF,new MathContext(6,RoundingMode.HALF_UP)) + " °C", 100,65);
+            gTemp.drawString("Position:                                    " +  new BigDecimal(length,new MathContext(6,RoundingMode.HALF_UP)) + " m", 100,80);
             
             
             /*for (int i = 0; i < ll.getCount(); i++) {

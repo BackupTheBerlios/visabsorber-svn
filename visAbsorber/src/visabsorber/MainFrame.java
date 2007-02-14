@@ -141,14 +141,9 @@ public class MainFrame extends javax.swing.JFrame {
             .add(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
-                            .add(statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE))
-                        .addContainerGap())
+                    .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                    .add(statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -158,8 +153,8 @@ public class MainFrame extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jButton5)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton8)
-                        .addContainerGap())))
+                        .add(jButton8)))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -176,7 +171,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .add(jButton5)
                     .add(jButton8))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -185,11 +180,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel9.setText("Randbedingungsliste");
 
-        rbdFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\grob\\1.rbd");
+        rbdFileField.setText("Netze\\var 0 lang\\1.rbd");
 
-        elementFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\grob\\1.ele");
+        elementFileField.setText("Netze\\var 0 lang\\1.ele");
 
-        nodeFileField.setText("D:\\Programmierung\\PPM\\visAbsorber\\Netze\\grob\\1.knt");
+        nodeFileField.setText("Netze\\var 0 lang\\1.knt");
 
         jButton3.setText("...");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -256,7 +251,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel12.setText("W\u00e4rme\u00fcbergang an Wasser:");
 
-        jTextField7.setText("2000");
+        jTextField7.setText("60");
 
         jLabel13.setText("W\u00e4rmestromdichte durch Strahlung:");
 
@@ -274,7 +269,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel17.setText("Massenstrom Wasser:");
 
-        jTextField11.setText("0.250");
+        jTextField11.setText("0.01");
 
         jLabel18.setText("W\u00e4rmekapazit\u00e4t Wasser:");
 
@@ -284,9 +279,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel20.setText("Anzahl der Schnitte:");
 
-        jTextField13.setText("100");
+        jTextField13.setText("10");
 
-        jTextField14.setText("1");
+        jTextField14.setText("7");
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -471,7 +466,7 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 667, Short.MAX_VALUE)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -617,7 +612,7 @@ public class MainFrame extends javax.swing.JFrame {
         
         if (cut<cutCount) {
             tF = tF-(qRohr*absLength/cutCount)/(cpWater*massflow);
-            visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft, tF);
+            visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft, tF, absLength/cutCount*cut);
             visMatrix.repaint();
             visMatrix.saveToFile(new File(""+cut+".png"));
             cut++;
@@ -641,7 +636,7 @@ public class MainFrame extends javax.swing.JFrame {
             fem.start();
         }
         else {
-            visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft, tF);
+            visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft, tF, absLength);
             visMatrix.repaint();
             visMatrix.saveToFile(new File(""+cut+".png"));
         }
