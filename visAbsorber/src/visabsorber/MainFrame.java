@@ -6,14 +6,11 @@
 
 package visabsorber;
 
-import java.awt.Canvas;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import javax.swing.JFileChooser;
+import java.text.DateFormat;
+import java.util.Date;
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 /**
@@ -613,12 +610,23 @@ public class MainFrame extends javax.swing.JFrame {
             }
         }
        
+            visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft, tF, absLength);
+            visMatrix.repaint();
+            Date today;
+            String dateOut;
         
+
+            DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.SHORT,
+                                   DateFormat.SHORT,
+                                   Locale.US);
+            today = new Date();
+            dateOut = formatter.format(today);
+                    
         if (cut<cutCount) {
             tF = tF-(qRohr*absLength/cutCount)/(cpWater*massflow);
             visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft, tF, absLength/cutCount*cut);
             visMatrix.repaint();
-            visMatrix.saveToFile(new File(""+cut+".png"));
+            visMatrix.saveToFile(new File("Bilder\\"+dateOut+"\\"+cut+".png"));
             cut++;
             nodeList.resetNodeList();
             tF = tF-(qRohr*absLength/cutCount)/(cpWater*massflow);
@@ -640,9 +648,8 @@ public class MainFrame extends javax.swing.JFrame {
             fem.start();
         }
         else {
-            visMatrix.refreshImg(nodeList, elementList, lineList, qRohr, qOberfl, qLuft, tF, absLength);
-            visMatrix.repaint();
-            visMatrix.saveToFile(new File(""+cut+".png"));
+
+            visMatrix.saveToFile(new File("Bilder\\"+dateOut+"\\"+cut+".png"));
         }
     }
     /**
