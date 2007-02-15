@@ -478,7 +478,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
 // TODO add your handling code here:
         visMatrix.changeGridView();
-        femFinish();
+        femFinish(null);
     }//GEN-LAST:event_jToggleButton1ActionPerformed
     
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -487,16 +487,16 @@ public class MainFrame extends javax.swing.JFrame {
     
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         visMatrix.zoomMinus();
-        femFinish();
+        femFinish(null);
     }//GEN-LAST:event_jButton7ActionPerformed
     
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         visMatrix.zoomPlus();
-        femFinish();
+        femFinish(null);
     }//GEN-LAST:event_jButton6ActionPerformed
     
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        femFinish();
+        femFinish(null);
         
         /*nodeList=loadNodesFromFile(new File(nodeFileField.getText()));
         JOptionPane.showMessageDialog(null, ""+nodeList.getCount(), "Fehler Elementenliste", JOptionPane.ERROR_MESSAGE);
@@ -574,15 +574,19 @@ public class MainFrame extends javax.swing.JFrame {
                             break;
                         }
                     }
-                    //nodeList.getNode(10).setU(80.0);*/
-                    
-                    FEM fem= new FEM(nodeList, elementList, lineList, this, it,res);
+                    //nodeList.getNode(10).setU(80.0);
+                      Matrix VectorX = new Matrix(1,nodeList.getCount());
+        //calc.calcLUShort (S, p, VectorX);
+                    for (int i=0;i<VectorX.getYCount();i++) {
+                         VectorX.setValue(0,i,20.0);
+                    }    
+                    FEM fem= new FEM(nodeList, elementList, lineList, this, it,res,VectorX);
                     try {
                         fem.join();
                     } catch (Exception exc) {
                         JOptionPane.showMessageDialog(null, exc.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
                     }
-                    fem = new FEM(nodeList, elementList, lineList, this, it,res);
+                    fem = new FEM(nodeList, elementList, lineList, this, it,res,VectorX);
                     fem.start();
                     //if (X!=null)  X.saveMatrixToFile(new File("x.txt"));
                     //visMatrix.repaint();
@@ -592,7 +596,7 @@ public class MainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
     
-    public void femFinish() {
+    public void femFinish(Matrix VectorX) {
         double qRohr=0;
         double qOberfl=0;
         double qLuft=0;
@@ -626,13 +630,13 @@ public class MainFrame extends javax.swing.JFrame {
                 }
                 
             }
-            FEM fem= new FEM(nodeList, elementList, lineList, this, it,res);
+            FEM fem= new FEM(nodeList, elementList, lineList, this, it,res,VectorX);
             try {
                 fem.join();
             } catch (Exception exc) {
                 JOptionPane.showMessageDialog(null, exc.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
             }
-            fem = new FEM(nodeList, elementList, lineList, this, it,res);
+            fem = new FEM(nodeList, elementList, lineList, this, it,res,VectorX);
             fem.start();
         }
         else {

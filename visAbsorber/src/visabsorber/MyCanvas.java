@@ -20,7 +20,7 @@ class MyCanvas extends Canvas {
     LineList lineList;
     Image imgTemp, imgGird;
     int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0;
-    double zoom=4112.0, minU=0, maxU=0;
+    double zoom=8224.0, minU=0, maxU=0;
     boolean netz=false;
     
     public void changeGridView() {

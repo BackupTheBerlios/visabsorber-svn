@@ -16,17 +16,19 @@ public class FEM extends Thread {
     NodeList nodeList;
     ElementList elementList;
     LineList lineList;
+    Matrix VectorX;
     int iter;
     double resi;
     private MainFrame main;
     /** Creates a new instance of FEM */
-    public FEM(NodeList nl, ElementList el, LineList ll, MainFrame m, int it, double res)  {
+    public FEM(NodeList nl, ElementList el, LineList ll, MainFrame m, int it, double res, Matrix X)  {
         nodeList=nl;
         elementList=el;
         lineList=ll;
         main = m;
         iter=it;
         resi=res;
+        VectorX=X;
     }
     
     public Matrix calcS() {
@@ -119,7 +121,7 @@ public class FEM extends Thread {
         
     }
      public synchronized void finish () {
-         main.femFinish();
+         main.femFinish(VectorX);
      }
     
     public synchronized void progress(String statusName, int position, int max) {
@@ -139,11 +141,11 @@ public class FEM extends Thread {
         progress("Jacobi",0,0);
         
         Calculator calc=new Calculator(this);
-        Matrix VectorX = new Matrix(1,nodeList.getCount());
+        //Matrix VectorX = new Matrix(1,nodeList.getCount());
         //calc.calcLUShort (S, p, VectorX);
-        for (int i=0;i<VectorX.getYCount();i++) {
+        /*for (int i=0;i<VectorX.getYCount();i++) {
             VectorX.setValue(0,i,20.0);
-        }
+        }*/
         double res=calc.calcGauss(S,p,VectorX,iter,resi,1.0);
         progress("Save X-file",0,0);
         Matrix xOutput = new Matrix(4,nodeList.getCount());
