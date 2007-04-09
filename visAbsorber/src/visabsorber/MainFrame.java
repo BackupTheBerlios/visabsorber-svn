@@ -89,6 +89,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
         jTextField14 = new javax.swing.JTextField();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("visAbsorber");
@@ -138,9 +139,9 @@ public class MainFrame extends javax.swing.JFrame {
             .add(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
-                    .add(statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
+                    .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, statusLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+                    .add(statusBar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jButton6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -168,7 +169,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .add(jButton5)
                     .add(jButton8))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
+                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1143, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -177,11 +178,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel9.setText("Randbedingungsliste");
 
-        rbdFileField.setText("Netze\\var 0 lang\\1.rbd");
+        rbdFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_3\\grid.rbd");
 
-        elementFileField.setText("Netze\\var 0 lang\\1.ele");
+        elementFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_3\\grid.ele");
 
-        nodeFileField.setText("Netze\\var 0 lang\\1.knt");
+        nodeFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_3\\grid.knt");
 
         jButton3.setText("...");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -280,6 +281,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTextField14.setText("7");
 
+        jButton9.setText("start FEM-Test-Gebiet");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -294,9 +302,9 @@ public class MainFrame extends javax.swing.JFrame {
                             .add(jLabel9)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, rbdFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, elementFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
-                                    .add(nodeFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE))
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, rbdFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, elementFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
+                                    .add(nodeFileField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                                     .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -309,12 +317,12 @@ public class MainFrame extends javax.swing.JFrame {
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(20, 20, 20)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jTextField1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                            .add(jTextField1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                             .add(jLabel2)
                             .add(jLabel3)
-                            .add(jTextField2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                            .add(jTextField2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                             .add(jLabel4)
-                            .add(jTextField3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)))
+                            .add(jTextField3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)))
                     .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -322,44 +330,47 @@ public class MainFrame extends javax.swing.JFrame {
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(10, 10, 10)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jTextField4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                                    .add(jTextField4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                     .add(jLabel6)
                                     .add(jLabel10)
-                                    .add(jTextField5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                                    .add(jTextField5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                     .add(jLabel11)
-                                    .add(jTextField6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                                    .add(jTextField6, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                     .add(jLabel12)
-                                    .add(jTextField7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                                    .add(jTextField7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                     .add(jLabel13)
-                                    .add(jTextField8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                                    .add(jTextField8, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                     .add(jLabel17)
-                                    .add(jTextField11, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                                    .add(jTextField11, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                     .add(jLabel18)
-                                    .add(jTextField12, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                                    .add(jTextField12, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
                                     .add(jLabel19)
-                                    .add(jTextField14, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)))))
+                                    .add(jTextField14, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)))))
                     .add(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField13, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField13, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jLabel14)
                                     .add(jPanel1Layout.createSequentialGroup()
                                         .add(10, 10, 10)
                                         .add(jLabel20)))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 242, Short.MAX_VALUE))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 261, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jTextField9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .add(10, 10, 10)
                                 .add(jLabel15)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 229, Short.MAX_VALUE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 248, Short.MAX_VALUE))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(10, 10, 10)
                                 .add(jLabel16)
                                 .add(170, 170, 170))
-                            .add(jTextField10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE)
-                            .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 349, Short.MAX_VALUE))))
+                            .add(jTextField10, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                            .add(jButton1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)))
+                    .add(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(jButton9, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -447,7 +458,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .add(jTextField10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jButton1)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jButton9)
+                .addContainerGap(299, Short.MAX_VALUE))
         );
         jScrollPane1.setViewportView(jPanel1);
 
@@ -463,10 +476,83 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1246, Short.MAX_VALUE)
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        nodeList = ReadFile.loadNodesFromFile(new File(nodeFileField.getText()));
+        if (nodeList != null) {
+            elementList = ReadFile.loadElementsFromFile(new File(elementFileField.getText()), nodeList);
+            if (elementList != null) {
+                lineList = ReadFile.loadLinesFromFile(new File(rbdFileField.getText()), nodeList);
+                if (lineList == null) {
+                    JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Randliste","Fehler", JOptionPane.ERROR_MESSAGE);
+                } else {
+//JOptionPane.showMessageDialog(null, "Fertig","Fertig", JOptionPane.ERROR_MESSAGE);
+                    /*lAbs=Double.valueOf(jTextField1.getText()).doubleValue();
+                    lDam=Double.valueOf(jTextField2.getText()).doubleValue();
+                    lBod=Double.valueOf(jTextField3.getText()).doubleValue();
+                    tU=Double.valueOf(jTextField4.getText()).doubleValue();
+                    tF=Double.valueOf(jTextField6.getText()).doubleValue();
+                    q=Double.valueOf(jTextField8.getText()).doubleValue();
+                    aU=Double.valueOf(jTextField5.getText()).doubleValue();
+                    aF=Double.valueOf(jTextField7.getText()).doubleValue();*/
+                     
+                    it=Double.valueOf(jTextField9.getText()).intValue();
+                    res=Double.valueOf(jTextField10.getText()).doubleValue();
+                    cut=0;
+                    cutCount=0;
+                    /*cpWater=Double.valueOf(jTextField12.getText()).doubleValue();
+                    massflow=Double.valueOf(jTextField11.getText()).doubleValue();
+                    absLength=Double.valueOf(jTextField14.getText()).doubleValue();*/
+                    
+                    for (int i = 0; i < elementList.getCount(); i++) {
+                        Element e = elementList.getElement(i);
+                        e.setlamda(100);
+                    }
+                    
+                    for (int i = 0; i < lineList.getCount(); i++) {
+                        Line line = lineList.getLine(i);
+                        switch (line.getType()) {
+                            case 0: line.setProperties(false,0,false,0,0);
+                                    line.getNode0().setU(20);
+                                    line.getNode1().setU(20);
+                            
+                            break;
+                            case 1: line.setProperties(true,0,false,aF,tF);
+                            break;
+                            case 2: line.setProperties(true,0,false,aU,tU);
+                            //line.getNode0().setU(20.0);
+                            //line.getNode1().setU(20.0);
+                            break;
+                            case 3: line.setProperties(false,0,true,2000,0);
+                            break;
+                       
+                        }
+                    }
+                    //nodeList.getNode(10).setU(80.0);
+                      Matrix VectorX = new Matrix(1,nodeList.getCount());
+        //calc.calcLUShort (S, p, VectorX);
+                    for (int i=0;i<VectorX.getYCount();i++) {
+                         VectorX.setValue(0,i,20.0);
+                    }    
+                    FEM fem= new FEM(nodeList, elementList, lineList, this, it,res,VectorX);
+                    try {
+                        fem.join();
+                    } catch (Exception exc) {
+                        JOptionPane.showMessageDialog(null, exc.getMessage() , "Fehler", JOptionPane.ERROR_MESSAGE);
+                    }
+                    fem = new FEM(nodeList, elementList, lineList, this, it,res,VectorX);
+                    fem.start();
+                    //if (X!=null)  X.saveMatrixToFile(new File("x.txt"));
+                    //visMatrix.repaint();
+                }
+            } else JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Elementenliste","Fehler", JOptionPane.ERROR_MESSAGE);
+        } else JOptionPane.showMessageDialog(null, "Fehler beim einlesen der Knotenliste","Fehler", JOptionPane.ERROR_MESSAGE);
+      
+    }//GEN-LAST:event_jButton9ActionPerformed
     
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         visMatrix.save();
@@ -649,7 +735,7 @@ public class MainFrame extends javax.swing.JFrame {
         }
         else {
 
-            visMatrix.saveToFile(new File("Bilder\\"+dateOut+"\\"+cut+".png"));
+            visMatrix.saveToFile(new File(""+cut+".png"));
         }
     }
     /**
@@ -673,6 +759,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

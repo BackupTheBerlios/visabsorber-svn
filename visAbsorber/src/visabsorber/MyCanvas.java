@@ -20,7 +20,7 @@ class MyCanvas extends Canvas {
     LineList lineList;
     Image imgTemp, imgGird;
     int offsetX=0, offsetY=0, minX=0, minY=0, maxX=0,maxY=0;
-    double zoom=8224.0, minU=0, maxU=0;
+    double zoom=20, minU=0, maxU=0;//8224.0
     boolean netz=false;
     
     public void changeGridView() {
@@ -91,8 +91,8 @@ class MyCanvas extends Canvas {
                 if (minU>bufU) minU=bufU;
                 if (maxU<bufU) maxU=bufU;
             }
-            maxU=70.0;
-            minU=20.0;
+            maxU=20.0;
+            minU=0.0;
             //JOptionPane.showMessageDialog(null, ""+minU, "1", JOptionPane.ERROR_MESSAGE);
             //JOptionPane.showMessageDialog(null, ""+maxU, "2", JOptionPane.ERROR_MESSAGE);
             offsetX=0-minX+400;
