@@ -1,0 +1,4 @@
+fid = fopen('ref_quadrat_rand.txt', 'r');
+ende=421;summanden=200;
+B = fscanf(fid, '%i %g %g') ;
+fclose(fid)
