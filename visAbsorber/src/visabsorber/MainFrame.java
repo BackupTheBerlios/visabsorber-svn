@@ -169,7 +169,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .add(jButton5)
                     .add(jButton8))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1143, Short.MAX_VALUE)
+                .add(scrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -178,11 +178,11 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel9.setText("Randbedingungsliste");
 
-        rbdFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_3\\grid.rbd");
+        rbdFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_10\\grid.rbd");
 
-        elementFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_3\\grid.ele");
+        elementFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_10\\grid.ele");
 
-        nodeFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_3\\grid.knt");
+        nodeFileField.setText("D:\\Programmierung\\PPM\\Auswertung\\matlab\\Grid_10\\grid.knt");
 
         jButton3.setText("...");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -476,7 +476,7 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1246, Short.MAX_VALUE)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 909, Short.MAX_VALUE)
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -527,7 +527,7 @@ public class MainFrame extends javax.swing.JFrame {
                             //line.getNode0().setU(20.0);
                             //line.getNode1().setU(20.0);
                             break;
-                            case 3: line.setProperties(false,0,true,2000,0);
+                            case 3: line.setProperties(false,0,true,400,0);
                             break;
                        
                         }

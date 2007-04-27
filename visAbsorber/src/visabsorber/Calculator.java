@@ -267,6 +267,7 @@ public class Calculator {
         Matrix tempArray = new Matrix(1,n);
         Matrix res=new Matrix(1,n);
         double Residuum=eps+1,globRes=0;
+        double calCount=0;
         Vector<Integer>[] oS = optS(A);
         for (int k=0;k<maxc && Residuum > eps;k++) {
             if (fem!=null) fem.progress("Gauss (Residuum: " + Residuum + ")",k,maxc);
@@ -279,6 +280,7 @@ public class Calculator {
                     int x1= line.get(j).intValue();
                     if (x1<i) sum = sum + A.getValue(x1,i)*tempArray.getValue(0,x1);
                     if (x1>i) sum = sum + A.getValue(x1,i)*x.getValue(0,x1);
+                    calCount++;
                 }
                 /*for (int j=0; j<i; j++) {
                     sum = sum + A.getValue(j,i)*tempArray.getValue(0,j);
@@ -325,7 +327,7 @@ public class Calculator {
             if (w>2.0) w=2.0;*/
             
         }
-        return Residuum;
+        return calCount;//Residuum;
         
 
     }
