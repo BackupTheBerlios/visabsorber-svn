@@ -113,6 +113,7 @@ public class ReadFile {
                 for (int i=0;i<bufX;i++) {
                     String line=buffer.readLine();
                     buf=readLine(line, 3, ' ');
+                    //nl.addNode(new Node(buf[1],buf[2],0.0,false,nl.getCount()));
                     nl.addNode(new Node(buf[1],buf[2],0.0,false,nl.getCount()));
                 }
             } catch(java.lang.Exception e) {

@@ -23,6 +23,7 @@ public class Node {
     /** Creates a new instance of node */
     public Node(double x1, double y1, double u1, boolean temp1, int i) {
        u=u1;
+       if (u!=0.0) temp=true;
        y=y1;
        x=x1;
        temp=temp1;
