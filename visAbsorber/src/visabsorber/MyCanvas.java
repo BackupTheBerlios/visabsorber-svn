@@ -99,10 +99,10 @@ class MyCanvas extends Canvas {
             offsetY=0-minY+5;
             //Canvas canvas= new Canvas();
             //canvas.setSize(maxX-minX,maxY-minY);
-            int h=maxX+offsetX;//Double.valueOf((maxX+offsetX)*zoom).intValue();
-            int w=maxY+offsetY;//Double.valueOf((maxX+offsetX)*zoom).intValue();
-            if (h<150) h=150;
-            if (w<510) w=510;
+            int h=maxX+offsetX+20;//Double.valueOf((maxX+offsetX)*zoom).intValue();
+            int w=maxY+offsetY+20;//Double.valueOf((maxX+offsetX)*zoom).intValue();
+            if (h<150) h=150+20;
+            if (w<510) w=510+20;
             imgTemp=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB);
             Graphics gTemp=imgTemp.getGraphics();
             imgGird=new BufferedImage(h, w,BufferedImage.TYPE_INT_ARGB);
@@ -145,6 +145,10 @@ class MyCanvas extends Canvas {
                     gTemp.drawLine(x0,y0,x1,y1);
                     gTemp.drawLine(x0,y0,x2,y2);
                     gTemp.drawLine(x2,y2,x1,y1);
+                    gTemp.setColor(Color.pink);
+                    gTemp.drawString(""+el.getElement(i).getNode0().getIndex(),x0-5,y0+2);
+                    gTemp.drawString(""+el.getElement(i).getNode1().getIndex(),x1-5,y1+2);
+                    gTemp.drawString(""+el.getElement(i).getNode2().getIndex(),x2-5,y2+2);
                 }
                 
                 //this.getGraphics().drawImage(imgTemp,0,0, null);

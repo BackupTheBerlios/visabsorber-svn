@@ -1,0 +1,210 @@
+%%**************************************************************
+%% Version: filename    rev date       time     last modified by
+%%     $Id: MDT-SADA.tex 83 2007-02-05 08:58:26Z dietmarw $ 
+%%**************************************************************
+%% (The "Id" tag above is updated automatically if 
+%% 	svn propset svn:keywords "Id" <filename>
+%% was set.)
+\documentclass[index]{MDT-SADA}  
+   
+% Zusätzliches Packet für diese Datei und zugehörige Einstellungen
+\usepackage{listings}
+\usepackage{epsf}  
+\usepackage{epsfig} 
+\usepackage{hyperref}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
+\usepackage{graphicx}
+%\usepackage{a4wide}
+%\usepackage[margin=2cm,nohead]{geometry}
+\usepackage[margin=2.5cm, top=1.5cm, bottom=3.5cm]{geometry}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{-1cm}
+\lstset{% 
+	tabsize=2,% 
+	basicstyle=\footnotesize\ttfamily,%
+	%numbers=left,% 
+ 	%numberfirstline,%
+	breaklines=true,%
+	breakatwhitespace=true,%
+	%linewidth=0.9\textwidth,% 
+	%xleftmargin=0.05\textwidth,%
+	frame=tlrb,%
+	captionpos=b%
+}
+
+% Interne Definitionen für die Darstellung von ...
+\newcommand{\befehl}[2][x]{\ifthenelse{\equal{#1}{x}}{\index{Befehl!#2}\index{#2}}{}\texttt{$\backslash$#2}}
+\newenvironment{beispiel}[1]{\hfill\begin{minipage}[c]{0.8\textwidth}Beispiel:\small\ifthenelse{\equal{#1}{}}{\\}{\lstinputlisting[linerange={#1}]{MDT-SADA.tex}}}{\end{minipage}\hfill}
+\newcommand{\verzeichnis}[1]{\path{#1}}
+\newcommand{\option}[2][x]{\ifthenelse{\equal{#1}{x}}{\index{Option!#2}\index{#2}}{}\mbox{'#2'}}
+\newcommand{\umgebung}[2][x]{\ifthenelse{\equal{#1}{x}}{\index{Umgebung!#2}\index{#2}}{}\texttt{#1}}
+
+\begin{document}
+	%Schaltet auf römische Seitenzahlen um 
+	\frontmatter
+	
+	%Setzt die Titelseite
+	% #1 Autor + Martikelnummer
+	% #2 Matrikelnummer %%nicht verwenden!
+	% #3 Titel
+	% #4 Untertitel
+	% #5 Abgabedatum
+	% #6 Betreuer
+	% #7 Fakultät
+	% #8 Institut
+	\titelseite{Name}{Martikelnummer}{Titel}{Untertitel}{Abgabedatum}{Betreuer}{Fakultät}{Institut}
+		{Anleitung für die Benutzung}
+		{\today}
+		{N.N.}
+
+	%Erzeugt das Inhaltsverzeichnis (inkl. Link in der pdf-Datei)
+	\inhaltsverzeichnis 
+	
+	%Erzeugen der Seite mit den Formelzeichen
+	\begin{formelzeichen}
+		$\theta$ & Ein Formelzeichen.\\
+		A & Eine Matrix.\\
+	\end{formelzeichen}
+
+ %Erzeugen der Seite mit den Abkürzungen
+	\begin{abkuerzungen}
+		ADU oder A/D	& Analog-Digital-Umsetzer \\
+		CMR	& Common Mode Rejection \\
+		DMS	& Dehnungsmessstreifen \\
+		OT 	& Oberster Totpunkt \\
+		OP	& Operationsverstärker \\
+		I/O	& Input-Output Schnittstelle\\
+		MUX	& Multiplexer\\
+		S\&H	& Sample-and-Hold-Baustein\\	
+	\end{abkuerzungen}
+ 	%Schaltet auf arabische Seitenzahlen um.
+	\mainmatter
+
+	%Hier beginnt unser Text ;-)
+
+
+\chapter{Programmbedienung}
+
+\section{Vorrausetzung und Start der visAbsorber-Software}
+
+Das Programm benötigt die eine JAVA-Runtime-Umgebung ab Version 1.5.x. Je nach Größe des genutzten FEM-Netzes sollten 512-2048MB RAM-Speicher vorhanden sein. Die Software wird gestartet je nach Betriebssystem in der Konsole mit dem Befehl "java -jar visAbsorber.jar".
+
+\section{Features und Bedienung}
+
+Die visAbsorber-Software berechnet die zweidimensionale Wärmeverteilung im Querschnitt eines Solarabsorbers. Das Programm nutzt die FEM-Netzdatentyps des PPM-Netzgenerators. Hierbei ist die ordnungsgemäße Indizierung der Elementtypen (Absorber, Dämmung, Boden) und der Randtypen (Absorberoberfläche, Rohrfläche, Bodenfläche) Vorrausetzung für den reibungsfreien Programmablauf. Abbildung \ref{fig:programm} zeigt die Indexverteilung an Hand eines Beispieles.
+
+//Abildung Indexverteilung
+
+\begin{figure}
+	\centering
+		\includegraphics[width=1.00\textwidth]{Bilder/programm.PNG}
+	\caption{Grafisches User-Interface des visAbsorbers}
+	\label{fig:programm}
+\end{figure}
+
+Die Anwendung besitzt ein graphisches User-Interface (Abb ??), die es den Benutzter erlaubt, sehr einfach die Systembedingungen zu verändern. Somit kann mit geringem Aufwand unterschiedliche Szenarien untersucht werden. Die Ergebnisse werden graphisch in dem Ausgabefenster angezeigt, sowie als Liste im Programmverzeichnis gespeichert.
+
+Vorgehensweise bei der Bedienung der Software:
+\begin{enumerate}
+	\item Wählen Sie die Knoten-, Element-, Randlistendateien zu dem passenden FEM-Netz aus.
+	\item Geben Sie die Systembedingungen (Wärmeleitfähigkeit, Umgebungstemperatur, etc.) an, sowie die Länge des Absorber in Rohrrichtung (Z-Koordinate)
+	\item "Anzahl der Schnitte" gibt an, in wie viel Teile der Absorber in Z-Richtung geteilt werden soll. Für jede Position wird im Verlauf ein jeweiliges Temperaturfeld berechnet und als Bild- und Listendatei im Programmverzeichnis gespeichert.
+	\item Um den Prozess zu starten, klicken Sie auf "start FEM".
+	\item Der aktuelle Status wird am oberen Rand angezeigt und Ergebnisse des aktuellen Schnitts im Ausgabe Fenster angezeigt.
+\end{enumerate}
+
+ 
+\chapter{Einführung in die Implementierung}
+
+\begin{figure}
+	\centering
+		\includegraphics[width=1.00\textwidth]{Bilder/ablauf.pdf}
+	\caption{Vereinfachter Programmablauf des visAbsorbers}
+	\label{fig:ablauf}
+\end{figure}
+
+Die visAbsorber-Software wurde in der objektorientierten Programmiersprache JAVA implementiert. Abbildung \ref{fig:ablauf} zeigt den vereinfachten Überblick über den Programmablauf. Elementen-, Knoten und Randlisten sind mit Hilfe von Objekten realisiert und sind direkt miteinander verknüpft. Dadurch sind umständliche Zugriffsoperationen über Indextafeln überflüssig. Dies beschleunigt zum einen das Programm und lässt zum anderen den Quellencode übersichtlicher erscheinen. 
+
+Im ersten Schritt werden die Netzdaten aus den jeweiligen Dateien des PPM-Netzgenerators eingelesen und den Objekten zugeordnet. Beim Start des FEM-Algorithmuses wird zu erst die Benutzereingaben (Wärmeleitfähigkeiten, Wärmekapazitäten, etc) den Listen zugeordnet. Danach öffnet die Software für FEM-Berechnung einen einzelnen Thread. Dies ist ein Prozess der abgelöst vom Hauptprogramm arbeitet. Dies hat den Zweck, dass während der Berechnung Statusinformationen im Hauptfenster angezeigt werden können. Nach der Übergabe der FEM-Daten an den Thread, werden die Steifigkeitsmatrix und der Lastvektor berechnet. Da die Matrix schwach besetzt ist, dass heißt an viele Positionen befindet sich ein Null, wird im folgenden Schritt diese optimiert. Das Programm generiert einen Vektor, welcher auflistet, welche Positionen mit ungleich Null besetzt sind. Die bringt einen großen Vorteil bei der Lösung des Gleichungssystems, da der Gauss-Seidel-Löser nur noch diese Stellen in die Berechnung einfließen lassen muss. Dadurch erübrigen sich sehr viele Additionen mit einer Null. Nachdem der Löser das System bis zum gewünschten Reesidum gelöst hat, übergibt der Thread den Lösungsvektor zurück an das Hauptprogramm. Mit dieser Lösung wird das Temperaturfeld im Ausgabefenster gezeichnet, dabei wird innerhalb der Dreieckelemente linear interpoliert. Nach der Speicherung der Bild- Listendaten in das Programmverzeichnis, wird überprüft ob weitere Schnitte zu berechnen sind. Falls ja werden die neuen Randbedingungen berechnet (Wassertemperatur) und der FEM-Thread erneut gestartet.
+
+\chapter{Überprüfung der Qualität des FEM- Algorithmuses}
+
+Nach der Implementierung der FEM und des Gleichungslösers in die Software wurde die Funktionsfähigkeit und Effektivität der beiden Programmteile untersucht. Hierzu ist der Vergleich einer klassischen analytischen Lösung mit der numerischen Lösung des FEM-Algorithmus ein Weg, um die Qualität der Implementierung zu überprüfen.
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.50\textwidth]{Bilder/Fehleranalyse_schaubild.pdf}
+\caption{Schaubild des Testgebietes}
+\label{fig:Fehleranalyse_schaubild}
+\end{center}
+\end{figure}
+Das verwendete Testgebiet ist ein Rechteck mit vier Randeigenschaften (Abb.\ref{fig:Fehleranalyse_schaubild}). Die beiden Neumann-Ränder sind adiabat, sodass kein Wärmestrom über diese fließt. Am Dirichlet-Rand herrscht eine konstante Temperatur von 20°C. Der Cauchy-Rand hat einen Wärmeübergangskoeffizent von AlphaU = 400W/(m2*K) und eine Umgebungstemperatur Theta=0°C. Im inneren des Testgebietes ist die Wärmeleitfähigkeit Lambda=100W/(K*m). Dieser Fall besitzt alle Randtypen die der FEM-Algorythmus verarbeiten kann und dient so gut zum Test der Implementierung. Die anaylitische Lösung dieses Testgebietes kann durch Gleichung (??) ausgedrückt werden.
+
+//Gleichung
+
+Im Weiteren wurden verschiedene FEM-Netze mit unterschiedlichen Anzahlen von Knoten passend generiert. So kann nach der numerischen Berechnung der Knotentemperaturen, diese verglichen werden mit den tatsächlichen Temperaturen an diesen Koordinaten. Der mögliche entstandene Fehler kann dann Rückschlüsse auf die Qualität der FEM-Implentierung liefern.
+
+\section{Ergebnisse und Auswertung}
+
+In der Untersuchung wurden 4 FEM-Netze mit 13, 25, 1811, 761 bzw. 3212 Knoten verwendet. Die Abbildung \ref{fig:Fehleranalyse_Testgebiete} zeigt die jeweiligen numerischen Lösungen der Temperaturfelder.
+
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=1.0\textwidth]{Bilder/Fehleranalyse_Testgebiete.png}
+	\caption{Temperaturverteilung im Testgebiet}
+	\label{fig:Fehleranalyse_Testgebiete}
+\end{figure}
+
+Die Tabelle \ref{tab:Fehler} beinhaltet für jedes Netz die Anzahl der benötigten Rechenzyklen um die numerische Lösung zu berechnen, dass heißt diese Zahl gibt Auskunft über den Rechen -bzw. Zeitaufwand. Der relative Fehler ist ein Durchschnittswert aus den Fehlern an jeden Knoten. Diese werden berechnet aus der Differenz der FEM-Temperatur -und der exakten analytischen Lösung, geteilt durch die analytische Lösung an den jeweiligen Knoten.
+
+\begin{table}
+\caption{Relativer Fehler und Rechenaufwand bei unterschiedlichen Knotenanzahlen}
+	\centering
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		Anzahl der Knoten & 13 & 25 & 181 & 761 & 3121 \\ 
+		\hline
+		Rechenzyklen & 5460 & 36036 & 2901230 & 53305797 & 933354851 \\ 
+		\hline
+		Relativer Fehler & 3,332678929 & 1,37121127 & 0,123004588 & 0,02628152 & 0,00627174 \\ 
+		\hline
+	\end{tabular}
+	\label{tab:Fehler}
+\end{table}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.80\textwidth]{Bilder/Fehleranalyse_rela_Fehler.pdf}
+	\caption{Relativer Fehler bei unterschiedlichen Knotenanzahlen}
+	\label{fig:Fehleranalyse_rela_Fehler}
+\end{figure}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.80\textwidth]{Bilder/Fehleranalyse_Dauer.pdf}
+	\caption{Rechenaufwand der jeweiligen FEM-Netze}
+	\label{fig:Fehleranalyse_Dauer}
+\end{figure}
+
+Dieser durchschnittliche prozentuale Fehler nimmt mit der Anzahl der Knoten stetig ab (Abb. \ref{fig:Fehleranalyse_rela_Fehler}) und konvergiert gegen null. Im Gegensatz dazu nimmt der Rechenaufwand in Form der nötigen Rechenzyklen zum Quadrat der Knotenanzahl zu (Abb. \ref{fig:Fehleranalyse_Dauer}). So muss bei der Nutzung des FEM-Algorithmuses immer ein Kompromiss zwischen Fehler und Rechenaufwand eingegangen werden. 
+
+\begin{figure}
+	\centering
+		\includegraphics[width=0.60\textwidth]{Bilder/fehler_grid10.pdf}
+	\caption{Räumliche Fehlerverteilung in Prozent bei 181 Knoten}
+	\label{fig:fehler_grid10}
+\end{figure}
+\begin{figure}
+	\centering
+		\includegraphics[width=0.60\textwidth]{Bilder/fehler_grid20.pdf}
+	\caption{Räumliche Fehlerverteilung in Prozent bei 761 Knoten}
+	\label{fig:fehler_grid20}
+\end{figure}
+
+Die Fehlerverteilung innerhalb des Testgebietes ist mit Hilfe zweier Beispiele dargestellt (Abb. \ref{fig:fehler_grid10}, Abb. \ref{fig:fehler_grid20}). Mit dem Vergleich zur Abbildung \ref{fig:Fehleranalyse_Testgebiete} zeigt sich, dass die größten Fehler in den Gebieten mit größten Temperaturänderungen und somit die größten Wärmestrome zu finden sind. Aus dieser Schlussfolgerung ist eine Möglichkeit die FEM zu optimieren, die die Netze so zu verändern, dass in Teilen mit hohen Wärmeströmen die Anzahl der Knoten erhöht wird und in den Gebieten mit niedriger Temperturänderung sie reduziert wird.
+	% Dummy Literaturverzeichnis
+	\begin{literaturverzeichnis}
+		\bibitem{Test}Winkler, D.; Liebezeit, Th.\\\emph{Vorlage für Studien- und Diplomarbeiten - Anleitung für die Benutzung}\\MDT 2007 (unveröffentlicht)
+	\end{literaturverzeichnis}
+
+	% Index
+	\indexverzeichnis
+\end{document}
+
